@@ -1,0 +1,115 @@
+[
+  {
+    "pattern": "workplace-honesty",
+    "keywords": [
+      "workplace", "employer", "colleague", "report", "regulator", "defect", "safety", "whistleblow", "fire", "manager", "complain",
+      "iş", "işyeri", "işveren", "rapor", "kusur", "güvenlik", "ihbar", "yöneticiye"
+    ],
+    "sourceIds": [
+      "Q.5.2", "Q.4.135", "Q.5.8", "Q.49.6", "Q.17.36",
+      "muslim.49", "muslim.55", "ibn-majah.2341", "bukhari.6094"
+    ]
+  },
+  {
+    "pattern": "whistleblowing",
+    "keywords": [
+      "whistleblow", "report wrongdoing", "expose", "disclose", "fraud", "wrongdoing",
+      "ihbar", "iç müfettiş", "yolsuzluk", "kötülüğü göstermek"
+    ],
+    "sourceIds": ["muslim.49", "muslim.55", "Q.4.135", "Q.5.8", "Q.5.2", "ibn-majah.2341"]
+  },
+  {
+    "pattern": "organ-donation",
+    "keywords": [
+      "organ", "donor", "transplant", "brain death", "harvest", "cadaver",
+      "organ bağışı", "nakil", "beyin ölümü", "donör"
+    ],
+    "sourceIds": ["Q.5.32", "Q.33.72", "ibn-majah.2341"]
+  },
+  {
+    "pattern": "riba-finance",
+    "keywords": [
+      "mortgage", "loan", "interest", "ribā", "riba", "credit", "usury", "finance", "bank",
+      "ipotek", "kredi", "faiz", "ribâ", "banka", "konut kredisi"
+    ],
+    "sourceIds": ["Q.2.275", "Q.4.36", "Q.16.90", "ibn-majah.2341"]
+  },
+  {
+    "pattern": "family-conflict",
+    "keywords": [
+      "family", "parent", "spouse", "child", "marriage", "divorce", "in-law", "religion family",
+      "aile", "ebeveyn", "anne baba", "eş", "çocuk", "evlilik", "boşanma"
+    ],
+    "sourceIds": ["Q.4.36", "Q.4.135", "Q.5.8", "Q.16.90", "Q.49.12", "muslim.2564"]
+  },
+  {
+    "pattern": "professional-ethics",
+    "keywords": [
+      "client", "patient", "colleague", "professional", "ethics", "boundary", "conflict of interest",
+      "müvekkil", "hasta", "meslek", "etik", "çıkar çatışması"
+    ],
+    "sourceIds": ["Q.4.135", "Q.5.8", "Q.16.90", "Q.17.36", "Q.49.6", "muslim.49", "muslim.55", "ibn-majah.2341", "bukhari.6094"]
+  },
+  {
+    "pattern": "medical-decision",
+    "keywords": [
+      "treatment", "surgery", "doctor", "diagnosis", "vaccine", "medical", "end of life", "DNR", "transplant",
+      "tedavi", "ameliyat", "doktor", "teşhis", "aşı", "sağlık"
+    ],
+    "sourceIds": ["Q.5.32", "Q.33.72", "ibn-majah.2341"]
+  },
+  {
+    "pattern": "truth-disclosure",
+    "keywords": [
+      "tell", "disclose", "secret", "honest", "lie", "truth", "transparent",
+      "söyle", "açıkla", "sır", "doğruluk", "yalan", "şeffaf"
+    ],
+    "sourceIds": ["Q.2.42", "Q.9.119", "Q.17.81", "Q.49.6", "bukhari.6094", "tirmidhi.2516"]
+  },
+  {
+    "pattern": "honest-speech",
+    "keywords": [
+      "say", "speech", "promise", "lie", "tell",
+      "söyle", "konuş", "sözü", "yalan"
+    ],
+    "sourceIds": ["Q.9.119", "Q.49.6", "bukhari.6094", "tirmidhi.2516", "muslim.55"]
+  },
+  {
+    "pattern": "sincerity-intention",
+    "keywords": [
+      "intention", "niyya", "motive", "sincerity", "ikhlas", "showing off", "riyāʾ",
+      "niyet", "ihlas", "samimiyet", "riyâ", "gösteriş"
+    ],
+    "sourceIds": ["bukhari.1", "Q.92.20", "Q.25.43", "Q.16.106"]
+  },
+  {
+    "pattern": "religious-obligation",
+    "keywords": [
+      "prayer", "fast", "zakāt", "hajj", "obligation", "ibadet", "namaz", "oruç", "zekat", "hac"
+    ],
+    "sourceIds": ["muslim.8", "Q.51.56", "Q.33.72", "Q.4.36"]
+  },
+  {
+    "pattern": "community-harm",
+    "keywords": [
+      "community", "society", "public", "harm", "fitna", "discord",
+      "topluluk", "toplum", "kamuoyu", "fitne", "zarar"
+    ],
+    "sourceIds": ["Q.5.2", "Q.16.90", "Q.49.12", "muslim.49", "ibn-majah.2341", "muslim.2564"]
+  },
+  {
+    "pattern": "inheritance-property",
+    "keywords": [
+      "inheritance", "will", "property", "wealth", "money",
+      "miras", "vasiyet", "mülk", "para", "servet"
+    ],
+    "sourceIds": ["Q.2.275", "Q.4.36", "Q.16.90"]
+  },
+  {
+    "pattern": "general",
+    "keywords": [],
+    "sourceIds": [
+      "Q.17.36", "Q.5.8", "Q.16.90", "Q.49.6", "Q.92.20", "bukhari.1", "muslim.55", "ibn-majah.2341"
+    ]
+  }
+]

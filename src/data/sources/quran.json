@@ -1,0 +1,381 @@
+[
+  {
+    "id": "Q.2.42",
+    "sura": 2,
+    "aya": 42,
+    "arabic": "وَلَا تَلْبِسُوا الْحَقَّ بِالْبَاطِلِ وَتَكْتُمُوا الْحَقَّ وَأَنتُمْ تَعْلَمُونَ",
+    "transliteration": "Wa-lā talbisū al-ḥaqqa bi-l-bāṭili wa-taktumū al-ḥaqqa wa-antum taʿlamūn",
+    "translations": {
+      "pickthall": "Confound not truth with falsehood, nor knowingly conceal the truth.",
+      "diyanet": "Hakkı bâtıla karıştırmayın ve bilerek hakkı gizlemeyin."
+    },
+    "themes": ["haqq", "truth", "batil", "concealment", "honesty"],
+    "casePatterns": ["truth-disclosure", "honest-speech", "workplace-honesty", "whistleblowing"],
+    "tafsirRefs": [
+      { "tafsir": "al-Ṭabarī", "ref": "Jāmiʿ al-Bayān, on Q. 2:42" },
+      { "tafsir": "al-Rāzī", "ref": "Mafātīḥ al-Ghayb, on Q. 2:42" }
+    ],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.2.147",
+    "sura": 2,
+    "aya": 147,
+    "arabic": "الْحَقُّ مِن رَّبِّكَ فَلَا تَكُونَنَّ مِنَ الْمُمْتَرِينَ",
+    "transliteration": "Al-ḥaqqu min rabbika fa-lā takūnanna mina al-mumtarīn",
+    "translations": {
+      "pickthall": "It is the truth from thy Lord; so be not thou of those who waver.",
+      "diyanet": "Hak Rabbindendir; o hâlde sakın şüphe edenlerden olma."
+    },
+    "themes": ["haqq", "truth", "certainty", "yaqin"],
+    "casePatterns": ["truth-disclosure", "general"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.2.170",
+    "sura": 2,
+    "aya": 170,
+    "arabic": "وَإِذَا قِيلَ لَهُمُ اتَّبِعُوا مَا أَنزَلَ اللَّهُ قَالُوا بَلْ نَتَّبِعُ مَا أَلْفَيْنَا عَلَيْهِ آبَاءَنَا ۚ أَوَلَوْ كَانَ آبَاؤُهُمْ لَا يَعْقِلُونَ شَيْئًا وَلَا يَهْتَدُونَ",
+    "transliteration": "Wa-idhā qīla lahumu ittabiʿū mā anzala Allāhu qālū bal nattabiʿu mā alfaynā ʿalayhi ābāʾanā — awa-law kāna ābāʾuhum lā yaʿqilūna shayʾan wa-lā yahtadūn",
+    "translations": {
+      "pickthall": "And when it is said unto them: Follow that which Allah hath revealed, they say: We follow that wherein we found our fathers. What! Even though their fathers were wholly unintelligent and had no guidance?",
+      "diyanet": "Onlara, “Allah'ın indirdiğine uyun” denildiğinde, “Hayır, biz babalarımızı üzerinde bulduğumuz yola uyarız” derler. Babaları akıl erdirememiş ve doğruyu bulamamış olsa da mı?"
+    },
+    "themes": ["taqlid", "tradition", "reason", "aql", "inherited-belief"],
+    "casePatterns": ["religious-obligation", "general"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.4.135",
+    "sura": 4,
+    "aya": 135,
+    "arabic": "يَا أَيُّهَا الَّذِينَ آمَنُوا كُونُوا قَوَّامِينَ بِالْقِسْطِ شُهَدَاءَ لِلَّهِ وَلَوْ عَلَىٰ أَنفُسِكُمْ أَوِ الْوَالِدَيْنِ وَالْأَقْرَبِينَ",
+    "transliteration": "Yā ayyuhā alladhīna āmanū kūnū qawwāmīna bi-l-qisṭi shuhadāʾa li-Llāhi wa-law ʿalā anfusikum aw-i-l-wālidayni wa-l-aqrabīn",
+    "translations": {
+      "pickthall": "O ye who believe! Be ye staunch in justice, witnesses for Allah, even though it be against yourselves or (your) parents or (your) kindred.",
+      "diyanet": "Ey iman edenler! Adaleti titizlikle ayakta tutun, kendiniz, ana babanız ve akrabanız aleyhinde de olsa Allah için şahitlik eden kimseler olun."
+    },
+    "themes": ["adl", "justice", "qist", "witness", "truthfulness"],
+    "casePatterns": ["truth-disclosure", "whistleblowing", "family-conflict", "workplace-honesty"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.5.2",
+    "sura": 5,
+    "aya": 2,
+    "arabic": "وَتَعَاوَنُوا عَلَى الْبِرِّ وَالتَّقْوَىٰ ۖ وَلَا تَعَاوَنُوا عَلَى الْإِثْمِ وَالْعُدْوَانِ",
+    "transliteration": "Wa-taʿāwanū ʿalā al-birri wa-l-taqwā wa-lā taʿāwanū ʿalā al-ithmi wa-l-ʿudwān",
+    "translations": {
+      "pickthall": "Help ye one another unto righteousness and pious duty. Help not one another unto sin and transgression.",
+      "diyanet": "İyilik ve takvâ üzere yardımlaşın; günah ve düşmanlık üzere yardımlaşmayın."
+    },
+    "themes": ["birr", "taqwa", "cooperation", "ithm", "harm-prevention"],
+    "casePatterns": ["workplace-honesty", "professional-ethics", "community-harm", "whistleblowing"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.5.8",
+    "sura": 5,
+    "aya": 8,
+    "arabic": "يَا أَيُّهَا الَّذِينَ آمَنُوا كُونُوا قَوَّامِينَ لِلَّهِ شُهَدَاءَ بِالْقِسْطِ ۖ وَلَا يَجْرِمَنَّكُمْ شَنَآنُ قَوْمٍ عَلَىٰ أَلَّا تَعْدِلُوا ۚ اعْدِلُوا هُوَ أَقْرَبُ لِلتَّقْوَىٰ",
+    "transliteration": "Yā ayyuhā alladhīna āmanū kūnū qawwāmīna li-Llāhi shuhadāʾa bi-l-qisṭi wa-lā yajrimannakum shanaʾānu qawmin ʿalā allā taʿdilū — iʿdilū huwa aqrabu li-l-taqwā",
+    "translations": {
+      "pickthall": "O ye who believe! Be steadfast witnesses for Allah in equity, and let not hatred of any people seduce you that ye deal not justly. Deal justly, that is nearer to your duty.",
+      "diyanet": "Ey iman edenler! Allah için hakkı ayakta tutan, adaletle şahitlik eden kimseler olun. Bir topluma olan kininiz sizi adaletsizliğe sürüklemesin. Âdil olun; bu, takvâya daha yakındır."
+    },
+    "themes": ["adl", "justice", "qist", "fairness", "enmity"],
+    "casePatterns": ["truth-disclosure", "professional-ethics", "community-harm", "family-conflict"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.5.32",
+    "sura": 5,
+    "aya": 32,
+    "arabic": "مَن قَتَلَ نَفْسًا بِغَيْرِ نَفْسٍ أَوْ فَسَادٍ فِي الْأَرْضِ فَكَأَنَّمَا قَتَلَ النَّاسَ جَمِيعًا وَمَنْ أَحْيَاهَا فَكَأَنَّمَا أَحْيَا النَّاسَ جَمِيعًا",
+    "transliteration": "Man qatala nafsan bi-ghayri nafsin aw fasādin fī al-arḍi fa-kaʾannamā qatala al-nāsa jamīʿan wa-man aḥyāhā fa-kaʾannamā aḥyā al-nāsa jamīʿan",
+    "translations": {
+      "pickthall": "Whosoever killeth a human being for other than manslaughter or corruption in the earth, it shall be as if he had killed all mankind, and whoso saveth the life of one, it shall be as if he had saved the life of all mankind.",
+      "diyanet": "Kim, bir cana karşılık veya yeryüzünde bir bozgunculuğa karşılık olmaksızın bir kimseyi öldürürse, sanki bütün insanları öldürmüş gibi olur. Kim de bir kimsenin hayatını kurtarırsa, sanki bütün insanların hayatını kurtarmış gibi olur."
+    },
+    "themes": ["nafs", "life", "preservation", "qatl"],
+    "casePatterns": ["medical-decision", "organ-donation", "community-harm"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.6.115",
+    "sura": 6,
+    "aya": 115,
+    "arabic": "وَتَمَّتْ كَلِمَتُ رَبِّكَ صِدْقًا وَعَدْلًا ۚ لَا مُبَدِّلَ لِكَلِمَاتِهِ",
+    "transliteration": "Wa-tammat kalimatu rabbika ṣidqan wa-ʿadlan — lā mubaddila li-kalimātihi",
+    "translations": {
+      "pickthall": "Perfected is the Word of thy Lord in truth and justice. There is naught that can change His words.",
+      "diyanet": "Rabbinin sözü, doğruluk ve adalet bakımından tamamlanmıştır. O'nun sözlerini değiştirebilecek yoktur."
+    },
+    "themes": ["sidq", "adl", "kalima", "qaṭʿi"],
+    "casePatterns": ["religious-obligation", "general"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.9.119",
+    "sura": 9,
+    "aya": 119,
+    "arabic": "يَا أَيُّهَا الَّذِينَ آمَنُوا اتَّقُوا اللَّهَ وَكُونُوا مَعَ الصَّادِقِينَ",
+    "transliteration": "Yā ayyuhā alladhīna āmanū ittaqū Allāha wa-kūnū maʿa al-ṣādiqīn",
+    "translations": {
+      "pickthall": "O ye who believe! Be careful of your duty to Allah, and be with the truthful.",
+      "diyanet": "Ey iman edenler! Allah'tan sakının ve sâdıklarla beraber olun."
+    },
+    "themes": ["sidq", "truthfulness", "taqwa", "company"],
+    "casePatterns": ["honest-speech", "sincerity-intention", "general"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.10.36",
+    "sura": 10,
+    "aya": 36,
+    "arabic": "وَمَا يَتَّبِعُ أَكْثَرُهُمْ إِلَّا ظَنًّا ۚ إِنَّ الظَّنَّ لَا يُغْنِي مِنَ الْحَقِّ شَيْئًا",
+    "transliteration": "Wa-mā yattabiʿu aktharuhum illā ẓannan — inna al-ẓanna lā yughnī mina al-ḥaqqi shayʾan",
+    "translations": {
+      "pickthall": "Most of them follow naught but conjecture. Surely conjecture can by no means take the place of truth.",
+      "diyanet": "Onların çoğu yalnızca bir zanna uyar. Şüphesiz zan, hak namına hiçbir şey ifade etmez."
+    },
+    "themes": ["zann", "conjecture", "haqq", "epistemic-discipline"],
+    "casePatterns": ["truth-disclosure", "general"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.16.90",
+    "sura": 16,
+    "aya": 90,
+    "arabic": "إِنَّ اللَّهَ يَأْمُرُ بِالْعَدْلِ وَالْإِحْسَانِ وَإِيتَاءِ ذِي الْقُرْبَىٰ وَيَنْهَىٰ عَنِ الْفَحْشَاءِ وَالْمُنكَرِ وَالْبَغْيِ",
+    "transliteration": "Inna Allāha yaʾmuru bi-l-ʿadli wa-l-iḥsāni wa-ītāʾi dhī al-qurbā wa-yanhā ʿani al-faḥshāʾi wa-l-munkari wa-l-baghyi",
+    "translations": {
+      "pickthall": "Lo! Allah enjoineth justice and kindness, and giving to kinsfolk, and forbiddeth lewdness and abomination and wickedness.",
+      "diyanet": "Şüphesiz Allah, adaleti, iyilik yapmayı, akrabaya yardım etmeyi emreder; her türlü hayâsızlığı, çirkin işleri ve haksızlığı yasaklar."
+    },
+    "themes": ["adl", "ihsan", "justice", "munkar", "baghy"],
+    "casePatterns": ["family-conflict", "professional-ethics", "community-harm"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.16.106",
+    "sura": 16,
+    "aya": 106,
+    "arabic": "إِلَّا مَنْ أُكْرِهَ وَقَلْبُهُ مُطْمَئِنٌّ بِالْإِيمَانِ",
+    "transliteration": "Illā man ukriha wa-qalbuhu muṭmaʾinnun bi-l-īmān",
+    "translations": {
+      "pickthall": "Save him who is forced thereto and whose heart is still content with the Faith.",
+      "diyanet": "Kalbi imanla dolu olduğu hâlde zorlanan kimse müstesnadır."
+    },
+    "themes": ["ikrah", "duress", "iman", "intention", "niyya"],
+    "casePatterns": ["sincerity-intention", "general"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.17.36",
+    "sura": 17,
+    "aya": 36,
+    "arabic": "وَلَا تَقْفُ مَا لَيْسَ لَكَ بِهِ عِلْمٌ ۚ إِنَّ السَّمْعَ وَالْبَصَرَ وَالْفُؤَادَ كُلُّ أُولَٰئِكَ كَانَ عَنْهُ مَسْئُولًا",
+    "transliteration": "Wa-lā taqfu mā laysa laka bihi ʿilmun — inna al-samʿa wa-l-baṣara wa-l-fuʾāda kullu ulāʾika kāna ʿanhu masʾūlan",
+    "translations": {
+      "pickthall": "And follow not that whereof thou hast no knowledge. Lo! the hearing and the sight and the heart — of each of these will be asked.",
+      "diyanet": "Hakkında bilgin olmayan şeyin ardına düşme. Çünkü kulak, göz ve kalp; bunların hepsi ondan sorumludur."
+    },
+    "themes": ["ilm", "knowledge", "epistemic-discipline", "responsibility"],
+    "casePatterns": ["truth-disclosure", "professional-ethics", "general"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.17.81",
+    "sura": 17,
+    "aya": 81,
+    "arabic": "وَقُلْ جَاءَ الْحَقُّ وَزَهَقَ الْبَاطِلُ ۚ إِنَّ الْبَاطِلَ كَانَ زَهُوقًا",
+    "transliteration": "Wa-qul jāʾa al-ḥaqqu wa-zahaqa al-bāṭilu — inna al-bāṭila kāna zahūqan",
+    "translations": {
+      "pickthall": "And say: Truth hath come and falsehood hath vanished away. Lo! falsehood is ever bound to vanish.",
+      "diyanet": "De ki: Hak geldi, bâtıl yok oldu. Şüphesiz bâtıl yok olucudur."
+    },
+    "themes": ["haqq", "batil", "truth", "falsehood"],
+    "casePatterns": ["truth-disclosure", "honest-speech", "general"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.22.6",
+    "sura": 22,
+    "aya": 6,
+    "arabic": "ذَٰلِكَ بِأَنَّ اللَّهَ هُوَ الْحَقُّ",
+    "transliteration": "Dhālika bi-anna Allāha huwa al-ḥaqq",
+    "translations": {
+      "pickthall": "That is because Allah, He is the Truth.",
+      "diyanet": "İşte bu, Allah'ın hak olmasındandır."
+    },
+    "themes": ["haqq", "truth", "tawhid"],
+    "casePatterns": ["general"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.25.43",
+    "sura": 25,
+    "aya": 43,
+    "arabic": "أَرَأَيْتَ مَنِ اتَّخَذَ إِلَٰهَهُ هَوَاهُ",
+    "transliteration": "Araʾayta man ittakhadha ilāhahu hawāhu",
+    "translations": {
+      "pickthall": "Hast thou seen him who chooseth for his god his own lust?",
+      "diyanet": "Hevâsını ilâh edinen kimseyi gördün mü?"
+    },
+    "themes": ["hawa", "desire", "self-deception", "niyya"],
+    "casePatterns": ["sincerity-intention", "general"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.33.72",
+    "sura": 33,
+    "aya": 72,
+    "arabic": "إِنَّا عَرَضْنَا الْأَمَانَةَ عَلَى السَّمَاوَاتِ وَالْأَرْضِ وَالْجِبَالِ فَأَبَيْنَ أَن يَحْمِلْنَهَا وَأَشْفَقْنَ مِنْهَا وَحَمَلَهَا الْإِنسَانُ",
+    "transliteration": "Innā ʿaraḍnā al-amānata ʿalā al-samāwāti wa-l-arḍi wa-l-jibāli fa-abayna an yaḥmilnahā wa-ashfaqna minhā wa-ḥamalahā al-insān",
+    "translations": {
+      "pickthall": "Lo! We offered the trust unto the heavens and the earth and the hills, but they shrank from bearing it and were afraid of it. And man assumed it.",
+      "diyanet": "Biz emaneti göklere, yere ve dağlara teklif ettik; onlar onu yüklenmekten çekindiler, ondan korkup titrediler; onu insan yüklendi."
+    },
+    "themes": ["amana", "trust", "responsibility", "khilafa", "human-function"],
+    "casePatterns": ["religious-obligation", "professional-ethics", "general"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.41.53",
+    "sura": 41,
+    "aya": 53,
+    "arabic": "سَنُرِيهِمْ آيَاتِنَا فِي الْآفَاقِ وَفِي أَنفُسِهِمْ حَتَّىٰ يَتَبَيَّنَ لَهُمْ أَنَّهُ الْحَقُّ",
+    "transliteration": "Sa-nurīhim āyātinā fī al-āfāqi wa-fī anfusihim ḥattā yatabayyana lahum annahu al-ḥaqq",
+    "translations": {
+      "pickthall": "We shall show them Our portents on the horizons and within themselves until it will be manifest unto them that it is the Truth.",
+      "diyanet": "Onun hak olduğu kendilerine açıkça belli oluncaya kadar, varlığımızın delillerini, onlara hem ufuklarda, hem kendi nefislerinde göstereceğiz."
+    },
+    "themes": ["ayat", "haqq", "afaq", "anfus", "cumulative-evidence"],
+    "casePatterns": ["general"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.49.6",
+    "sura": 49,
+    "aya": 6,
+    "arabic": "يَا أَيُّهَا الَّذِينَ آمَنُوا إِن جَاءَكُمْ فَاسِقٌ بِنَبَإٍ فَتَبَيَّنُوا أَن تُصِيبُوا قَوْمًا بِجَهَالَةٍ فَتُصْبِحُوا عَلَىٰ مَا فَعَلْتُمْ نَادِمِينَ",
+    "transliteration": "Yā ayyuhā alladhīna āmanū in jāʾakum fāsiqun bi-nabaʾin fa-tabayyanū an tuṣībū qawman bi-jahālatin fa-tuṣbiḥū ʿalā mā faʿaltum nādimīn",
+    "translations": {
+      "pickthall": "O ye who believe! If an evil-liver bring you tidings, verify it, lest ye smite some folk in ignorance and afterward repent of what ye did.",
+      "diyanet": "Ey iman edenler! Eğer fâsık biri size bir haber getirirse, onun doğruluğunu araştırın. Yoksa bilmeden bir topluluğa kötülük edersiniz de sonra yaptığınıza pişman olursunuz."
+    },
+    "themes": ["tabayyun", "verification", "akhbar", "epistemic-discipline"],
+    "casePatterns": ["truth-disclosure", "workplace-honesty", "professional-ethics"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.49.12",
+    "sura": 49,
+    "aya": 12,
+    "arabic": "يَا أَيُّهَا الَّذِينَ آمَنُوا اجْتَنِبُوا كَثِيرًا مِّنَ الظَّنِّ إِنَّ بَعْضَ الظَّنِّ إِثْمٌ",
+    "transliteration": "Yā ayyuhā alladhīna āmanū ijtanibū kathīran mina al-ẓanni inna baʿḍa al-ẓanni ithm",
+    "translations": {
+      "pickthall": "O ye who believe! Shun much suspicion; for lo! some suspicion is a crime.",
+      "diyanet": "Ey iman edenler! Zandan çok sakının; çünkü zannın bir kısmı günahtır."
+    },
+    "themes": ["zann", "suspicion", "ithm"],
+    "casePatterns": ["family-conflict", "community-harm", "general"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.51.56",
+    "sura": 51,
+    "aya": 56,
+    "arabic": "وَمَا خَلَقْتُ الْجِنَّ وَالْإِنسَ إِلَّا لِيَعْبُدُونِ",
+    "transliteration": "Wa-mā khalaqtu al-jinna wa-l-insa illā li-yaʿbudūn",
+    "translations": {
+      "pickthall": "I created the jinn and humankind only that they might worship Me.",
+      "diyanet": "Ben cinleri ve insanları, ancak bana kulluk etsinler diye yarattım."
+    },
+    "themes": ["ʿubudiyya", "worship", "human-function", "telos"],
+    "casePatterns": ["religious-obligation", "general"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.53.28",
+    "sura": 53,
+    "aya": 28,
+    "arabic": "وَمَا لَهُم بِهِ مِنْ عِلْمٍ ۖ إِن يَتَّبِعُونَ إِلَّا الظَّنَّ ۖ وَإِنَّ الظَّنَّ لَا يُغْنِي مِنَ الْحَقِّ شَيْئًا",
+    "transliteration": "Wa-mā lahum bihi min ʿilmin in yattabiʿūna illā al-ẓanna wa-inna al-ẓanna lā yughnī mina al-ḥaqqi shayʾan",
+    "translations": {
+      "pickthall": "They have no knowledge thereof. They follow but a guess, and lo! a guess can never take the place of the truth.",
+      "diyanet": "Hâlbuki onların bu hususta hiçbir bilgisi yoktur. Sadece zanna uymaktadırlar; zan ise hak namına hiçbir şey ifade etmez."
+    },
+    "themes": ["zann", "ilm", "haqq", "epistemic-discipline"],
+    "casePatterns": ["truth-disclosure", "general"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.92.20",
+    "sura": 92,
+    "aya": 20,
+    "arabic": "إِلَّا ابْتِغَاءَ وَجْهِ رَبِّهِ الْأَعْلَىٰ",
+    "transliteration": "Illā ibtighāʾa wajhi rabbihi al-aʿlā",
+    "translations": {
+      "pickthall": "Except as seeking the pleasure of his Lord, the Most High.",
+      "diyanet": "Yalnızca yüce Rabbinin rızasını arayarak."
+    },
+    "themes": ["wajh", "ikhlas", "intention", "niyya", "sincerity"],
+    "casePatterns": ["sincerity-intention", "general"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.2.275",
+    "sura": 2,
+    "aya": 275,
+    "arabic": "وَأَحَلَّ اللَّهُ الْبَيْعَ وَحَرَّمَ الرِّبَا",
+    "transliteration": "Wa-aḥalla Allāhu al-bayʿa wa-ḥarrama al-ribā",
+    "translations": {
+      "pickthall": "Whereas Allah permitteth trading and forbiddeth usury.",
+      "diyanet": "Allah alış-verişi helâl, ribâyı (faizi) haram kıldı."
+    },
+    "themes": ["riba", "bayʿ", "trade", "mal", "property"],
+    "casePatterns": ["riba-finance", "inheritance-property"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.4.36",
+    "sura": 4,
+    "aya": 36,
+    "arabic": "وَاعْبُدُوا اللَّهَ وَلَا تُشْرِكُوا بِهِ شَيْئًا ۖ وَبِالْوَالِدَيْنِ إِحْسَانًا",
+    "transliteration": "Wa-aʿbudū Allāha wa-lā tushrikū bihi shayʾan wa-bi-l-wālidayni iḥsānan",
+    "translations": {
+      "pickthall": "And serve Allah. Ascribe no thing as partner unto Him. (Show) kindness unto parents.",
+      "diyanet": "Allah'a kulluk edin, O'na hiçbir şeyi ortak koşmayın. Anaya babaya iyilik edin."
+    },
+    "themes": ["tawhid", "ihsan", "wālidayn", "family"],
+    "casePatterns": ["family-conflict", "religious-obligation"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  }
+]

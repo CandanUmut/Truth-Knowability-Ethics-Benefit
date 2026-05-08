@@ -1,6 +1,38 @@
 {
   "eyebrow": "Sources",
-  "title": "Qur'ān, hadith, and classical maqāṣid sources.",
-  "subtitle": "The source library used in Step 4 of any deliberation. Every source is shown bilingually, with translator named and the major interpretive traditions tagged.",
-  "placeholder": "The source library will be populated in Phase 4 — Qur'ānic verses, sound hadiths, and maqāṣid sources, indexed by case-pattern."
+  "title": "Qur'ān, hadith, and classical maqāṣid sources",
+  "subtitle": "The source library used in Step 4 of any deliberation. Every source is presented in Arabic, transliteration, and bilingual translation, with translator named.",
+  "searchLabel": "Search sources",
+  "searchPlaceholder": "Theme, citation, keyword…",
+  "filter": {
+    "all": "All",
+    "quran": "Qur'ān",
+    "hadith": "Hadith"
+  },
+  "themeFilter": "Filter by theme",
+  "allThemes": "All themes",
+  "count": "{{count}} sources",
+  "noResults": "No sources match this search or filter.",
+  "sources": {
+    "quranTag": "Qur'ān",
+    "hadithTag": "Hadith"
+  },
+  "assertion": {
+    "qatʿi": "Qaṭʿī",
+    "zanni": "Ẓannī"
+  },
+  "grade": {
+    "sahih": "Saḥīḥ",
+    "hasan": "Ḥasan",
+    "daif": "Ḍaʿīf",
+    "mursal": "Mursal",
+    "mawduʿ": "Mawḍūʿ"
+  },
+  "reviewStatus": {
+    "seed": "Seed — awaiting scholarly review"
+  },
+  "seedNotice": {
+    "title": "The library is currently a seed set.",
+    "body": "The Arabic, transliteration, and translations are a good-faith first pass; we welcome scholarly review via pull request. The review workflow lives in /docs/scholar-review.md (Phase 6)."
+  }
 }

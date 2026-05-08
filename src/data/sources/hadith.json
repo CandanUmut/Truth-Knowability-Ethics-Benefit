@@ -1,0 +1,147 @@
+[
+  {
+    "id": "bukhari.1",
+    "collection": "Bukhari",
+    "book": "Bad' al-Wahy",
+    "number": 1,
+    "grade": "sahih",
+    "narrator": "ʿUmar ibn al-Khaṭṭāb",
+    "arabic": "إِنَّمَا الْأَعْمَالُ بِالنِّيَّاتِ، وَإِنَّمَا لِكُلِّ امْرِئٍ مَا نَوَى. فَمَنْ كَانَتْ هِجْرَتُهُ إِلَى اللَّهِ وَرَسُولِهِ فَهِجْرَتُهُ إِلَى اللَّهِ وَرَسُولِهِ، وَمَنْ كَانَتْ هِجْرَتُهُ لِدُنْيَا يُصِيبُهَا أَوِ امْرَأَةٍ يَنْكِحُهَا فَهِجْرَتُهُ إِلَى مَا هَاجَرَ إِلَيْهِ.",
+    "transliteration": "Innamā al-aʿmālu bi-l-niyyāt, wa-innamā li-kulli imriʾin mā nawā. Fa-man kānat hijratuhu ilā Allāhi wa-rasūlihi fa-hijratuhu ilā Allāhi wa-rasūlihi, wa-man kānat hijratuhu li-dunyā yuṣībuhā aw imraʾatin yankiḥuhā fa-hijratuhu ilā mā hājara ilayhi.",
+    "translations": {
+      "en": "Actions are only by intentions, and each person shall have only what he intended. Whoever's emigration was to God and His Messenger, his emigration is to God and His Messenger; and whoever's emigration was for some worldly thing he might gain or a woman he might marry, his emigration is to what he emigrated to.",
+      "tr": "Ameller ancak niyetlere göredir ve herkese ancak niyet ettiği vardır. Kimin hicreti Allah'a ve Resûlüne ise, hicreti Allah'a ve Resûlüne; kimin hicreti elde edeceği bir dünya için veya nikâhlanacağı bir kadın içinse, hicreti hicret ettiği şeyedir."
+    },
+    "themes": ["niyya", "intention", "ikhlas", "sincerity"],
+    "casePatterns": ["sincerity-intention", "general"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "muslim.49",
+    "collection": "Muslim",
+    "book": "al-Īmān",
+    "number": 49,
+    "grade": "sahih",
+    "narrator": "Abū Saʿīd al-Khudrī",
+    "arabic": "مَنْ رَأَى مِنْكُمْ مُنْكَرًا فَلْيُغَيِّرْهُ بِيَدِهِ، فَإِنْ لَمْ يَسْتَطِعْ فَبِلِسَانِهِ، فَإِنْ لَمْ يَسْتَطِعْ فَبِقَلْبِهِ، وَذَلِكَ أَضْعَفُ الْإِيمَانِ.",
+    "transliteration": "Man raʾā minkum munkaran fa-l-yughayyirhu bi-yadihi, fa-in lam yastaṭiʿ fa-bi-lisānihi, fa-in lam yastaṭiʿ fa-bi-qalbihi, wa-dhālika aḍʿafu al-īmān.",
+    "translations": {
+      "en": "Whoever among you sees an evil, let him change it with his hand; if he is not able, then with his tongue; and if he is not able, then with his heart — and that is the weakest of faith.",
+      "tr": "Sizden kim bir münker (kötülük) görürse, onu eliyle değiştirsin; gücü yetmezse diliyle; ona da gücü yetmezse kalbiyle (buğzetsin) — ki bu, imanın en zayıfıdır."
+    },
+    "themes": ["munkar", "change-evil", "responsibility", "harm-prevention"],
+    "casePatterns": ["whistleblowing", "workplace-honesty", "community-harm", "professional-ethics"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "muslim.55",
+    "collection": "Muslim",
+    "book": "al-Īmān",
+    "number": 55,
+    "grade": "sahih",
+    "narrator": "Tamīm al-Dārī",
+    "arabic": "الدِّينُ النَّصِيحَةُ. قُلْنَا: لِمَنْ؟ قَالَ: لِلَّهِ وَلِكِتَابِهِ وَلِرَسُولِهِ وَلِأَئِمَّةِ الْمُسْلِمِينَ وَعَامَّتِهِمْ.",
+    "transliteration": "Al-dīnu al-naṣīḥa. Qulnā: liman? Qāla: lillāhi wa-li-kitābihi wa-li-rasūlihi wa-li-aʾimmati al-muslimīna wa-ʿāmmatihim.",
+    "translations": {
+      "en": "Religion is sincere counsel. We said: To whom? He said: To God, to His Book, to His Messenger, to the leaders of the Muslims, and to their common folk.",
+      "tr": "Din nasihattir. ‘Kime?’ dedik. Şöyle buyurdu: ‘Allah'a, O'nun Kitâbına, Resûlüne, Müslüman önderlere ve umuma.’"
+    },
+    "themes": ["nasiha", "sincere-counsel", "advice", "naseehah"],
+    "casePatterns": ["whistleblowing", "honest-speech", "community-harm", "general"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "muslim.8",
+    "collection": "Muslim",
+    "book": "al-Īmān",
+    "number": 8,
+    "grade": "sahih",
+    "narrator": "ʿUmar ibn al-Khaṭṭāb",
+    "arabic": "الإِسْلَامُ أَنْ تَشْهَدَ أَنْ لَا إِلَهَ إِلَّا اللَّهُ وَأَنَّ مُحَمَّدًا رَسُولُ اللَّهِ، وَتُقِيمَ الصَّلَاةَ، وَتُؤْتِيَ الزَّكَاةَ، وَتَصُومَ رَمَضَانَ، وَتَحُجَّ الْبَيْتَ. … الإِحْسَانُ أَنْ تَعْبُدَ اللَّهَ كَأَنَّكَ تَرَاهُ، فَإِنْ لَمْ تَكُنْ تَرَاهُ فَإِنَّهُ يَرَاكَ.",
+    "transliteration": "Al-Islāmu an tashhada an lā ilāha illā Allāh wa-anna Muḥammadan rasūlu Allāh, wa-tuqīma al-ṣalāta, wa-tuʾtiya al-zakāta, wa-taṣūma Ramaḍāna, wa-taḥujja al-bayta. … Al-iḥsānu an taʿbuda Allāha ka-annaka tarāhu, fa-in lam takun tarāhu fa-innahu yarāka.",
+    "translations": {
+      "en": "Islam is to bear witness that there is no god but God and that Muḥammad is the Messenger of God, to establish prayer, to give zakāt, to fast Ramaḍān, and to perform the pilgrimage. … Iḥsān is to worship God as if you see Him; for though you do not see Him, He sees you.",
+      "tr": "İslâm; Allah'tan başka ilâh olmadığına ve Muhammed'in Allah'ın elçisi olduğuna şahitlik etmen, namazı dosdoğru kılman, zekâtı vermen, Ramazan orucunu tutman ve Beyt'i haccetmendir. … İhsân, Allah'ı görür gibi ibadet etmendir; sen O'nu görmesen de O seni görmektedir."
+    },
+    "themes": ["islam", "iman", "ihsan", "human-function"],
+    "casePatterns": ["religious-obligation", "sincerity-intention", "general"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "ibn-majah.2341",
+    "collection": "Ibn Majah",
+    "book": "al-Aḥkām",
+    "number": 2341,
+    "grade": "hasan",
+    "narrator": "ʿUbāda ibn al-Ṣāmit",
+    "arabic": "لَا ضَرَرَ وَلَا ضِرَارَ.",
+    "transliteration": "Lā ḍarara wa-lā ḍirār.",
+    "translations": {
+      "en": "There shall be no harm, nor reciprocating harm.",
+      "tr": "Zarar vermek de yoktur, zarara zararla karşılık vermek de."
+    },
+    "themes": ["darar", "harm-prevention", "darʾ-mafasid"],
+    "casePatterns": ["medical-decision", "professional-ethics", "community-harm", "workplace-honesty"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed",
+    "translatorNote": "Famous principle hadith; the basis of the legal maxim 'darʾ al-mafāsid muqaddam ʿalā jalb al-maṣāliḥ'. Cited in al-Nawawī's 40 Hadith #32."
+  },
+  {
+    "id": "muslim.2564",
+    "collection": "Muslim",
+    "book": "al-Birr wa-l-Ṣila",
+    "number": 2564,
+    "grade": "sahih",
+    "narrator": "Abū Hurayra",
+    "arabic": "إِيَّاكُمْ وَالظَّنَّ، فَإِنَّ الظَّنَّ أَكْذَبُ الْحَدِيثِ.",
+    "transliteration": "Iyyākum wa-l-ẓanna fa-inna al-ẓanna akdhabu al-ḥadīth.",
+    "translations": {
+      "en": "Beware of suspicion, for suspicion is the most untruthful form of speech.",
+      "tr": "Zandan sakının; zira zan, sözün en yalanıdır."
+    },
+    "themes": ["zann", "suspicion", "epistemic-discipline"],
+    "casePatterns": ["family-conflict", "community-harm", "general"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "bukhari.6094",
+    "collection": "Bukhari",
+    "book": "al-Adab",
+    "number": 6094,
+    "grade": "sahih",
+    "narrator": "ʿAbdullāh ibn Masʿūd",
+    "arabic": "إِنَّ الصِّدْقَ يَهْدِي إِلَى الْبِرِّ، وَإِنَّ الْبِرَّ يَهْدِي إِلَى الْجَنَّةِ، وَإِنَّ الرَّجُلَ لَيَصْدُقُ حَتَّى يُكْتَبَ عِنْدَ اللَّهِ صِدِّيقًا. وَإِنَّ الْكَذِبَ يَهْدِي إِلَى الْفُجُورِ.",
+    "transliteration": "Inna al-ṣidqa yahdī ilā al-birr, wa-inna al-birra yahdī ilā al-jannah, wa-inna al-rajula la-yaṣduqu ḥattā yuktaba ʿinda Allāhi ṣiddīqan. Wa-inna al-kadhiba yahdī ilā al-fujūr.",
+    "translations": {
+      "en": "Truthfulness leads to righteousness, and righteousness leads to Paradise; a man keeps speaking the truth until he is recorded with God as a most truthful one. Lying leads to corruption.",
+      "tr": "Doğruluk iyiliğe götürür; iyilik de cennete götürür. İnsan doğru söylemeye devam ede ede Allah katında ‘sıddîk' olarak yazılır. Yalan ise günaha (fücura) götürür."
+    },
+    "themes": ["sidq", "truthfulness", "kadhib", "akhlaq"],
+    "casePatterns": ["honest-speech", "workplace-honesty", "truth-disclosure"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "tirmidhi.2516",
+    "collection": "Tirmidhi",
+    "book": "Ṣifat al-Qiyāma",
+    "number": 2516,
+    "grade": "hasan",
+    "narrator": "al-Ḥasan ibn ʿAlī",
+    "arabic": "دَعْ مَا يَرِيبُكَ إِلَى مَا لَا يَرِيبُكَ، فَإِنَّ الصِّدْقَ طُمَأْنِينَةٌ، وَإِنَّ الْكَذِبَ رِيبَةٌ.",
+    "transliteration": "Daʿ mā yarībuka ilā mā lā yarībuka, fa-inna al-ṣidqa ṭumaʾnīnatun wa-inna al-kadhiba rībah.",
+    "translations": {
+      "en": "Leave what makes you doubt for what does not. Truthfulness is tranquility, and lying is doubt.",
+      "tr": "Şüpheli olanı bırak, şüpheli olmayanı tut; çünkü doğruluk huzur (tumeʾnîne), yalan ise şüphedir."
+    },
+    "themes": ["tumaninah", "doubt", "shubha", "wara"],
+    "casePatterns": ["truth-disclosure", "professional-ethics", "general"],
+    "assertionStrength": "zanni",
+    "reviewStatus": "seed"
+  }
+]

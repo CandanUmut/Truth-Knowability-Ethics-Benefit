@@ -127,16 +127,20 @@
   },
   "step4": {
     "title": "Step 4: Source consultation",
-    "subtitle": "List the Qur'ānic, prophetic, and maqāṣid sources bearing on the case; record how each applies in your reading.",
-    "intro": {
-      "title": "Before Phase 4 — the source library is not yet seeded.",
-      "body": "The library will be wired up in Phase 4, matching Qur'ānic verses, sound hadiths, and classical maqāṣid texts to the case-pattern. For now, type the citations you want to consult yourself (e.g. ‘Q. 5:8’, ‘Bukhārī 1’, ‘Shāṭibī, Muwāfaqāt II’).",
-      "phase4": "When Phase 4 lands, the library will surface here automatically; the consultations you have entered will not be lost."
+    "subtitle": "Review the Qur'ānic, prophetic, and maqāṣid sources that bear on the case; pick the ones you find relevant and record your reading.",
+    "matched": {
+      "title": "Sources suggested for your case",
+      "body": "Your case description matches the keywords below; we surface candidate sources for you to consider. You decide which actually apply.",
+      "patternsLabel": "Matched patterns",
+      "heading": "Suggested sources",
+      "consult": "Add to consultation",
+      "added": "Added"
     },
-    "empty": "No sources yet. Add the first source you want to consult.",
+    "consultations": "Sources consulted in this deliberation",
+    "empty": "No sources yet. Pick from above or enter your own citation.",
     "source": "Source",
     "removeSource": "Remove this source",
-    "addSource": "Add source",
+    "addCustom": "Enter my own citation",
     "untitledSource": "Untitled source",
     "citationLabel": "Citation",
     "citationHelp": "The canonical citation (sūra/āya, collection/number, classical text page, etc.).",

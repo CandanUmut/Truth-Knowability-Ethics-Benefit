@@ -127,16 +127,20 @@
   },
   "step4": {
     "title": "4. Adım: Kaynak istişaresi",
-    "subtitle": "Vakaya etki eden Kur'ânî, Sünnî ve maqâṣid kaynaklarını listeleyin; her birinin bu vakaya nasıl uyduğunu kendi okumanızla yazın.",
-    "intro": {
-      "title": "Aşama 4'ten önce — kaynak kütüphanesi henüz dolu değil.",
-      "body": "Kütüphane Faz 4'te eklenecek; vaka-örüntüsüne göre Kur'ân âyetleri, sahih hadisler ve klasik maqâṣid metinleri eşleştirilecek. Şimdilik istişareye almak istediğiniz kaynakları kendiniz girin (örn. ‘Q. 5:8’, ‘Buhârî 1’, ‘Şâtıbî, el-Muvâfakât II’).",
-      "phase4": "Aşama 4 hazır olduğunda burada yumuşak bir geçişle kütüphane görünecek; kaydettiğiniz istişareler kaybolmayacak."
+    "subtitle": "Vakaya etki eden Kur'ânî, Sünnî ve maqâṣid kaynaklarını gözden geçirin; ilgili olduklarını düşündüklerinizi seçin ve okumanızı kaydedin.",
+    "matched": {
+      "title": "Vakanız için önerilen kaynaklar",
+      "body": "Vaka açıklamanız anahtar kelime eşlemesi yoluyla aşağıdaki kaynaklara işaret ediyor. Hangilerinin gerçekten ilgili olduğuna siz karar verin.",
+      "patternsLabel": "Eşleşen örüntüler",
+      "heading": "Önerilen kaynaklar",
+      "consult": "İstişareye al",
+      "added": "Eklendi"
     },
-    "empty": "Henüz bir kaynak eklenmedi. İstişareye konu olan ilk kaynağı ekleyin.",
+    "consultations": "Müzakereye dahil edilen kaynaklar",
+    "empty": "Henüz bir kaynak eklenmedi. Yukarıdan seçin veya kendiniz bir atıf girin.",
     "source": "Kaynak",
     "removeSource": "Bu kaynağı kaldır",
-    "addSource": "Kaynak ekle",
+    "addCustom": "Kendi kaynağımı gir",
     "untitledSource": "Başlıksız kaynak",
     "citationLabel": "Atıf",
     "citationHelp": "Kaynağın kanonik atfı (sûre/âyet, koleksiyon/numara, klasik metin sayfası, vb.).",

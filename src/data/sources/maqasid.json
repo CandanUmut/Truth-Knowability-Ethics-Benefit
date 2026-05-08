@@ -1,0 +1,58 @@
+[
+  {
+    "id": "din",
+    "family": "classical-five",
+    "arabic": "ḥifẓ al-dīn",
+    "i18nKey": "maqasid.din",
+    "description": "Preservation of religion — the orientation that gives every other good its meaning."
+  },
+  {
+    "id": "nafs",
+    "family": "classical-five",
+    "arabic": "ḥifẓ al-nafs",
+    "i18nKey": "maqasid.nafs",
+    "description": "Preservation of life — without which no agent exists to bear the trust."
+  },
+  {
+    "id": "aql",
+    "family": "classical-five",
+    "arabic": "ḥifẓ al-ʿaql",
+    "i18nKey": "maqasid.aql",
+    "description": "Preservation of intellect — the seat of moral discernment and responsibility."
+  },
+  {
+    "id": "nasl",
+    "family": "classical-five",
+    "arabic": "ḥifẓ al-nasl",
+    "i18nKey": "maqasid.nasl",
+    "description": "Preservation of lineage — the continuity through which the function is carried forward."
+  },
+  {
+    "id": "mal",
+    "family": "classical-five",
+    "arabic": "ḥifẓ al-māl",
+    "i18nKey": "maqasid.mal",
+    "description": "Preservation of property — the material substrate on which the function is exercised."
+  },
+  {
+    "id": "vital",
+    "family": "taha-axis",
+    "arabic": "al-maṣāliḥ al-ḥayawiyya",
+    "i18nKey": "taha.vital",
+    "description": "Vital interests: bodily, biological, and material wellbeing."
+  },
+  {
+    "id": "rational",
+    "family": "taha-axis",
+    "arabic": "al-maṣāliḥ al-ʿaqliyya",
+    "i18nKey": "taha.rational",
+    "description": "Rational interests: knowledge, education, deliberation, intellectual flourishing."
+  },
+  {
+    "id": "spiritual",
+    "family": "taha-axis",
+    "arabic": "al-maṣāliḥ al-rūḥiyya",
+    "i18nKey": "taha.spiritual",
+    "description": "Spiritual interests: orientation toward God, growth in virtue, the heart's openness to the divine."
+  }
+]

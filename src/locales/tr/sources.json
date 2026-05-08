@@ -1,6 +1,38 @@
 {
   "eyebrow": "Kaynaklar",
-  "title": "Kur'ân, hadis ve klasik makâsıd kaynakları.",
-  "subtitle": "Müzakerelerin dördüncü adımında kullanılan kaynak kütüphanesi. Her kaynak iki dilde sunulur, çevirmen adı verilir, klasik yorum gelenekleri etiketlenir.",
-  "placeholder": "Kaynak kütüphanesi 4. fazda doldurulacak — Kur'ân âyetleri, sahih hadisler ve maqâṣid kaynakları, vaka-örüntülerine bağlı olarak."
+  "title": "Kur'ân, hadis ve klasik makâsıd kaynakları",
+  "subtitle": "Müzakerelerin dördüncü adımında kullanılan kaynak kütüphanesi. Her kaynak Arapça, transliterasyon ve iki dilde sunulur; çevirmen adı verilir.",
+  "searchLabel": "Kaynaklarda ara",
+  "searchPlaceholder": "Tema, atıf, anahtar kelime…",
+  "filter": {
+    "all": "Hepsi",
+    "quran": "Kur'ân",
+    "hadith": "Hadis"
+  },
+  "themeFilter": "Temaya göre filtrele",
+  "allThemes": "Tüm temalar",
+  "count": "{{count}} kaynak",
+  "noResults": "Bu arama veya filtreyle eşleşen kaynak bulunamadı.",
+  "sources": {
+    "quranTag": "Kur'ân",
+    "hadithTag": "Hadis"
+  },
+  "assertion": {
+    "qatʿi": "Kat'î",
+    "zanni": "Zannî"
+  },
+  "grade": {
+    "sahih": "Sahih",
+    "hasan": "Hasan",
+    "daif": "Zayıf",
+    "mursal": "Mürsel",
+    "mawduʿ": "Mevdû"
+  },
+  "reviewStatus": {
+    "seed": "Taslak — âlim incelemesi bekliyor"
+  },
+  "seedNotice": {
+    "title": "Bu kütüphane şu an bir tohum kümesidir.",
+    "body": "Arapça metinler, transliterasyon ve çeviriler iyi niyetle hazırlanmış ilk geçiştir; yetkin âlimler tarafından PR yoluyla incelenmesini bekleriz. İnceleme süreci için /docs/scholar-review.md (Faz 6'da) hazırlanacaktır."
+  }
 }
