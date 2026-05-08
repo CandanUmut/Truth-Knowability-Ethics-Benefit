@@ -7,7 +7,30 @@
     "subtitle": "This tool does not give you an answer. It walks you through your decision in a structured way, one question at a time. Your answers stay only on this device."
   },
   "startCta": "Let's begin",
+  "seeExampleInstead": "Or see a worked example first",
   "startNote": "Your answers stay only on this device. You can export them as JSON at any time.",
+  "intro": {
+    "eyebrow": "First time here?",
+    "title": "Here's what to expect.",
+    "subtitle": "A short walkthrough before you start. You can also see a worked example to get the feel of the dossier first.",
+    "cards": {
+      "ask": {
+        "title": "Five short rounds of questions",
+        "body": "Most are quick — pick from a few choices. Each question has a small (?) icon you can tap to see why we're asking and what the framework does with your answer."
+      },
+      "private": {
+        "title": "Nothing leaves your device",
+        "body": "Your answers are saved locally as you go. No server, no analytics, no tracking. You can export your work as JSON at any time."
+      },
+      "output": {
+        "title": "A map, not a verdict",
+        "body": "At the end you receive a deliberation map: each option scored on truth, ethics, benefit, and your stated intention. The decision is still yours."
+      }
+    },
+    "startCta": "I'm ready, let's begin",
+    "exampleCta": "Show me a worked example first",
+    "dismissHint": "You'll see this only the first time. You can revisit examples anytime from the menu."
+  },
   "outputTitle": "Deliberation map",
   "outputSubtitle": "Not a verdict — a structured reflection on four moments, returned to you.",
   "outputBadge": "Map",
@@ -41,6 +64,80 @@
   "reset": "Clear",
   "confirmReset": "Are you sure you want to clear all input? This cannot be undone.",
   "skip": "Skip",
+  "whyhelp": {
+    "label": "Why we ask this",
+    "heading": "Why we ask this",
+    "askingFor": "What we want to learn",
+    "engineDoes": "What the framework does with your answer",
+    "step1": {
+      "q1": {
+        "askingFor": "Just a few sentences in your own words on what you're facing. The framework only refers back to this in the final summary; it does not parse the text.",
+        "engineDoes": "We use a few keywords from your description in Step 4 to suggest sources that often bear on cases like yours. Nothing more — your text is not analyzed or sent anywhere."
+      },
+      "q2": {
+        "askingFor": "Two or more concrete options. \"Do nothing\" counts as an option if it's a real one for you.",
+        "engineDoes": "Each option becomes a column in the dossier. Step 3 asks what each option might do; the engine compares them on harm averted, benefit served, certainty, and how they fit your intention."
+      }
+    },
+    "step2": {
+      "gate": {
+        "askingFor": "Whether your decision rests on one or more empirical facts that, if wrong, would change your answer.",
+        "engineDoes": "If yes, we'll ask how sure you are about each fact. The framework's Commitment 2 (\"a truth-claim pressed into action with weak evidence must be marked ẓann, not yaqīn\") then governs the dossier — when a sensitive fact is at the doubt level, the dossier returns \"open\" rather than a confident answer."
+      },
+      "claims": {
+        "askingFor": "Each fact your decision relies on, written as a short sentence, with how sure you are of it and whether your decision would change if it were wrong.",
+        "engineDoes": "Sureness maps onto the §7.2 confidence scale (yaqīn=1.0, ẓann_strong=0.7, ẓann=0.5, shakk=0.3, jahl=0.0). Sensitive claims at low sureness force the output toward the \"open\" classification — the framework refuses to be more confident than your evidence allows."
+      }
+    },
+    "step3": {
+      "harmPick": {
+        "askingFor": "Which kinds of harm this option might create, in plain language.",
+        "engineDoes": "Each picked harm becomes a negative impact on the underlying maqāṣid (\"protected goods\"). The next two questions — how big and how sure — determine its weight. A severe harm at high sureness on a necessity-tier good can filter the option out entirely."
+      },
+      "helpPick": {
+        "askingFor": "Which kinds of good this option might do, in plain language.",
+        "engineDoes": "Each picked help becomes a positive impact. The dossier compares the sum of helps and harms across options to compute each option's score, weighted by the tier of the good touched."
+      },
+      "detail": {
+        "askingFor": "How big this effect is, and how sure you are it would actually happen.",
+        "engineDoes": "Magnitude × tier_weight × confidence is the scoring formula. \"Severe\" pulls a good into the necessity tier (weight 3); \"Hardly\" leaves it at refinement (weight 1). Low sureness scales the weight down — uncertain effects don't dominate the calculus."
+      }
+    },
+    "step4": {
+      "gate": {
+        "askingFor": "Whether you'd like the framework to surface relevant Qur'ānic verses and hadiths for cases like yours.",
+        "engineDoes": "If you say yes, we suggest 2–7 sources matched by case-pattern. You decide which actually resonate. The dossier records your reading of each source you accept; the framework never picks for you."
+      }
+    },
+    "step5": {
+      "tone": {
+        "askingFor": "Which phrasing for question 5 feels more honest to you.",
+        "engineDoes": "Just changes the wording of one question. The framework processes both variants identically."
+      },
+      "questions": {
+        "q1": {
+          "askingFor": "What you genuinely want from this decision, before you've reasoned about whether it's right or wrong.",
+          "engineDoes": "Your answers in Step 5 are not scored. They're recorded in the dossier as a mirror of what you said you wanted. The framework only uses your stated leaning (a separate question) to detect tension with the option that scores highest."
+        },
+        "q2": {
+          "askingFor": "A test of whether your reasoning here would survive without the worldly benefit you're hoping for.",
+          "engineDoes": "Recorded in the dossier verbatim. Not scored — but the question forces you to surface a possibility you might otherwise avoid examining."
+        },
+        "q3": {
+          "askingFor": "What about your motivation you'd hide if a sincere person asked.",
+          "engineDoes": "Recorded verbatim. The classical Sufi diagnostic literature works on the principle that what we wouldn't say aloud is often what's actually driving us."
+        },
+        "q4": {
+          "askingFor": "How you'd defend your leaning to someone whose sincerity you respect.",
+          "engineDoes": "Recorded verbatim. If you can't articulate it for that person, the framework gently invites you to revisit Step 5's other answers."
+        },
+        "q5": {
+          "askingFor": "What your conscience reports when you imagine living with this choice. The phrasing tracks the tone you picked at the start.",
+          "engineDoes": "Recorded verbatim. The framework treats this as the deepest layer of intention — what the Sufi tradition calls the \"standing orientation\" beneath any particular niyya."
+        }
+      }
+    }
+  },
   "scale": {
     "severity": {
       "1": "Hardly",

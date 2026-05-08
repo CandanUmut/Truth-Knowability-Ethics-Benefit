@@ -57,6 +57,7 @@ export function Step5Niyya({ onComplete, onBackToPrevious }: Props) {
         title={t('step5.tone.title')}
         subtitle={t('step5.tone.subtitle')}
         helper={t('step5.tone.helper')}
+        helpKey="step5.tone"
         onBack={retreat}
         onContinue={advance}
       >
@@ -89,6 +90,7 @@ export function Step5Niyya({ onComplete, onBackToPrevious }: Props) {
         title={t(titleKey)}
         subtitle={t('step5.questions.subtitle')}
         helper={t('step5.placeholder')}
+        helpKey={`step5.questions.${q.key}`}
         onBack={retreat}
         onContinue={advance}
       >

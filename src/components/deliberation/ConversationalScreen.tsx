@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { WhyHelp } from '@/components/common/WhyHelp';
 import { cn } from '@/lib/utils';
 
 interface Props {
@@ -21,6 +22,8 @@ interface Props {
   continueLabel?: string;
   /** Optional progress text e.g. "Question 2 of 7". */
   progress?: string;
+  /** When set, a (?) button appears next to the title revealing the corresponding whyhelp.<helpKey> entry. */
+  helpKey?: string;
   className?: string;
 }
 
@@ -35,6 +38,7 @@ export function ConversationalScreen({
   continueDisabled,
   continueLabel,
   progress,
+  helpKey,
   className,
 }: Props) {
   const { t } = useTranslation('deliberate');
@@ -54,6 +58,7 @@ export function ConversationalScreen({
       <div className="space-y-3 text-center">
         <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight leading-snug">
           {title}
+          {helpKey && <WhyHelp helpKey={helpKey} />}
         </h2>
         {subtitle && (
           <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">

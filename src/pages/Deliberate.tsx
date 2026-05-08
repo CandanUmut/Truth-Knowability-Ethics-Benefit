@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Download, RotateCcw, FileCheck2, Plus, ScrollText, Check } from 'lucide-react';
@@ -172,12 +173,42 @@ function SavedIndicator({ at }: { at: number | null }) {
   );
 }
 
+const TUTORIAL_KEY = 'teb.tutorial.seen';
+
 function LandingNew({ onStart }: { onStart: () => void }) {
   const { t } = useTranslation('deliberate');
   const current = useSession((s) => s.current);
   const setStep = useSession((s) => s.setStep);
+  const [showIntro, setShowIntro] = useState<boolean>(() => {
+    try {
+      return window.localStorage.getItem(TUTORIAL_KEY) !== '1';
+    } catch {
+      return true;
+    }
+  });
+  const dismissIntro = () => {
+    try {
+      window.localStorage.setItem(TUTORIAL_KEY, '1');
+    } catch {
+      /* ignore */
+    }
+    setShowIntro(false);
+  };
   // If a deliberation exists in memory but step is 0 (e.g. after reset), allow continuing.
   const hasDraft = current !== null;
+
+  if (showIntro) {
+    return (
+      <FirstRunIntro
+        onStart={() => {
+          dismissIntro();
+          onStart();
+        }}
+        onDismiss={dismissIntro}
+      />
+    );
+  }
+
   return (
     <div className="mx-auto max-w-prose px-6 py-24 text-center space-y-10">
       <motion.div
@@ -205,8 +236,70 @@ function LandingNew({ onStart }: { onStart: () => void }) {
             <ScrollText size={14} aria-hidden="true" /> {t('continueDraft')}
           </Button>
         )}
+        <Link
+          to="/examples"
+          className="text-xs text-muted-foreground hover:text-foreground underline underline-offset-4 transition-colors"
+        >
+          {t('seeExampleInstead')}
+        </Link>
         <p className="text-xs text-muted-foreground mt-1">{t('startNote')}</p>
       </div>
+    </div>
+  );
+}
+
+function FirstRunIntro({ onStart, onDismiss }: { onStart: () => void; onDismiss: () => void }) {
+  const { t } = useTranslation('deliberate');
+  const cards = ['cards.ask', 'cards.private', 'cards.output'] as const;
+  return (
+    <div className="mx-auto max-w-prose px-6 py-20 space-y-10">
+      <motion.div
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+        className="text-center space-y-4"
+      >
+        <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+          {t('intro.eyebrow')}
+        </p>
+        <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">
+          {t('intro.title')}
+        </h1>
+        <p className="text-muted-foreground leading-relaxed max-w-prose mx-auto">
+          {t('intro.subtitle')}
+        </p>
+      </motion.div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        {cards.map((c, i) => (
+          <motion.div
+            key={c}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 + i * 0.06, duration: 0.35 }}
+            className="rounded-2xl border border-border p-5 space-y-2"
+          >
+            <p className="text-sm font-semibold">{t(`intro.${c}.title`)}</p>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              {t(`intro.${c}.body`)}
+            </p>
+          </motion.div>
+        ))}
+      </div>
+
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+        <Button size="lg" onClick={onStart}>
+          {t('intro.startCta')}
+        </Button>
+        <Link
+          to="/examples"
+          onClick={onDismiss}
+          className="text-sm text-muted-foreground hover:text-foreground underline underline-offset-4 transition-colors"
+        >
+          {t('intro.exampleCta')}
+        </Link>
+      </div>
+      <p className="text-xs text-center text-muted-foreground/70">{t('intro.dismissHint')}</p>
     </div>
   );
 }

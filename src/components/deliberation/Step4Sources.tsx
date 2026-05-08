@@ -46,6 +46,7 @@ export function Step4Sources({ onComplete, onBackToPrevious }: Props) {
         title={t('step4.gate.title')}
         subtitle={t('step4.gate.subtitle')}
         helper={t('step4.gate.helper')}
+        helpKey="step4.gate"
         onBack={onBackToPrevious}
       >
         <div className="space-y-3 mx-auto max-w-md">

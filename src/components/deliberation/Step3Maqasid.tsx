@@ -225,6 +225,7 @@ function ConsequencePickScreen({
       }
       subtitle={t(subtitleKey)}
       helper={t(helperKey)}
+      helpKey={direction === 'negative' ? 'step3.harmPick' : 'step3.helpPick'}
       onBack={onRetreat}
       onContinue={onAdvance}
       continueLabel={selectedIds.size === 0 ? t('step3.skipNothingFits') : undefined}
@@ -326,6 +327,7 @@ function ConsequenceDetailScreen({
       progress={progressLabel}
       title={t(titleKey, { label: t(template.i18nLabel) })}
       subtitle={t('step3.detail.subtitle')}
+      helpKey="step3.detail"
       onBack={onRetreat}
       onContinue={onAdvance}
       continueDisabled={!impact?.magnitude || !impact?.causalConfidence}

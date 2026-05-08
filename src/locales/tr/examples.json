@@ -1,0 +1,37 @@
+{
+  "eyebrow": "Örnekler",
+  "title": "Üç işlenmiş vaka.",
+  "subtitle": "Çalışma metninin §7.5'inden alınmıştır. Her biri, çerçevenin gerçek bir zor kararı nasıl işlediğini ve ne tür bir dosya ürettiğini gösterir.",
+  "viewDossier": "Dosyayı gör",
+  "backToList": "Tüm örneklere geri dön",
+  "introTitle": "Bu örnek hakkında",
+  "tryItTitle": "Kendi müzakerene aktar",
+  "tryItBody": "Bu örneği bir çalışma kopyası olarak aç: orijinaline dokunulmaz ama her cevabı düzenleyebilir, seçenekleri değiştirebilir ve dosyayı bunlara göre yeniden ürettirebilirsin. Orijinal /örnekler'de kalır; senin kopyan kendi geçmişinde yaşar.",
+  "tryItCta": "Kopya olarak aç",
+  "seeOthers": "Diğer örnekleri gör",
+  "disclaimer": {
+    "title": "Örnekleri okurken",
+    "body": "Bu yapılandırmalar açıklayıcıdır — metnin anlatımına yakın dururlar ama kaçınılmaz olarak yorumlanmıştır. Sizin müzakereniz kendi cevaplarınıza göre kendi dosyasını üretir; burada görünen hiçbir şey çerçevenin size ne söyleyeceğini önceden belirlemez."
+  },
+  "workplace-honesty": {
+    "tag": "İşlenmiş örnek · İşyerinde dürüstlük",
+    "title": "Bilinen bir güvenlik kusurunu raporlamak",
+    "summary": "İş vizesiyle çalışan bir mühendis, şirketinin düşük olasılıklı ama gerçek bir güvenlik kusuru olan ürünü piyasaya sürdüğünü keşfeder. İç kanallar etkisiz kalmıştır. Ne yapmalı?",
+    "intro": "Metnin birinci işlenmiş örneği (§7.5, Örnek 1). Çerçeve, ahlâkî zemini ihlâl eden seçenekleri (zarar olasılığını bilerek susmak) filtreler; iki makul yol arasında — düzenleyiciye raporlama veya iç kanalları zorlamaya devam — nitelikli ihtilafı dürüstçe gösterir; niyet kontrolü, agentın belirttiği yönelimle uyuşan seçeneği destekler.\n\nÇerçevenin ilginç hamlesi 2. taahhüttür: \"zayıf delille eyleme geçirilen bir doğruluk iddiası yakîn değil zann olarak işaretlenmelidir.\" Mühendisin iki kritik iddiası — iç incelemenin doğru olduğu ve raporlamanın işe yarayacağı — zann seviyesindedir. Dosya bu belirsizliği sınıflandırmaya taşır.",
+    "paperRef": "Çalışma metni §7.5, Örnek 1."
+  },
+  "organ-donation": {
+    "tag": "İşlenmiş örnek · Organ bağışı",
+    "title": "Vefat sonrası organ bağışı kaydı",
+    "summary": "45 yaşında Müslüman bir kadın organ bağışçısı olarak kayıt olmaya çağrılır. Ülkesinin yasası beyin ölümünden sonra bağışı yetkilendirir — bunu tüm âlimler şer'î ölüm olarak kabul etmez.",
+    "intro": "Metnin ikinci işlenmiş örneği (§7.5, Örnek 2). Çerçeve burada en iyi çalışır: nitelikli ihtilafı bir hata değil meşru bir çıktı olarak inşa eder. Yetkin âlimlerin samimiyetle ayrıştığı bir mevzuda çerçeve taraf seçmez; büyük pozisyonları, izin veren pozisyonların buluştuğu koşulları (rıza, ticaret yokluğu, vücut hürmeti, ihsân niyeti) ve şahsî istişareyi tavsiye eder.\n\nKullanıcının koşullu seçeneğe — açık koşullarla kaydolma — meyli, çerçevenin analiziyle temiz bir niyet uyumu üretir.",
+    "paperRef": "Çalışma metni §7.5, Örnek 2."
+  },
+  "riba-mortgage": {
+    "tag": "İşlenmiş örnek · Ribâ-yakın finans",
+    "title": "Alternatifsiz piyasada konvansiyonel ipotek",
+    "summary": "Gerçek anlamda İslâmî finansman bulunmayan bir ülkede yaşayan bir Müslüman, birincil konut için konvansiyonel ipotek almayı düşünüyor. Süresiz kira pahalı; biriktirip nakit almak 15+ yıl alır.",
+    "intro": "Metnin üçüncü işlenmiş örneği (§7.5, Örnek 3). Çerçeve çoğunluk pozisyonu (konvansiyonel ipotek yasaklı ribâya girer) ile azınlık izin pozisyonu (alternatifsiz piyasalarda Müslümanlar için zorunluluk-koşullu izin) arasında seçim yapmaz. Bu ikiliği kayda alır, kullanıcının hangisi içinde akıl yürüttüğünü açıkça kabul etmesini ister ve azınlık pozisyonu kullanıcı için açılmadan önce \"alternatif yok\" iddiasını gerçek piyasa araştırmasıyla test etmesini şart koşar.\n\nNiyet kontrolü hesaptan daha açıklayıcıdır burada: kullanıcının kira seçeneğine meyli, vicdanın gerekçeleri rasyonelleştirmek yerine doğrulama tercihini gösterir.",
+    "paperRef": "Çalışma metni §7.5, Örnek 3."
+  }
+}

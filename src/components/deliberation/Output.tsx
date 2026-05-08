@@ -54,9 +54,15 @@ function deriveRadars(d: Deliberation, result: DeliberationResult): DerivedRadar
   });
 }
 
-export function Output() {
+interface OutputProps {
+  /** Optional override; when set, the dossier renders this deliberation instead of the active session. */
+  deliberation?: Deliberation;
+}
+
+export function Output({ deliberation }: OutputProps = {}) {
   const { t } = useTranslation('deliberate');
-  const current = useSession((s) => s.current);
+  const sessionCurrent = useSession((s) => s.current);
+  const current = deliberation ?? sessionCurrent;
 
   const result = useMemo(() => (current ? runDeliberation(current) : null), [current]);
 

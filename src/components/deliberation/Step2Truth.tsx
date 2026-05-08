@@ -58,6 +58,7 @@ export function Step2Truth({ onComplete, onBackToPrevious }: Props) {
         title={t('step2.gate.title')}
         subtitle={t('step2.gate.subtitle')}
         helper={t('step2.gate.helper')}
+        helpKey="step2.gate"
         onBack={onBackToPrevious}
       >
         <div className="space-y-3 mx-auto max-w-md">
@@ -111,6 +112,7 @@ export function Step2Truth({ onComplete, onBackToPrevious }: Props) {
       title={t('step2.claims.title')}
       subtitle={t('step2.claims.subtitle')}
       helper={t('step2.claims.helper')}
+      helpKey="step2.claims"
       onBack={() => setSubStep(1)}
       onContinue={onComplete}
       continueDisabled={claims.some((c) => !c.text.trim() || !c.confidence)}

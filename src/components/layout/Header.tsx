@@ -7,10 +7,10 @@ import { cn } from '@/lib/utils';
 
 const navItems = [
   { to: '/method', key: 'method' as const },
-  { to: '/sources', key: 'sources' as const },
+  { to: '/examples', key: 'examples' as const },
   { to: '/deliberate', key: 'deliberate' as const },
+  { to: '/sources', key: 'sources' as const },
   { to: '/history', key: 'history' as const },
-  { to: '/about', key: 'about' as const },
 ];
 
 export function Header() {

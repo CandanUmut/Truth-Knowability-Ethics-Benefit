@@ -79,6 +79,7 @@ export function Step1Case({ onComplete, onBackToPrevious }: Props) {
         title={t('step1.q1.title')}
         subtitle={t('step1.q1.subtitle')}
         helper={t('step1.q1.helper')}
+        helpKey="step1.q1"
         onBack={onBackToPrevious}
         onContinue={() => setSubStep(2)}
         continueDisabled={c.description.trim().length < 4}
@@ -102,6 +103,7 @@ export function Step1Case({ onComplete, onBackToPrevious }: Props) {
       title={t('step1.q2.title')}
       subtitle={t('step1.q2.subtitle')}
       helper={t('step1.q2.helper')}
+      helpKey="step1.q2"
       onBack={() => setSubStep(1)}
       onContinue={onComplete}
       continueDisabled={filledOptionCount < 2}

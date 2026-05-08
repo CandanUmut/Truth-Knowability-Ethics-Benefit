@@ -11,6 +11,8 @@ const Sources = lazy(() => import('@/pages/Sources'));
 const History = lazy(() => import('@/pages/History'));
 const Privacy = lazy(() => import('@/pages/Privacy'));
 const Deliberate = lazy(() => import('@/pages/Deliberate'));
+const Examples = lazy(() => import('@/pages/Examples'));
+const ExampleDetail = lazy(() => import('@/pages/ExampleDetail'));
 const NotFound = lazy(() => import('@/pages/NotFound'));
 
 function PageTransition({ children }: { children: React.ReactNode }) {
@@ -59,6 +61,8 @@ export default function Router() {
             <Route path="/history" element={<PageTransition><History /></PageTransition>} />
             <Route path="/privacy" element={<PageTransition><Privacy /></PageTransition>} />
             <Route path="/deliberate" element={<PageTransition><Deliberate /></PageTransition>} />
+            <Route path="/examples" element={<PageTransition><Examples /></PageTransition>} />
+            <Route path="/examples/:id" element={<PageTransition><ExampleDetail /></PageTransition>} />
             <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
           </Routes>
         </Suspense>

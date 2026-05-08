@@ -11,6 +11,7 @@ import trHistory from '@/locales/tr/history.json';
 import trPrivacy from '@/locales/tr/privacy.json';
 import trDeliberate from '@/locales/tr/deliberate.json';
 import trGlossary from '@/locales/tr/glossary.json';
+import trExamples from '@/locales/tr/examples.json';
 
 import enCommon from '@/locales/en/common.json';
 import enHome from '@/locales/en/home.json';
@@ -21,6 +22,7 @@ import enHistory from '@/locales/en/history.json';
 import enPrivacy from '@/locales/en/privacy.json';
 import enDeliberate from '@/locales/en/deliberate.json';
 import enGlossary from '@/locales/en/glossary.json';
+import enExamples from '@/locales/en/examples.json';
 
 const namespaces = [
   'common',
@@ -32,6 +34,7 @@ const namespaces = [
   'privacy',
   'deliberate',
   'glossary',
+  'examples',
 ] as const;
 
 void i18n
@@ -53,6 +56,7 @@ void i18n
         privacy: trPrivacy,
         deliberate: trDeliberate,
         glossary: trGlossary,
+        examples: trExamples,
       },
       en: {
         common: enCommon,
@@ -64,6 +68,7 @@ void i18n
         privacy: enPrivacy,
         deliberate: enDeliberate,
         glossary: enGlossary,
+        examples: enExamples,
       },
     },
     interpolation: { escapeValue: false },

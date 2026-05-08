@@ -1,0 +1,37 @@
+{
+  "eyebrow": "Examples",
+  "title": "Three worked cases.",
+  "subtitle": "These come from §7.5 of the working paper. Each shows how the framework processes a real, hard decision — and what kind of dossier it produces.",
+  "viewDossier": "View the dossier",
+  "backToList": "Back to all examples",
+  "introTitle": "About this example",
+  "tryItTitle": "Try it as your own",
+  "tryItBody": "Open this example as a working copy: nothing about the original is altered, but you can edit any answer, change the options, and see how the dossier shifts. The example stays in /examples; your copy lives in your own deliberation history.",
+  "tryItCta": "Open as a copy",
+  "seeOthers": "See the other examples",
+  "disclaimer": {
+    "title": "Reading the examples",
+    "body": "These constructions are illustrative — they hew close to the paper's narrative but were inevitably interpreted by the constructor. Your deliberation will produce its own dossier from your own answers; nothing here predicts what the framework will say to you."
+  },
+  "workplace-honesty": {
+    "tag": "Worked example · Workplace honesty",
+    "title": "Reporting a known safety defect",
+    "summary": "An engineer on a work visa discovers that her company is shipping a product with a low-probability but real safety defect. Internal channels have been ineffective. What should she do?",
+    "intro": "This is the paper's first worked example (§7.5, Example 1). The framework filters away options that engage the moral floor (saying nothing while knowing harm is possible), surfaces qualified disagreement between the two reasonable courses (report to the regulator vs. press internally further), and aligns the niyya check with the option the agent's stated motivation actually fits.\n\nThe interesting framework move here is Commitment 2: \"a truth-claim pressed into action with weak evidence must be marked ẓann, not yaqīn.\" The engineer's two critical claims — that internal review is correct and that reporting will work — are at ẓann level. The dossier carries that uncertainty into the classification.",
+    "paperRef": "Working paper §7.5, Example 1."
+  },
+  "organ-donation": {
+    "tag": "Worked example · Organ donation",
+    "title": "Posthumous organ donor registration",
+    "summary": "A 45-year-old Muslim is asked to register as an organ donor. Her country's law authorizes donation after a brain-death determination — which not all scholars accept as legal death.",
+    "intro": "This is the paper's second worked example (§7.5, Example 2). It is where the framework does best, because it builds qualified disagreement in as a legitimate output rather than treating divergence among competent scholars as a failure. The framework records the major positions, the conditions on which the permissive positions converge (consent, no commerce, dignified handling, motivation by iḥsān), and recommends consultation in person rather than picking a side.\n\nThe agent's stated leaning toward the conditional option — registering with explicit conditions honored — produces a clean niyya alignment with the framework's analysis.",
+    "paperRef": "Working paper §7.5, Example 2."
+  },
+  "riba-mortgage": {
+    "tag": "Worked example · Ribā-adjacent finance",
+    "title": "Conventional mortgage in a market without alternatives",
+    "summary": "A Muslim residing in a country without genuine Islamic financing is considering a conventional mortgage to purchase a primary residence. Renting indefinitely is costly; saving to buy outright would take 15+ years.",
+    "intro": "This is the paper's third worked example (§7.5, Example 3). The framework does not pick between the majority position (the conventional mortgage engages ribā in its prohibited form) and the minority permissive position (need-conditioned permission for Muslims in markets without alternatives). It records the binary, requires the user to acknowledge which one she is reasoning within, and forces the user to test her claim of \"no alternatives\" against actual market research before the minority position becomes available to her.\n\nThe niyya check here is more revealing than the calculus alone: the user's leaning toward continued renting tracks her conscience's preference for verifying rather than rationalizing necessity.",
+    "paperRef": "Working paper §7.5, Example 3."
+  }
+}

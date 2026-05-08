@@ -7,7 +7,30 @@
     "subtitle": "Bu uygulama bir cevap vermez. Sizi adım adım bir karar üzerinde yapılandırılmış bir biçimde düşündürür. Cevaplarınız yalnızca bu cihazda kalır."
   },
   "startCta": "Başlayalım",
+  "seeExampleInstead": "Önce işlenmiş bir örnek görmek ister misiniz?",
   "startNote": "Cevaplarınız yalnızca bu cihazda saklanır. İstediğiniz an JSON olarak dışa aktarabilirsiniz.",
+  "intro": {
+    "eyebrow": "İlk kez mi geldiniz?",
+    "title": "Sizi neyin beklediğine kısa bir bakış.",
+    "subtitle": "Başlamadan önce kısa bir tanıtım. İsterseniz dosyanın nasıl göründüğünü anlamak için işlenmiş bir örneğe de bakabilirsiniz.",
+    "cards": {
+      "ask": {
+        "title": "Beş kısa soru turu",
+        "body": "Çoğu hızlı — birkaç seçenek arasından seçim yaparsınız. Her sorunun yanında küçük bir (?) simgesi vardır; ona dokunarak bunu neden sorduğumuzu ve çerçevenin cevabınızla ne yaptığını görebilirsiniz."
+      },
+      "private": {
+        "title": "Hiçbir şey cihazınızdan çıkmaz",
+        "body": "Cevaplarınız ilerledikçe yerel olarak kaydedilir. Sunucu yok, analitik yok, takip yok. Çalışmanızı her an JSON olarak dışa aktarabilirsiniz."
+      },
+      "output": {
+        "title": "Bir hüküm değil, bir harita",
+        "body": "Sonunda bir müzakere haritası alırsınız: her seçenek hakîkat, ahlâk, maslahat ve niyet ekseninde puanlanır. Karar hâlâ sizindir."
+      }
+    },
+    "startCta": "Hazırım, başlayalım",
+    "exampleCta": "Önce işlenmiş bir örnek görmek istiyorum",
+    "dismissHint": "Bu ekranı yalnızca ilk kez görürsünüz. Örneklere menüden istediğiniz an dönebilirsiniz."
+  },
   "outputTitle": "Müzakere haritası",
   "outputSubtitle": "Bu bir hüküm değil, dört eksende size geri yansıtılan yapılandırılmış bir akıl yürütmedir.",
   "outputBadge": "Harita",
@@ -41,6 +64,80 @@
   "reset": "Temizle",
   "confirmReset": "Tüm girdileri silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
   "skip": "Atla",
+  "whyhelp": {
+    "label": "Bunu neden soruyoruz",
+    "heading": "Bunu neden soruyoruz",
+    "askingFor": "Ne öğrenmek istiyoruz",
+    "engineDoes": "Çerçeve cevabınızla ne yapar",
+    "step1": {
+      "q1": {
+        "askingFor": "Yaşadığınız durum hakkında kendi sözcüklerinizle birkaç cümle. Çerçeve bu metni yalnızca son özette geri verir; metni ayrıştırmaz.",
+        "engineDoes": "Açıklamanızdan birkaç anahtar kelime, 4. adımda benzer vakalarda etkili olan kaynakları önermek için kullanılır. Bu kadar — metniniz analiz edilmez ve hiçbir yere gönderilmez."
+      },
+      "q2": {
+        "askingFor": "İki veya daha fazla somut seçenek. Sizin için gerçek bir seçenek olduğu sürece \"hiçbir şey yapmama\" da sayılır.",
+        "engineDoes": "Her seçenek dosyada bir sütun olur. 3. adım her seçeneğin neye dokunabileceğini sorar; çerçeve sonuçları zarar önleme, fayda sağlama, kesinlik ve niyetinizle uyum açılarından karşılaştırır."
+      }
+    },
+    "step2": {
+      "gate": {
+        "askingFor": "Kararınızın, yanlış olsa kararınızı değiştirecek bir veya iki olguya dayanıp dayanmadığı.",
+        "engineDoes": "Evet derseniz her olgu için ne kadar emin olduğunuzu sorarız. Çerçevenin 2. taahhüdü (\"zayıf delille eyleme geçirilen bir doğruluk iddiası yakîn değil zann olarak işaretlenmelidir\") burada işler — hassas bir olgu şüphe seviyesindeyse, dosya \"açık\" döndürür, kendinden emin bir cevap değil."
+      },
+      "claims": {
+        "askingFor": "Kararınızın dayandığı her olgu — kısa bir cümleyle, ne kadar emin olduğunuzu ve yanlış olsa kararınızın değişip değişmeyeceğini.",
+        "engineDoes": "Eminlik, §7.2 güven sınıfına haritalanır (yakîn=1.0, kuvvetli zan=0.7, zan=0.5, şek=0.3, cehl=0.0). Düşük eminlikli hassas iddialar dosyayı \"açık\" sınıfına çeker — çerçeve, delilin izin verdiğinden daha emin görünmeyi reddeder."
+      }
+    },
+    "step3": {
+      "harmPick": {
+        "askingFor": "Bu seçeneğin ne tür zararlar üretebileceği — sade bir dille.",
+        "engineDoes": "Seçtiğiniz her zarar, alttaki makâsıd (korunan iyi) üzerinde negatif bir etki olur. Sonraki iki soru — büyüklük ve eminlik — ağırlığını belirler. Zarûrî bir iyi üzerinde yüksek eminlikli ciddi bir zarar, seçeneği tamamen filtreleyebilir."
+      },
+      "helpPick": {
+        "askingFor": "Bu seçeneğin ne tür iyilikler yapabileceği — sade bir dille.",
+        "engineDoes": "Seçtiğiniz her iyilik pozitif bir etki olur. Dosya, seçenekleri toplam fayda ile zarar arasındaki farkı, dokunulan iyinin katmanına göre ağırlıklandırarak karşılaştırır."
+      },
+      "detail": {
+        "askingFor": "Bu etkinin ne kadar büyük olduğu ve gerçekten gerçekleşeceğine ne kadar emin olduğunuz.",
+        "engineDoes": "Büyüklük × katman ağırlığı × eminlik puanlama formülüdür. \"Çok ağır\" iyiyi zarûrî katmana çeker (ağırlık 3); \"Çok az\" tahsînî katmanda bırakır (ağırlık 1). Düşük eminlik ağırlığı azaltır — belirsiz etkiler hesaba egemen olmaz."
+      }
+    },
+    "step4": {
+      "gate": {
+        "askingFor": "Çerçevenin sizin gibi vakalar için ilgili Kur'ân âyetleri ve hadisleri önermesini isteyip istemediğiniz.",
+        "engineDoes": "Evet derseniz vaka örüntüsüne uyan 2-7 kaynak öneririz. Hangilerinin gerçekten size dokunduğuna siz karar verirsiniz. Dosya kabul ettiğiniz her kaynağa dair okumanızı kayda alır; çerçeve sizin yerinize seçim yapmaz."
+      }
+    },
+    "step5": {
+      "tone": {
+        "askingFor": "5. soru için hangi ifade tonunun size daha doğal geldiği.",
+        "engineDoes": "Sadece tek bir sorunun ifadesini değiştirir. Çerçeve her iki varyantı aynı şekilde işler."
+      },
+      "questions": {
+        "q1": {
+          "askingFor": "Bu karardan, doğru veya yanlış olduğunu düşünmeden önce gerçekten ne istediğiniz.",
+          "engineDoes": "5. adımdaki cevaplarınız puanlanmaz. Dosyada söylediğiniz şeyi olduğu gibi geri yansıtırız. Çerçeve yalnızca sizin belirttiğiniz meyli (ayrı bir soru) en yüksek puan alan seçenekle çatıştığında bunu gösterir."
+        },
+        "q2": {
+          "askingFor": "Akıl yürütmenizin, umduğunuz dünyevi kazanç olmadan da ayakta kalıp kalmayacağına dair bir sınama.",
+          "engineDoes": "Aynen kayda alınır. Puanlanmaz — ama soru, görmek istemediğiniz bir olasılığı yüzeye çıkarır."
+        },
+        "q3": {
+          "askingFor": "Niyetiniz hakkında, samimi biri sorsa gizleyeceğiniz şey.",
+          "engineDoes": "Aynen kayda alınır. Klasik tasavvuf teşhis edebiyatı şu ilkeyle çalışır: yüksek sesle söyleyemediğimiz şey, çoğu zaman bizi gerçekten yönlendirendir."
+        },
+        "q4": {
+          "askingFor": "Samimiyetine güvendiğiniz birine meylinizi nasıl savunacağınız.",
+          "engineDoes": "Aynen kayda alınır. Bu kişiye dile getiremiyorsanız, çerçeve 5. adımın diğer cevaplarına dönmenizi nazikçe önerir."
+        },
+        "q5": {
+          "askingFor": "Bu seçimle yaşadığınızı hayal ettiğinizde vicdanınızın söylediği şey. İfade, başlangıçta seçtiğiniz tonu izler.",
+          "engineDoes": "Aynen kayda alınır. Çerçeve bu cevabı niyetin en derin katmanı olarak okur — Sufi geleneğinin herhangi bir özel niyetin altında \"daimî yönelim\" dediği şey."
+        }
+      }
+    }
+  },
   "scale": {
     "severity": {
       "1": "Çok az",
