@@ -11,7 +11,8 @@
     "sources": "Kaynaklar",
     "history": "Geçmiş",
     "about": "Hakkında",
-    "privacy": "Gizlilik"
+    "privacy": "Gizlilik",
+    "skipToContent": "Ana içeriğe atla"
   },
   "actions": {
     "start": "Bir müzakereye başla",

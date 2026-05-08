@@ -11,7 +11,8 @@
     "sources": "Sources",
     "history": "History",
     "about": "About",
-    "privacy": "Privacy"
+    "privacy": "Privacy",
+    "skipToContent": "Skip to main content"
   },
   "actions": {
     "start": "Start a deliberation",
