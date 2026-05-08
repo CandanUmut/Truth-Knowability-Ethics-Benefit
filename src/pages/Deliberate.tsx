@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { Save, Download, RotateCcw, FileCheck2, Plus, ScrollText } from 'lucide-react';
+import { Download, RotateCcw, FileCheck2, Plus, ScrollText, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Step1Case } from '@/components/deliberation/Step1Case';
 import { Step2Truth } from '@/components/deliberation/Step2Truth';
@@ -37,12 +37,13 @@ export default function Deliberate() {
   const advanceStep = useSession((s) => s.advanceStep);
   const retreatStep = useSession((s) => s.retreatStep);
   const [savedToast, setSavedToast] = useState<string | null>(null);
+  const [lastSavedAt, setLastSavedAt] = useState<number | null>(null);
 
   // Autosave: write the active deliberation to Dexie 600ms after any change.
   useEffect(() => {
     if (!current) return;
     const id = window.setTimeout(() => {
-      void saveDeliberation(current);
+      void saveDeliberation(current).then(() => setLastSavedAt(Date.now()));
     }, 600);
     return () => window.clearTimeout(id);
   }, [current]);
@@ -62,11 +63,6 @@ export default function Deliberate() {
   const isOutput = step >= OUTPUT_STEP;
   const visibleStep = isOutput || isReview ? TOTAL_MAJOR : step;
 
-  const onSaveDraft = async () => {
-    const updated: Deliberation = { ...current, status: 'draft', updatedAt: new Date().toISOString() };
-    await saveDeliberation(updated);
-    setSavedToast(t('savedDraft'));
-  };
   const onSaveFinal = async () => {
     const result = runDeliberation(current);
     const updated: Deliberation = {
@@ -115,12 +111,11 @@ export default function Deliberate() {
         )}
       </div>
 
-      <div className="border-t border-border pt-4 flex flex-wrap items-center justify-end gap-2">
+      <div className="border-t border-border pt-4 flex flex-wrap items-center gap-2">
+        <SavedIndicator at={lastSavedAt} />
+        <div className="flex-1" />
         <Button variant="ghost" size="sm" onClick={onStartAnother}>
           <Plus size={14} aria-hidden="true" /> {t('newDeliberation')}
-        </Button>
-        <Button variant="ghost" size="sm" onClick={onSaveDraft}>
-          <Save size={14} aria-hidden="true" /> {t('actions.saveDraft', { ns: 'common' })}
         </Button>
         {isOutput && (
           <Button variant="ghost" size="sm" onClick={onSaveFinal}>
@@ -150,6 +145,30 @@ export default function Deliberate() {
         </div>
       )}
     </div>
+  );
+}
+
+function SavedIndicator({ at }: { at: number | null }) {
+  const { t } = useTranslation('deliberate');
+  if (!at) {
+    return (
+      <span className="text-xs text-muted-foreground/70 flex items-center gap-1.5">
+        {t('savingHint')}
+      </span>
+    );
+  }
+  const seconds = Math.max(0, Math.floor((Date.now() - at) / 1000));
+  const label =
+    seconds < 5
+      ? t('savedJustNow')
+      : seconds < 60
+      ? t('savedSecondsAgo', { n: seconds })
+      : t('savedMinutesAgo', { n: Math.floor(seconds / 60) });
+  return (
+    <span className="text-xs text-muted-foreground flex items-center gap-1.5">
+      <Check size={12} aria-hidden="true" />
+      {label}
+    </span>
   );
 }
 

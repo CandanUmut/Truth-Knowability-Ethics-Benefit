@@ -37,7 +37,6 @@ export function Step4Sources({ onComplete, onBackToPrevious }: Props) {
 
   if (!current) return null;
   const consultations = current.consultations;
-  const consultedIds = new Set(consultations.map((c) => c.sourceId));
 
   // Gate
   if (subStep <= 1) {
@@ -79,8 +78,19 @@ export function Step4Sources({ onComplete, onBackToPrevious }: Props) {
   }
 
   // Sub-step 2 — present matched + already-added consultations + ability to add custom
-  const addFromLibrary = (sourceId: string) => {
-    if (consultedIds.has(sourceId)) return;
+  const addFromLibrary = (sourceId: string, bearsOnCase: 'yes' | 'no' | 'unsure') => {
+    const existing = consultations.find((c) => c.sourceId === sourceId);
+    if (existing) {
+      // Toggle: if same answer clicked again, remove; otherwise update.
+      if (existing.bearsOnCase === bearsOnCase) {
+        setConsultations(consultations.filter((c) => c.id !== existing.id));
+      } else {
+        setConsultations(
+          consultations.map((c) => (c.id === existing.id ? { ...c, bearsOnCase } : c))
+        );
+      }
+      return;
+    }
     const src = getSource(sourceId);
     if (!src) return;
     const citation =
@@ -91,9 +101,14 @@ export function Step4Sources({ onComplete, onBackToPrevious }: Props) {
       id: crypto.randomUUID(),
       sourceId,
       citation,
-      bearsOnCase: 'yes',
+      bearsOnCase,
     };
     setConsultations([...consultations, fresh]);
+  };
+
+  const currentAnswerFor = (sourceId: string): 'yes' | 'no' | 'unsure' | null => {
+    const c = consultations.find((c) => c.sourceId === sourceId);
+    return c?.bearsOnCase ?? null;
   };
 
   const updateConsult = (id: string, patch: Partial<SourceConsultation>) =>
@@ -121,23 +136,31 @@ export function Step4Sources({ onComplete, onBackToPrevious }: Props) {
             </h3>
             <div className="space-y-3">
               {matched.map((src) => {
-                const already = consultedIds.has(src.data.id);
+                const answer = currentAnswerFor(src.data.id);
                 return (
-                  <SourceCard
-                    key={src.data.id}
-                    source={src}
-                    compact
-                    trailing={
-                      <Button
-                        size="sm"
-                        variant={already ? 'ghost' : 'outline'}
-                        disabled={already}
-                        onClick={() => addFromLibrary(src.data.id)}
+                  <div key={src.data.id} className="space-y-2">
+                    <SourceCard source={src} compact />
+                    <div className="flex flex-wrap gap-1.5 pl-1">
+                      <ResonanceButton
+                        active={answer === 'yes'}
+                        onClick={() => addFromLibrary(src.data.id, 'yes')}
                       >
-                        {already ? t('step4.review.added') : t('step4.review.resonates')}
-                      </Button>
-                    }
-                  />
+                        {t('step4.review.bears.yes')}
+                      </ResonanceButton>
+                      <ResonanceButton
+                        active={answer === 'unsure'}
+                        onClick={() => addFromLibrary(src.data.id, 'unsure')}
+                      >
+                        {t('step4.review.bears.unsure')}
+                      </ResonanceButton>
+                      <ResonanceButton
+                        active={answer === 'no'}
+                        onClick={() => addFromLibrary(src.data.id, 'no')}
+                      >
+                        {t('step4.review.bears.no')}
+                      </ResonanceButton>
+                    </div>
+                  </div>
                 );
               })}
             </div>
@@ -205,6 +228,31 @@ export function Step4Sources({ onComplete, onBackToPrevious }: Props) {
         </section>
       </div>
     </ConversationalScreen>
+  );
+}
+
+function ResonanceButton({
+  active,
+  onClick,
+  children,
+}: {
+  active: boolean;
+  onClick: () => void;
+  children: React.ReactNode;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={cn(
+        'h-8 rounded-full px-3.5 text-xs font-medium border transition-colors',
+        active
+          ? 'bg-foreground text-background border-foreground'
+          : 'bg-background border-border text-muted-foreground hover:text-foreground hover:border-foreground/40'
+      )}
+    >
+      {children}
+    </button>
   );
 }
 

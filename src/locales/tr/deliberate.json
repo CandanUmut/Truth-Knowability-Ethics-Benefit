@@ -34,6 +34,10 @@
   "backToSteps": "Adımlara geri dön",
   "savedDraft": "Taslak kaydedildi",
   "savedFinal": "Müzakere kaydedildi",
+  "savingHint": "Otomatik kaydediliyor",
+  "savedJustNow": "Az önce kaydedildi",
+  "savedSecondsAgo": "{{n}} saniye önce kaydedildi",
+  "savedMinutesAgo": "{{n}} dakika önce kaydedildi",
   "reset": "Temizle",
   "confirmReset": "Tüm girdileri silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
   "skip": "Atla",
@@ -169,6 +173,11 @@
       "empty": "Henüz seçtiğiniz bir kaynak yok.",
       "resonates": "Bana uyuyor",
       "added": "Eklendi",
+      "bears": {
+        "yes": "Bana uyuyor",
+        "unsure": "Emin değilim",
+        "no": "Pek değil"
+      },
       "citationLabel": "Atıf",
       "citationPlaceholder": "Örn: Q. 5:8 — adâlet âyeti",
       "reasoningLabel": "Bu kaynak vakanıza nasıl uyuyor? (isteğe bağlı)",

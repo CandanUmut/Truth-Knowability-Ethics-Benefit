@@ -34,6 +34,10 @@
   "backToSteps": "Back to steps",
   "savedDraft": "Draft saved",
   "savedFinal": "Deliberation saved",
+  "savingHint": "Auto-saving",
+  "savedJustNow": "Saved just now",
+  "savedSecondsAgo": "Saved {{n}}s ago",
+  "savedMinutesAgo": "Saved {{n}}m ago",
   "reset": "Clear",
   "confirmReset": "Are you sure you want to clear all input? This cannot be undone.",
   "skip": "Skip",
@@ -169,6 +173,11 @@
       "empty": "No sources added yet.",
       "resonates": "This resonates",
       "added": "Added",
+      "bears": {
+        "yes": "This resonates",
+        "unsure": "Not sure",
+        "no": "Not really"
+      },
       "citationLabel": "Citation",
       "citationPlaceholder": "e.g. Q. 5:8 — the verse on justice",
       "reasoningLabel": "How does this source apply, in your reading? (optional)",
