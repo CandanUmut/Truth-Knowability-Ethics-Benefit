@@ -2,6 +2,19 @@
   "eyebrow": "History",
   "title": "Saved deliberations",
   "subtitle": "All dossiers live only on this device. Export them as JSON whenever you wish; import them on another device when you want.",
+  "importBtn": "Import JSON",
+  "exportAll": "Export all",
+  "imported": "{{count}} dossiers imported.",
+  "confirmDelete": "Are you sure you want to delete this dossier? This cannot be undone.",
+  "open": "Open",
+  "delete": "Delete",
+  "untitled": "Untitled deliberation",
+  "options": "{{count}} options",
+  "claims": "{{count}} claims",
+  "status": {
+    "draft": "Draft",
+    "final": "Final"
+  },
   "empty": {
     "title": "No deliberations saved yet.",
     "body": "When you finish your first deliberation, its dossier will appear in this list. It is not sent to a server, not shared with anyone — it stays on your device.",

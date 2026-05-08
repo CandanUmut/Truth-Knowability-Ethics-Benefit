@@ -2,6 +2,19 @@
   "eyebrow": "Geçmiş",
   "title": "Kaydedilen müzakereler",
   "subtitle": "Tüm dosyalar yalnızca bu cihazda saklanır. JSON olarak dışa aktarabilirsiniz; başka bir cihaza taşımak istediğinizde içe aktarın.",
+  "importBtn": "JSON içe aktar",
+  "exportAll": "Hepsini dışa aktar",
+  "imported": "{{count}} dosya içe aktarıldı.",
+  "confirmDelete": "Bu dosyayı silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
+  "open": "Aç",
+  "delete": "Sil",
+  "untitled": "Başlıksız müzakere",
+  "options": "{{count}} seçenek",
+  "claims": "{{count}} iddia",
+  "status": {
+    "draft": "Taslak",
+    "final": "Kaydedilmiş"
+  },
   "empty": {
     "title": "Henüz kaydedilmiş bir müzakere yok.",
     "body": "İlk müzakerenize başladığınızda, dosyalarınız bu liste içinde görünecek — ne sunucuya gönderilir, ne de paylaşılır. Cihazınızda kalır.",

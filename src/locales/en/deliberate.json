@@ -2,5 +2,284 @@
   "eyebrow": "Deliberate",
   "title": "A five-step structured deliberation",
   "subtitle": "State your case; mark the truth-claims at issue; identify the maqāṣid implicated; consult the sources; check your niyya. At the end you receive a deliberation map, not a verdict.",
-  "placeholder": "The five-step deliberation flow will arrive in Phase 3."
+  "startCta": "Begin a new deliberation",
+  "startNote": "Your answers stay only on this device. You can export them as JSON at any time.",
+  "outputTitle": "Deliberation map",
+  "outputSubtitle": "Not a verdict — a structured reflection on four moments, returned to you.",
+  "seeMap": "See the map",
+  "backToSteps": "Back to steps",
+  "savedDraft": "Draft saved",
+  "savedFinal": "Deliberation saved",
+  "reset": "Clear",
+  "confirmReset": "Are you sure you want to clear all input? This cannot be undone.",
+  "stepper": {
+    "label": "Step {{n}} of {{total}}",
+    "progress": "Step {{n}} of {{total}}"
+  },
+  "step1": {
+    "title": "Step 1: Case statement",
+    "subtitle": "What situation are you facing, who is implicated, what options are open to you?",
+    "descriptionLabel": "Case description",
+    "descriptionHelp": "200–500 words on the matter, the parties, and why this is a hard decision.",
+    "descriptionPlaceholder": "The situation I am facing right now…",
+    "agentsLabel": "Who is involved",
+    "agentsHelp": "Persons or entities affected by, or interacting with, the decision.",
+    "agents": {
+      "self": "Myself",
+      "family": "Family",
+      "employer": "Employer",
+      "community": "Community",
+      "society": "Society",
+      "other": "Other"
+    },
+    "optionsLabel": "Options I am considering",
+    "optionsHelp": "At least two options; include “do nothing” when relevant.",
+    "optionLabelPlaceholder": "Option title (e.g. report to the regulator)",
+    "optionDescriptionPlaceholder": "What this option concretely looks like — a short description (optional).",
+    "addOption": "Add option",
+    "removeOption": "Remove this option",
+    "atLeastTwo": "A meaningful deliberation needs at least two options.",
+    "timeHorizonLabel": "Time horizon",
+    "timeHorizonHelp": "The principal time scale over which this decision plays out.",
+    "timeHorizon": {
+      "hours": "Hours",
+      "days": "Days",
+      "weeks": "Weeks",
+      "months": "Months",
+      "years": "Years"
+    },
+    "reversibilityLabel": "Reversibility",
+    "reversibilityHelp": "1: fully irreversible; 5: fully reversible.",
+    "reversibilityLow": "Irreversible",
+    "reversibilityHigh": "Reversible",
+    "stakesMaqasidLabel": "Stakes on the protected goods (1–5)",
+    "stakesMaqasidHelp": "How high are the stakes on each of the five necessities (religion, life, intellect, lineage, property)?",
+    "stakesTahaLabel": "Tāhā axes (vital / rational / spiritual)",
+    "stakesTahaHelp": "Axes the classical five do not always capture: vital, rational, spiritual interests."
+  },
+  "step2": {
+    "title": "Step 2: Truth-claims at issue",
+    "subtitle": "List every fact-claim that, if false, would change the moral analysis. Mark its evidential basis and confidence class.",
+    "intro": "Hume is right: from purely descriptive premises no normative conclusion follows by deduction. But if your descriptive premises are weak, your normative conclusion is not steady either. This step asks you to separate what is genuinely evidenced.",
+    "claim": "Claim",
+    "removeClaim": "Remove this claim",
+    "addClaim": "Add a claim",
+    "empty": "No claims yet. Add at least one fact-claim the case rests on.",
+    "textLabel": "Claim text",
+    "textPlaceholder": "Example: ‘Internal review correctly assessed this defect as low-probability.’",
+    "basisLabel": "Evidential basis",
+    "basisHelp": "The strongest source of support for this claim.",
+    "basis": {
+      "sense": "Sense",
+      "demonstrative": "Demonstrative",
+      "tawatur": "Tawātur",
+      "cumulative": "Cumulative",
+      "single_source": "Single source",
+      "intuition": "Intuition",
+      "none": "No basis"
+    },
+    "basisDesc": {
+      "sense": "I have observed it directly under proper conditions.",
+      "demonstrative": "It is a strict consequence of premises I am sure of.",
+      "tawatur": "It is mass-transmitted from independent channels making collusion implausible.",
+      "cumulative": "It is supported by the convergence of several independent lines of evidence.",
+      "single_source": "It comes from a single source whose reliability is acceptable.",
+      "intuition": "I only feel it intuitively.",
+      "none": "I have no concrete evidential basis."
+    },
+    "confidenceLabel": "Confidence class",
+    "confidenceHelp": "A suggestion is auto-derived from the evidential basis; lower it if you should.",
+    "sensitivityLabel": "Is this a sensitive claim?",
+    "sensitivityHelp": "‘If this were false, my moral analysis would change.’ Mark sensitive in that case.",
+    "warning": {
+      "title": "Sensitive claim with weak evidence",
+      "body": "This decision rests on a critical claim whose evidential basis is at the level of ẓann. You may want to investigate further before deciding. (Commitment 2)"
+    }
+  },
+  "step3": {
+    "title": "Step 3: Maqāṣid implicated",
+    "subtitle": "For each option, mark the impact on the five protected goods and on the three Tāhā axes.",
+    "intro": "This step feeds the core score. Direction (positive / negative / none), tier (ḍarūrī / ḥājī / taḥsīnī), magnitude (1–5), and causal confidence — these four are given for each impact.",
+    "noOptions": "Add at least two options in Step 1 first.",
+    "option": "Option",
+    "untitled": "Untitled option",
+    "maqasidLabel": "Five necessary maqāṣid",
+    "tahaLabel": "Tāhā axes",
+    "directionLabel": "Direction",
+    "direction": {
+      "positive": "Positive",
+      "negative": "Negative",
+      "neutral": "No relation"
+    },
+    "tierLabel": "Tier",
+    "tierHelp": "The tier the maqsad operates at in this case: ḍarūrī / ḥājī / taḥsīnī.",
+    "magnitudeLabel": "Magnitude",
+    "magnitudeLow": "Low",
+    "magnitudeHigh": "High",
+    "causalConfidenceLabel": "Causal confidence",
+    "affectedLabel": "Who is affected",
+    "affected": {
+      "self": "Self",
+      "family": "Family",
+      "community": "Community",
+      "society": "Society"
+    }
+  },
+  "step4": {
+    "title": "Step 4: Source consultation",
+    "subtitle": "List the Qur'ānic, prophetic, and maqāṣid sources bearing on the case; record how each applies in your reading.",
+    "intro": {
+      "title": "Before Phase 4 — the source library is not yet seeded.",
+      "body": "The library will be wired up in Phase 4, matching Qur'ānic verses, sound hadiths, and classical maqāṣid texts to the case-pattern. For now, type the citations you want to consult yourself (e.g. ‘Q. 5:8’, ‘Bukhārī 1’, ‘Shāṭibī, Muwāfaqāt II’).",
+      "phase4": "When Phase 4 lands, the library will surface here automatically; the consultations you have entered will not be lost."
+    },
+    "empty": "No sources yet. Add the first source you want to consult.",
+    "source": "Source",
+    "removeSource": "Remove this source",
+    "addSource": "Add source",
+    "untitledSource": "Untitled source",
+    "citationLabel": "Citation",
+    "citationHelp": "The canonical citation (sūra/āya, collection/number, classical text page, etc.).",
+    "citationPlaceholder": "Example: Q. 5:8 — the verse on justice",
+    "bearsLabel": "Does this source bear on the case?",
+    "bears": {
+      "yes": "Yes",
+      "no": "No",
+      "unsure": "Unsure"
+    },
+    "reasoningLabel": "How does it apply, in your reading?",
+    "reasoningHelp": "The framework records your interpretation; it does not impose a single reading.",
+    "reasoningPlaceholder": "Briefly note which dimension of the case the source addresses and how…",
+    "minorityLabel": "I am following a minority position on this",
+    "minorityHelp": "The framework lets you follow a minority position; it records your reasoning and updates the dossier's classification accordingly.",
+    "minorityReasoningLabel": "Reasoning for the minority position"
+  },
+  "step5": {
+    "title": "Step 5: Niyya check",
+    "subtitle": "Five questions. Your answers are not scored — they are mirrored back to you. The step examines, it does not judge.",
+    "intro": {
+      "title": "This step is not an examination.",
+      "body": "The questions are invitations to honest self-reflection. Answer as truthfully as you can; the answers stay with you alone."
+    },
+    "toneLabel": "Tone of question 5",
+    "toneHelp": "We offer two phrasings for the fifth question; pick the one that feels more honest to you.",
+    "tone": {
+      "religious": "Before God",
+      "secular": "Before my conscience"
+    },
+    "questions": {
+      "q1": { "text": "What outcome do I most want from this decision, prior to the moral analysis?" },
+      "q2": { "text": "Would I still choose this course if a major worldly benefit were removed?" },
+      "q3": { "text": "What would I not want others to know about my motivation here?" },
+      "q4": { "text": "If a person I respect for sincerity asked me why I am leaning this way, what would I say?" },
+      "q5": {
+        "religious": "What does my conscience report when I imagine making this choice and standing with it before God?",
+        "secular": "What does my conscience report when I imagine making this choice and standing with it before myself?"
+      }
+    },
+    "placeholder": "A short, honest answer is enough…",
+    "leaningLabel": "Which option does my heart lean toward?",
+    "leaningHelp": "Independent of the score, your interior leaning. The algorithm only uses this to surface tension between your stated direction and the option scoring highest.",
+    "corruptLabel": "I admit my motivation is corrupt",
+    "corruptHelp": "Tick this only if you yourself judge your motivation here morally compromised. When ticked, the niyya multiplier on the top option drops to 0 and a clear warning is added to the dossier."
+  },
+  "output": {
+    "empty": "Not enough data to compute. Fill in the steps to complete the deliberation.",
+    "option": "Option",
+    "topOption": "Highest score",
+    "score": "Score",
+    "rawPositive": "Positive total",
+    "rawNegative": "Negative total",
+    "niyyaMultiplier": "Niyya multiplier",
+    "classificationReason": "Reason",
+    "tetrad": {
+      "truth": "Truth",
+      "ethics": "Ethics",
+      "benefit": "Benefit",
+      "intention": "Intention"
+    },
+    "filtered": {
+      "title": "Filtered: violates a ḍarūrī prohibition under conditions of certainty.",
+      "generic": "Severe negative impact at yaqīn level on a ḍarūrī good.",
+      "daruri.din": "Severe negative impact on dīn at yaqīn level.",
+      "daruri.nafs": "Severe negative impact on nafs at yaqīn level.",
+      "daruri.aql": "Severe negative impact on ʿaql at yaqīn level.",
+      "daruri.nasl": "Severe negative impact on nasl at yaqīn level.",
+      "daruri.mal": "Severe negative impact on māl at yaqīn level."
+    },
+    "tetradMap": {
+      "title": "Tetrad map",
+      "body": "Each option on four axes: average strength of your truth-claims, ethical floor (no severe ḍarūrī harm), benefit calculus, and niyya alignment."
+    },
+    "caseSummary": {
+      "title": "Case summary",
+      "empty": "No case description was entered."
+    },
+    "maqasidRanking": {
+      "title": "Maqāṣid balance",
+      "body": "Net effect on each of the five necessary goods, summed across options — harm to the left, benefit to the right.",
+      "harm": "Harm",
+      "benefit": "Benefit"
+    },
+    "sourceMap": {
+      "title": "Source map",
+      "empty": "No source consultations recorded for this deliberation.",
+      "bears": {
+        "yes": "Bears directly on the case",
+        "no": "Does not bear on the case",
+        "unsure": "Unsure"
+      },
+      "minority": "minority position"
+    },
+    "intention": {
+      "title": "Intention profile",
+      "body": "Your answers reflected back. The framework does not score them; it only reports tension between your stated leaning and the option scoring highest in the calculus.",
+      "empty": "Step 5 was not answered."
+    },
+    "recommendations": {
+      "title": "Recommendations"
+    },
+    "rec.consultScholar": "We recommend consulting this matter in person with a qualified scholar. This tool does not replace personal consultation.",
+    "rec.niyyaTension": "There is tension between your stated leaning and the option scoring highest. You should decide whether to revise your intention or your choice.",
+    "rec.niyyaCorrupt": "You have indicated your motivation is corrupt. Even if the act's outward form is permitted, its present motivation makes it morally compromised.",
+    "rec.investigateFurther": "The case's critical claims are weakly evidenced. Investigate further before deciding.",
+    "reason": {
+      "allFiltered": "Every option violates a ḍarūrī prohibition under conditions of certainty.",
+      "sensitiveClaimWeak": "A sensitive critical claim is at shakk-level evidence.",
+      "scoreGapWide": "The top-scoring option is clearly ahead of the runner-up.",
+      "scoreGapNarrow": "Multiple options score within a small margin of each other.",
+      "scholarlyDivergence": "There is a known scholarly disagreement on this case.",
+      "niyyaShiftedTop": "The niyya multiplier shifted which option ranks first.",
+      "singleViableOption": "Only one option remains viable after filtering.",
+      "runnerUpZero": "The runner-up scores zero; comparison is degenerate."
+    },
+    "dissenting": {
+      "title": "What this framework does not handle well",
+      "body": "This tool cannot handle the fine-grained mandūb / mubāḥ distinction with subtlety; it is much coarser than a trained niyya-diagnosis; and it works less well for users without baseline Islamic literacy. Read the output in context, and consult a qualified scholar where the matter calls for it."
+    }
+  },
+  "confidence": {
+    "yaqin": { "label": "Yaqīn", "term": "certainty" },
+    "zann_strong": { "label": "Ẓann (strong)", "term": "preponderant probability" },
+    "zann": { "label": "Ẓann", "term": "probable opinion" },
+    "shakk": { "label": "Shakk", "term": "doubt" },
+    "jahl": { "label": "Jahl", "term": "ignorance" }
+  },
+  "tier": {
+    "daruri": { "label": "Ḍarūrī", "desc": "A necessity without which human life collapses structurally." },
+    "haji": { "label": "Ḥājī", "desc": "A need whose absence creates significant hardship but not structural collapse." },
+    "tahsini": { "label": "Taḥsīnī", "desc": "A refinement supporting the dignity, beauty, and excellence of life." }
+  },
+  "maqasid": {
+    "din": { "label": "Religion", "term": "ḥifẓ al-dīn" },
+    "nafs": { "label": "Life", "term": "ḥifẓ al-nafs" },
+    "aql": { "label": "Intellect", "term": "ḥifẓ al-ʿaql" },
+    "nasl": { "label": "Lineage", "term": "ḥifẓ al-nasl" },
+    "mal": { "label": "Property", "term": "ḥifẓ al-māl" }
+  },
+  "taha": {
+    "vital": { "label": "Vital", "term": "al-maṣāliḥ al-ḥayawiyya" },
+    "rational": { "label": "Rational", "term": "al-maṣāliḥ al-ʿaqliyya" },
+    "spiritual": { "label": "Spiritual", "term": "al-maṣāliḥ al-rūḥiyya" }
+  }
 }
