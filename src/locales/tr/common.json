@@ -1,0 +1,38 @@
+{
+  "app": {
+    "name": "Hakîkat · Ahlâk · Maslahat",
+    "shortName": "HAM"
+  },
+  "nav": {
+    "home": "Ana Sayfa",
+    "method": "Yöntem",
+    "deliberate": "Müzakere",
+    "sources": "Kaynaklar",
+    "history": "Geçmiş",
+    "about": "Hakkında",
+    "privacy": "Gizlilik"
+  },
+  "actions": {
+    "start": "Bir müzakereye başla",
+    "continue": "Devam et",
+    "back": "Geri",
+    "next": "İleri",
+    "save": "Kaydet",
+    "saveDraft": "Taslağı kaydet",
+    "saveFinal": "Son hâlini kaydet",
+    "export": "Dışa aktar (JSON)",
+    "import": "İçe aktar (JSON)",
+    "cancel": "Vazgeç",
+    "close": "Kapat"
+  },
+  "theme": {
+    "light": "Aydınlık",
+    "dark": "Karanlık",
+    "system": "Sistem"
+  },
+  "lang": {
+    "tr": "Türkçe",
+    "en": "English",
+    "switchTo": "Dili değiştir"
+  }
+}

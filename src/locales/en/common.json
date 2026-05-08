@@ -1,0 +1,38 @@
+{
+  "app": {
+    "name": "Truth · Ethics · Benefit",
+    "shortName": "TEB"
+  },
+  "nav": {
+    "home": "Home",
+    "method": "Method",
+    "deliberate": "Deliberate",
+    "sources": "Sources",
+    "history": "History",
+    "about": "About",
+    "privacy": "Privacy"
+  },
+  "actions": {
+    "start": "Start a deliberation",
+    "continue": "Continue",
+    "back": "Back",
+    "next": "Next",
+    "save": "Save",
+    "saveDraft": "Save draft",
+    "saveFinal": "Save final",
+    "export": "Export (JSON)",
+    "import": "Import (JSON)",
+    "cancel": "Cancel",
+    "close": "Close"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "lang": {
+    "tr": "Türkçe",
+    "en": "English",
+    "switchTo": "Switch language"
+  }
+}

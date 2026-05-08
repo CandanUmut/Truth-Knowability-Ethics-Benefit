@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Truth · Ethics · Benefit</title>
+    <script>
+      (function () {
+        var segments = location.pathname.split('/');
+        var base = '/Truth-Knowability-Ethics-Benefit/';
+        var pathAfterBase = location.pathname.indexOf(base) === 0
+          ? location.pathname.slice(base.length)
+          : segments.slice(2).join('/');
+        sessionStorage.setItem(
+          'teb.spa-redirect',
+          pathAfterBase + location.search + location.hash
+        );
+        location.replace(base);
+      })();
+    </script>
+  </head>
+  <body>Redirecting…</body>
+</html>
