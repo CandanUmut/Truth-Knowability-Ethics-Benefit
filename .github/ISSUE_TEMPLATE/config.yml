@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Read the framework first
+    url: https://github.com/CandanUmut/Truth-Knowability-Ethics-Benefit/blob/main/research/truth-ethics-benefit-preprint.md
+    about: The application implements a specific philosophical framework. The paper is the canonical reference for what the application is doing and why.
+  - name: Scholar review workflow
+    url: https://github.com/CandanUmut/Truth-Knowability-Ethics-Benefit/blob/main/docs/scholar-review.md
+    about: The workflow qualified scholars can use to review and correct the seed source library.
