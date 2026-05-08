@@ -2,6 +2,8 @@
   "eyebrow": "History",
   "title": "Saved deliberations",
   "subtitle": "All dossiers live only on this device. Export them as JSON whenever you wish; import them on another device when you want.",
+  "newCta": "New deliberation",
+  "activeBadge": "Active",
   "importBtn": "Import JSON",
   "exportAll": "Export all",
   "imported": "{{count}} dossiers imported.",

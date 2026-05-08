@@ -2,6 +2,8 @@
   "eyebrow": "Geçmiş",
   "title": "Kaydedilen müzakereler",
   "subtitle": "Tüm dosyalar yalnızca bu cihazda saklanır. JSON olarak dışa aktarabilirsiniz; başka bir cihaza taşımak istediğinizde içe aktarın.",
+  "newCta": "Yeni müzakere",
+  "activeBadge": "Aktif",
   "importBtn": "JSON içe aktar",
   "exportAll": "Hepsini dışa aktar",
   "imported": "{{count}} dosya içe aktarıldı.",

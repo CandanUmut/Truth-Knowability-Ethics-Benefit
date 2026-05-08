@@ -1,15 +1,16 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { Save, Download, RotateCcw, FileCheck2 } from 'lucide-react';
+import { Save, Download, RotateCcw, FileCheck2, Plus, ScrollText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Step1Case } from '@/components/deliberation/Step1Case';
 import { Step2Truth } from '@/components/deliberation/Step2Truth';
 import { Step3Maqasid } from '@/components/deliberation/Step3Maqasid';
 import { Step4Sources } from '@/components/deliberation/Step4Sources';
 import { Step5Niyya } from '@/components/deliberation/Step5Niyya';
+import { Step6Review } from '@/components/deliberation/Step6Review';
 import { Output } from '@/components/deliberation/Output';
-import { useSession, type StepIndex } from '@/lib/storage/session';
+import { useSession, type StepIndex, REVIEW_STEP, OUTPUT_STEP, FINAL_STEP } from '@/lib/storage/session';
 import { saveDeliberation } from '@/lib/storage/history';
 import { buildExport, downloadJSON } from '@/lib/storage/export';
 import { runDeliberation } from '@/lib/classification';
@@ -30,11 +31,21 @@ export default function Deliberate() {
   const current = useSession((s) => s.current);
   const step = useSession((s) => s.step);
   const start = useSession((s) => s.start);
+  const startAnother = useSession((s) => s.startAnother);
   const reset = useSession((s) => s.reset);
   const setStep = useSession((s) => s.setStep);
   const advanceStep = useSession((s) => s.advanceStep);
   const retreatStep = useSession((s) => s.retreatStep);
   const [savedToast, setSavedToast] = useState<string | null>(null);
+
+  // Autosave: write the active deliberation to Dexie 600ms after any change.
+  useEffect(() => {
+    if (!current) return;
+    const id = window.setTimeout(() => {
+      void saveDeliberation(current);
+    }, 600);
+    return () => window.clearTimeout(id);
+  }, [current]);
 
   useEffect(() => {
     if (savedToast) {
@@ -44,34 +55,12 @@ export default function Deliberate() {
   }, [savedToast]);
 
   if (!current || step === 0) {
-    return (
-      <div className="mx-auto max-w-prose px-6 py-24 text-center space-y-8">
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="space-y-5"
-        >
-          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-            {t('eyebrow')}
-          </p>
-          <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">
-            {t('start.title')}
-          </h1>
-          <p className="text-muted-foreground leading-relaxed max-w-prose mx-auto">
-            {t('start.subtitle')}
-          </p>
-        </motion.div>
-        <div className="flex flex-col items-center gap-3">
-          <Button size="lg" onClick={() => start()}>{t('startCta')}</Button>
-          <p className="text-xs text-muted-foreground">{t('startNote')}</p>
-        </div>
-      </div>
-    );
+    return <LandingNew onStart={() => start()} />;
   }
 
-  const isOutput = step > TOTAL_MAJOR;
-  const visibleStep = isOutput ? TOTAL_MAJOR : step;
+  const isReview = step === REVIEW_STEP;
+  const isOutput = step >= OUTPUT_STEP;
+  const visibleStep = isOutput || isReview ? TOTAL_MAJOR : step;
 
   const onSaveDraft = async () => {
     const updated: Deliberation = { ...current, status: 'draft', updatedAt: new Date().toISOString() };
@@ -96,12 +85,19 @@ export default function Deliberate() {
     const filename = `teb-deliberation-${updated.id.slice(0, 8)}.json`;
     downloadJSON(payload, filename);
   };
+  const onStartAnother = async () => {
+    // Make sure the current draft is persisted before we leave it.
+    await saveDeliberation({ ...current, status: 'draft', updatedAt: new Date().toISOString() });
+    startAnother();
+    setSavedToast(t('newStarted'));
+  };
 
   return (
     <div className="mx-auto max-w-form px-6 py-10 min-h-[calc(100vh-4rem)] flex flex-col">
       <CompactStepBar
         visibleStep={visibleStep}
-        isOutput={isOutput}
+        isOutput={isOutput || isReview}
+        outputBadgeKey={isOutput ? 'outputBadge' : isReview ? 'reviewBadge' : undefined}
         onJump={(n) => setStep(n as StepIndex)}
       />
 
@@ -110,7 +106,8 @@ export default function Deliberate() {
         {step === 2 && <Step2Truth onComplete={advanceStep} onBackToPrevious={retreatStep} />}
         {step === 3 && <Step3Maqasid onComplete={advanceStep} onBackToPrevious={retreatStep} />}
         {step === 4 && <Step4Sources onComplete={advanceStep} onBackToPrevious={retreatStep} />}
-        {step === 5 && <Step5Niyya onComplete={advanceStep} onBackToPrevious={retreatStep} />}
+        {step === FINAL_STEP && <Step5Niyya onComplete={advanceStep} onBackToPrevious={retreatStep} />}
+        {isReview && <Step6Review onComplete={advanceStep} onBackToPrevious={retreatStep} />}
         {isOutput && (
           <div className="w-full">
             <Output />
@@ -119,6 +116,9 @@ export default function Deliberate() {
       </div>
 
       <div className="border-t border-border pt-4 flex flex-wrap items-center justify-end gap-2">
+        <Button variant="ghost" size="sm" onClick={onStartAnother}>
+          <Plus size={14} aria-hidden="true" /> {t('newDeliberation')}
+        </Button>
         <Button variant="ghost" size="sm" onClick={onSaveDraft}>
           <Save size={14} aria-hidden="true" /> {t('actions.saveDraft', { ns: 'common' })}
         </Button>
@@ -153,13 +153,54 @@ export default function Deliberate() {
   );
 }
 
+function LandingNew({ onStart }: { onStart: () => void }) {
+  const { t } = useTranslation('deliberate');
+  const current = useSession((s) => s.current);
+  const setStep = useSession((s) => s.setStep);
+  // If a deliberation exists in memory but step is 0 (e.g. after reset), allow continuing.
+  const hasDraft = current !== null;
+  return (
+    <div className="mx-auto max-w-prose px-6 py-24 text-center space-y-10">
+      <motion.div
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+        className="space-y-5"
+      >
+        <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+          {t('eyebrow')}
+        </p>
+        <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">
+          {t('start.title')}
+        </h1>
+        <p className="text-muted-foreground leading-relaxed max-w-prose mx-auto">
+          {t('start.subtitle')}
+        </p>
+      </motion.div>
+      <div className="flex flex-col items-center gap-3">
+        <Button size="lg" onClick={onStart}>
+          {t('startCta')}
+        </Button>
+        {hasDraft && (
+          <Button variant="ghost" size="sm" onClick={() => setStep(1)}>
+            <ScrollText size={14} aria-hidden="true" /> {t('continueDraft')}
+          </Button>
+        )}
+        <p className="text-xs text-muted-foreground mt-1">{t('startNote')}</p>
+      </div>
+    </div>
+  );
+}
+
 function CompactStepBar({
   visibleStep,
   isOutput,
+  outputBadgeKey,
   onJump,
 }: {
   visibleStep: number;
   isOutput: boolean;
+  outputBadgeKey?: 'outputBadge' | 'reviewBadge';
   onJump: (n: number) => void;
 }) {
   const { t } = useTranslation('deliberate');
@@ -188,7 +229,7 @@ function CompactStepBar({
         })}
       </div>
       <p className="text-[0.7rem] uppercase tracking-[0.2em] text-muted-foreground text-center">
-        {isOutput ? t('outputBadge') : t(STEP_LABEL_KEYS[visibleStep - 1])}
+        {isOutput && outputBadgeKey ? t(outputBadgeKey) : t(STEP_LABEL_KEYS[visibleStep - 1])}
       </p>
     </div>
   );

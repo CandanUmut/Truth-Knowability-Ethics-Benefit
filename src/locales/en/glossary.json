@@ -1,0 +1,55 @@
+{
+  "label": "Glossary",
+  "yaqin": {
+    "title": "Yaqīn",
+    "body": "Certain knowledge — the highest grade of epistemic warrant. The classical tradition recognizes three channels: direct sense perception, the first principles of reason, and tawātur (mass-transmitted testimony where collusion is impossible)."
+  },
+  "zann": {
+    "title": "Ẓann",
+    "body": "Probable opinion — strong enough to act on, but not strong enough to ground foundational belief."
+  },
+  "shakk": {
+    "title": "Shakk",
+    "body": "Doubt — when the evidence on each side appears balanced. A weak basis for action; further investigation is called for."
+  },
+  "jahl": {
+    "title": "Jahl",
+    "body": "Ignorance. A claim at this level cannot anchor a moral decision."
+  },
+  "tawatur": {
+    "title": "Tawātur",
+    "body": "Mass-transmitted testimony where collusion or shared error is implausible. A genuine channel of certainty in the classical epistemology."
+  },
+  "niyya": {
+    "title": "Niyya",
+    "body": "Intention — the inner orientation that re-qualifies an outward act. The hadith says: ‘Actions are only by intentions.’ Two people can perform the same outward act with different intentions; they are doing two different acts in the morally relevant sense."
+  },
+  "maqasid": {
+    "title": "Maqāṣid (al-Sharīʿa)",
+    "body": "The objectives the Lawgiver pursues through revealed rulings — preservation of religion, life, intellect, lineage, and property. Al-Shāṭibī orders them across three tiers: ḍarūrī, ḥājī, taḥsīnī."
+  },
+  "daruri": {
+    "title": "Ḍarūrī",
+    "body": "Necessity — without it, human life collapses structurally. The classical five (religion, life, intellect, lineage, property) belong here. A clear ḍarūrī prohibition overrides most other calculations."
+  },
+  "haji": {
+    "title": "Ḥājī",
+    "body": "Need — not strictly indispensable, but its absence creates significant hardship. The Sharīʿa's licit concessions (rukhṣas) operate at this level."
+  },
+  "tahsini": {
+    "title": "Taḥsīnī",
+    "body": "Refinement — the dignity, beauty, and excellence of human life. Preserved as long as the higher tiers are not breached."
+  },
+  "haqq": {
+    "title": "Ḥaqq",
+    "body": "Truth as reality — a thing being what it presents itself to be. The reality side of Russell's ‘correspondence' relation."
+  },
+  "sidq": {
+    "title": "Ṣidq",
+    "body": "Truth as speech — the proposition matches reality. The speech side of the same correspondence relation."
+  },
+  "ribā": {
+    "title": "Ribā (Usury)",
+    "body": "Gain from a loan or from an unequal exchange of like commodities. Forbidden in clear Qur'ānic terms (Q. 2:275 onward). Modern financial application is heavily debated."
+  }
+}

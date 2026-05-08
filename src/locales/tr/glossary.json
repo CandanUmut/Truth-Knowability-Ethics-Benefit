@@ -1,0 +1,55 @@
+{
+  "label": "Sözlük",
+  "yaqin": {
+    "title": "Yakîn",
+    "body": "Şüphe götürmeyen kesin bilgi. Klasik geleneğin kabul ettiği üç kaynak: doğrudan duyu, aklın ilk ilkeleri ve tevatür (sayısı bağımsız ve hata ortaklığı imkânsız tanıklıkların aktardığı bilgi)."
+  },
+  "zann": {
+    "title": "Zann",
+    "body": "Olasılık derecesinde olan, kesin olmayan kanaat. Eyleme dayanak olabilir ama temel inanç için yetmez."
+  },
+  "shakk": {
+    "title": "Şek",
+    "body": "İki tarafı eşit görünen şüphe. Karar için zayıf bir temeldir; daha çok araştırma gerektirir."
+  },
+  "jahl": {
+    "title": "Cehl",
+    "body": "Bilgisizlik. Bu seviyedeki bir iddia üzerine ahlâkî karar inşa edilemez."
+  },
+  "tawatur": {
+    "title": "Tevatür",
+    "body": "Aralarında gizli anlaşma imkânsız sayıda bağımsız tanığın aktardığı haber. Yakîn üretebilen bir bilgi kanalıdır."
+  },
+  "niyya": {
+    "title": "Niyet",
+    "body": "Bir eylemi içsel olarak yönlendiren kasıt. Hadis-i şerif: ‘Ameller niyetlere göredir.’ İki kişi aynı dış eylemi yapabilir, niyetleri farklıysa eylemleri ahlâken farklıdır."
+  },
+  "maqasid": {
+    "title": "Makâsıd (el-Şerîʿa)",
+    "body": "Şâriʿin, dinin hükümleri arkasında gözettiği amaçlar — dinin, canın, aklın, neslin ve malın korunması. Şâtıbî bunları üç katmana ayırır: zarûrî, hâcî, tahsînî."
+  },
+  "daruri": {
+    "title": "Zarûrî",
+    "body": "Olmadan insanî hayatın yapısal olarak çöktüğü zorunlu iyi. Beş zarûrî maksat: din, can, akıl, nesil, mal. Bu seviyede bir yasak diğer hesapları ezer."
+  },
+  "haji": {
+    "title": "Hâcî",
+    "body": "Olmazsa olmazlardan değil ama yokluğu ciddi sıkıntı yaratan iyi. Şâriʿin ruhsatları (kolaylıkları) bu katmanda işler."
+  },
+  "tahsini": {
+    "title": "Tahsînî",
+    "body": "İnsanî hayatın güzellik, edep, incelik boyutu. Diğer iki katmanı feda etmediği sürece korunur."
+  },
+  "haqq": {
+    "title": "Hak",
+    "body": "Varlığın gerçekliği, ‘gerçekten olduğu gibi olmak’. Russell'ın ‘gerçeğe karşılık gelme’ ilişkisinin gerçek tarafı."
+  },
+  "sidq": {
+    "title": "Sıdk",
+    "body": "Sözün doğruluğu, bir önermenin söylediği ile gerçeğin örtüşmesi. Russell'ın ilişkisinin söz tarafı."
+  },
+  "ribā": {
+    "title": "Ribâ (Faiz)",
+    "body": "Borç verme veya cinsi aynı malların eşitsiz değişiminden doğan kazanç. Kur'ân'da açıkça yasaklanmıştır (Q. 2:275 ve devamı). Çağdaş finans bağlamında geniş tartışma vardır."
+  }
+}

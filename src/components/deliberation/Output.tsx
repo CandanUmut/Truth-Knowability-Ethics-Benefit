@@ -5,6 +5,7 @@ import { useSession } from '@/lib/storage/session';
 import { runDeliberation } from '@/lib/classification';
 import { CONFIDENCE_SCORE, type Deliberation, type DeliberationResult, type Maqsad, MAQASID } from '@/types/deliberation';
 import { TetradRadar, type TetradPoint } from './TetradRadar';
+import { GlossaryTerm } from '@/components/common/GlossaryTerm';
 import { cn } from '@/lib/utils';
 
 interface DerivedRadar {
@@ -134,7 +135,8 @@ export function Output() {
                   </p>
                   {score && score.niyyaMultiplier !== 1 && (
                     <p>
-                      {t('output.niyyaMultiplier')}: <span className="tabular-nums">×{score.niyyaMultiplier.toFixed(2)}</span>
+                      <GlossaryTerm term="niyya">{t('output.niyyaMultiplier')}</GlossaryTerm>:{' '}
+                      <span className="tabular-nums">×{score.niyyaMultiplier.toFixed(2)}</span>
                     </p>
                   )}
                 </div>

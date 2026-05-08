@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { ScrollText, Download, Upload, Trash2, FileCheck2, FilePen } from 'lucide-react';
+import { ScrollText, Download, Upload, Trash2, FileCheck2, FilePen, Plus } from 'lucide-react';
 import { PageHeader } from '@/components/common/PageHeader';
 import { Button } from '@/components/ui/button';
 import { buttonVariants } from '@/components/ui/button-variants';
@@ -26,6 +26,7 @@ export default function History() {
   const [error, setError] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const loadFromHistory = useSession((s) => s.loadFromHistory);
+  const activeId = useSession((s) => s.current?.id);
 
   const refresh = async () => {
     setLoading(true);
@@ -79,6 +80,12 @@ export default function History() {
       <PageHeader eyebrow={t('eyebrow')} title={t('title')} subtitle={t('subtitle')} />
 
       <div className="flex flex-wrap items-center gap-2">
+        <Link
+          to="/deliberate"
+          className={cn(buttonVariants({ variant: 'primary', size: 'sm' }))}
+        >
+          <Plus size={14} aria-hidden="true" /> {t('newCta')}
+        </Link>
         <Button
           variant="outline"
           size="sm"
@@ -131,13 +138,25 @@ export default function History() {
           {items.map((d) => {
             const StatusIcon = d.status === 'final' ? FileCheck2 : FilePen;
             const updated = new Date(d.updatedAt);
+            const isActive = d.id === activeId;
             return (
-              <li key={d.id} className="rounded-2xl border border-border p-5 space-y-3">
+              <li
+                key={d.id}
+                className={cn(
+                  'rounded-2xl border p-5 space-y-3',
+                  isActive ? 'border-foreground/40 bg-secondary/20' : 'border-border'
+                )}
+              >
                 <div className="flex items-start justify-between gap-4">
                   <div className="space-y-1 min-w-0">
-                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground flex-wrap">
                       <StatusIcon size={12} aria-hidden="true" />
                       {t(`status.${d.status}`)}
+                      {isActive && (
+                        <span className="rounded-full bg-foreground text-background px-2 py-0.5 text-[0.65rem] uppercase tracking-wider font-medium">
+                          {t('activeBadge')}
+                        </span>
+                      )}
                       <span aria-hidden="true">·</span>
                       <time dateTime={d.updatedAt}>
                         {updated.toLocaleDateString(i18n.resolvedLanguage)}{' '}

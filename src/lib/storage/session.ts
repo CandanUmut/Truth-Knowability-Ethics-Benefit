@@ -15,7 +15,18 @@ import {
   type TruthClaim,
 } from '@/types/deliberation';
 
-export type StepIndex = 0 | 1 | 2 | 3 | 4 | 5 | 6;
+export type StepIndex = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7;
+
+/**
+ * Step semantics:
+ *  0 = no active deliberation (landing)
+ *  1..5 = the five deliberation steps
+ *  6 = quick review of smart defaults before the dossier
+ *  7 = dossier output
+ */
+export const REVIEW_STEP: StepIndex = 6;
+export const OUTPUT_STEP: StepIndex = 7;
+export const FINAL_STEP: StepIndex = 5;
 
 type SessionState = {
   current: Deliberation | null;
@@ -23,6 +34,8 @@ type SessionState = {
   /** Sub-step within the current major step. Reset to 1 whenever step changes. */
   subStep: number;
   start: () => Deliberation;
+  /** Save current to Dexie via auto-save and create a fresh deliberation. */
+  startAnother: () => Deliberation;
   reset: () => void;
   setStep: (step: StepIndex) => void;
   advanceStep: () => void;
@@ -64,10 +77,15 @@ export const useSession = create<SessionState>()(
         set({ current: fresh, step: 1, subStep: 1 });
         return fresh;
       },
+      startAnother: () => {
+        const fresh = newDeliberation();
+        set({ current: fresh, step: 1, subStep: 1 });
+        return fresh;
+      },
       reset: () => set({ current: null, step: 0, subStep: 1 }),
       setStep: (step) => set({ step, subStep: 1 }),
       advanceStep: () => {
-        const next = Math.min(6, get().step + 1) as StepIndex;
+        const next = Math.min(7, get().step + 1) as StepIndex;
         set({ step: next, subStep: 1 });
       },
       retreatStep: () => {

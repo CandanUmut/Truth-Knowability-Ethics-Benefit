@@ -11,6 +11,25 @@
   "outputTitle": "Müzakere haritası",
   "outputSubtitle": "Bu bir hüküm değil, dört eksende size geri yansıtılan yapılandırılmış bir akıl yürütmedir.",
   "outputBadge": "Harita",
+  "reviewBadge": "Hızlı gözden geçirme",
+  "newDeliberation": "Yeni müzakere",
+  "newStarted": "Yeni müzakere başlatıldı. Önceki Geçmiş'e kaydedildi.",
+  "continueDraft": "Yarım kalan müzakereye devam et",
+  "review": {
+    "title": "Hızlı bir gözden geçirme.",
+    "subtitle": "Hesaba girmeden önce, çerçevenin sizin yerinize varsaydığı birkaç şeyi ister misiniz değiştirmek?",
+    "helper": "Tüm bunları olduğu gibi bırakıp doğrudan haritaya geçebilirsiniz.",
+    "seeMap": "Haritayı göster",
+    "timeHorizon": "Zaman ufku",
+    "reversibility": "Geri dönülebilirlik",
+    "reversibilityHelp": "1: tamamen geri dönülemez · 5: kolayca geri alınabilir.",
+    "stakes": "Korunan iyiler için pay",
+    "stakesHelp": {
+      "before": "Bu kararın ",
+      "term": "korunan iyilere",
+      "after": " (din, can, akıl, nesil, mal) ne kadar dokunduğu — her birine ayrı ayrı."
+    }
+  },
   "seeMap": "Haritayı gör",
   "backToSteps": "Adımlara geri dön",
   "savedDraft": "Taslak kaydedildi",

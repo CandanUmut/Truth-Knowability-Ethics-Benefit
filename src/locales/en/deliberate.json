@@ -11,6 +11,25 @@
   "outputTitle": "Deliberation map",
   "outputSubtitle": "Not a verdict — a structured reflection on four moments, returned to you.",
   "outputBadge": "Map",
+  "reviewBadge": "Quick review",
+  "newDeliberation": "New deliberation",
+  "newStarted": "New deliberation started. The previous one is in History.",
+  "continueDraft": "Continue your in-progress deliberation",
+  "review": {
+    "title": "A quick review.",
+    "subtitle": "Before we compute, would you like to adjust anything the framework assumed for you?",
+    "helper": "You can leave all of these as they are and go straight to the map.",
+    "seeMap": "Show me the map",
+    "timeHorizon": "Time horizon",
+    "reversibility": "Reversibility",
+    "reversibilityHelp": "1: fully irreversible · 5: easily reversible.",
+    "stakes": "Stakes on the protected goods",
+    "stakesHelp": {
+      "before": "How much this decision touches on each of the ",
+      "term": "protected goods",
+      "after": " — religion, life, intellect, lineage, property — separately."
+    }
+  },
   "seeMap": "See the map",
   "backToSteps": "Back to steps",
   "savedDraft": "Draft saved",
