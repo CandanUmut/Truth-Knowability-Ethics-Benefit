@@ -1,329 +1,471 @@
+import { useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Label } from '@/components/ui/label';
-import { Segmented } from '@/components/ui/segmented';
-import { StepperScale } from '@/components/ui/stepper-scale';
+import { ConversationalScreen } from './ConversationalScreen';
+import { PlainScale } from '@/components/ui/plain-scale';
 import { useSession } from '@/lib/storage/session';
 import {
-  AFFECTED_PARTIES,
-  MAQASID,
-  TAHA_AXES,
-  type AffectedParty,
-  type Confidence,
-  type DeliberationOption,
-  type Direction,
-  type Magnitude,
-  type Maqsad,
-  type MaqsidImpact,
-  type TahaAxis,
-  type TahaImpact,
-  type Tier,
+  HARM_CONSEQUENCES,
+  HELP_CONSEQUENCES,
+  SURENESS_TO_CONFIDENCE,
+  tierForMagnitude,
+  findConsequence,
+  type ConsequenceTemplate,
+} from '@/data/consequences';
+import type {
+  DeliberationOption,
+  Magnitude,
+  MaqsidImpact,
+  TahaImpact,
 } from '@/types/deliberation';
+import { cn } from '@/lib/utils';
 
-const DIRECTIONS: Direction[] = ['positive', 'negative', 'neutral'];
-const TIERS: Tier[] = ['daruri', 'haji', 'tahsini'];
-const CONFIDENCES: Confidence[] = ['yaqin', 'zann_strong', 'zann', 'shakk', 'jahl'];
+interface Props {
+  onComplete: () => void;
+  onBackToPrevious?: () => void;
+}
 
-export function Step3Maqasid() {
+/**
+ * Each option contributes 2 + (#harms) + 2 + (#helps) sub-screens.
+ * Sub-screens within a single option, in order:
+ *   - harm-pick: multi-select of harm consequences
+ *   - for each picked harm: detail (severity + sureness)
+ *   - help-pick: multi-select of help consequences
+ *   - for each picked help: detail (severity + sureness)
+ *
+ * We compute a flat plan of screens at render time from the persisted state.
+ */
+
+interface ScreenPlan {
+  optionIndex: number;
+  optionId: string;
+  kind: 'harm-pick' | 'help-pick' | 'harm-detail' | 'help-detail';
+  consequenceId?: string;
+}
+
+function planFor(options: DeliberationOption[]): ScreenPlan[] {
+  const plan: ScreenPlan[] = [];
+  options.forEach((opt, optionIndex) => {
+    plan.push({ optionIndex, optionId: opt.id, kind: 'harm-pick' });
+    const harmIds = opt.maqasidImpacts
+      .filter((i) => i.direction === 'negative')
+      .map((i) => (i.notes ?? '').replace(/^cid:/, ''))
+      .filter(Boolean)
+      .concat(
+        opt.tahaImpacts.filter((i) => i.direction === 'negative').map((i) => (i.id))
+      );
+    // We index detail-screens by the consequence template id, derived from impact.notes ('cid:<id>').
+    for (const impact of opt.maqasidImpacts.filter((i) => i.direction === 'negative')) {
+      const cid = (impact.notes ?? '').replace(/^cid:/, '');
+      if (cid) plan.push({ optionIndex, optionId: opt.id, kind: 'harm-detail', consequenceId: cid });
+    }
+    for (const impact of opt.tahaImpacts.filter((i) => i.direction === 'negative')) {
+      // notes don't exist on TahaImpact in the type; we use the impact.id stored as the consequence template id.
+      const cid = harmIdsCidForTaha(impact.id, opt);
+      if (cid) plan.push({ optionIndex, optionId: opt.id, kind: 'harm-detail', consequenceId: cid });
+    }
+    plan.push({ optionIndex, optionId: opt.id, kind: 'help-pick' });
+    for (const impact of opt.maqasidImpacts.filter((i) => i.direction === 'positive')) {
+      const cid = (impact.notes ?? '').replace(/^cid:/, '');
+      if (cid) plan.push({ optionIndex, optionId: opt.id, kind: 'help-detail', consequenceId: cid });
+    }
+    for (const impact of opt.tahaImpacts.filter((i) => i.direction === 'positive')) {
+      const cid = harmIdsCidForTaha(impact.id, opt);
+      if (cid) plan.push({ optionIndex, optionId: opt.id, kind: 'help-detail', consequenceId: cid });
+    }
+    void harmIds;
+  });
+  return plan;
+}
+
+/** Resolve the consequence template id stored on a Tāhā impact. We persist
+ * the template id in the impact's `id` field, prefixed with 'cid:' for clarity. */
+function harmIdsCidForTaha(impactId: string, _opt: DeliberationOption): string | undefined {
+  if (impactId.startsWith('cid:')) return impactId.slice(4);
+  return undefined;
+}
+
+export function Step3Maqasid({ onComplete, onBackToPrevious }: Props) {
   const { t } = useTranslation('deliberate');
+  const subStep = useSession((s) => s.subStep);
+  const setSubStep = useSession((s) => s.setSubStep);
   const current = useSession((s) => s.current);
   const updateCase = useSession((s) => s.updateCase);
 
-  if (!current) return null;
-  const options = current.case.options;
+  const options = useMemo(
+    () => current?.case.options ?? [],
+    [current?.case.options]
+  );
+  const plan = useMemo(() => planFor(options), [options]);
+  const idx = Math.min(Math.max(subStep, 1), Math.max(plan.length, 1)) - 1;
 
-  const updateOption = (id: string, patch: Partial<DeliberationOption>) => {
-    updateCase({
-      options: options.map((o) => (o.id === id ? { ...o, ...patch } : o)),
-    });
+  // Normalize "last sub-step" sentinel from retreatStep().
+  useEffect(() => {
+    if (subStep > plan.length && plan.length > 0) {
+      setSubStep(plan.length);
+    }
+  }, [subStep, plan.length, setSubStep]);
+
+  if (!current || options.length < 2 || plan.length === 0) {
+    return (
+      <ConversationalScreen
+        title={t('step3.empty.title')}
+        subtitle={t('step3.empty.body')}
+        onBack={onBackToPrevious}
+        onContinue={onComplete}
+      >
+        <div />
+      </ConversationalScreen>
+    );
+  }
+
+  const screen = plan[idx];
+  const option = options[screen.optionIndex];
+
+  const onAdvance = () => {
+    if (idx + 1 >= plan.length) onComplete();
+    else setSubStep(idx + 2);
+  };
+  const onRetreat = () => {
+    if (idx === 0) onBackToPrevious?.();
+    else setSubStep(idx);
   };
 
   return (
-    <div className="space-y-10">
-      <p className="text-muted-foreground leading-relaxed">{t('step3.intro')}</p>
-
-      {options.length === 0 && (
-        <div className="rounded-2xl border border-dashed border-border p-8 text-center">
-          <p className="text-sm text-muted-foreground">{t('step3.noOptions')}</p>
-        </div>
+    <>
+      {screen.kind === 'harm-pick' && (
+        <ConsequencePickScreen
+          progressLabel={t('step3.progress', {
+            optionLetter: String.fromCharCode(65 + screen.optionIndex),
+            total: options.length,
+          })}
+          option={option}
+          direction="negative"
+          consequences={HARM_CONSEQUENCES}
+          onAdvance={onAdvance}
+          onRetreat={onRetreat}
+          onUpdate={(patch) => updateCase({ options: options.map((o) => (o.id === option.id ? { ...o, ...patch } : o)) })}
+        />
       )}
-
-      {options.map((option, optIdx) => (
-        <section key={option.id} className="space-y-6">
-          <div>
-            <p className="text-xs uppercase tracking-wider text-muted-foreground">
-              {t('step3.option')} {String.fromCharCode(65 + optIdx)}
-            </p>
-            <p className="text-lg font-semibold text-foreground mt-0.5">
-              {option.label || t('step3.untitled')}
-            </p>
-          </div>
-
-          <div className="space-y-4">
-            <Label>{t('step3.maqasidLabel')}</Label>
-            {MAQASID.map((m) => {
-              const impact = option.maqasidImpacts.find((i) => i.maqsad === m);
-              return (
-                <MaqsidImpactCard
-                  key={m}
-                  maqsad={m}
-                  impact={impact}
-                  onChange={(patch) => {
-                    if (!patch && impact) {
-                      updateOption(option.id, {
-                        maqasidImpacts: option.maqasidImpacts.filter((i) => i.id !== impact.id),
-                      });
-                    } else if (patch) {
-                      const existing = impact;
-                      const merged: MaqsidImpact = {
-                        id: existing?.id ?? crypto.randomUUID(),
-                        maqsad: m,
-                        direction: 'neutral',
-                        tier: 'daruri',
-                        magnitude: 3,
-                        causalConfidence: 'zann_strong',
-                        affected: ['self'],
-                        ...existing,
-                        ...patch,
-                      };
-                      updateOption(option.id, {
-                        maqasidImpacts: existing
-                          ? option.maqasidImpacts.map((i) => (i.id === existing.id ? merged : i))
-                          : [...option.maqasidImpacts, merged],
-                      });
-                    }
-                  }}
-                />
-              );
-            })}
-          </div>
-
-          <div className="space-y-4">
-            <Label>{t('step3.tahaLabel')}</Label>
-            {TAHA_AXES.map((a) => {
-              const impact = option.tahaImpacts.find((i) => i.axis === a);
-              return (
-                <TahaImpactCard
-                  key={a}
-                  axis={a}
-                  impact={impact}
-                  onChange={(patch) => {
-                    if (!patch && impact) {
-                      updateOption(option.id, {
-                        tahaImpacts: option.tahaImpacts.filter((i) => i.id !== impact.id),
-                      });
-                    } else if (patch) {
-                      const existing = impact;
-                      const merged: TahaImpact = {
-                        id: existing?.id ?? crypto.randomUUID(),
-                        axis: a,
-                        direction: 'neutral',
-                        tier: 'tahsini',
-                        magnitude: 3,
-                        causalConfidence: 'zann_strong',
-                        ...existing,
-                        ...patch,
-                      };
-                      updateOption(option.id, {
-                        tahaImpacts: existing
-                          ? option.tahaImpacts.map((i) => (i.id === existing.id ? merged : i))
-                          : [...option.tahaImpacts, merged],
-                      });
-                    }
-                  }}
-                />
-              );
-            })}
-          </div>
-        </section>
-      ))}
-    </div>
+      {screen.kind === 'help-pick' && (
+        <ConsequencePickScreen
+          progressLabel={t('step3.progress', {
+            optionLetter: String.fromCharCode(65 + screen.optionIndex),
+            total: options.length,
+          })}
+          option={option}
+          direction="positive"
+          consequences={HELP_CONSEQUENCES}
+          onAdvance={onAdvance}
+          onRetreat={onRetreat}
+          onUpdate={(patch) => updateCase({ options: options.map((o) => (o.id === option.id ? { ...o, ...patch } : o)) })}
+        />
+      )}
+      {(screen.kind === 'harm-detail' || screen.kind === 'help-detail') && screen.consequenceId && (
+        <ConsequenceDetailScreen
+          progressLabel={t('step3.progress', {
+            optionLetter: String.fromCharCode(65 + screen.optionIndex),
+            total: options.length,
+          })}
+          option={option}
+          consequenceId={screen.consequenceId}
+          direction={screen.kind === 'harm-detail' ? 'negative' : 'positive'}
+          onAdvance={onAdvance}
+          onRetreat={onRetreat}
+          onUpdate={(patch) => updateCase({ options: options.map((o) => (o.id === option.id ? { ...o, ...patch } : o)) })}
+        />
+      )}
+    </>
   );
 }
 
-function MaqsidImpactCard({
-  maqsad,
-  impact,
-  onChange,
-}: {
-  maqsad: Maqsad;
-  impact?: MaqsidImpact;
-  onChange: (patch: Partial<MaqsidImpact> | null) => void;
-}) {
-  const { t } = useTranslation('deliberate');
-  const direction = impact?.direction ?? 'neutral';
-  const isActive = direction !== 'neutral';
+/* --------- Consequence multi-pick screen --------- */
 
-  const toggleAffected = (party: AffectedParty) => {
-    const current = impact?.affected ?? [];
-    if (current.includes(party)) {
-      onChange({ affected: current.filter((p) => p !== party) });
+interface PickProps {
+  progressLabel: string;
+  option: DeliberationOption;
+  direction: 'positive' | 'negative';
+  consequences: ConsequenceTemplate[];
+  onAdvance: () => void;
+  onRetreat: () => void;
+  onUpdate: (patch: Partial<DeliberationOption>) => void;
+}
+
+function ConsequencePickScreen({
+  progressLabel,
+  option,
+  direction,
+  consequences,
+  onAdvance,
+  onRetreat,
+  onUpdate,
+}: PickProps) {
+  const { t } = useTranslation('deliberate');
+  const titleKey = direction === 'negative' ? 'step3.harmPick.title' : 'step3.helpPick.title';
+  const subtitleKey = direction === 'negative' ? 'step3.harmPick.subtitle' : 'step3.helpPick.subtitle';
+  const helperKey = direction === 'negative' ? 'step3.harmPick.helper' : 'step3.helpPick.helper';
+
+  const selectedIds = collectSelectedConsequenceIds(option, direction);
+
+  const toggle = (template: ConsequenceTemplate) => {
+    const isSelected = selectedIds.has(template.id);
+    if (isSelected) {
+      onUpdate(removeConsequence(option, template, direction));
     } else {
-      onChange({ affected: [...current, party] });
+      onUpdate(addConsequence(option, template, direction));
     }
   };
 
   return (
-    <div className="rounded-2xl border border-border p-4 space-y-4">
-      <div className="flex items-baseline justify-between">
-        <div>
-          <p className="text-sm font-semibold">{t(`maqasid.${maqsad}.label`)}</p>
-          <p className="text-xs text-muted-foreground italic">{t(`maqasid.${maqsad}.term`)}</p>
-        </div>
-        <Segmented<Direction>
-          value={direction}
-          onChange={(v) => onChange({ direction: v })}
-          options={DIRECTIONS.map((d) => ({
-            value: d,
-            label: t(`step3.direction.${d}`),
-          }))}
-          ariaLabel={t('step3.directionLabel')}
-          size="sm"
-        />
+    <ConversationalScreen
+      progress={progressLabel}
+      title={
+        <>
+          {t(titleKey, { option: option.label || t('step3.untitledOption') })}
+        </>
+      }
+      subtitle={t(subtitleKey)}
+      helper={t(helperKey)}
+      onBack={onRetreat}
+      onContinue={onAdvance}
+      continueLabel={selectedIds.size === 0 ? t('step3.skipNothingFits') : undefined}
+    >
+      <div className="space-y-3 mx-auto max-w-md">
+        {consequences.map((c) => {
+          const active = selectedIds.has(c.id);
+          return (
+            <button
+              key={c.id}
+              type="button"
+              role="checkbox"
+              aria-checked={active}
+              onClick={() => toggle(c)}
+              className={cn(
+                'w-full rounded-2xl border p-4 text-left transition-colors',
+                active
+                  ? 'bg-foreground text-background border-foreground'
+                  : 'bg-background border-border hover:border-foreground/40'
+              )}
+            >
+              <p className="text-sm font-semibold">{t(c.i18nLabel)}</p>
+              <p className={cn('text-xs mt-1', active ? 'text-background/80' : 'text-muted-foreground')}>
+                {t(c.i18nDesc)}
+              </p>
+            </button>
+          );
+        })}
       </div>
-
-      {isActive && (
-        <div className="space-y-4 pt-2">
-          <div>
-            <Label>{t('step3.tierLabel')}</Label>
-            <p className="text-xs text-muted-foreground mb-2">{t('step3.tierHelp')}</p>
-            <Segmented<Tier>
-              value={impact?.tier ?? null}
-              onChange={(v) => onChange({ tier: v })}
-              options={TIERS.map((tier) => ({
-                value: tier,
-                label: t(`tier.${tier}.label`),
-                description: t(`tier.${tier}.desc`),
-              }))}
-              ariaLabel={t('step3.tierLabel')}
-              size="sm"
-            />
-          </div>
-
-          <div>
-            <Label>{t('step3.magnitudeLabel')}</Label>
-            <StepperScale
-              value={impact?.magnitude ?? null}
-              onChange={(v) => onChange({ magnitude: v as Magnitude })}
-              ariaLabel={t('step3.magnitudeLabel')}
-              lowLabel={t('step3.magnitudeLow')}
-              highLabel={t('step3.magnitudeHigh')}
-            />
-          </div>
-
-          <div>
-            <Label>{t('step3.causalConfidenceLabel')}</Label>
-            <Segmented<Confidence>
-              value={impact?.causalConfidence ?? null}
-              onChange={(v) => onChange({ causalConfidence: v })}
-              options={CONFIDENCES.map((c) => ({
-                value: c,
-                label: t(`confidence.${c}.label`),
-                description: t(`confidence.${c}.term`),
-              }))}
-              ariaLabel={t('step3.causalConfidenceLabel')}
-              size="sm"
-            />
-          </div>
-
-          <div>
-            <Label>{t('step3.affectedLabel')}</Label>
-            <div className="flex flex-wrap gap-2">
-              {AFFECTED_PARTIES.map((p) => {
-                const active = impact?.affected.includes(p);
-                return (
-                  <button
-                    key={p}
-                    type="button"
-                    onClick={() => toggleAffected(p)}
-                    className={
-                      'rounded-full border px-3 h-8 text-xs transition-colors ' +
-                      (active
-                        ? 'bg-foreground text-background border-foreground'
-                        : 'bg-background border-border text-muted-foreground hover:text-foreground')
-                    }
-                  >
-                    {t(`step3.affected.${p}`)}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
+    </ConversationalScreen>
   );
 }
 
-function TahaImpactCard({
-  axis,
-  impact,
-  onChange,
-}: {
-  axis: TahaAxis;
-  impact?: TahaImpact;
-  onChange: (patch: Partial<TahaImpact> | null) => void;
-}) {
+/* --------- Consequence detail screen (severity + sureness) --------- */
+
+interface DetailProps {
+  progressLabel: string;
+  option: DeliberationOption;
+  consequenceId: string;
+  direction: 'positive' | 'negative';
+  onAdvance: () => void;
+  onRetreat: () => void;
+  onUpdate: (patch: Partial<DeliberationOption>) => void;
+}
+
+function ConsequenceDetailScreen({
+  progressLabel,
+  option,
+  consequenceId,
+  direction,
+  onAdvance,
+  onRetreat,
+  onUpdate,
+}: DetailProps) {
   const { t } = useTranslation('deliberate');
-  const direction = impact?.direction ?? 'neutral';
-  const isActive = direction !== 'neutral';
+  const template = findConsequence(consequenceId);
+  if (!template) return null;
+
+  const impact = findImpactFor(option, template, direction);
+
+  const setMagnitude = (v: 1 | 2 | 3 | 4 | 5) => {
+    if (template.maqsad) {
+      const next = option.maqasidImpacts.map((i) => {
+        if (i.id !== impact?.id) return i;
+        return { ...i, magnitude: v as Magnitude, tier: tierForMagnitude(v) };
+      });
+      onUpdate({ maqasidImpacts: next });
+    } else if (template.taha) {
+      const next = option.tahaImpacts.map((i) => {
+        if (i.id !== impact?.id) return i;
+        return { ...i, magnitude: v as Magnitude, tier: tierForMagnitude(v) };
+      });
+      onUpdate({ tahaImpacts: next });
+    }
+  };
+
+  const setSureness = (v: 1 | 2 | 3 | 4 | 5) => {
+    const conf = SURENESS_TO_CONFIDENCE[v];
+    if (template.maqsad) {
+      const next = option.maqasidImpacts.map((i) => {
+        if (i.id !== impact?.id) return i;
+        return { ...i, causalConfidence: conf };
+      });
+      onUpdate({ maqasidImpacts: next });
+    } else if (template.taha) {
+      const next = option.tahaImpacts.map((i) => {
+        if (i.id !== impact?.id) return i;
+        return { ...i, causalConfidence: conf };
+      });
+      onUpdate({ tahaImpacts: next });
+    }
+  };
+
+  const titleKey = direction === 'negative' ? 'step3.detail.harmTitle' : 'step3.detail.helpTitle';
+  const magLabel = direction === 'negative' ? 'severity' : 'help';
 
   return (
-    <div className="rounded-2xl border border-border p-4 space-y-4">
-      <div className="flex items-baseline justify-between">
+    <ConversationalScreen
+      progress={progressLabel}
+      title={t(titleKey, { label: t(template.i18nLabel) })}
+      subtitle={t('step3.detail.subtitle')}
+      onBack={onRetreat}
+      onContinue={onAdvance}
+      continueDisabled={!impact?.magnitude || !impact?.causalConfidence}
+    >
+      <div className="mx-auto max-w-md space-y-10">
         <div>
-          <p className="text-sm font-semibold">{t(`taha.${axis}.label`)}</p>
-          <p className="text-xs text-muted-foreground italic">{t(`taha.${axis}.term`)}</p>
+          <p className="text-sm font-medium mb-3 text-center">
+            {direction === 'negative' ? t('step3.detail.howBigHarm') : t('step3.detail.howBigHelp')}
+          </p>
+          <PlainScale
+            value={(impact?.magnitude ?? null) as 1 | 2 | 3 | 4 | 5 | null}
+            onChange={setMagnitude}
+            variant={magLabel}
+            ariaLabel={direction === 'negative' ? t('step3.detail.howBigHarm') : t('step3.detail.howBigHelp')}
+          />
         </div>
-        <Segmented<Direction>
-          value={direction}
-          onChange={(v) => onChange({ direction: v })}
-          options={DIRECTIONS.map((d) => ({
-            value: d,
-            label: t(`step3.direction.${d}`),
-          }))}
-          ariaLabel={t('step3.directionLabel')}
-          size="sm"
-        />
+        <div>
+          <p className="text-sm font-medium mb-3 text-center">{t('step3.detail.howSure')}</p>
+          <PlainScale
+            value={(confidenceToSureness(impact?.causalConfidence) ?? null) as 1 | 2 | 3 | 4 | 5 | null}
+            onChange={setSureness}
+            variant="sureness"
+            ariaLabel={t('step3.detail.howSure')}
+          />
+        </div>
       </div>
-
-      {isActive && (
-        <div className="space-y-4 pt-2">
-          <div>
-            <Label>{t('step3.tierLabel')}</Label>
-            <Segmented<Tier>
-              value={impact?.tier ?? null}
-              onChange={(v) => onChange({ tier: v })}
-              options={TIERS.map((tier) => ({
-                value: tier,
-                label: t(`tier.${tier}.label`),
-              }))}
-              ariaLabel={t('step3.tierLabel')}
-              size="sm"
-            />
-          </div>
-          <div>
-            <Label>{t('step3.magnitudeLabel')}</Label>
-            <StepperScale
-              value={impact?.magnitude ?? null}
-              onChange={(v) => onChange({ magnitude: v as Magnitude })}
-              ariaLabel={t('step3.magnitudeLabel')}
-            />
-          </div>
-          <div>
-            <Label>{t('step3.causalConfidenceLabel')}</Label>
-            <Segmented<Confidence>
-              value={impact?.causalConfidence ?? null}
-              onChange={(v) => onChange({ causalConfidence: v })}
-              options={CONFIDENCES.map((c) => ({
-                value: c,
-                label: t(`confidence.${c}.label`),
-              }))}
-              ariaLabel={t('step3.causalConfidenceLabel')}
-              size="sm"
-            />
-          </div>
-        </div>
-      )}
-    </div>
+    </ConversationalScreen>
   );
+}
+
+function confidenceToSureness(c: MaqsidImpact['causalConfidence'] | undefined): 1 | 2 | 3 | 4 | 5 | undefined {
+  if (!c) return undefined;
+  const map: Record<string, 1 | 2 | 3 | 4 | 5> = {
+    jahl: 1,
+    shakk: 2,
+    zann: 3,
+    zann_strong: 4,
+    yaqin: 5,
+  };
+  return map[c];
+}
+
+/* --------- Helpers: stable consequence ↔ impact mapping --------- */
+
+function impactCidForMaqasid(impact: MaqsidImpact): string | undefined {
+  if (impact.notes && impact.notes.startsWith('cid:')) return impact.notes.slice(4);
+  return undefined;
+}
+
+function impactCidForTaha(impact: TahaImpact): string | undefined {
+  if (impact.id.startsWith('cid:')) return impact.id.slice(4);
+  return undefined;
+}
+
+function collectSelectedConsequenceIds(
+  option: DeliberationOption,
+  direction: 'positive' | 'negative'
+): Set<string> {
+  const set = new Set<string>();
+  for (const i of option.maqasidImpacts) {
+    if (i.direction !== direction) continue;
+    const cid = impactCidForMaqasid(i);
+    if (cid) set.add(cid);
+  }
+  for (const i of option.tahaImpacts) {
+    if (i.direction !== direction) continue;
+    const cid = impactCidForTaha(i);
+    if (cid) set.add(cid);
+  }
+  return set;
+}
+
+function findImpactFor(
+  option: DeliberationOption,
+  template: ConsequenceTemplate,
+  direction: 'positive' | 'negative'
+): MaqsidImpact | TahaImpact | undefined {
+  if (template.maqsad) {
+    return option.maqasidImpacts.find(
+      (i) => i.direction === direction && impactCidForMaqasid(i) === template.id
+    );
+  }
+  if (template.taha) {
+    return option.tahaImpacts.find(
+      (i) => i.direction === direction && impactCidForTaha(i) === template.id
+    );
+  }
+  return undefined;
+}
+
+function addConsequence(
+  option: DeliberationOption,
+  template: ConsequenceTemplate,
+  direction: 'positive' | 'negative'
+): Partial<DeliberationOption> {
+  if (template.maqsad) {
+    const fresh: MaqsidImpact = {
+      id: crypto.randomUUID(),
+      maqsad: template.maqsad,
+      direction,
+      tier: 'haji', // will adjust when severity picked
+      magnitude: 3,
+      causalConfidence: 'zann_strong',
+      affected: ['self'],
+      notes: `cid:${template.id}`,
+    };
+    return { maqasidImpacts: [...option.maqasidImpacts, fresh] };
+  }
+  if (template.taha) {
+    const fresh: TahaImpact = {
+      id: `cid:${template.id}`,
+      axis: template.taha,
+      direction,
+      tier: 'haji',
+      magnitude: 3,
+      causalConfidence: 'zann_strong',
+    };
+    return { tahaImpacts: [...option.tahaImpacts, fresh] };
+  }
+  return {};
+}
+
+function removeConsequence(
+  option: DeliberationOption,
+  template: ConsequenceTemplate,
+  direction: 'positive' | 'negative'
+): Partial<DeliberationOption> {
+  if (template.maqsad) {
+    return {
+      maqasidImpacts: option.maqasidImpacts.filter(
+        (i) => !(i.direction === direction && impactCidForMaqasid(i) === template.id)
+      ),
+    };
+  }
+  if (template.taha) {
+    return {
+      tahaImpacts: option.tahaImpacts.filter(
+        (i) => !(i.direction === direction && impactCidForTaha(i) === template.id)
+      ),
+    };
+  }
+  return {};
 }

@@ -1,34 +1,23 @@
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Plus, X } from 'lucide-react';
+import { ConversationalScreen } from './ConversationalScreen';
 import { Textarea } from '@/components/ui/textarea';
 import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Segmented } from '@/components/ui/segmented';
-import { StepperScale } from '@/components/ui/stepper-scale';
 import { Button } from '@/components/ui/button';
 import { useSession } from '@/lib/storage/session';
-import {
-  MAQASID,
-  TAHA_AXES,
-  type AgentKind,
-  type DeliberationOption,
-  type Maqsad,
-  type Reversibility,
-  type Stake,
-  type TahaAxis,
-  type TimeHorizon,
-} from '@/types/deliberation';
+import type { DeliberationOption } from '@/types/deliberation';
 
-const AGENT_KINDS: AgentKind[] = ['self', 'family', 'employer', 'community', 'society', 'other'];
-const TIME_HORIZONS: TimeHorizon[] = ['hours', 'days', 'weeks', 'months', 'years'];
-
-function newOptionId() {
-  return crypto.randomUUID();
+interface Props {
+  onComplete: () => void;
+  onBackToPrevious?: () => void;
 }
+
+const SUB_TOTAL = 2;
 
 function newOption(label = ''): DeliberationOption {
   return {
-    id: newOptionId(),
+    id: crypto.randomUUID(),
     label,
     description: '',
     maqasidImpacts: [],
@@ -36,184 +25,124 @@ function newOption(label = ''): DeliberationOption {
   };
 }
 
-export function Step1Case() {
+export function Step1Case({ onComplete, onBackToPrevious }: Props) {
   const { t } = useTranslation('deliberate');
+  const subStep = useSession((s) => s.subStep);
+  const setSubStep = useSession((s) => s.setSubStep);
   const current = useSession((s) => s.current);
   const updateCase = useSession((s) => s.updateCase);
+
+  // Smart defaults — applied once when the user enters Step 1.
+  useEffect(() => {
+    if (!current) return;
+    const c = current.case;
+    const patch: Parameters<typeof updateCase>[0] = {};
+    if (c.agents.length === 0) {
+      patch.agents = [{ id: crypto.randomUUID(), kind: 'self' }];
+    }
+    if (c.timeHorizon === null) patch.timeHorizon = 'weeks';
+    if (c.reversibility === null) patch.reversibility = 3;
+    if (Object.keys(c.stakes.maqasid).length === 0) {
+      patch.stakes = {
+        maqasid: { din: 3, nafs: 3, aql: 3, nasl: 3, mal: 3 },
+        taha: { vital: 3, rational: 3, spiritual: 3 },
+      };
+    }
+    if (Object.keys(patch).length > 0) updateCase(patch);
+    // Ensure we have at least two option rows ready when the user reaches sub-step 2.
+    if (c.options.length < 2) {
+      const needed = 2 - c.options.length;
+      const fresh = Array.from({ length: needed }, () => newOption());
+      updateCase({ options: [...c.options, ...fresh] });
+    }
+    // run once
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   if (!current) return null;
   const c = current.case;
 
-  const toggleAgent = (kind: AgentKind) => {
-    const exists = c.agents.find((a) => a.kind === kind);
-    if (exists) {
-      updateCase({ agents: c.agents.filter((a) => a.kind !== kind) });
-    } else {
-      updateCase({ agents: [...c.agents, { id: crypto.randomUUID(), kind }] });
-    }
-  };
-
-  const setOptionLabel = (id: string, label: string) => {
-    updateCase({
-      options: c.options.map((o) => (o.id === id ? { ...o, label } : o)),
-    });
-  };
-  const setOptionDescription = (id: string, description: string) => {
-    updateCase({
-      options: c.options.map((o) => (o.id === id ? { ...o, description } : o)),
-    });
-  };
+  const setOptionLabel = (id: string, label: string) =>
+    updateCase({ options: c.options.map((o) => (o.id === id ? { ...o, label } : o)) });
+  const setOptionDescription = (id: string, description: string) =>
+    updateCase({ options: c.options.map((o) => (o.id === id ? { ...o, description } : o)) });
   const addOption = () => updateCase({ options: [...c.options, newOption()] });
-  const removeOption = (id: string) => updateCase({ options: c.options.filter((o) => o.id !== id) });
+  const removeOption = (id: string) =>
+    updateCase({ options: c.options.filter((o) => o.id !== id) });
 
-  const setStakeMaqsad = (m: Maqsad, v: Stake) =>
-    updateCase({ stakes: { ...c.stakes, maqasid: { ...c.stakes.maqasid, [m]: v } } });
-  const setStakeTaha = (a: TahaAxis, v: Stake) =>
-    updateCase({ stakes: { ...c.stakes, taha: { ...c.stakes.taha, [a]: v } } });
+  const filledOptionCount = c.options.filter((o) => o.label.trim().length > 0).length;
 
-  return (
-    <div className="space-y-10">
-      <section>
-        <Label htmlFor="case-description">{t('step1.descriptionLabel')}</Label>
-        <p className="text-xs text-muted-foreground mb-2">{t('step1.descriptionHelp')}</p>
+  if (subStep <= 1) {
+    return (
+      <ConversationalScreen
+        progress={t('step1.progress', { n: 1, total: SUB_TOTAL })}
+        title={t('step1.q1.title')}
+        subtitle={t('step1.q1.subtitle')}
+        helper={t('step1.q1.helper')}
+        onBack={onBackToPrevious}
+        onContinue={() => setSubStep(2)}
+        continueDisabled={c.description.trim().length < 4}
+      >
         <Textarea
-          id="case-description"
+          autoFocus
           value={c.description}
           onChange={(e) => updateCase({ description: e.target.value })}
-          placeholder={t('step1.descriptionPlaceholder')}
+          placeholder={t('step1.q1.placeholder')}
           rows={6}
+          aria-label={t('step1.q1.title')}
+          className="text-base"
         />
-      </section>
+      </ConversationalScreen>
+    );
+  }
 
-      <section>
-        <Label>{t('step1.agentsLabel')}</Label>
-        <p className="text-xs text-muted-foreground mb-3">{t('step1.agentsHelp')}</p>
-        <div className="flex flex-wrap gap-2">
-          {AGENT_KINDS.map((kind) => {
-            const active = c.agents.some((a) => a.kind === kind);
-            return (
-              <button
-                key={kind}
-                type="button"
-                onClick={() => toggleAgent(kind)}
-                className={
-                  'rounded-full border px-3.5 h-9 text-sm transition-colors ' +
-                  (active
-                    ? 'bg-foreground text-background border-foreground'
-                    : 'bg-background border-border text-muted-foreground hover:text-foreground hover:border-foreground/40')
-                }
-              >
-                {t(`step1.agents.${kind}`)}
-              </button>
-            );
-          })}
-        </div>
-      </section>
-
-      <section>
-        <Label>{t('step1.optionsLabel')}</Label>
-        <p className="text-xs text-muted-foreground mb-3">{t('step1.optionsHelp')}</p>
-        <div className="space-y-3">
-          {c.options.map((opt, idx) => (
-            <div key={opt.id} className="rounded-2xl border border-border p-4 space-y-2.5">
-              <div className="flex gap-2 items-start">
-                <span className="mt-2 text-xs uppercase tracking-wider text-muted-foreground">
-                  {String.fromCharCode(65 + idx)}
-                </span>
-                <Input
-                  value={opt.label}
-                  onChange={(e) => setOptionLabel(opt.id, e.target.value)}
-                  placeholder={t('step1.optionLabelPlaceholder')}
-                />
+  return (
+    <ConversationalScreen
+      progress={t('step1.progress', { n: 2, total: SUB_TOTAL })}
+      title={t('step1.q2.title')}
+      subtitle={t('step1.q2.subtitle')}
+      helper={t('step1.q2.helper')}
+      onBack={() => setSubStep(1)}
+      onContinue={onComplete}
+      continueDisabled={filledOptionCount < 2}
+    >
+      <div className="space-y-3 mx-auto max-w-md">
+        {c.options.map((opt, idx) => (
+          <div key={opt.id} className="rounded-2xl border border-border p-4 space-y-2.5">
+            <div className="flex gap-2 items-center">
+              <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground w-6">
+                {String.fromCharCode(65 + idx)}
+              </span>
+              <Input
+                value={opt.label}
+                onChange={(e) => setOptionLabel(opt.id, e.target.value)}
+                placeholder={t('step1.q2.optionPlaceholder')}
+                aria-label={t('step1.q2.optionAria', { letter: String.fromCharCode(65 + idx) })}
+              />
+              {c.options.length > 2 && (
                 <button
                   type="button"
                   onClick={() => removeOption(opt.id)}
-                  aria-label={t('step1.removeOption')}
-                  className="h-11 w-11 inline-flex items-center justify-center rounded-full text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-colors"
+                  aria-label={t('step1.q2.remove')}
+                  className="h-9 w-9 inline-flex items-center justify-center rounded-full text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-colors"
                 >
-                  <X size={16} />
+                  <X size={14} />
                 </button>
-              </div>
-              <Textarea
-                value={opt.description ?? ''}
-                onChange={(e) => setOptionDescription(opt.id, e.target.value)}
-                placeholder={t('step1.optionDescriptionPlaceholder')}
-                rows={2}
-                className="min-h-[60px]"
-              />
+              )}
             </div>
-          ))}
-        </div>
-        <Button type="button" variant="outline" size="sm" onClick={addOption} className="mt-3">
-          <Plus size={14} aria-hidden="true" /> {t('step1.addOption')}
+            <Textarea
+              value={opt.description ?? ''}
+              onChange={(e) => setOptionDescription(opt.id, e.target.value)}
+              placeholder={t('step1.q2.descPlaceholder')}
+              rows={2}
+              className="min-h-[56px] text-sm"
+            />
+          </div>
+        ))}
+        <Button type="button" variant="outline" size="sm" onClick={addOption}>
+          <Plus size={14} aria-hidden="true" /> {t('step1.q2.addOption')}
         </Button>
-        {c.options.length < 2 && (
-          <p className="mt-2 text-xs text-warning">{t('step1.atLeastTwo')}</p>
-        )}
-      </section>
-
-      <section>
-        <Label>{t('step1.timeHorizonLabel')}</Label>
-        <p className="text-xs text-muted-foreground mb-2">{t('step1.timeHorizonHelp')}</p>
-        <Segmented
-          value={c.timeHorizon}
-          onChange={(v) => updateCase({ timeHorizon: v })}
-          options={TIME_HORIZONS.map((h) => ({ value: h, label: t(`step1.timeHorizon.${h}`) }))}
-          ariaLabel={t('step1.timeHorizonLabel')}
-        />
-      </section>
-
-      <section>
-        <Label>{t('step1.reversibilityLabel')}</Label>
-        <p className="text-xs text-muted-foreground mb-2">{t('step1.reversibilityHelp')}</p>
-        <StepperScale
-          value={c.reversibility}
-          onChange={(v) => updateCase({ reversibility: v as Reversibility })}
-          ariaLabel={t('step1.reversibilityLabel')}
-          lowLabel={t('step1.reversibilityLow')}
-          highLabel={t('step1.reversibilityHigh')}
-        />
-      </section>
-
-      <section>
-        <Label>{t('step1.stakesMaqasidLabel')}</Label>
-        <p className="text-xs text-muted-foreground mb-3">{t('step1.stakesMaqasidHelp')}</p>
-        <div className="space-y-3">
-          {MAQASID.map((m) => (
-            <div key={m} className="flex items-center justify-between gap-4 flex-wrap">
-              <div className="flex-1 min-w-[140px]">
-                <p className="text-sm font-medium text-foreground">{t(`maqasid.${m}.label`)}</p>
-                <p className="text-xs text-muted-foreground italic">{t(`maqasid.${m}.term`)}</p>
-              </div>
-              <StepperScale
-                value={c.stakes.maqasid[m] ?? null}
-                onChange={(v) => setStakeMaqsad(m, v as Stake)}
-                ariaLabel={t(`maqasid.${m}.label`)}
-              />
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section>
-        <Label>{t('step1.stakesTahaLabel')}</Label>
-        <p className="text-xs text-muted-foreground mb-3">{t('step1.stakesTahaHelp')}</p>
-        <div className="space-y-3">
-          {TAHA_AXES.map((a) => (
-            <div key={a} className="flex items-center justify-between gap-4 flex-wrap">
-              <div className="flex-1 min-w-[140px]">
-                <p className="text-sm font-medium text-foreground">{t(`taha.${a}.label`)}</p>
-                <p className="text-xs text-muted-foreground italic">{t(`taha.${a}.term`)}</p>
-              </div>
-              <StepperScale
-                value={c.stakes.taha[a] ?? null}
-                onChange={(v) => setStakeTaha(a, v as Stake)}
-                ariaLabel={t(`taha.${a}.label`)}
-              />
-            </div>
-          ))}
-        </div>
-      </section>
-    </div>
+      </div>
+    </ConversationalScreen>
   );
 }

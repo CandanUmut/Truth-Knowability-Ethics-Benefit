@@ -2,190 +2,266 @@
   "eyebrow": "Müzakere",
   "title": "Beş adımlı yapılandırılmış müzakere",
   "subtitle": "Vakanızı tanımlayın; doğruluk iddialarınızı işaretleyin; etkilenen makâsıdı belirleyin; kaynaklara danışın; niyetinizi yoklayın. Sonunda bir hüküm değil, bir müzakere haritası alırsınız.",
-  "startCta": "Yeni bir müzakereye başla",
+  "start": {
+    "title": "Birlikte düşünelim.",
+    "subtitle": "Bu uygulama bir cevap vermez. Sizi adım adım bir karar üzerinde yapılandırılmış bir biçimde düşündürür. Cevaplarınız yalnızca bu cihazda kalır."
+  },
+  "startCta": "Başlayalım",
   "startNote": "Cevaplarınız yalnızca bu cihazda saklanır. İstediğiniz an JSON olarak dışa aktarabilirsiniz.",
   "outputTitle": "Müzakere haritası",
   "outputSubtitle": "Bu bir hüküm değil, dört eksende size geri yansıtılan yapılandırılmış bir akıl yürütmedir.",
+  "outputBadge": "Harita",
   "seeMap": "Haritayı gör",
   "backToSteps": "Adımlara geri dön",
   "savedDraft": "Taslak kaydedildi",
   "savedFinal": "Müzakere kaydedildi",
   "reset": "Temizle",
   "confirmReset": "Tüm girdileri silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
-  "stepper": {
-    "label": "{{n}} / {{total}}. adım",
-    "progress": "Adım {{n}} / {{total}}"
+  "skip": "Atla",
+  "scale": {
+    "severity": {
+      "1": "Çok az",
+      "2": "Biraz",
+      "3": "Orta düzeyde",
+      "4": "Çok",
+      "5": "Çok ağır"
+    },
+    "help": {
+      "1": "Çok az",
+      "2": "Biraz",
+      "3": "Orta düzeyde",
+      "4": "Çok",
+      "5": "Çok büyük"
+    },
+    "sureness": {
+      "1": "Hiç bilmiyorum",
+      "2": "Şüpheliyim",
+      "3": "Belki",
+      "4": "Oldukça eminim",
+      "5": "Tamamen eminim"
+    }
   },
   "step1": {
-    "title": "1. Adım: Vaka beyanı",
-    "subtitle": "Hangi durumla yüzleşiyorsunuz, kim etkileniyor, hangi seçenekler önünüzde?",
-    "descriptionLabel": "Vaka tanımı",
-    "descriptionHelp": "200–500 kelime arası, mesele, taraflar ve neden zor bir karar olduğu hakkında.",
-    "descriptionPlaceholder": "Şu an karşı karşıya olduğum durum…",
-    "agentsLabel": "Kim dahil",
-    "agentsHelp": "Karardan etkilenen veya kararla etkileşim halinde olan kişi/kurumlar.",
-    "agents": {
-      "self": "Ben",
-      "family": "Ailem",
-      "employer": "İşveren",
-      "community": "Topluluk",
-      "society": "Toplum",
-      "other": "Diğer"
+    "short": "Karar",
+    "title": "1. Adım: Karar",
+    "subtitle": "Hangi karar üzerinde düşünüyorsunuz?",
+    "progress": "{{n}} / {{total}} soru",
+    "q1": {
+      "title": "Hangi kararı vermeniz gerekiyor?",
+      "subtitle": "Sizinle olan biteni anlamamıza yardımcı olun.",
+      "helper": "Birkaç cümle yeter. Hangi durumdasınız, ne karar vermeniz gerekiyor?",
+      "placeholder": "Şu an karşı karşıya olduğum durum…"
     },
-    "optionsLabel": "Düşündüğüm seçenekler",
-    "optionsHelp": "En az iki seçenek; uygunsa “hiçbir şey yapmama” seçeneğini de ekleyin.",
-    "optionLabelPlaceholder": "Seçenek başlığı (örn. raporu düzenleyiciye iletmek)",
-    "optionDescriptionPlaceholder": "Bu seçeneğin somut olarak neye benzediği — kısa bir açıklama (isteğe bağlı).",
-    "addOption": "Seçenek ekle",
-    "removeOption": "Bu seçeneği kaldır",
-    "atLeastTwo": "Anlamlı bir müzakere için en az iki seçenek gerekir.",
-    "timeHorizonLabel": "Zaman ufku",
-    "timeHorizonHelp": "Bu kararın kendi sonuçlarını gösterdiği temel zaman dilimi.",
-    "timeHorizon": {
-      "hours": "Saatler",
-      "days": "Günler",
-      "weeks": "Haftalar",
-      "months": "Aylar",
-      "years": "Yıllar"
-    },
-    "reversibilityLabel": "Geri dönülebilirlik",
-    "reversibilityHelp": "1: tamamen geri dönülemez; 5: tamamen geri alınabilir.",
-    "reversibilityLow": "Geri dönülemez",
-    "reversibilityHigh": "Geri alınabilir",
-    "stakesMaqasidLabel": "Korunan iyiler için pay (1–5)",
-    "stakesMaqasidHelp": "Karar bu beş zorunlu iyi (din, can, akıl, nesil, mal) bakımından genel olarak ne kadar yüksek bir oyun oynuyor?",
-    "stakesTahaLabel": "Tâhâ ekseni payı (hayatî / aklî / rûhânî)",
-    "stakesTahaHelp": "Klasik beş katmanın yakalamadığı eksenler: hayatî, aklî, rûhânî maslahat."
+    "q2": {
+      "title": "Hangi seçenekler var?",
+      "subtitle": "En az iki seçenek girin. Yapılabilecek farklı şeyler ne?",
+      "helper": "Uygunsa “hiçbir şey yapmama” seçeneğini de ekleyin.",
+      "optionPlaceholder": "Seçenek başlığı (örn. raporu düzenleyiciye iletmek)",
+      "optionAria": "Seçenek {{letter}}",
+      "descPlaceholder": "Bu seçenek somut olarak neye benzer? (isteğe bağlı)",
+      "addOption": "Başka seçenek ekle",
+      "remove": "Bu seçeneği kaldır"
+    }
   },
   "step2": {
-    "title": "2. Adım: Doğruluk iddiaları",
-    "subtitle": "Eğer yanlış olsalardı ahlâkî analizi değiştirecek olgu iddialarını listeleyin. Her iddianın delil tabanını ve güven sınıfını işaretleyin.",
-    "intro": "Hume haklıdır: betimsel öncüllerle normatif sonuca tümdengelimle gidilmez. Ama betimsel öncülleriniz zayıfsa, sağlam bir norma ulaşmanız da zordur. Bu adım, sizden nelerin gerçekten kanıtlı olduğunu ayırmanızı ister.",
+    "short": "Olgular",
+    "title": "2. Adım: Olgular",
+    "progress": "{{n}} / {{total}}",
     "claim": "İddia",
     "removeClaim": "Bu iddiayı kaldır",
-    "addClaim": "İddia ekle",
-    "empty": "Henüz bir iddia yok. Vakanın yaslandığı en az bir olgu iddiasını ekleyin.",
-    "textLabel": "İddia metni",
-    "textPlaceholder": "Örnek: ‘İç inceleme bu kusuru doğru biçimde düşük olasılık olarak değerlendirdi.’",
-    "basisLabel": "Delil tabanı",
-    "basisHelp": "Bu iddiaya en güçlü desteği veren bilgi kaynağı.",
-    "basis": {
-      "sense": "Duyu",
-      "demonstrative": "Bürhan",
-      "tawatur": "Tevatür",
-      "cumulative": "Kümülatif",
-      "single_source": "Tek kaynak",
-      "intuition": "Sezgi",
-      "none": "Delilsiz"
+    "gate": {
+      "title": "Bu karar, yanılıyor olabileceğiniz bir olguya mı dayanıyor?",
+      "subtitle": "Bazen kararımız bir olgunun doğru olduğuna güvenmemize bağlıdır. Eğer öyleyse, ne kadar emin olduğumuzu sormak yararlıdır.",
+      "helper": "Emin değilseniz “Emin değilim”i seçin; çerçeve sizi zorlamaz.",
+      "yes": "Evet, bir veya iki olguya dayanıyor",
+      "yesDesc": "Eğer o olgu yanlış olsaydı kararım değişirdi.",
+      "unsure": "Emin değilim",
+      "unsureDesc": "Şimdilik bu adımı atlamayı tercih ediyorum.",
+      "no": "Hayır, kararım olgulara değil değer yargısına dayanıyor",
+      "noDesc": "Bu adıma ihtiyacım yok."
     },
-    "basisDesc": {
-      "sense": "Uygun şartlarda kendim gözlemledim.",
-      "demonstrative": "Kesin olduğum öncüllerden zorunlu olarak çıkıyor.",
-      "tawatur": "Gizli anlaşmanın imkânsız olduğu sayıda bağımsız kanaldan aktarılıyor.",
-      "cumulative": "Birden çok bağımsız delilin yakınsamasıyla destekleniyor.",
-      "single_source": "Güvenilirliği kabul edilebilir tek bir kaynaktan geliyor.",
-      "intuition": "Yalnızca sezgisel olarak böyle hissediyorum.",
-      "none": "Hiçbir somut delil dayanağı yok."
-    },
-    "confidenceLabel": "Güven sınıfı",
-    "confidenceHelp": "Delil tabanından otomatik bir öneri yapılır; gerekirse aşağı çekin.",
-    "sensitivityLabel": "Bu iddia hassas mıdır?",
-    "sensitivityHelp": "‘Eğer yanlış olsaydı, ahlâkî analizim değişirdi.’ Bu durumda hassas olarak işaretleyin.",
-    "warning": {
-      "title": "Hassas iddiada zayıf delil",
-      "body": "Bu karar, kritik bir iddia üzerine kuruludur ve delil tabanı zann seviyesinde. Karar vermeden önce daha fazla araştırmayı düşünebilirsiniz. (Taahhüt 2)"
+    "claims": {
+      "title": "Bu olgular hakkında ne kadar eminsiniz?",
+      "subtitle": "Her olgu için kısa bir cümle ve emin olma derecenizi seçin.",
+      "helper": "Birden fazla olgu ekleyebilirsiniz. Sonra devam edin.",
+      "factLabel": "Olgu",
+      "factPlaceholder": "Örn: ‘İç inceleme bu kusuru doğru biçimde düşük olasılık olarak değerlendirdi.’",
+      "howSure": "Bu olguya ne kadar eminsiniz?",
+      "sensitivityLabel": "Bu olgu yanlışsa kararım değişir",
+      "sensitivityHelp": "Bunu işaretlerseniz çerçeve, bu olgudaki güveninize özel dikkat gösterir.",
+      "addAnother": "Başka olgu ekle",
+      "weakWarning": "Bu olgu yanlışsa kararınız değişir, ama buna pek emin değilsiniz. Karar vermeden önce biraz daha araştırmayı düşünebilirsiniz."
     }
   },
   "step3": {
-    "title": "3. Adım: Etkilenen makâsıd",
-    "subtitle": "Her seçenek için, beş zarûrî maksat ve Tâhâ üç ekseni üzerindeki etkiyi işaretleyin.",
-    "intro": "Bu adım çekirdek puanlamayı besler. Yön (olumlu/olumsuz/yok), katman (zarûrî/hâcî/tahsînî), büyüklük (1–5) ve sebep güveni — bu dördü her etki için verilir.",
-    "noOptions": "Önce 1. adımda en az iki seçenek ekleyin.",
-    "option": "Seçenek",
-    "untitled": "Başlıksız seçenek",
-    "maqasidLabel": "Beş zarûrî maksat",
-    "tahaLabel": "Tâhâ ekseni",
-    "directionLabel": "Yön",
-    "direction": {
-      "positive": "Olumlu",
-      "negative": "Olumsuz",
-      "neutral": "Etkisiz"
+    "short": "Etkiler",
+    "title": "3. Adım: Etkiler",
+    "subtitle": "Her seçeneğin neye dokunduğuna birlikte bakalım.",
+    "progress": "Seçenek {{optionLetter}} · {{total}} seçenekten",
+    "untitledOption": "Başlıksız seçenek",
+    "skipNothingFits": "Hiçbiri uymuyor — devam et",
+    "empty": {
+      "title": "Önce iki seçenek ekleyin.",
+      "body": "Müzakere için en az iki seçenek lazım — 1. adıma dönüp ekleyin."
     },
-    "tierLabel": "Katman",
-    "tierHelp": "Maksadın bu vakada yer aldığı katman: zarûrî / hâcî / tahsînî.",
-    "magnitudeLabel": "Büyüklük",
-    "magnitudeLow": "Az",
-    "magnitudeHigh": "Çok",
-    "causalConfidenceLabel": "Sebep–sonuç güveni",
-    "affectedLabel": "Kim etkileniyor",
-    "affected": {
-      "self": "Ben",
-      "family": "Aile",
-      "community": "Topluluk",
-      "society": "Toplum"
+    "harmPick": {
+      "title": "{{option}} kime, neye zarar verebilir?",
+      "subtitle": "Uygun olanları seçin. Birden fazla olabilir.",
+      "helper": "Hiçbiri uymuyorsa boş bırakıp devam edebilirsiniz."
+    },
+    "helpPick": {
+      "title": "{{option}} kime, neye iyi gelebilir?",
+      "subtitle": "Yardımcı olabileceği şeyleri seçin.",
+      "helper": "Hiçbiri uymuyorsa boş bırakıp devam edebilirsiniz."
+    },
+    "detail": {
+      "harmTitle": "{{label}} ne kadar büyük bir zarar?",
+      "helpTitle": "{{label}} ne kadar büyük bir fayda?",
+      "subtitle": "İki kısa soruyla derinleştirelim.",
+      "howBigHarm": "Ne kadar büyük bir zarar?",
+      "howBigHelp": "Ne kadar büyük bir fayda?",
+      "howSure": "Bu sonucun gerçekten olacağına ne kadar eminsiniz?"
     }
   },
   "step4": {
-    "title": "4. Adım: Kaynak istişaresi",
-    "subtitle": "Vakaya etki eden Kur'ânî, Sünnî ve maqâṣid kaynaklarını gözden geçirin; ilgili olduklarını düşündüklerinizi seçin ve okumanızı kaydedin.",
-    "matched": {
-      "title": "Vakanız için önerilen kaynaklar",
-      "body": "Vaka açıklamanız anahtar kelime eşlemesi yoluyla aşağıdaki kaynaklara işaret ediyor. Hangilerinin gerçekten ilgili olduğuna siz karar verin.",
-      "patternsLabel": "Eşleşen örüntüler",
-      "heading": "Önerilen kaynaklar",
-      "consult": "İstişareye al",
-      "added": "Eklendi"
-    },
-    "consultations": "Müzakereye dahil edilen kaynaklar",
-    "empty": "Henüz bir kaynak eklenmedi. Yukarıdan seçin veya kendiniz bir atıf girin.",
+    "short": "Kaynaklar",
+    "title": "4. Adım: Kaynaklar",
+    "progress": "{{n}} / {{total}}",
     "source": "Kaynak",
     "removeSource": "Bu kaynağı kaldır",
-    "addCustom": "Kendi kaynağımı gir",
     "untitledSource": "Başlıksız kaynak",
-    "citationLabel": "Atıf",
-    "citationHelp": "Kaynağın kanonik atfı (sûre/âyet, koleksiyon/numara, klasik metin sayfası, vb.).",
-    "citationPlaceholder": "Örnek: Q. 5:8 — adâlet âyeti",
-    "bearsLabel": "Bu kaynak vakaya etki ediyor mu?",
-    "bears": {
-      "yes": "Evet",
-      "no": "Hayır",
-      "unsure": "Emin değilim"
+    "gate": {
+      "title": "Geleneğin bu konuda söylediklerine bakmak ister misiniz?",
+      "subtitle": "Çerçeve, vakanızla ilgili olabilecek Kur'ân âyetleri ve hadisleri önerir. Onları görmek isteyip istemediğinize siz karar verirsiniz.",
+      "helper": "Bu adım isteğe bağlıdır.",
+      "show": "Önerilen kaynakları göster",
+      "showDesc": "Sizin için ilgili olabilecek {{count}} kaynak hazırladık.",
+      "custom": "Kendi kaynağımı eklemek istiyorum",
+      "customDesc": "Aklınızda belirli bir âyet, hadis veya klasik metin varsa.",
+      "skip": "Bu adımı atla",
+      "skipDesc": "Bu kez kaynaklara bakmak istemiyorum."
     },
-    "reasoningLabel": "Sizin okumanızla nasıl uyguluyor?",
-    "reasoningHelp": "Çerçeve sizin yorumunuzu kayda geçer; tek bir okumayı dayatmaz.",
-    "reasoningPlaceholder": "Bu kaynağın vakanın hangi boyutuna nasıl temas ettiğini kısaca yazın…",
-    "minorityLabel": "Bu konuda azınlık görüşünü takip ediyorum",
-    "minorityHelp": "Çerçeve azınlık görüşünü takip etmenize izin verir; gerekçenizi kayda alır ve dosyanın sınıflandırmasını uygun şekilde günceller.",
-    "minorityReasoningLabel": "Azınlık görüşünün gerekçesi"
+    "review": {
+      "title": "Vakanıza yakın kaynaklar",
+      "subtitle": "Sizinle rezonansa giren kaynakları seçin. Hangilerinin gerçekten ilgili olduğuna siz karar verirsiniz.",
+      "helper": "Aşağıdaki kaynaklar üzerine küçük bir not yazabilirsiniz.",
+      "suggested": "Önerilen kaynaklar",
+      "yours": "Müzakerenize dahil ettikleriniz",
+      "empty": "Henüz seçtiğiniz bir kaynak yok.",
+      "resonates": "Bana uyuyor",
+      "added": "Eklendi",
+      "citationLabel": "Atıf",
+      "citationPlaceholder": "Örn: Q. 5:8 — adâlet âyeti",
+      "reasoningLabel": "Bu kaynak vakanıza nasıl uyuyor? (isteğe bağlı)",
+      "reasoningPlaceholder": "Bu kaynağın vakanın hangi boyutuna nasıl temas ettiğini kısaca yazın…",
+      "addCustom": "Kendi kaynağımı ekle"
+    }
   },
   "step5": {
-    "title": "5. Adım: Niyet kontrolü",
-    "subtitle": "Beş soru. Cevaplarınız puanlanmaz; size geri yansıtılır. Yargılayan değil, ayna tutan bir adımdır.",
-    "intro": {
-      "title": "Bu adım bir sınav değildir.",
-      "body": "Sorular, samimi öz-değerlendirmeye davettir. Cevapları olabildiğince dürüst yazın; sadece sizin için kalır."
-    },
-    "toneLabel": "Beşinci sorunun tonu",
-    "toneHelp": "Beşinci soru için iki ifade biçimi sunuyoruz; size daha doğal geleni seçin.",
+    "short": "Niyet",
+    "title": "5. Adım: Niyet",
+    "progress": "{{n}} / {{total}}",
     "tone": {
+      "title": "Niyet sorularını nasıl ifade edelim?",
+      "subtitle": "Beşinci soru için iki ton sunuyoruz. Hangisi size daha doğal geliyor?",
+      "helper": "İstediğiniz an değiştirebilirsiniz.",
       "religious": "Allah huzurunda",
       "secular": "Vicdanım önünde"
     },
     "questions": {
-      "q1": { "text": "Bu karardan ahlâkî analiz öncesinde en çok ne çıkmasını istiyorum?" },
-      "q2": { "text": "Önemli bir dünyevi kazanç ortadan kaldırılsa bile bu yolu yine seçer miydim?" },
-      "q3": { "text": "Bu kararın motivasyonum konusunda başkalarının bilmesini istemediğim ne var?" },
-      "q4": { "text": "Samimiyetine güvendiğim bir kişi neden böyle eğilim gösterdiğimi sorsa, ona ne söylerdim?" },
+      "subtitle": "Bu sorulara dürüst cevap verin — kimse okumayacak.",
+      "placeholder": "Birkaç cümle yeter…",
+      "q1": { "text": "Bu karardan ahlâkî analiz öncesinde en çok ne çıkmasını istiyorsunuz?" },
+      "q2": { "text": "Önemli bir dünyevi kazanç ortadan kaldırılsa bile bu yolu yine seçer miydiniz?" },
+      "q3": { "text": "Bu kararın motivasyonu hakkında başkalarının bilmesini istemediğiniz ne var?" },
+      "q4": { "text": "Samimiyetine güvendiğiniz bir kişi neden böyle eğilim gösterdiğinizi sorsa, ona ne söylerdiniz?" },
       "q5": {
-        "religious": "Bu kararı verip Allah huzurunda durduğumu hayal ettiğimde vicdanım ne söylüyor?",
-        "secular": "Bu kararı verip kendi vicdanım önünde durduğumu hayal ettiğimde ne hissediyorum?"
+        "religious": "Bu kararı verip Allah huzurunda durduğunuzu hayal ettiğinizde vicdanınız ne söylüyor?",
+        "secular": "Bu kararı verip kendi vicdanınız önünde durduğunuzu hayal ettiğinizde ne hissediyorsunuz?"
       }
     },
-    "placeholder": "Kısa, dürüst bir yanıt yeter…",
-    "leaningLabel": "Kalbim hangi seçeneğe meylediyor?",
-    "leaningHelp": "Puanlamadan bağımsız olarak içsel meyliniz. Algoritma yalnızca bu meyil ile en yüksek puan alan seçenek arasındaki gerilimi yumuşakça size gösterir.",
-    "corruptLabel": "Niyetimin bozuk olduğunu kabul ediyorum",
-    "corruptHelp": "Bu kutuyu yalnızca niyetinizin gerçekten ahlâken kusurlu olduğunu kendiniz kabul ediyorsanız işaretleyin. İşaretlendiğinde, en yüksek puanlı seçenek niyet çarpanıyla 0'a düşer ve dosyaya açık bir uyarı eklenir."
+    "placeholder": "Birkaç cümle yeter…",
+    "leaning": {
+      "title": "Kalbiniz hangi seçeneğe meylediyor?",
+      "subtitle": "Henüz hiçbir hesap yapmadan, içsel meyliniz hangisi?",
+      "helper": "Bu cevap puanlanmaz; sadece niyetinizle hesabın çatışıp çatışmadığını anlamamıza yardımcı olur.",
+      "unsure": "Henüz emin değilim"
+    },
+    "corrupt": {
+      "title": "Niyetiniz konusunda bir endişeniz var mı?",
+      "subtitle": "Bu yalnızca siz kendiniz, niyetinizin gerçekten bozuk olduğunu kabul ediyorsanız işaretleyin.",
+      "helper": "İşaretlerseniz, en yüksek puan alan seçeneğin niyet çarpanı 0 olur ve dosyaya açık bir uyarı eklenir.",
+      "label": "Niyetimin bozuk olduğunu kabul ediyorum",
+      "note": "Bu adım isteğe bağlıdır. Çoğu insan bunu işaretlemez.",
+      "continue": "Tamamla"
+    }
+  },
+  "actions": {
+    "next": "Devam",
+    "back": "Geri",
+    "skip": "Atla"
+  },
+  "consequence": {
+    "harm": {
+      "risk_life": {
+        "label": "Birinin canına veya güvenliğine risk",
+        "desc": "Sağlık, beden veya yaşam tehlikesi"
+      },
+      "damage_integrity": {
+        "label": "Vicdanıma veya dürüstlüğüme zarar",
+        "desc": "İç huzursuzluk, kendine yabancılaşma, dini-ahlâkî yükümlülükten kayma"
+      },
+      "mind_wellbeing": {
+        "label": "Birinin zihnine veya iyiliğine zarar",
+        "desc": "Stres, akıl sağlığı, eğitim, kavrayış"
+      },
+      "family_future": {
+        "label": "Aileye veya geleceğe zarar",
+        "desc": "Eş, çocuklar, sonraki nesil — bağlar ve sürekliliğe zarar"
+      },
+      "money_property": {
+        "label": "Para veya mülk kaybı",
+        "desc": "Maddi yük, geçim, finansal güvenlik"
+      },
+      "spiritual_cost": {
+        "label": "Ruhsal maliyet",
+        "desc": "İç huzur, manevi yön, Allah'la / vicdanla bağ"
+      },
+      "lost_opportunity": {
+        "label": "Öğrenme veya gelişme fırsatının kaybı",
+        "desc": "Bilgi, beceri, vizyon kaybı"
+      }
+    },
+    "help": {
+      "protect_life": {
+        "label": "Birinin canını veya güvenliğini koruma",
+        "desc": "Sağlık, beden, yaşam emniyeti"
+      },
+      "serve_integrity": {
+        "label": "Vicdanıma ve dürüstlüğüme hizmet",
+        "desc": "İç huzur, doğru olanı yapma, ahlâkî yön"
+      },
+      "support_wellbeing": {
+        "label": "Birinin zihnine veya iyiliğine destek",
+        "desc": "Eğitim, akıl sağlığı, gelişim"
+      },
+      "serve_family": {
+        "label": "Aileye veya geleceğe destek",
+        "desc": "Eş, çocuklar, sonraki nesil için iyi"
+      },
+      "gain_resources": {
+        "label": "Maddi imkânda iyileşme",
+        "desc": "Geçim, kazanç, finansal sağlamlık"
+      },
+      "spiritual_growth": {
+        "label": "Manevi gelişim",
+        "desc": "Allah'a / vicdana yönelme, iç huzur, takvâ"
+      },
+      "rational_growth": {
+        "label": "Öğrenme veya gelişme fırsatı",
+        "desc": "Bilgi, beceri, vizyon kazancı"
+      }
+    }
   },
   "output": {
     "empty": "Henüz hesaplanacak veri yok. Adımları doldurarak müzakerenizi tamamlayın.",
@@ -220,7 +296,7 @@
       "empty": "Vaka açıklaması girilmedi."
     },
     "maqasidRanking": {
-      "title": "Makâsıd dengesi",
+      "title": "Etki dengesi",
       "body": "Beş zarûrî maksat üzerine seçenekler arasında toplam etki — solda zarar, sağda fayda.",
       "harm": "Zarar",
       "benefit": "Fayda"
@@ -263,16 +339,16 @@
     }
   },
   "confidence": {
-    "yaqin": { "label": "Yakîn", "term": "kesin bilgi" },
-    "zann_strong": { "label": "Zann (güçlü)", "term": "güçlü zan" },
-    "zann": { "label": "Zann", "term": "zan" },
-    "shakk": { "label": "Şek", "term": "şüphe" },
-    "jahl": { "label": "Cehl", "term": "bilgisizlik" }
+    "yaqin": { "label": "Tamamen eminim", "term": "yakîn" },
+    "zann_strong": { "label": "Oldukça eminim", "term": "kuvvetli zan" },
+    "zann": { "label": "Belki", "term": "zan" },
+    "shakk": { "label": "Şüpheliyim", "term": "şek" },
+    "jahl": { "label": "Hiç bilmiyorum", "term": "cehl" }
   },
   "tier": {
-    "daruri": { "label": "Zarûrî", "desc": "Olmadan insanî hayatın yapısal olarak çöktüğü zorunlu iyi." },
-    "haji": { "label": "Hâcî", "desc": "Yokluğu ciddi sıkıntı yaratan ama yapısal çöküşe yol açmayan iyi." },
-    "tahsini": { "label": "Tahsînî", "desc": "Hayatın güzelliğini, edebini ve inceliğini sağlayan iyi." }
+    "daruri": { "label": "Zorunlu", "desc": "Olmadan insanî hayatın yapısal olarak çöktüğü koşul." },
+    "haji": { "label": "Gerekli", "desc": "Yokluğu ciddi sıkıntı yaratan ama yapısal çöküşe yol açmayan." },
+    "tahsini": { "label": "Güzelleştirici", "desc": "Hayatın güzellik, edep ve incelik boyutu." }
   },
   "maqasid": {
     "din": { "label": "Din", "term": "ḥifẓ al-dīn" },

@@ -15,14 +15,19 @@ import {
   type TruthClaim,
 } from '@/types/deliberation';
 
-export type StepIndex = 0 | 1 | 2 | 3 | 4 | 5;
+export type StepIndex = 0 | 1 | 2 | 3 | 4 | 5 | 6;
 
 type SessionState = {
   current: Deliberation | null;
   step: StepIndex;
+  /** Sub-step within the current major step. Reset to 1 whenever step changes. */
+  subStep: number;
   start: () => Deliberation;
   reset: () => void;
   setStep: (step: StepIndex) => void;
+  advanceStep: () => void;
+  retreatStep: () => void;
+  setSubStep: (subStep: number) => void;
   updateCase: (patch: Partial<DeliberationCase>) => void;
   setClaims: (claims: TruthClaim[]) => void;
   setConsultations: (consultations: SourceConsultation[]) => void;
@@ -53,13 +58,23 @@ export const useSession = create<SessionState>()(
     (set, get) => ({
       current: null,
       step: 0,
+      subStep: 1,
       start: () => {
         const fresh = newDeliberation();
-        set({ current: fresh, step: 1 });
+        set({ current: fresh, step: 1, subStep: 1 });
         return fresh;
       },
-      reset: () => set({ current: null, step: 0 }),
-      setStep: (step) => set({ step }),
+      reset: () => set({ current: null, step: 0, subStep: 1 }),
+      setStep: (step) => set({ step, subStep: 1 }),
+      advanceStep: () => {
+        const next = Math.min(6, get().step + 1) as StepIndex;
+        set({ step: next, subStep: 1 });
+      },
+      retreatStep: () => {
+        const prev = Math.max(1, get().step - 1) as StepIndex;
+        set({ step: prev, subStep: 99 }); // 99 = "last sub-step"; each step normalizes
+      },
+      setSubStep: (subStep) => set({ subStep }),
       updateCase: (patch) => {
         const cur = get().current;
         if (!cur) return;
@@ -86,12 +101,12 @@ export const useSession = create<SessionState>()(
         set({ current: touch({ ...cur, niyya }) });
       },
       loadFromHistory: (deliberation) => {
-        set({ current: deliberation, step: 1 });
+        set({ current: deliberation, step: 1, subStep: 1 });
       },
     }),
     {
       name: 'teb.session.active',
-      partialize: (state) => ({ current: state.current, step: state.step }),
+      partialize: (state) => ({ current: state.current, step: state.step, subStep: state.subStep }),
     }
   )
 );

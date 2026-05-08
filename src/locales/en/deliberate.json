@@ -2,190 +2,266 @@
   "eyebrow": "Deliberate",
   "title": "A five-step structured deliberation",
   "subtitle": "State your case; mark the truth-claims at issue; identify the maqāṣid implicated; consult the sources; check your niyya. At the end you receive a deliberation map, not a verdict.",
-  "startCta": "Begin a new deliberation",
+  "start": {
+    "title": "Let's think this through together.",
+    "subtitle": "This tool does not give you an answer. It walks you through your decision in a structured way, one question at a time. Your answers stay only on this device."
+  },
+  "startCta": "Let's begin",
   "startNote": "Your answers stay only on this device. You can export them as JSON at any time.",
   "outputTitle": "Deliberation map",
   "outputSubtitle": "Not a verdict — a structured reflection on four moments, returned to you.",
+  "outputBadge": "Map",
   "seeMap": "See the map",
   "backToSteps": "Back to steps",
   "savedDraft": "Draft saved",
   "savedFinal": "Deliberation saved",
   "reset": "Clear",
   "confirmReset": "Are you sure you want to clear all input? This cannot be undone.",
-  "stepper": {
-    "label": "Step {{n}} of {{total}}",
-    "progress": "Step {{n}} of {{total}}"
+  "skip": "Skip",
+  "scale": {
+    "severity": {
+      "1": "Hardly",
+      "2": "A little",
+      "3": "Somewhat",
+      "4": "A lot",
+      "5": "Severe"
+    },
+    "help": {
+      "1": "Hardly",
+      "2": "A little",
+      "3": "Somewhat",
+      "4": "A lot",
+      "5": "Profound"
+    },
+    "sureness": {
+      "1": "No idea",
+      "2": "Doubt it",
+      "3": "Maybe",
+      "4": "Pretty sure",
+      "5": "Certain"
+    }
   },
   "step1": {
-    "title": "Step 1: Case statement",
-    "subtitle": "What situation are you facing, who is implicated, what options are open to you?",
-    "descriptionLabel": "Case description",
-    "descriptionHelp": "200–500 words on the matter, the parties, and why this is a hard decision.",
-    "descriptionPlaceholder": "The situation I am facing right now…",
-    "agentsLabel": "Who is involved",
-    "agentsHelp": "Persons or entities affected by, or interacting with, the decision.",
-    "agents": {
-      "self": "Myself",
-      "family": "Family",
-      "employer": "Employer",
-      "community": "Community",
-      "society": "Society",
-      "other": "Other"
+    "short": "Decision",
+    "title": "Step 1: Your decision",
+    "subtitle": "What decision are you thinking about?",
+    "progress": "Question {{n}} of {{total}}",
+    "q1": {
+      "title": "What decision are you trying to make?",
+      "subtitle": "Tell us what's going on, in your own words.",
+      "helper": "A few sentences is enough. What's the situation, what do you need to decide?",
+      "placeholder": "The situation I'm facing right now…"
     },
-    "optionsLabel": "Options I am considering",
-    "optionsHelp": "At least two options; include “do nothing” when relevant.",
-    "optionLabelPlaceholder": "Option title (e.g. report to the regulator)",
-    "optionDescriptionPlaceholder": "What this option concretely looks like — a short description (optional).",
-    "addOption": "Add option",
-    "removeOption": "Remove this option",
-    "atLeastTwo": "A meaningful deliberation needs at least two options.",
-    "timeHorizonLabel": "Time horizon",
-    "timeHorizonHelp": "The principal time scale over which this decision plays out.",
-    "timeHorizon": {
-      "hours": "Hours",
-      "days": "Days",
-      "weeks": "Weeks",
-      "months": "Months",
-      "years": "Years"
-    },
-    "reversibilityLabel": "Reversibility",
-    "reversibilityHelp": "1: fully irreversible; 5: fully reversible.",
-    "reversibilityLow": "Irreversible",
-    "reversibilityHigh": "Reversible",
-    "stakesMaqasidLabel": "Stakes on the protected goods (1–5)",
-    "stakesMaqasidHelp": "How high are the stakes on each of the five necessities (religion, life, intellect, lineage, property)?",
-    "stakesTahaLabel": "Tāhā axes (vital / rational / spiritual)",
-    "stakesTahaHelp": "Axes the classical five do not always capture: vital, rational, spiritual interests."
+    "q2": {
+      "title": "What are your options?",
+      "subtitle": "Add at least two. What different things could you do?",
+      "helper": "Include “do nothing” if it's a real option.",
+      "optionPlaceholder": "Option title (e.g. report to the regulator)",
+      "optionAria": "Option {{letter}}",
+      "descPlaceholder": "What does this option concretely look like? (optional)",
+      "addOption": "Add another option",
+      "remove": "Remove this option"
+    }
   },
   "step2": {
-    "title": "Step 2: Truth-claims at issue",
-    "subtitle": "List every fact-claim that, if false, would change the moral analysis. Mark its evidential basis and confidence class.",
-    "intro": "Hume is right: from purely descriptive premises no normative conclusion follows by deduction. But if your descriptive premises are weak, your normative conclusion is not steady either. This step asks you to separate what is genuinely evidenced.",
+    "short": "Facts",
+    "title": "Step 2: Facts",
+    "progress": "{{n}} of {{total}}",
     "claim": "Claim",
     "removeClaim": "Remove this claim",
-    "addClaim": "Add a claim",
-    "empty": "No claims yet. Add at least one fact-claim the case rests on.",
-    "textLabel": "Claim text",
-    "textPlaceholder": "Example: ‘Internal review correctly assessed this defect as low-probability.’",
-    "basisLabel": "Evidential basis",
-    "basisHelp": "The strongest source of support for this claim.",
-    "basis": {
-      "sense": "Sense",
-      "demonstrative": "Demonstrative",
-      "tawatur": "Tawātur",
-      "cumulative": "Cumulative",
-      "single_source": "Single source",
-      "intuition": "Intuition",
-      "none": "No basis"
+    "gate": {
+      "title": "Does your decision rest on any facts you might be wrong about?",
+      "subtitle": "Sometimes a decision depends on a fact being true. If so, it helps to ask how sure we are.",
+      "helper": "If you're not sure, pick \"Not sure\" — the framework won't push you.",
+      "yes": "Yes, it rests on one or two facts",
+      "yesDesc": "If the fact were wrong, my decision would change.",
+      "unsure": "Not sure",
+      "unsureDesc": "I'd rather skip this step for now.",
+      "no": "No, it's a values question, not a fact question",
+      "noDesc": "I don't need this step."
     },
-    "basisDesc": {
-      "sense": "I have observed it directly under proper conditions.",
-      "demonstrative": "It is a strict consequence of premises I am sure of.",
-      "tawatur": "It is mass-transmitted from independent channels making collusion implausible.",
-      "cumulative": "It is supported by the convergence of several independent lines of evidence.",
-      "single_source": "It comes from a single source whose reliability is acceptable.",
-      "intuition": "I only feel it intuitively.",
-      "none": "I have no concrete evidential basis."
-    },
-    "confidenceLabel": "Confidence class",
-    "confidenceHelp": "A suggestion is auto-derived from the evidential basis; lower it if you should.",
-    "sensitivityLabel": "Is this a sensitive claim?",
-    "sensitivityHelp": "‘If this were false, my moral analysis would change.’ Mark sensitive in that case.",
-    "warning": {
-      "title": "Sensitive claim with weak evidence",
-      "body": "This decision rests on a critical claim whose evidential basis is at the level of ẓann. You may want to investigate further before deciding. (Commitment 2)"
+    "claims": {
+      "title": "How sure are you about each fact?",
+      "subtitle": "For each fact, write a short sentence and pick how sure you are.",
+      "helper": "You can add more than one. Continue when you're done.",
+      "factLabel": "The fact",
+      "factPlaceholder": "e.g. ‘Internal review correctly assessed this defect as low-probability.’",
+      "howSure": "How sure are you about this fact?",
+      "sensitivityLabel": "If this fact were wrong, my decision would change",
+      "sensitivityHelp": "If you mark this, the framework will pay extra attention to your confidence in this fact.",
+      "addAnother": "Add another fact",
+      "weakWarning": "If this fact is wrong, your decision would change — but you're not very sure of it. You may want to investigate further before deciding."
     }
   },
   "step3": {
-    "title": "Step 3: Maqāṣid implicated",
-    "subtitle": "For each option, mark the impact on the five protected goods and on the three Tāhā axes.",
-    "intro": "This step feeds the core score. Direction (positive / negative / none), tier (ḍarūrī / ḥājī / taḥsīnī), magnitude (1–5), and causal confidence — these four are given for each impact.",
-    "noOptions": "Add at least two options in Step 1 first.",
-    "option": "Option",
-    "untitled": "Untitled option",
-    "maqasidLabel": "Five necessary maqāṣid",
-    "tahaLabel": "Tāhā axes",
-    "directionLabel": "Direction",
-    "direction": {
-      "positive": "Positive",
-      "negative": "Negative",
-      "neutral": "No relation"
+    "short": "Effects",
+    "title": "Step 3: Effects",
+    "subtitle": "Let's think about what each option does to people.",
+    "progress": "Option {{optionLetter}} of {{total}}",
+    "untitledOption": "Untitled option",
+    "skipNothingFits": "None of these — continue",
+    "empty": {
+      "title": "Add two options first.",
+      "body": "We need at least two options to deliberate — go back to Step 1 and add them."
     },
-    "tierLabel": "Tier",
-    "tierHelp": "The tier the maqsad operates at in this case: ḍarūrī / ḥājī / taḥsīnī.",
-    "magnitudeLabel": "Magnitude",
-    "magnitudeLow": "Low",
-    "magnitudeHigh": "High",
-    "causalConfidenceLabel": "Causal confidence",
-    "affectedLabel": "Who is affected",
-    "affected": {
-      "self": "Self",
-      "family": "Family",
-      "community": "Community",
-      "society": "Society"
+    "harmPick": {
+      "title": "What might {{option}} hurt?",
+      "subtitle": "Pick what applies. There can be more than one.",
+      "helper": "If nothing fits, leave it empty and continue."
+    },
+    "helpPick": {
+      "title": "What might {{option}} help?",
+      "subtitle": "Pick what applies.",
+      "helper": "If nothing fits, leave it empty and continue."
+    },
+    "detail": {
+      "harmTitle": "How big is the {{label}} harm?",
+      "helpTitle": "How big is the {{label}} help?",
+      "subtitle": "Two short questions to deepen this.",
+      "howBigHarm": "How big is the harm?",
+      "howBigHelp": "How big is the help?",
+      "howSure": "How sure are you this would actually happen?"
     }
   },
   "step4": {
-    "title": "Step 4: Source consultation",
-    "subtitle": "Review the Qur'ānic, prophetic, and maqāṣid sources that bear on the case; pick the ones you find relevant and record your reading.",
-    "matched": {
-      "title": "Sources suggested for your case",
-      "body": "Your case description matches the keywords below; we surface candidate sources for you to consider. You decide which actually apply.",
-      "patternsLabel": "Matched patterns",
-      "heading": "Suggested sources",
-      "consult": "Add to consultation",
-      "added": "Added"
-    },
-    "consultations": "Sources consulted in this deliberation",
-    "empty": "No sources yet. Pick from above or enter your own citation.",
+    "short": "Sources",
+    "title": "Step 4: Sources",
+    "progress": "{{n}} of {{total}}",
     "source": "Source",
     "removeSource": "Remove this source",
-    "addCustom": "Enter my own citation",
     "untitledSource": "Untitled source",
-    "citationLabel": "Citation",
-    "citationHelp": "The canonical citation (sūra/āya, collection/number, classical text page, etc.).",
-    "citationPlaceholder": "Example: Q. 5:8 — the verse on justice",
-    "bearsLabel": "Does this source bear on the case?",
-    "bears": {
-      "yes": "Yes",
-      "no": "No",
-      "unsure": "Unsure"
+    "gate": {
+      "title": "Want to see what the tradition says about cases like yours?",
+      "subtitle": "The framework can suggest Qur'ānic verses and hadiths that might bear on your case. You decide whether they apply.",
+      "helper": "This step is optional.",
+      "show": "Show me suggested sources",
+      "showDesc": "We have {{count}} sources that might be relevant for you.",
+      "custom": "I want to add my own source",
+      "customDesc": "If you have a specific verse, hadith, or classical text in mind.",
+      "skip": "Skip this step",
+      "skipDesc": "I don't want to consult sources for this one."
     },
-    "reasoningLabel": "How does it apply, in your reading?",
-    "reasoningHelp": "The framework records your interpretation; it does not impose a single reading.",
-    "reasoningPlaceholder": "Briefly note which dimension of the case the source addresses and how…",
-    "minorityLabel": "I am following a minority position on this",
-    "minorityHelp": "The framework lets you follow a minority position; it records your reasoning and updates the dossier's classification accordingly.",
-    "minorityReasoningLabel": "Reasoning for the minority position"
+    "review": {
+      "title": "Sources close to your case",
+      "subtitle": "Pick the sources that resonate. You decide which actually apply.",
+      "helper": "You can write a short note on each source.",
+      "suggested": "Suggested sources",
+      "yours": "What you've added to your deliberation",
+      "empty": "No sources added yet.",
+      "resonates": "This resonates",
+      "added": "Added",
+      "citationLabel": "Citation",
+      "citationPlaceholder": "e.g. Q. 5:8 — the verse on justice",
+      "reasoningLabel": "How does this source apply, in your reading? (optional)",
+      "reasoningPlaceholder": "Briefly note which dimension of the case the source addresses…",
+      "addCustom": "Add my own source"
+    }
   },
   "step5": {
-    "title": "Step 5: Niyya check",
-    "subtitle": "Five questions. Your answers are not scored — they are mirrored back to you. The step examines, it does not judge.",
-    "intro": {
-      "title": "This step is not an examination.",
-      "body": "The questions are invitations to honest self-reflection. Answer as truthfully as you can; the answers stay with you alone."
-    },
-    "toneLabel": "Tone of question 5",
-    "toneHelp": "We offer two phrasings for the fifth question; pick the one that feels more honest to you.",
+    "short": "Intention",
+    "title": "Step 5: Intention",
+    "progress": "{{n}} of {{total}}",
     "tone": {
+      "title": "How would you like the intention questions phrased?",
+      "subtitle": "We offer two tones for the fifth question. Which feels more honest to you?",
+      "helper": "You can change this anytime.",
       "religious": "Before God",
       "secular": "Before my conscience"
     },
     "questions": {
-      "q1": { "text": "What outcome do I most want from this decision, prior to the moral analysis?" },
-      "q2": { "text": "Would I still choose this course if a major worldly benefit were removed?" },
-      "q3": { "text": "What would I not want others to know about my motivation here?" },
-      "q4": { "text": "If a person I respect for sincerity asked me why I am leaning this way, what would I say?" },
+      "subtitle": "Be honest with yourself — no one else will read this.",
+      "placeholder": "A few sentences is enough…",
+      "q1": { "text": "What outcome do you most want from this decision, prior to the moral analysis?" },
+      "q2": { "text": "Would you still choose this course if a major worldly benefit were removed?" },
+      "q3": { "text": "What would you not want others to know about your motivation here?" },
+      "q4": { "text": "If a person you respect for sincerity asked you why you are leaning this way, what would you say?" },
       "q5": {
-        "religious": "What does my conscience report when I imagine making this choice and standing with it before God?",
-        "secular": "What does my conscience report when I imagine making this choice and standing with it before myself?"
+        "religious": "What does your conscience report when you imagine making this choice and standing with it before God?",
+        "secular": "What does your conscience report when you imagine making this choice and standing with it before yourself?"
       }
     },
-    "placeholder": "A short, honest answer is enough…",
-    "leaningLabel": "Which option does my heart lean toward?",
-    "leaningHelp": "Independent of the score, your interior leaning. The algorithm only uses this to surface tension between your stated direction and the option scoring highest.",
-    "corruptLabel": "I admit my motivation is corrupt",
-    "corruptHelp": "Tick this only if you yourself judge your motivation here morally compromised. When ticked, the niyya multiplier on the top option drops to 0 and a clear warning is added to the dossier."
+    "placeholder": "A few sentences is enough…",
+    "leaning": {
+      "title": "Which option does your heart lean toward?",
+      "subtitle": "Independent of any score, what's your inner inclination?",
+      "helper": "We don't score this answer; we only use it to detect tension between your intention and the calculus.",
+      "unsure": "I'm not sure yet"
+    },
+    "corrupt": {
+      "title": "Any concern about your motivation?",
+      "subtitle": "Tick this only if you yourself judge your motivation here morally compromised.",
+      "helper": "If you tick it, the niyya multiplier on the top option drops to 0 and a clear warning is added to the dossier.",
+      "label": "I admit my motivation is corrupt",
+      "note": "This is optional. Most people will leave it blank.",
+      "continue": "Finish"
+    }
+  },
+  "actions": {
+    "next": "Continue",
+    "back": "Back",
+    "skip": "Skip"
+  },
+  "consequence": {
+    "harm": {
+      "risk_life": {
+        "label": "Risk to someone's life or safety",
+        "desc": "Health, body, life-or-death stakes"
+      },
+      "damage_integrity": {
+        "label": "Damage to my conscience or integrity",
+        "desc": "Inner unease, drifting from a moral or religious commitment"
+      },
+      "mind_wellbeing": {
+        "label": "Harm to someone's mind or wellbeing",
+        "desc": "Stress, mental health, education, judgment"
+      },
+      "family_future": {
+        "label": "Harm to family or the future",
+        "desc": "Spouse, children, future generations — bonds and continuity"
+      },
+      "money_property": {
+        "label": "Loss of money or property",
+        "desc": "Material burden, livelihood, financial security"
+      },
+      "spiritual_cost": {
+        "label": "Spiritual cost",
+        "desc": "Inner peace, orientation, connection to God / conscience"
+      },
+      "lost_opportunity": {
+        "label": "Loss of a chance to learn or grow",
+        "desc": "Knowledge, skill, vision lost"
+      }
+    },
+    "help": {
+      "protect_life": {
+        "label": "Protects someone's life or safety",
+        "desc": "Health, body, life-saving"
+      },
+      "serve_integrity": {
+        "label": "Serves my conscience and integrity",
+        "desc": "Inner peace, doing the right thing, moral orientation"
+      },
+      "support_wellbeing": {
+        "label": "Supports someone's mind or wellbeing",
+        "desc": "Education, mental health, growth"
+      },
+      "serve_family": {
+        "label": "Serves family or the future",
+        "desc": "Spouse, children, the next generation"
+      },
+      "gain_resources": {
+        "label": "Improves material situation",
+        "desc": "Livelihood, earnings, financial soundness"
+      },
+      "spiritual_growth": {
+        "label": "Spiritual growth",
+        "desc": "Orientation toward God / conscience, inner peace"
+      },
+      "rational_growth": {
+        "label": "A chance to learn or grow",
+        "desc": "Knowledge, skill, vision gained"
+      }
+    }
   },
   "output": {
     "empty": "Not enough data to compute. Fill in the steps to complete the deliberation.",
@@ -220,7 +296,7 @@
       "empty": "No case description was entered."
     },
     "maqasidRanking": {
-      "title": "Maqāṣid balance",
+      "title": "Effect balance",
       "body": "Net effect on each of the five necessary goods, summed across options — harm to the left, benefit to the right.",
       "harm": "Harm",
       "benefit": "Benefit"
@@ -263,16 +339,16 @@
     }
   },
   "confidence": {
-    "yaqin": { "label": "Yaqīn", "term": "certainty" },
-    "zann_strong": { "label": "Ẓann (strong)", "term": "preponderant probability" },
-    "zann": { "label": "Ẓann", "term": "probable opinion" },
-    "shakk": { "label": "Shakk", "term": "doubt" },
-    "jahl": { "label": "Jahl", "term": "ignorance" }
+    "yaqin": { "label": "Certain", "term": "yaqīn" },
+    "zann_strong": { "label": "Pretty sure", "term": "strong probable opinion" },
+    "zann": { "label": "Maybe", "term": "probable opinion" },
+    "shakk": { "label": "Doubt it", "term": "doubt" },
+    "jahl": { "label": "No idea", "term": "ignorance" }
   },
   "tier": {
-    "daruri": { "label": "Ḍarūrī", "desc": "A necessity without which human life collapses structurally." },
-    "haji": { "label": "Ḥājī", "desc": "A need whose absence creates significant hardship but not structural collapse." },
-    "tahsini": { "label": "Taḥsīnī", "desc": "A refinement supporting the dignity, beauty, and excellence of life." }
+    "daruri": { "label": "Necessity", "desc": "Without it, human life collapses structurally." },
+    "haji": { "label": "Need", "desc": "Its absence creates significant hardship without structural collapse." },
+    "tahsini": { "label": "Refinement", "desc": "The dignity, beauty, and excellence of life." }
   },
   "maqasid": {
     "din": { "label": "Religion", "term": "ḥifẓ al-dīn" },

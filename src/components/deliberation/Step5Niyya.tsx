@@ -1,22 +1,38 @@
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { ConversationalScreen } from './ConversationalScreen';
 import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
 import { Segmented } from '@/components/ui/segmented';
 import { useSession } from '@/lib/storage/session';
 import type { NiyyaCheck } from '@/types/deliberation';
+import { cn } from '@/lib/utils';
 
-const QUESTIONS: (keyof Pick<NiyyaCheck, 'q1' | 'q2' | 'q3' | 'q4' | 'q5'>)[] = [
-  'q1',
-  'q2',
-  'q3',
-  'q4',
-  'q5',
+interface Props {
+  onComplete: () => void;
+  onBackToPrevious?: () => void;
+}
+
+const TOTAL = 8; // tone, q1, q2, q3, q4, q5, leaning, corrupt-confirm
+
+const QUESTIONS: { key: 'q1' | 'q2' | 'q3' | 'q4' | 'q5'; needsTone?: boolean }[] = [
+  { key: 'q1' },
+  { key: 'q2' },
+  { key: 'q3' },
+  { key: 'q4' },
+  { key: 'q5', needsTone: true },
 ];
 
-export function Step5Niyya() {
+export function Step5Niyya({ onComplete, onBackToPrevious }: Props) {
   const { t } = useTranslation('deliberate');
+  const subStep = useSession((s) => s.subStep);
+  const setSubStep = useSession((s) => s.setSubStep);
   const current = useSession((s) => s.current);
   const setNiyya = useSession((s) => s.setNiyya);
+
+  // Normalize sentinel "last sub-step" from retreatStep().
+  useEffect(() => {
+    if (subStep > TOTAL) setSubStep(TOTAL);
+  }, [subStep, setSubStep]);
 
   if (!current) return null;
   const niyya = current.niyya;
@@ -24,78 +40,140 @@ export function Step5Niyya() {
 
   const update = (patch: Partial<NiyyaCheck>) => setNiyya({ ...niyya, ...patch });
 
-  return (
-    <div className="space-y-10">
-      <div className="rounded-2xl bg-secondary/50 border border-border p-5">
-        <p className="text-sm font-medium">{t('step5.intro.title')}</p>
-        <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{t('step5.intro.body')}</p>
-      </div>
+  const advance = () => {
+    if (subStep >= TOTAL) onComplete();
+    else setSubStep(subStep + 1);
+  };
+  const retreat = () => {
+    if (subStep <= 1) onBackToPrevious?.();
+    else setSubStep(subStep - 1);
+  };
 
-      <div>
-        <Label>{t('step5.toneLabel')}</Label>
-        <p className="text-xs text-muted-foreground mb-2">{t('step5.toneHelp')}</p>
-        <Segmented<'religious' | 'secular'>
-          value={niyya.toneVariant ?? 'religious'}
-          onChange={(v) => update({ toneVariant: v })}
-          options={[
-            { value: 'religious', label: t('step5.tone.religious') },
-            { value: 'secular', label: t('step5.tone.secular') },
-          ]}
-          ariaLabel={t('step5.toneLabel')}
-          size="sm"
-        />
-      </div>
-
-      {QUESTIONS.map((q) => {
-        const isQ5 = q === 'q5';
-        const questionKey = isQ5 ? `step5.questions.${q}.${niyya.toneVariant ?? 'religious'}` : `step5.questions.${q}.text`;
-        return (
-          <div key={q} className="space-y-3">
-            <p className="text-base font-medium text-foreground leading-relaxed">
-              {t(questionKey)}
-            </p>
-            <Textarea
-              value={niyya[q]}
-              onChange={(e) => update({ [q]: e.target.value } as Partial<NiyyaCheck>)}
-              placeholder={t('step5.placeholder')}
-              rows={4}
-              className="min-h-[100px]"
-            />
-          </div>
-        );
-      })}
-
-      {options.length > 0 && (
-        <div className="space-y-3">
-          <Label>{t('step5.leaningLabel')}</Label>
-          <p className="text-xs text-muted-foreground">{t('step5.leaningHelp')}</p>
-          <div className="flex flex-wrap gap-2">
-            {options.map((opt, idx) => {
-              const active = niyya.leaningOptionId === opt.id;
-              return (
-                <button
-                  key={opt.id}
-                  type="button"
-                  onClick={() =>
-                    update({ leaningOptionId: active ? undefined : opt.id })
-                  }
-                  className={
-                    'rounded-full border px-4 h-9 text-sm transition-colors ' +
-                    (active
-                      ? 'bg-foreground text-background border-foreground'
-                      : 'bg-background border-border text-muted-foreground hover:text-foreground hover:border-foreground/40')
-                  }
-                >
-                  {String.fromCharCode(65 + idx)} · {opt.label || t('step3.untitled')}
-                </button>
-              );
-            })}
-          </div>
+  // 1: tone selection
+  if (subStep <= 1) {
+    return (
+      <ConversationalScreen
+        progress={t('step5.progress', { n: 1, total: TOTAL })}
+        title={t('step5.tone.title')}
+        subtitle={t('step5.tone.subtitle')}
+        helper={t('step5.tone.helper')}
+        onBack={retreat}
+        onContinue={advance}
+      >
+        <div className="flex justify-center">
+          <Segmented<'religious' | 'secular'>
+            value={niyya.toneVariant ?? 'religious'}
+            onChange={(v) => update({ toneVariant: v })}
+            options={[
+              { value: 'religious', label: t('step5.tone.religious') },
+              { value: 'secular', label: t('step5.tone.secular') },
+            ]}
+            ariaLabel={t('step5.tone.title')}
+          />
         </div>
-      )}
+      </ConversationalScreen>
+    );
+  }
 
-      <div className="rounded-xl border border-border p-4">
-        <label className="inline-flex items-start gap-3 cursor-pointer">
+  // 2..6: questions
+  const questionIdx = subStep - 2;
+  if (questionIdx >= 0 && questionIdx < QUESTIONS.length) {
+    const q = QUESTIONS[questionIdx];
+    const tone = niyya.toneVariant ?? 'religious';
+    const titleKey = q.needsTone
+      ? `step5.questions.${q.key}.${tone}`
+      : `step5.questions.${q.key}.text`;
+    return (
+      <ConversationalScreen
+        progress={t('step5.progress', { n: subStep, total: TOTAL })}
+        title={t(titleKey)}
+        subtitle={t('step5.questions.subtitle')}
+        helper={t('step5.placeholder')}
+        onBack={retreat}
+        onContinue={advance}
+      >
+        <Textarea
+          autoFocus
+          value={niyya[q.key]}
+          onChange={(e) => update({ [q.key]: e.target.value } as Partial<NiyyaCheck>)}
+          placeholder={t('step5.questions.placeholder')}
+          rows={5}
+          className="text-base mx-auto max-w-md min-h-[140px]"
+          aria-label={t(titleKey)}
+        />
+      </ConversationalScreen>
+    );
+  }
+
+  // 7: leaning
+  if (subStep === 7) {
+    return (
+      <ConversationalScreen
+        progress={t('step5.progress', { n: 7, total: TOTAL })}
+        title={t('step5.leaning.title')}
+        subtitle={t('step5.leaning.subtitle')}
+        helper={t('step5.leaning.helper')}
+        onBack={retreat}
+        onContinue={advance}
+      >
+        <div className="space-y-2 mx-auto max-w-md">
+          {options.map((opt, idx) => {
+            const active = niyya.leaningOptionId === opt.id;
+            return (
+              <button
+                key={opt.id}
+                type="button"
+                role="radio"
+                aria-checked={active}
+                onClick={() =>
+                  update({ leaningOptionId: active ? undefined : opt.id })
+                }
+                className={cn(
+                  'w-full rounded-2xl border p-4 text-left transition-colors',
+                  active
+                    ? 'bg-foreground text-background border-foreground'
+                    : 'bg-background border-border hover:border-foreground/40'
+                )}
+              >
+                <p className="text-xs uppercase tracking-wider opacity-70">
+                  {t('output.option')} {String.fromCharCode(65 + idx)}
+                </p>
+                <p className="text-base font-medium mt-1">
+                  {opt.label || t('step3.untitledOption')}
+                </p>
+              </button>
+            );
+          })}
+          <button
+            type="button"
+            onClick={() => update({ leaningOptionId: undefined })}
+            className={cn(
+              'w-full rounded-2xl border p-4 text-left transition-colors text-muted-foreground italic',
+              !niyya.leaningOptionId
+                ? 'bg-secondary border-foreground/20'
+                : 'bg-background border-border hover:border-foreground/40'
+            )}
+          >
+            {t('step5.leaning.unsure')}
+          </button>
+        </div>
+      </ConversationalScreen>
+    );
+  }
+
+  // 8: corrupt confirm
+  return (
+    <ConversationalScreen
+      progress={t('step5.progress', { n: 8, total: TOTAL })}
+      title={t('step5.corrupt.title')}
+      subtitle={t('step5.corrupt.subtitle')}
+      helper={t('step5.corrupt.helper')}
+      onBack={retreat}
+      onContinue={advance}
+      continueLabel={t('step5.corrupt.continue')}
+    >
+      <div className="mx-auto max-w-md">
+        <label className="flex items-start gap-3 cursor-pointer rounded-2xl border border-border p-4 hover:border-foreground/40 transition-colors">
           <input
             type="checkbox"
             checked={!!niyya.selfReportedCorrupt}
@@ -104,14 +182,14 @@ export function Step5Niyya() {
           />
           <span>
             <span className="block text-sm font-medium text-foreground">
-              {t('step5.corruptLabel')}
+              {t('step5.corrupt.label')}
             </span>
-            <span className="block text-xs text-muted-foreground mt-0.5 leading-relaxed">
-              {t('step5.corruptHelp')}
+            <span className="block text-xs text-muted-foreground mt-1 leading-relaxed">
+              {t('step5.corrupt.note')}
             </span>
           </span>
         </label>
       </div>
-    </div>
+    </ConversationalScreen>
   );
 }

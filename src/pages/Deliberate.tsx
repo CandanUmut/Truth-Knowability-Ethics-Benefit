@@ -1,10 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, ArrowRight, Save, Download, RotateCcw, FileCheck2 } from 'lucide-react';
-import { PageHeader } from '@/components/common/PageHeader';
+import { motion } from 'framer-motion';
+import { Save, Download, RotateCcw, FileCheck2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { StepIndicator } from '@/components/deliberation/StepIndicator';
 import { Step1Case } from '@/components/deliberation/Step1Case';
 import { Step2Truth } from '@/components/deliberation/Step2Truth';
 import { Step3Maqasid } from '@/components/deliberation/Step3Maqasid';
@@ -16,8 +14,16 @@ import { saveDeliberation } from '@/lib/storage/history';
 import { buildExport, downloadJSON } from '@/lib/storage/export';
 import { runDeliberation } from '@/lib/classification';
 import type { Deliberation } from '@/types/deliberation';
+import { cn } from '@/lib/utils';
 
-const TOTAL_STEPS = 5;
+const TOTAL_MAJOR = 5;
+const STEP_LABEL_KEYS = [
+  'step1.short',
+  'step2.short',
+  'step3.short',
+  'step4.short',
+  'step5.short',
+] as const;
 
 export default function Deliberate() {
   const { t } = useTranslation('deliberate');
@@ -26,6 +32,8 @@ export default function Deliberate() {
   const start = useSession((s) => s.start);
   const reset = useSession((s) => s.reset);
   const setStep = useSession((s) => s.setStep);
+  const advanceStep = useSession((s) => s.advanceStep);
+  const retreatStep = useSession((s) => s.retreatStep);
   const [savedToast, setSavedToast] = useState<string | null>(null);
 
   useEffect(() => {
@@ -37,29 +45,40 @@ export default function Deliberate() {
 
   if (!current || step === 0) {
     return (
-      <div className="mx-auto max-w-prose px-6 py-20 space-y-10">
-        <PageHeader
-          eyebrow={t('eyebrow')}
-          title={t('title')}
-          subtitle={t('subtitle')}
-        />
-        <div className="space-y-3">
-          <Button onClick={() => start()}>{t('startCta')}</Button>
+      <div className="mx-auto max-w-prose px-6 py-24 text-center space-y-8">
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="space-y-5"
+        >
+          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+            {t('eyebrow')}
+          </p>
+          <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">
+            {t('start.title')}
+          </h1>
+          <p className="text-muted-foreground leading-relaxed max-w-prose mx-auto">
+            {t('start.subtitle')}
+          </p>
+        </motion.div>
+        <div className="flex flex-col items-center gap-3">
+          <Button size="lg" onClick={() => start()}>{t('startCta')}</Button>
           <p className="text-xs text-muted-foreground">{t('startNote')}</p>
         </div>
       </div>
     );
   }
 
+  const isOutput = step > TOTAL_MAJOR;
+  const visibleStep = isOutput ? TOTAL_MAJOR : step;
+
   const onSaveDraft = async () => {
-    if (!current) return;
     const updated: Deliberation = { ...current, status: 'draft', updatedAt: new Date().toISOString() };
     await saveDeliberation(updated);
     setSavedToast(t('savedDraft'));
   };
-
   const onSaveFinal = async () => {
-    if (!current) return;
     const result = runDeliberation(current);
     const updated: Deliberation = {
       ...current,
@@ -70,9 +89,7 @@ export default function Deliberate() {
     await saveDeliberation(updated);
     setSavedToast(t('savedFinal'));
   };
-
   const onExport = () => {
-    if (!current) return;
     const result = current.result ?? runDeliberation(current);
     const updated: Deliberation = { ...current, result };
     const payload = buildExport([updated]);
@@ -80,75 +97,36 @@ export default function Deliberate() {
     downloadJSON(payload, filename);
   };
 
-  const onPrev = () => {
-    if (step > 1) setStep((step - 1) as StepIndex);
-  };
-  const onNext = () => {
-    if (step < TOTAL_STEPS) setStep((step + 1) as StepIndex);
-    else setStep(TOTAL_STEPS as StepIndex); // remain on output
-  };
-  const onShowOutput = () => setStep((TOTAL_STEPS + 1) as 5);
-
-  const isOutput = step > TOTAL_STEPS;
-  const visibleStep = isOutput ? TOTAL_STEPS : step;
-
   return (
-    <div className="mx-auto max-w-form px-6 py-12">
-      <div className="space-y-3 mb-8">
-        <PageHeader
-          eyebrow={t('eyebrow')}
-          title={isOutput ? t('outputTitle') : t(`step${visibleStep}.title`)}
-          subtitle={isOutput ? t('outputSubtitle') : t(`step${visibleStep}.subtitle`)}
-        />
-        <StepIndicator current={visibleStep} total={TOTAL_STEPS} onJump={(n) => setStep(n as StepIndex)} />
+    <div className="mx-auto max-w-form px-6 py-10 min-h-[calc(100vh-4rem)] flex flex-col">
+      <CompactStepBar
+        visibleStep={visibleStep}
+        isOutput={isOutput}
+        onJump={(n) => setStep(n as StepIndex)}
+      />
+
+      <div className="flex-1 flex items-start justify-center pt-12 pb-16">
+        {step === 1 && <Step1Case onComplete={advanceStep} />}
+        {step === 2 && <Step2Truth onComplete={advanceStep} onBackToPrevious={retreatStep} />}
+        {step === 3 && <Step3Maqasid onComplete={advanceStep} onBackToPrevious={retreatStep} />}
+        {step === 4 && <Step4Sources onComplete={advanceStep} onBackToPrevious={retreatStep} />}
+        {step === 5 && <Step5Niyya onComplete={advanceStep} onBackToPrevious={retreatStep} />}
+        {isOutput && (
+          <div className="w-full">
+            <Output />
+          </div>
+        )}
       </div>
 
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={isOutput ? 'output' : `step-${step}`}
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -4 }}
-          transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-        >
-          {!isOutput && step === 1 && <Step1Case />}
-          {!isOutput && step === 2 && <Step2Truth />}
-          {!isOutput && step === 3 && <Step3Maqasid />}
-          {!isOutput && step === 4 && <Step4Sources />}
-          {!isOutput && step === 5 && <Step5Niyya />}
-          {isOutput && <Output />}
-        </motion.div>
-      </AnimatePresence>
-
-      <div className="mt-12 flex flex-wrap items-center gap-3 border-t border-border pt-6">
-        {!isOutput && (
-          <>
-            <Button variant="outline" size="sm" onClick={onPrev} disabled={step === 1}>
-              <ArrowLeft size={14} aria-hidden="true" /> {t('actions.back', { ns: 'common' })}
-            </Button>
-            {step < TOTAL_STEPS ? (
-              <Button size="sm" onClick={onNext}>
-                {t('actions.next', { ns: 'common' })} <ArrowRight size={14} aria-hidden="true" />
-              </Button>
-            ) : (
-              <Button size="sm" onClick={onShowOutput}>
-                <FileCheck2 size={14} aria-hidden="true" /> {t('seeMap')}
-              </Button>
-            )}
-          </>
-        )}
-        {isOutput && (
-          <Button variant="outline" size="sm" onClick={() => setStep(TOTAL_STEPS as StepIndex)}>
-            <ArrowLeft size={14} aria-hidden="true" /> {t('backToSteps')}
-          </Button>
-        )}
-        <div className="flex-1" />
+      <div className="border-t border-border pt-4 flex flex-wrap items-center justify-end gap-2">
         <Button variant="ghost" size="sm" onClick={onSaveDraft}>
           <Save size={14} aria-hidden="true" /> {t('actions.saveDraft', { ns: 'common' })}
         </Button>
-        <Button variant="ghost" size="sm" onClick={onSaveFinal}>
-          <FileCheck2 size={14} aria-hidden="true" /> {t('actions.saveFinal', { ns: 'common' })}
-        </Button>
+        {isOutput && (
+          <Button variant="ghost" size="sm" onClick={onSaveFinal}>
+            <FileCheck2 size={14} aria-hidden="true" /> {t('actions.saveFinal', { ns: 'common' })}
+          </Button>
+        )}
         <Button variant="ghost" size="sm" onClick={onExport}>
           <Download size={14} aria-hidden="true" /> {t('actions.export', { ns: 'common' })}
         </Button>
@@ -171,6 +149,47 @@ export default function Deliberate() {
           {savedToast}
         </div>
       )}
+    </div>
+  );
+}
+
+function CompactStepBar({
+  visibleStep,
+  isOutput,
+  onJump,
+}: {
+  visibleStep: number;
+  isOutput: boolean;
+  onJump: (n: number) => void;
+}) {
+  const { t } = useTranslation('deliberate');
+  return (
+    <div className="space-y-2">
+      <div className="flex items-center gap-2">
+        {Array.from({ length: TOTAL_MAJOR }).map((_, i) => {
+          const n = i + 1;
+          const reached = n <= visibleStep;
+          const past = n < visibleStep || isOutput;
+          return (
+            <button
+              key={n}
+              type="button"
+              onClick={() => past && onJump(n)}
+              disabled={!past}
+              aria-label={t(STEP_LABEL_KEYS[i])}
+              aria-current={n === visibleStep && !isOutput ? 'step' : undefined}
+              className={cn(
+                'h-1.5 flex-1 rounded-full transition-colors',
+                reached ? 'bg-foreground' : 'bg-secondary',
+                past ? 'cursor-pointer hover:bg-foreground/80' : 'cursor-default'
+              )}
+            />
+          );
+        })}
+      </div>
+      <p className="text-[0.7rem] uppercase tracking-[0.2em] text-muted-foreground text-center">
+        {isOutput ? t('outputBadge') : t(STEP_LABEL_KEYS[visibleStep - 1])}
+      </p>
     </div>
   );
 }

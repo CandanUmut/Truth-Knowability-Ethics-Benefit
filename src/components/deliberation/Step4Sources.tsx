@@ -1,48 +1,84 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Plus, X, Sparkles } from 'lucide-react';
+import { ConversationalScreen } from './ConversationalScreen';
 import { Textarea } from '@/components/ui/textarea';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Segmented } from '@/components/ui/segmented';
 import { Button } from '@/components/ui/button';
 import { SourceCard } from '@/components/common/SourceCard';
 import { useSession } from '@/lib/storage/session';
-import { sourcesFor, getSource, patternsFor } from '@/lib/sources';
+import { sourcesFor, getSource } from '@/lib/sources';
 import type { SourceConsultation } from '@/types/deliberation';
+import { cn } from '@/lib/utils';
 
-const BEARS_OPTIONS: ('yes' | 'no' | 'unsure')[] = ['yes', 'no', 'unsure'];
+interface Props {
+  onComplete: () => void;
+  onBackToPrevious?: () => void;
+}
 
-export function Step4Sources() {
+const TOTAL = 2; // gate + (matched | custom)
+
+export function Step4Sources({ onComplete, onBackToPrevious }: Props) {
   const { t } = useTranslation('deliberate');
+  const subStep = useSession((s) => s.subStep);
+  const setSubStep = useSession((s) => s.setSubStep);
   const current = useSession((s) => s.current);
   const setConsultations = useSession((s) => s.setConsultations);
+
+  useEffect(() => {
+    if (subStep > TOTAL) setSubStep(TOTAL);
+  }, [subStep, setSubStep]);
 
   const matched = useMemo(() => {
     if (!current) return [];
     return sourcesFor(current.case.description);
   }, [current]);
 
-  const matchedPatterns = useMemo(() => {
-    if (!current) return [];
-    return patternsFor(current.case.description);
-  }, [current]);
-
   if (!current) return null;
   const consultations = current.consultations;
-
   const consultedIds = new Set(consultations.map((c) => c.sourceId));
 
-  const addCustom = () => {
-    const fresh: SourceConsultation = {
-      id: crypto.randomUUID(),
-      sourceId: '',
-      citation: '',
-      bearsOnCase: null,
-    };
-    setConsultations([...consultations, fresh]);
-  };
+  // Gate
+  if (subStep <= 1) {
+    return (
+      <ConversationalScreen
+        progress={t('step4.progress', { n: 1, total: TOTAL })}
+        title={t('step4.gate.title')}
+        subtitle={t('step4.gate.subtitle')}
+        helper={t('step4.gate.helper')}
+        onBack={onBackToPrevious}
+      >
+        <div className="space-y-3 mx-auto max-w-md">
+          <GateOption
+            label={t('step4.gate.show')}
+            desc={t('step4.gate.showDesc', { count: matched.length })}
+            onClick={() => setSubStep(2)}
+            active={false}
+          />
+          <GateOption
+            label={t('step4.gate.custom')}
+            desc={t('step4.gate.customDesc')}
+            onClick={() => {
+              if (consultations.length === 0) {
+                setConsultations([newCustom()]);
+              }
+              setSubStep(2);
+            }}
+            active={false}
+          />
+          <GateOption
+            label={t('step4.gate.skip')}
+            desc={t('step4.gate.skipDesc')}
+            onClick={onComplete}
+            active={false}
+          />
+        </div>
+      </ConversationalScreen>
+    );
+  }
 
+  // Sub-step 2 — present matched + already-added consultations + ability to add custom
   const addFromLibrary = (sourceId: string) => {
     if (consultedIds.has(sourceId)) return;
     const src = getSource(sourceId);
@@ -55,174 +91,158 @@ export function Step4Sources() {
       id: crypto.randomUUID(),
       sourceId,
       citation,
-      bearsOnCase: null,
+      bearsOnCase: 'yes',
     };
     setConsultations([...consultations, fresh]);
   };
 
-  const update = (id: string, patch: Partial<SourceConsultation>) =>
+  const updateConsult = (id: string, patch: Partial<SourceConsultation>) =>
     setConsultations(consultations.map((c) => (c.id === id ? { ...c, ...patch } : c)));
 
-  const remove = (id: string) => setConsultations(consultations.filter((c) => c.id !== id));
+  const removeConsult = (id: string) =>
+    setConsultations(consultations.filter((c) => c.id !== id));
+
+  const addCustom = () => setConsultations([...consultations, newCustom()]);
 
   return (
-    <div className="space-y-8">
-      <div className="rounded-2xl bg-secondary/40 border border-border p-5 space-y-2">
-        <p className="text-sm text-foreground font-medium flex items-center gap-2">
-          <Sparkles size={14} aria-hidden="true" />
-          {t('step4.matched.title')}
-        </p>
-        <p className="text-sm text-muted-foreground leading-relaxed">{t('step4.matched.body')}</p>
-        {matchedPatterns.length > 0 && (
-          <p className="text-xs text-muted-foreground/80 italic pt-1">
-            {t('step4.matched.patternsLabel')}: {matchedPatterns.join(', ')}
-          </p>
+    <ConversationalScreen
+      progress={t('step4.progress', { n: 2, total: TOTAL })}
+      title={t('step4.review.title')}
+      subtitle={t('step4.review.subtitle')}
+      helper={t('step4.review.helper')}
+      onBack={() => setSubStep(1)}
+      onContinue={onComplete}
+    >
+      <div className="space-y-8 mx-auto max-w-md">
+        {matched.length > 0 && (
+          <section className="space-y-3">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground flex items-center gap-2">
+              <Sparkles size={12} aria-hidden="true" /> {t('step4.review.suggested')}
+            </h3>
+            <div className="space-y-3">
+              {matched.map((src) => {
+                const already = consultedIds.has(src.data.id);
+                return (
+                  <SourceCard
+                    key={src.data.id}
+                    source={src}
+                    compact
+                    trailing={
+                      <Button
+                        size="sm"
+                        variant={already ? 'ghost' : 'outline'}
+                        disabled={already}
+                        onClick={() => addFromLibrary(src.data.id)}
+                      >
+                        {already ? t('step4.review.added') : t('step4.review.resonates')}
+                      </Button>
+                    }
+                  />
+                );
+              })}
+            </div>
+          </section>
         )}
-      </div>
 
-      {matched.length > 0 && (
-        <section className="space-y-4">
+        <section className="space-y-3">
           <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-            {t('step4.matched.heading')}
+            {t('step4.review.yours')}
           </h3>
-          <div className="space-y-4">
-            {matched.map((src) => {
-              const alreadyAdded = consultedIds.has(src.data.id);
-              return (
-                <SourceCard
-                  key={src.data.id}
-                  source={src}
-                  trailing={
-                    <Button
-                      variant={alreadyAdded ? 'ghost' : 'outline'}
-                      size="sm"
-                      disabled={alreadyAdded}
-                      onClick={() => addFromLibrary(src.data.id)}
-                    >
-                      {alreadyAdded ? t('step4.matched.added') : t('step4.matched.consult')}
-                    </Button>
-                  }
-                />
-              );
-            })}
-          </div>
-        </section>
-      )}
-
-      <section className="space-y-4">
-        <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-          {t('step4.consultations')}
-        </h3>
-
-        {consultations.length === 0 ? (
-          <div className="rounded-2xl border border-dashed border-border p-8 text-center">
-            <p className="text-sm text-muted-foreground">{t('step4.empty')}</p>
-          </div>
-        ) : (
-          <div className="space-y-4">
+          {consultations.length === 0 && (
+            <p className="text-xs text-muted-foreground italic">{t('step4.review.empty')}</p>
+          )}
+          <div className="space-y-3">
             {consultations.map((c, idx) => {
               const source = c.sourceId ? getSource(c.sourceId) : null;
               return (
-                <div key={c.id} className="rounded-2xl border border-border p-5 space-y-4">
+                <div key={c.id} className="rounded-2xl border border-border p-4 space-y-3">
                   <div className="flex items-start justify-between gap-3">
-                    <span className="text-xs uppercase tracking-wider text-muted-foreground">
+                    <p className="text-xs uppercase tracking-wider text-muted-foreground">
                       {t('step4.source')} {idx + 1}
-                    </span>
+                    </p>
                     <button
                       type="button"
-                      onClick={() => remove(c.id)}
+                      onClick={() => removeConsult(c.id)}
                       aria-label={t('step4.removeSource')}
                       className="text-muted-foreground hover:text-destructive transition-colors"
                     >
-                      <X size={16} />
+                      <X size={14} />
                     </button>
                   </div>
-
                   {source ? (
                     <SourceCard source={source} compact />
                   ) : (
                     <div>
-                      <Label htmlFor={`citation-${c.id}`}>{t('step4.citationLabel')}</Label>
-                      <p className="text-xs text-muted-foreground mb-2">{t('step4.citationHelp')}</p>
+                      <Label htmlFor={`citation-${c.id}`}>{t('step4.review.citationLabel')}</Label>
                       <Input
                         id={`citation-${c.id}`}
                         value={c.citation ?? ''}
-                        onChange={(e) => update(c.id, { citation: e.target.value, sourceId: c.sourceId || e.target.value })}
-                        placeholder={t('step4.citationPlaceholder')}
+                        onChange={(e) =>
+                          updateConsult(c.id, {
+                            citation: e.target.value,
+                            sourceId: c.sourceId || e.target.value,
+                          })
+                        }
+                        placeholder={t('step4.review.citationPlaceholder')}
                       />
                     </div>
                   )}
-
-                  <div>
-                    <Label>{t('step4.bearsLabel')}</Label>
-                    <Segmented<'yes' | 'no' | 'unsure'>
-                      value={c.bearsOnCase}
-                      onChange={(v) => update(c.id, { bearsOnCase: v })}
-                      options={BEARS_OPTIONS.map((v) => ({
-                        value: v,
-                        label: t(`step4.bears.${v}`),
-                      }))}
-                      ariaLabel={t('step4.bearsLabel')}
-                      size="sm"
-                    />
-                  </div>
-
-                  {c.bearsOnCase === 'yes' && (
-                    <>
-                      <div>
-                        <Label htmlFor={`reasoning-${c.id}`}>{t('step4.reasoningLabel')}</Label>
-                        <p className="text-xs text-muted-foreground mb-2">{t('step4.reasoningHelp')}</p>
-                        <Textarea
-                          id={`reasoning-${c.id}`}
-                          value={c.reasoning ?? ''}
-                          onChange={(e) => update(c.id, { reasoning: e.target.value })}
-                          placeholder={t('step4.reasoningPlaceholder')}
-                          rows={3}
-                          className="min-h-[80px]"
-                        />
-                      </div>
-                      <div>
-                        <label className="inline-flex items-start gap-3 cursor-pointer">
-                          <input
-                            type="checkbox"
-                            checked={!!c.followsMinority}
-                            onChange={(e) => update(c.id, { followsMinority: e.target.checked })}
-                            className="mt-1 h-4 w-4 rounded border-border text-foreground focus:ring-ring"
-                          />
-                          <span>
-                            <span className="block text-sm font-medium text-foreground">
-                              {t('step4.minorityLabel')}
-                            </span>
-                            <span className="block text-xs text-muted-foreground mt-0.5">
-                              {t('step4.minorityHelp')}
-                            </span>
-                          </span>
-                        </label>
-                      </div>
-                      {c.followsMinority && (
-                        <div>
-                          <Label htmlFor={`minority-${c.id}`}>{t('step4.minorityReasoningLabel')}</Label>
-                          <Textarea
-                            id={`minority-${c.id}`}
-                            value={c.minorityReasoning ?? ''}
-                            onChange={(e) => update(c.id, { minorityReasoning: e.target.value })}
-                            rows={2}
-                            className="min-h-[60px]"
-                          />
-                        </div>
-                      )}
-                    </>
-                  )}
+                  <Textarea
+                    value={c.reasoning ?? ''}
+                    onChange={(e) => updateConsult(c.id, { reasoning: e.target.value })}
+                    placeholder={t('step4.review.reasoningPlaceholder')}
+                    rows={2}
+                    className="min-h-[56px] text-sm"
+                    aria-label={t('step4.review.reasoningLabel')}
+                  />
                 </div>
               );
             })}
           </div>
-        )}
-
-        <Button type="button" variant="outline" size="sm" onClick={addCustom}>
-          <Plus size={14} aria-hidden="true" /> {t('step4.addCustom')}
-        </Button>
-      </section>
-    </div>
+          <Button type="button" variant="outline" size="sm" onClick={addCustom}>
+            <Plus size={14} aria-hidden="true" /> {t('step4.review.addCustom')}
+          </Button>
+        </section>
+      </div>
+    </ConversationalScreen>
   );
+}
+
+function GateOption({
+  label,
+  desc,
+  onClick,
+  active,
+}: {
+  label: string;
+  desc: string;
+  onClick: () => void;
+  active: boolean;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={cn(
+        'w-full rounded-2xl border p-4 text-left transition-colors',
+        active
+          ? 'bg-foreground text-background border-foreground'
+          : 'bg-background border-border hover:border-foreground/40'
+      )}
+    >
+      <p className="text-base font-semibold">{label}</p>
+      <p className={cn('text-xs mt-1', active ? 'text-background/80' : 'text-muted-foreground')}>
+        {desc}
+      </p>
+    </button>
+  );
+}
+
+function newCustom(): SourceConsultation {
+  return {
+    id: crypto.randomUUID(),
+    sourceId: '',
+    citation: '',
+    bearsOnCase: 'yes',
+  };
 }
