@@ -1,0 +1,21 @@
+{
+  "eyebrow": "About",
+  "title": "What this tool is, and what it is not.",
+  "subtitle": "It is a decision-support tool — not a fatwā service, not a chatbot, not an AI advisor. It does not think for you; it offers a structure that helps you think.",
+  "origin": {
+    "title": "Origin",
+    "body": "The application implements the framework of Umut Candan's working paper Truth, Ethics, and Benefit: A Multi-Source Framework for Practical Deliberation. The framework argues that truth, ethics, and benefit-judgments are irreducible to one another but inseparable in responsible practical reasoning, and specifies the rules of engagement among four sources: revelation (waḥy), reason (ʿaql), sense-experience (tajriba), and conscience (qalb / ḍamīr)."
+  },
+  "commitments": {
+    "title": "Philosophical commitments",
+    "body": "The framework sits in a moderate Ashʿarī / Māturīdī line: reason perceives the broad outline of moral truth, but that perception operates within a context shaped by revelation and tradition rather than in a vacuum. Hume's is/ought distinction is conceded; the descriptive premise is rejected — humans show up in experience already as bearers of function (ʿubūdiyya, khilāfa, amāna). Al-Shāṭibī's three-tier maqāṣid hierarchy is the structural skeleton; Tāhā ʿAbd al-Raḥmān's vital / rational / spiritual reorganization complements rather than replaces it.\n\nQualified disagreement is not a failure mode: where competent reasoners disagree in good faith, the framework presents the disagreement honestly rather than collapsing it into a forced verdict."
+  },
+  "audience": {
+    "title": "Who it is for",
+    "body": "Three readers, addressed without flattering or excluding any: a Muslim reader for whom revelation is binding, who will recognize a contemporary articulation of resources internal to her tradition; a secular reader for whom revelation is a tradition's resource, who can engage as comparative philosophy; and an Aristotelian / virtue-ethics reader who will find the integration claim resonant on grounds that do not require theology."
+  },
+  "limits": {
+    "title": "What it does not do",
+    "body": "This tool does not issue fatāwā. It does not replace consultation with a qualified scholar. It does not force binary verdicts on contested matters. It does not hide its uncertainty. It reports its own limits: the fine-grained mandūb / mubāḥ distinction, the sophistication of trained niyya-diagnosis, and outputs for users without baseline Islamic literacy are areas where the framework is honestly less competent."
+  }
+}

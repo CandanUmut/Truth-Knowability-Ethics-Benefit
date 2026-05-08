@@ -1,0 +1,98 @@
+{
+  "eyebrow": "Method",
+  "title": "The framework, four sources, and the niyya hinge.",
+  "subtitle": "We make the structure as visible as we can — knowing what the application asks (and what it does not) determines how you read its output.",
+  "section": {
+    "fourSource": {
+      "title": "Four sources — co-necessary, asymmetrically ordered",
+      "body": "Knowledge and moral judgment draw on four sources: revelation (waḥy), reason (ʿaql), sense-experience (tajriba), and conscience (qalb / ḍamīr). None is sufficient on its own. Where they appear to conflict in content, the question is which side has the stronger warrant in the specific case — not a pre-set hierarchy but a public adjudication rule. Intention is the hinge at the moment any of the four becomes action."
+    },
+    "maqasid": {
+      "title": "Five protected goods — al-Shāṭibī's skeleton",
+      "body": "Al-Shāṭibī shows by induction over the totality of revealed rulings that the Sharīʿa's commands track five protected goods: religion, life, intellect, lineage, property. They are not a ranked preference list but the structural conditions of human existence. The benefit calculus does not flatten these onto a single utilitarian scale — it tracks the impact on each."
+    },
+    "tier": {
+      "title": "Three tiers — ḍarūrī / ḥājī / taḥsīnī",
+      "body": "Two impacts on the same axis are not equally weighty. Protecting a ḍarūrī (necessary) good, a ḥājī (needed) good, and a taḥsīnī (refining) good belong to different tiers. The algorithm weights every impact by its tier."
+    },
+    "niyya": {
+      "title": "Niyya — a mirror, not a score",
+      "body": "In the fifth step, the application asks five reflective questions. Your answers are not scored; they are reflected back. The algorithm does only one thing with them: if your stated direction conflicts with the option scoring highest, that tension is gently surfaced. Intention is neither sufficient on its own, nor ignorable."
+    },
+    "commitments": {
+      "title": "Six falsifiable commitments",
+      "body": "The framework is a testable program, not an attitude. The six commitments below define the thresholds at which the framework would refuse to keep operating. If any is shown to fail across a wide range of cases, the framework needs revision."
+    },
+    "classification": {
+      "title": "Output classes",
+      "body": "The algorithm does not issue verdicts. It returns one of three classes."
+    }
+  },
+  "sources": {
+    "revelation": { "title": "Revelation", "term": "waḥy" },
+    "reason": { "title": "Reason", "term": "ʿaql" },
+    "experience": { "title": "Experience", "term": "tajriba" },
+    "conscience": { "title": "Conscience", "term": "qalb / ḍamīr" }
+  },
+  "diagram": {
+    "fourSource": {
+      "title": "Four sources and the niyya hinge",
+      "hingeTitle": "Niyya",
+      "hingeTerm": "niyya · qaṣd",
+      "caption": "Four co-necessary sources, asymmetrically ordered; at the moment of action, all four pass through the hinge of intention."
+    },
+    "maqasid": {
+      "caption": "The classical five ḍarūriyyāt from al-Shāṭibī's al-Muwāfaqāt. The user assigns how each option affects each good; the application does not assign that for her."
+    },
+    "tier": {
+      "caption": "The weights of impacts on the same maqsad differ by tier."
+    }
+  },
+  "maqasid": {
+    "din": { "label": "Religion", "term": "ḥifẓ al-dīn", "tier": "Ḍarūrī" },
+    "nafs": { "label": "Life", "term": "ḥifẓ al-nafs", "tier": "Ḍarūrī" },
+    "aql": { "label": "Intellect", "term": "ḥifẓ al-ʿaql", "tier": "Ḍarūrī" },
+    "nasl": { "label": "Lineage", "term": "ḥifẓ al-nasl", "tier": "Ḍarūrī" },
+    "mal": { "label": "Property", "term": "ḥifẓ al-māl", "tier": "Ḍarūrī" }
+  },
+  "tier": {
+    "weight": "Weight",
+    "daruri": {
+      "label": "Ḍarūrī",
+      "desc": "Necessities: without these, human life collapses into chaos — religion, life, intellect, lineage, property. Threats here override most other calculations."
+    },
+    "haji": {
+      "label": "Ḥājī",
+      "desc": "Needs: not strictly indispensable but their absence creates significant hardship. The Sharīʿa's licit concessions (rukhṣas) operate at this level."
+    },
+    "tahsini": {
+      "label": "Taḥsīnī",
+      "desc": "Refinements: the dignity, beauty, and excellence of human life. Preserved as long as the higher tiers are not breached."
+    }
+  },
+  "commitments": {
+    "c1": { "title": "1", "body": "A judgment of moral rightness that ignores truth-conditions is defective." },
+    "c2": { "title": "2", "body": "A truth-claim pressed into action with weak evidence must be marked ẓann, not yaqīn." },
+    "c3": { "title": "3", "body": "Benefit assessment cannot define the good; it can only inform it." },
+    "c4": { "title": "4", "body": "Intention is always morally relevant, never sufficient on its own." },
+    "c5": { "title": "5", "body": "Source conflicts must be resolved by public rules, not charismatic intuition." },
+    "c6": { "title": "6", "body": "Persistent qualified disagreement is itself a meaningful output, not an error state." }
+  },
+  "classification": {
+    "settled": {
+      "tag": "Settled",
+      "title": "High confidence",
+      "body": "Top option exceeds the runner-up clearly, sources converge, niyya is clean. Even so, consultation with a qualified scholar is recommended."
+    },
+    "qualified": {
+      "tag": "Qualified disagreement",
+      "title": "Reasonable divergence",
+      "body": "Multiple options score within 20% of each other, or there is a known scholarly disagreement on the case. The framework does not pick for you; it presents the disagreement honestly."
+    },
+    "open": {
+      "tag": "Open",
+      "title": "Insufficient evidence",
+      "body": "Critical claims at shakk level, literature is thin, or the facts are not yet settled. The framework structures the inquiry instead of issuing a verdict."
+    }
+  }
+}

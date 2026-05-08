@@ -4,6 +4,7 @@
     "shortName": "TEB"
   },
   "nav": {
+    "primary": "Primary",
     "home": "Home",
     "method": "Method",
     "deliberate": "Deliberate",
@@ -26,6 +27,7 @@
     "close": "Close"
   },
   "theme": {
+    "label": "Theme",
     "light": "Light",
     "dark": "Dark",
     "system": "System"
@@ -34,5 +36,20 @@
     "tr": "Türkçe",
     "en": "English",
     "switchTo": "Switch language"
+  },
+  "footer": {
+    "tagline": "A quiet tool for structured deliberation. A four-source framework drawing on revelation, reason, experience, and conscience. Open source.",
+    "linksLabel": "Links",
+    "explore": "Explore",
+    "repo": "Source code",
+    "repoDesc": "This application runs entirely in your browser. The repository is public; the privacy claims can be verified by reading the code.",
+    "license": "Apache-2.0 licensed.",
+    "versionLabel": "Version",
+    "preprintLabel": "Framework preprint v1.0"
+  },
+  "notFound": {
+    "title": "This page does not exist",
+    "body": "The page you are looking for is not here.",
+    "cta": "Return home"
   }
 }

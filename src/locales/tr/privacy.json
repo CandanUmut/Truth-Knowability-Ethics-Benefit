@@ -1,0 +1,18 @@
+{
+  "eyebrow": "Gizlilik",
+  "title": "Verileriniz cihazınızdan çıkmaz.",
+  "subtitle": "Bu, bir politika beyanı değil bir kod kararıdır. Aşağıdaki ilkeleri kaynak kod üzerinden doğrulayabilirsiniz.",
+  "intro": "Pratik müzakere sizin ile vicdanınız (ve eğer öyle düşünüyorsanız, Rabbiniz) arasındadır. Uygulama bir araçtır, bir tanık değil. Bu yüzden uygulama hiçbir şey toplamaz, hiçbir şey iletmez ve hiçbir şeyi izlemez.",
+  "principlesTitle": "Yedi ilke",
+  "principles": {
+    "p1": { "title": "Sıfır sunucu", "body": "Üretim derlemesinde uygulamadan dış bir uç noktaya hiçbir fetch() çağrısı yapılmaz. Çıktı tamamen statiktir." },
+    "p2": { "title": "Sıfır analitik", "body": "Google Analytics yok, Plausible yok, PostHog yok, Sentry yok, Mixpanel yok. Bir özellik telemetri gerektiriyorsa, o özellik gönderilmez." },
+    "p3": { "title": "Sıfır CDN bağımlılığı", "body": "Inter ve Noto Naskh Arabic yazı tipleri yerel olarak public/fonts/ içinde barındırılır. Google Fonts CDN kullanılmaz." },
+    "p4": { "title": "Yalnızca localStorage ve IndexedDB", "body": "Çerez yok. Parmak izi yok. Tarayıcı yerel depolaması, yalnızca bu cihaz için." },
+    "p5": { "title": "Dışa / içe aktarma", "body": "Tüm geçmişinizi her an JSON olarak dışa aktarabilir, başka bir cihaza içe aktarabilirsiniz. Tek 'senkronizasyon' yöntemi budur." },
+    "p6": { "title": "Açık kaynak", "body": "Depo herkese açıktır. Bu sayfada söylenen her şey kaynak kod üzerinden doğrulanabilir." },
+    "p7": { "title": "CI gizlilik bekçisi", "body": "Sürekli entegrasyon, kaynak kodda herhangi bir analitik / telemetri uç noktası bulursa derlemeyi başarısız sayar. İlke kod düzeyinde uygulanır." }
+  },
+  "verifyTitle": "Kendiniz doğrulayın",
+  "verifyBody": "Uygulamanın söylediğini yaptığını teyit etmek için kaynak kodu inceleyebilir, fetch çağrılarını arayabilir, derleme çıktısının içine bakabilirsiniz. Açıklığın işlevi tam budur."
+}

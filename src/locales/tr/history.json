@@ -1,0 +1,10 @@
+{
+  "eyebrow": "Geçmiş",
+  "title": "Kaydedilen müzakereler",
+  "subtitle": "Tüm dosyalar yalnızca bu cihazda saklanır. JSON olarak dışa aktarabilirsiniz; başka bir cihaza taşımak istediğinizde içe aktarın.",
+  "empty": {
+    "title": "Henüz kaydedilmiş bir müzakere yok.",
+    "body": "İlk müzakerenize başladığınızda, dosyalarınız bu liste içinde görünecek — ne sunucuya gönderilir, ne de paylaşılır. Cihazınızda kalır.",
+    "cta": "İlk müzakereye başla"
+  }
+}

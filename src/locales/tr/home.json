@@ -1,4 +1,31 @@
 {
-  "placeholderTitle": "Hakîkat · Ahlâk · Maslahat",
-  "placeholderBody": "Zor kararlar üzerinde dingin bir biçimde düşünmek için bir alan. Yapılandırılmış müzakere aracı yakında hazır."
+  "hero": {
+    "eyebrow": "Hakîkat · Ahlâk · Maslahat",
+    "title": "Zor kararlar üzerinde dingin bir biçimde düşünmek için bir alan.",
+    "subhead": "Analitik felsefe ile klasik İslâmî düşünce mirasından beslenen çok kaynaklı bir çerçeve üzerine inşa edilmiştir. Verileriniz cihazınızdan çıkmaz. Açık kaynaktır.",
+    "cta": "Bir müzakereye başla",
+    "secondary": "Yöntemi gör"
+  },
+  "cards": {
+    "truth": {
+      "title": "Hakîkat",
+      "term": "ḥaqq · ṣidq · yakîn",
+      "body": "Bir iddianın ne ölçüde delillendiğini ve sizden ne tür bir tasdik beklediğini ayırt edin: duyu, akıl, tevatür, tek kaynak, kümülatif kanıt veya delilsiz. Delilinizin gerçekten taşıyabileceğinden fazla kesinlikle konuşmayın."
+    },
+    "ethics": {
+      "title": "Ahlâk",
+      "term": "ḥusn · ʿadl · niyet",
+      "body": "Akıl ve vicdanın geniş hatlarda kavradığı doğru ile yanlış; sahih vahyin meseleye ne söylediği; insanın işlevini koruyup korumadığı; ve niyetinizin gerçekten ne olduğu. Bu dört eksen aynı yargıyı verdiğinde sağlam bir zemindesiniz."
+    },
+    "benefit": {
+      "title": "Maslahat",
+      "term": "ḍarûriyyât · ḥâciyyât · taḥsîniyyât",
+      "body": "Beş zorunlu maksat — din, can, akıl, nesil, mal — ve Tâhâ'nın hayatî / aklî / rûhânî üç ekseni. Faydaları katmanlandırır, zararları öne alır; faydacı tek-ölçek hesabını reddeder."
+    }
+  },
+  "hinge": {
+    "title": "Niyet, üçünü birbirine bağlayan menteşedir.",
+    "body": "Doğruluk, ahlâkîlik ve fayda yargıları formel olarak birbirine indirgenemez (Hume ve Moore haklıdır). Ama sorumlu pratik akıl yürütmede birbirinden ayrılamaz: müzakereyi yapan tek bir öznedir, bir niyetle. Bu uygulama, yargıları birleştirme yerine, niyetinize sizi ayna tutar.",
+    "note": "İnnemâ'l-aʿmâlü bi'n-niyyât. — Buhârî 1, Müslim 1907"
+  }
 }

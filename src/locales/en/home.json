@@ -1,4 +1,31 @@
 {
-  "placeholderTitle": "Truth · Ethics · Benefit",
-  "placeholderBody": "A quiet place to think carefully about hard decisions. The structured deliberation tool is coming soon."
+  "hero": {
+    "eyebrow": "Truth · Ethics · Benefit",
+    "title": "A quiet place to think carefully about hard decisions.",
+    "subhead": "Built on a multi-source framework drawing from analytic philosophy and classical Islamic intellectual tradition. Your data never leaves your device. Open source.",
+    "cta": "Start a deliberation",
+    "secondary": "Read the method"
+  },
+  "cards": {
+    "truth": {
+      "title": "Truth",
+      "term": "ḥaqq · ṣidq · yaqīn",
+      "body": "Distinguish how strongly a claim is evidenced and what kind of assent it warrants from you: sense, reason, mass-transmission, single source, cumulative case, or no basis. Speak with the certainty your evidence actually warrants — and no more."
+    },
+    "ethics": {
+      "title": "Ethics",
+      "term": "ḥusn · ʿadl · niyya",
+      "body": "Reason and conscience perceive the broad outline of right and wrong; revelation addresses the case where it does; the human function is preserved; and your intention is what it actually is. When the four converge you stand on solid ground."
+    },
+    "benefit": {
+      "title": "Benefit",
+      "term": "ḍarūriyyāt · ḥājiyyāt · taḥsīniyyāt",
+      "body": "Five protected goods — religion, life, intellect, lineage, property — and Tāhā's three axes of vital, rational, and spiritual interests. Tiered, not flattened; harm-aversion ahead of benefit-seeking; never collapsed into a single utilitarian scale."
+    }
+  },
+  "hinge": {
+    "title": "Intention is the hinge that binds the three.",
+    "body": "Truth-judgment, ethics-judgment, and benefit-judgment cannot be deductively reduced to one another (Hume and Moore are right). But they cannot be responsibly isolated either: it is one agent who deliberates, with one orientation. This tool does not integrate the three for you. It mirrors them back, so you can see your own intention.",
+    "note": "Innamā al-aʿmālu bi-l-niyyāt. — Bukhārī 1, Muslim 1907"
+  }
 }

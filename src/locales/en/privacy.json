@@ -1,0 +1,18 @@
+{
+  "eyebrow": "Privacy",
+  "title": "Your data never leaves your device.",
+  "subtitle": "This is not a policy statement. It is a code-level commitment, verifiable by reading the source.",
+  "intro": "Practical deliberation is between you and your conscience (and, if you so understand it, your Lord). The application is an instrument, not a witness. So it collects nothing, transmits nothing, and tracks nothing.",
+  "principlesTitle": "Seven principles",
+  "principles": {
+    "p1": { "title": "Zero server", "body": "In the production build, the application makes no fetch() calls to any external endpoint. The artifact is fully static." },
+    "p2": { "title": "Zero analytics", "body": "No Google Analytics, no Plausible, no PostHog, no Sentry, no Mixpanel. If a feature requires telemetry, the feature does not ship." },
+    "p3": { "title": "Zero CDN dependencies", "body": "Inter and Noto Naskh Arabic fonts are hosted locally in public/fonts/. No Google Fonts CDN." },
+    "p4": { "title": "localStorage and IndexedDB only", "body": "No cookies. No fingerprinting. Browser-local storage only, scoped to this device." },
+    "p5": { "title": "Export and import", "body": "You can export your full history as a JSON file at any moment, and import it on another device. This is the only sync mechanism." },
+    "p6": { "title": "Open source", "body": "The repository is public. Everything stated on this page can be verified by reading the code." },
+    "p7": { "title": "CI privacy guard", "body": "Continuous integration fails the build if the source contains any analytics or telemetry endpoints. The principle is enforced at the code level." }
+  },
+  "verifyTitle": "Verify it yourself",
+  "verifyBody": "To confirm the application does what it says, inspect the source, search for fetch calls, look inside the build artifact. The function of openness is precisely this."
+}

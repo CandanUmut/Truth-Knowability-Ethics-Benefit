@@ -1,0 +1,98 @@
+{
+  "eyebrow": "Yöntem",
+  "title": "Çerçeve, dört kaynak ve niyet menteşesi.",
+  "subtitle": "Çerçevenin yapısını mümkün olduğu kadar açık bir biçimde ortaya koyuyoruz — uygulamanın size ne sorduğunu ve ne sormadığını bilmeniz, çıktının onu nasıl anlamlandıracağınızı belirler.",
+  "section": {
+    "fourSource": {
+      "title": "Dört kaynak — karşılıklı zorunlu, asimetrik sıralanmış",
+      "body": "Bilgi ve ahlâkî yargı dört kaynaktan beslenir: vahy (waḥy), akıl (ʿaql), duyu deneyimi (tajriba) ve vicdan (qalb / ḍamîr). Hiçbiri tek başına yetmez. İçeriği bakımından çatıştıkları görünen yerlerde, hangi tarafın gerekçesinin daha güçlü olduğu sorulur — ön-belirlenmiş bir hiyerarşi değil, kamuya açık bir ayırma kuralı işler. Niyet, dördünün eyleme dönüştüğü andaki menteşedir."
+    },
+    "maqasid": {
+      "title": "Beş zorunlu maksat — Şâtıbî'nin iskeleti",
+      "body": "Şâtıbî, vahyin tüm hükümlerinin tüme-varımla beş korunan iyiye yöneldiğini gösterir: din, can, akıl, nesil ve mal. Bunlar bir tercih sıralaması değil, insanî varoluşun yapısal koşullarıdır. Maslahat hesabı, faydacı tek bir ölçeğe değil, bu beş eksenin her birine yapılan etkiye bakar."
+    },
+    "tier": {
+      "title": "Üç katman — zaruri / hâcî / tahsînî",
+      "body": "Aynı eksende ortaya çıkan iki etki eşit ağırlıkta değildir. Zarûrî (zorunlu) bir iyiyi koruma, hâcî (gereklilik) bir iyiyi koruma ve tahsînî (güzelleştirme) bir iyiyi koruma farklı katmanlara aittir. Algoritma, her etkiyi katmanına göre ağırlıklandırır."
+    },
+    "niyya": {
+      "title": "Niyet — bir puan değil, bir ayna",
+      "body": "Beşinci adımda uygulama size beş soru sorar. Cevaplarınız puanlanmaz; size geri yansıtılır. Algoritma sadece tek bir kontrolü yapar: en yüksek puan alan seçenekle ifade ettiğiniz yönelim çatışıyorsa, bunu nazikçe gösterir. Niyet ne tek başına yeter ne de göz ardı edilebilir."
+    },
+    "commitments": {
+      "title": "Altı yanlışlanabilir taahhüt",
+      "body": "Çerçeve, soyut bir tutum değil, sınanabilir bir programdır. Aşağıdaki altı taahhüt, çerçevenin ne yapmaktan vazgeçeceği eşikleri belirler. Sahada bunlardan herhangi biri geniş bir vakalar yelpazesinde tutarsız bulunursa, çerçevenin revize edilmesi gerekir."
+    },
+    "classification": {
+      "title": "Çıktı sınıfları",
+      "body": "Algoritma bir hüküm vermez. Üç sınıftan birini gösterir."
+    }
+  },
+  "sources": {
+    "revelation": { "title": "Vahy", "term": "waḥy" },
+    "reason": { "title": "Akıl", "term": "ʿaql" },
+    "experience": { "title": "Deneyim", "term": "tajriba" },
+    "conscience": { "title": "Vicdan", "term": "qalb / ḍamîr" }
+  },
+  "diagram": {
+    "fourSource": {
+      "title": "Dört kaynak ve niyet menteşesi",
+      "hingeTitle": "Niyet",
+      "hingeTerm": "niyya · qaṣd",
+      "caption": "Dört kaynak karşılıklı olarak zorunludur, asimetrik biçimde sıralanır; eylem ânında niyet menteşesinden geçer."
+    },
+    "maqasid": {
+      "caption": "Klasik beş zarûrî, Şâtıbî'nin el-Muvâfakât'ından alınmıştır. Kullanıcı her seçeneğin hangi iyiye nasıl etki ettiğini kendisi atar; uygulama bu atamayı yapmaz."
+    },
+    "tier": {
+      "caption": "Aynı maksada yapılan etkilerin ağırlıkları katmanlarına göre değişir."
+    }
+  },
+  "maqasid": {
+    "din": { "label": "Din", "term": "ḥifẓ al-dīn", "tier": "Zarûrî" },
+    "nafs": { "label": "Can", "term": "ḥifẓ al-nafs", "tier": "Zarûrî" },
+    "aql": { "label": "Akıl", "term": "ḥifẓ al-ʿaql", "tier": "Zarûrî" },
+    "nasl": { "label": "Nesil", "term": "ḥifẓ al-nasl", "tier": "Zarûrî" },
+    "mal": { "label": "Mal", "term": "ḥifẓ al-māl", "tier": "Zarûrî" }
+  },
+  "tier": {
+    "weight": "Ağırlık",
+    "daruri": {
+      "label": "Zarûrî",
+      "desc": "Bu iyiler olmadan insanî hayat yapısal olarak çöker — din, can, akıl, nesil, mal. Bunlara yönelik kesin tehditler diğer hesapları ezer."
+    },
+    "haji": {
+      "label": "Hâcî",
+      "desc": "Olmazsa olmazlardan değil ama yokluğu ciddi sıkıntı yaratan iyiler. Şâriʿin ruhsatları (kolaylıklar) bu katmanda işler."
+    },
+    "tahsini": {
+      "label": "Tahsînî",
+      "desc": "İnsanî hayatın güzellik, dürüstlük, edep ve incelik boyutu. Diğer iki katmanı feda etmediği sürece korunur."
+    }
+  },
+  "commitments": {
+    "c1": { "title": "1", "body": "Doğruluk şartlarını gözardı eden ahlâkî doğruluk yargısı kusurludur." },
+    "c2": { "title": "2", "body": "Zayıf delille eyleme geçirilen bir doğruluk iddiası yakîn değil zann olarak işaretlenmelidir." },
+    "c3": { "title": "3", "body": "Fayda değerlendirmesi iyiyi tanımlayamaz; sadece bilgi verebilir." },
+    "c4": { "title": "4", "body": "Niyet her zaman ahlâken alâkalıdır, asla tek başına yeterli değildir." },
+    "c5": { "title": "5", "body": "Kaynak çatışmaları kamuya açık kurallarla çözülmelidir, karizmatik sezgiyle değil." },
+    "c6": { "title": "6", "body": "Süregelen nitelikli ihtilaf kendi başına anlamlı bir çıktıdır, bir hata durumu değil." }
+  },
+  "classification": {
+    "settled": {
+      "tag": "Çözülmüş",
+      "title": "Yüksek güven",
+      "body": "En yüksek puanlı seçenek belirgin biçimde öne çıkar, kaynaklar yakınsar, niyet temizdir. Yine de yetkin bir âlim ile istişare önerilir."
+    },
+    "qualified": {
+      "tag": "Nitelikli ihtilaf",
+      "title": "Saygın ayrılık",
+      "body": "Birden fazla seçenek yakın puan alır veya bilinen bir âlim ihtilafı vardır. Çerçeve sizin yerinize seçim yapmaz; ihtilafı dürüstçe önünüze koyar."
+    },
+    "open": {
+      "tag": "Açık",
+      "title": "Bilgi yetersiz",
+      "body": "Kritik iddialar şek seviyesinde, literatür ince veya olgular henüz yeterince netleşmemiş. Çerçeve verdi̇ği yerine soruyu yapılandırır."
+    }
+  }
+}

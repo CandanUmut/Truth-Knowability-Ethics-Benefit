@@ -1,0 +1,21 @@
+{
+  "eyebrow": "Hakkında",
+  "title": "Bu araç nedir, ne değildir?",
+  "subtitle": "Bu uygulama bir karar destek aracıdır — bir fetvâ kaynağı değil, bir akıl hocası değil, bir yapay zekâ danışmanı değildir. Sizin yerine düşünmez; düşünmenize yardımcı bir yapı sunar.",
+  "origin": {
+    "title": "Çıkış noktası",
+    "body": "Uygulama, Umut Candan'ın “Truth, Ethics, and Benefit: A Multi-Source Framework for Practical Deliberation” başlıklı çalışma metnindeki çerçeveyi uygular. Çerçeve, doğruluk-ahlâk-fayda yargılarının birbirinden indirgenemez olduğunu ama sorumlu pratik akıl yürütmede birbirinden ayrılamayacağını savunur; vahy, akıl, deneyim ve vicdandan oluşan dört kaynak arasındaki etkileşim kurallarını açıkça tanımlar."
+  },
+  "commitments": {
+    "title": "Felsefî taahhütler",
+    "body": "Çerçeve, modifiye-Eş'arî / Mâturîdî çizgisinde durur: akıl ahlâkî kavrayışta gerçekten yetkindir, ancak bu yetkinlik vahyin ve geleneğin biçimlendirdiği bir bağlam içinde işler. Hume'un is/ought ayrımı kabul edilir, ama sırf betimsel bir insan tasviri reddedilir: insan, deneyimde zaten ʿubûdiyyet, hilâfet ve emânet yüklenmiş bir varlık olarak görünür. Şâtıbî'nin üç katmanlı maqâṣid hiyerarşisi taşıyıcı iskelettir; Tâhâ Abdurrahmân'ın hayatî/aklî/rûhânî yeniden düzenlemesi onu tamamlar.\n\nNitelikli ihtilaf bir hata durumu değildir: çerçeve, yetkin akıl yürütücülerin samimiyetle ayrıştığı bir meselede tek bir hüküm dayatmak yerine ayrılığı açıkça gösterir."
+  },
+  "audience": {
+    "title": "Kimin için yazıldı",
+    "body": "Üç farklı okuyucu için tutarlı kalmaya çalışır: vahyin bağlayıcı olduğu Müslüman okuyucu için kendi geleneğinin çağdaş bir ifadesi; vahyi bir geleneğin kaynağı olarak gören laik okuyucu için karşılaştırmalı felsefe çalışması; ve teolojik öncüller olmaksızın benzer bir bütünlüğü tanıyan Aristotelyan/erdem etiği okuyucusu için."
+  },
+  "limits": {
+    "title": "Ne yapmaz",
+    "body": "Bu araç fetvâ vermez. Yetkin bir âlimle istişareyi ikame etmez. İhtilaflı meselelerde ikili karar dayatmaz. Belirsizliğini gizlemez. Kendi sınırlarını rapor eder: belirli mevzularda (mendub/mubâh ayrımı, niyet işletilmesinin sofistike yapısı, derin İslâmî okur-yazarlık eksikliğindeki kullanıcılar) çerçevenin nelerden geri kaldığını dürüstçe söyler."
+  }
+}

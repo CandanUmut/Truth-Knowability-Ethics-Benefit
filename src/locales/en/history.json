@@ -1,0 +1,10 @@
+{
+  "eyebrow": "History",
+  "title": "Saved deliberations",
+  "subtitle": "All dossiers live only on this device. Export them as JSON whenever you wish; import them on another device when you want.",
+  "empty": {
+    "title": "No deliberations saved yet.",
+    "body": "When you finish your first deliberation, its dossier will appear in this list. It is not sent to a server, not shared with anyone — it stays on your device.",
+    "cta": "Begin your first deliberation"
+  }
+}

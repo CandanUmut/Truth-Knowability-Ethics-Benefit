@@ -4,6 +4,7 @@
     "shortName": "HAM"
   },
   "nav": {
+    "primary": "Birincil",
     "home": "Ana Sayfa",
     "method": "Yöntem",
     "deliberate": "Müzakere",
@@ -26,6 +27,7 @@
     "close": "Kapat"
   },
   "theme": {
+    "label": "Görünüm",
     "light": "Aydınlık",
     "dark": "Karanlık",
     "system": "Sistem"
@@ -34,5 +36,20 @@
     "tr": "Türkçe",
     "en": "English",
     "switchTo": "Dili değiştir"
+  },
+  "footer": {
+    "tagline": "Yapılandırılmış müzakere için sakin bir araç. Vahy, akıl, deneyim ve vicdandan beslenen bir çerçeve. Açık kaynak.",
+    "linksLabel": "Bağlantılar",
+    "explore": "Keşfet",
+    "repo": "Kaynak Kod",
+    "repoDesc": "Bu uygulama tamamen istemci tarafında çalışır. Kodun tamamı kamuya açıktır; gizlilik iddiaları kaynak kod üzerinden doğrulanabilir.",
+    "license": "Apache-2.0 lisansı altında.",
+    "versionLabel": "Sürüm",
+    "preprintLabel": "Çerçeve preprint v1.0"
+  },
+  "notFound": {
+    "title": "Bu sayfa bulunamadı",
+    "body": "Aradığınız sayfa bu cihazda mevcut değil.",
+    "cta": "Ana sayfaya dön"
   }
 }
