@@ -1,0 +1,287 @@
+[
+  {
+    "id": "scholar.ghazali.ihya.niyya",
+    "scholar": "Abū Ḥāmid al-Ghazālī",
+    "era": "classical",
+    "school": "Shāfiʿī / Sufi",
+    "work": "Iḥyāʾ ʿulūm al-dīn — Kitāb al-Niyya wa-l-Ikhlāṣ wa-l-Ṣidq",
+    "summary": {
+      "en": "Al-Ghazālī treats niyya not as a single declarative thought but as the sustained orientation of the heart at the moment of action. He distinguishes between motives that drive an act (al-bawāʿith) and the cover-stories the soul tells itself, arguing that ikhlāṣ is rare precisely because mixed motives are the human default.",
+      "tr": "Gazâlî, niyeti tek bir bildirim cümlesi değil, fiil ânında kalbin sürekli yönelimi olarak ele alır. Fiili harekete geçiren saikler (bevâis) ile nefsin kendine söylediği örtü-hikâyelerini ayırır ve ihlâsın az bulunur olmasının, karışık saiklerin insanın varsayılı durumu olmasından kaynaklandığını söyler."
+    },
+    "themes": ["niyya", "ikhlas", "self-deception", "introspection"],
+    "casePatterns": ["sincerity-intention", "general"],
+    "assertionStrength": "zanni",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "scholar.shatibi.muwafaqat.maqasid",
+    "scholar": "Abū Isḥāq al-Shāṭibī",
+    "era": "classical",
+    "school": "Mālikī",
+    "work": "al-Muwāfaqāt fī uṣūl al-sharīʿa",
+    "summary": {
+      "en": "Al-Shāṭibī systematises the ḍarūrī / ḥājī / taḥsīnī tier-structure that the framework's tier_weight encodes. He argues that the legitimacy of a ruling is grounded in whether it preserves the maqāṣid in their proper rank, and that contradictions between rulings should be resolved by appeal to the higher tier.",
+      "tr": "Şâtıbî, çerçevenin tier_weight olarak kodladığı ḍarûrî / ḥâcî / taḥsînî tabakalanmasını sistematik biçimde kurar. Bir hükmün meşruluğunun, maksatları doğru mertebeleriyle koruyup korumadığına bağlı olduğunu, hükümler arası çelişkilerin ise üst mertebeye başvurarak çözülmesi gerektiğini savunur."
+    },
+    "themes": ["maqasid", "shariʿa", "tier", "rank"],
+    "casePatterns": ["religious-obligation", "general"],
+    "assertionStrength": "zanni",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "scholar.ibn-qayyim.iʿlām.ends",
+    "scholar": "Ibn Qayyim al-Jawziyya",
+    "era": "classical",
+    "school": "Ḥanbalī",
+    "work": "Iʿlām al-muwaqqiʿīn ʿan rabbi al-ʿālamīn",
+    "summary": {
+      "en": "Ibn al-Qayyim defends a teleological reading of fiqh: the sharīʿa is wisdom and mercy from beginning to end. Any ruling derived in a way that contradicts justice, mercy, or maṣlaḥa cannot be from the sharīʿa, even if a literalist reading would suggest otherwise.",
+      "tr": "İbnü'l-Kayyım, fıkhın gâyeci okumasını savunur: şeriat baştan sona hikmet ve rahmettir. Adalete, merhamete veya maslahata aykırı biçimde çıkarılan bir hüküm, lafzî okuma onu telkin etse bile, şeriattan olamaz."
+    },
+    "themes": ["maslaha", "ends", "rahma", "ʿadl", "literalism-vs-purpose"],
+    "casePatterns": ["leadership-civic", "professional-ethics", "general"],
+    "assertionStrength": "zanni",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "scholar.izz-bin-abdissalam.qawaid.maslaha",
+    "scholar": "ʿIzz al-Dīn ibn ʿAbd al-Salām",
+    "era": "classical",
+    "school": "Shāfiʿī",
+    "work": "Qawāʿid al-aḥkām fī maṣāliḥ al-anām",
+    "summary": {
+      "en": "Reduces the entirety of the sharīʿa's purposes to the procurement of benefits (maṣāliḥ) and the prevention of harms (mafāsid), arranged in a tightly ranked schedule. The treatise pioneered the technique of weighing competing benefits and harms quantitatively, rather than picking the textually closest precedent.",
+      "tr": "Şeriatın gayelerinin tamamını, sıkı bir sıralama içinde, maslahatların celbi ve mefsedetlerin def'i olmak üzere indirger. Eser, benzer nas yerine çatışan maslahat ve mefsedetleri nicel biçimde tartma tekniğine öncülük etmiştir."
+    },
+    "themes": ["maslaha", "mafsada", "ranking", "weighing"],
+    "casePatterns": ["medical-decision", "professional-ethics", "community-harm"],
+    "assertionStrength": "zanni",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "scholar.ibn-rushd.bidaya.ikhtilaf",
+    "scholar": "Ibn Rushd al-Ḥafīd (Averroes)",
+    "era": "classical",
+    "school": "Mālikī",
+    "work": "Bidāyat al-mujtahid wa-nihāyat al-muqtaṣid",
+    "summary": {
+      "en": "A comparative manual of disagreement: each chapter sets out the positions of the four schools, identifies the underlying epistemic source of their divergence (textual ambiguity, weight of analogy, conflict of texts), and refrains from declaring a single winner. A model for how to hold multiple defensible positions in mind without collapsing them.",
+      "tr": "Karşılaştırmalı bir ihtilaf kılavuzu: her bölümde dört mezhebin görüşlerini sıralar, ayrılmalarının arkasındaki epistemik nedeni (lafız müphemliği, kıyasın gücü, naslar arası çelişki) tespit eder ve tek bir galibi ilan etmekten kaçınır. Birden fazla savunulabilir görüşü, birini diğerine indirgemeden tutmanın örnek metodudur."
+    },
+    "themes": ["ikhtilaf", "comparative", "epistemic-pluralism"],
+    "casePatterns": ["religious-obligation", "professional-ethics", "general"],
+    "assertionStrength": "zanni",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "scholar.nawawi.adhkar.tongue",
+    "scholar": "Yaḥyā ibn Sharaf al-Nawawī",
+    "era": "classical",
+    "school": "Shāfiʿī",
+    "work": "al-Adhkār — chapters on the tongue",
+    "summary": {
+      "en": "Al-Nawawī devotes extended chapters to the moral discipline of speech: gossip (ghība), tale-bearing (namīma), praise of the absent (which can shade into both), and silence as an ethical posture. He gives clear textual rules but is also attentive to the social cost of harshness.",
+      "tr": "Nevevî, dilin ahlâkî terbiyesine geniş bölümler ayırır: gıybet, koğuculuk (nemîme), gıyabında methiye (her ikisine de geçebilen) ve ahlâkî bir tutum olarak susmak. Açık nas-temelli kurallar verir, ama katılığın toplumsal bedeline de duyarlıdır."
+    },
+    "themes": ["lisan", "ghiba", "namima", "silence"],
+    "casePatterns": ["speech-control", "digital-online", "community-harm"],
+    "assertionStrength": "zanni",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "scholar.ibn-taymiyya.fatawa.maslaha",
+    "scholar": "Taqī al-Dīn Ibn Taymiyya",
+    "era": "classical",
+    "school": "Ḥanbalī (independent)",
+    "work": "Majmūʿ al-fatāwā",
+    "summary": {
+      "en": "Argues that decisions in public affairs must be taken on the basis of the greater benefit and lesser harm at the time of the decision, even when the textual precedents do not exactly cover the case. The siyāsa sharʿiyya tradition.",
+      "tr": "Kamu işlerinde alınan kararların, naslı örnekler tam olarak vakaya uymasa da, karar ânındaki daha büyük maslahat ve daha küçük mefsedet üzerinden verilmesi gerektiğini savunur. Bu, siyâset-i şer'iyye geleneğidir."
+    },
+    "themes": ["siyasa-shariyya", "maslaha", "public-affairs"],
+    "casePatterns": ["leadership-civic", "professional-ethics"],
+    "assertionStrength": "zanni",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "scholar.ibn-ata-allah.hikam.action",
+    "scholar": "Ibn ʿAṭāʾ Allāh al-Iskandarī",
+    "era": "classical",
+    "school": "Mālikī / Shādhilī Sufi",
+    "work": "al-Ḥikam — aphorisms on action",
+    "summary": {
+      "en": "On hidden self-regard in apparently good acts: 'Your insistence on a single act with God being its arena and not your soul, is a sign of the heart's insight.' The aphorisms diagnose the fine difference between acting for God's pleasure and acting for one's image of one's own piety.",
+      "tr": "Görünüşte iyi olan fiillerdeki gizli nefs-payı üzerine: ‘Bir amelinde Allah'ın olmasında ısrar etmen, sahnenin nefsin değil O olmasında ısrar etmen — bu, kalbin firasetinin işaretidir.' Hikemler, Allah rızası için yapmakla kendi takvalı imajı için yapmak arasındaki ince farkı teşhis eder."
+    },
+    "themes": ["niyya", "ikhlas", "riya", "self-deception"],
+    "casePatterns": ["sincerity-intention", "general"],
+    "assertionStrength": "zanni",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "scholar.ibn-hazm.muhalla.contracts",
+    "scholar": "Ibn Ḥazm al-Andalusī",
+    "era": "classical",
+    "school": "Ẓāhirī",
+    "work": "al-Muḥallā — chapters on contracts",
+    "summary": {
+      "en": "A literalist counterweight to maslaha-driven jurisprudence: contracts are valid if and only if their stipulated terms do not contradict an explicit text. Useful as a reminder that the framework's calculus must answer to the text where the text is decisive.",
+      "tr": "Maslahat-merkezli içtihada karşı zâhirî bir denge: sözleşmeler, açıkça yasaklanan şartlar içermediği sürece geçerlidir. Çerçevenin hesabının, nas kesin olduğunda nasla hesaplaşmak zorunda olduğunu hatırlatır."
+    },
+    "themes": ["zahir", "literalism", "contracts"],
+    "casePatterns": ["contracts-promises", "religious-obligation"],
+    "assertionStrength": "zanni",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "scholar.qaradawi.fiqh-of-priorities",
+    "scholar": "Yūsuf al-Qaraḍāwī",
+    "era": "modern",
+    "school": "contemporary, Sunnī",
+    "work": "Fī fiqh al-awlawiyyāt",
+    "summary": {
+      "en": "Argues that contemporary moral confusion is largely a failure of priority-ranking: people obey small obligations while neglecting greater ones, or invest in the symbolic at the expense of the substantive. Develops a working method for weighting the maqāṣid against modern circumstances.",
+      "tr": "Çağdaş ahlâkî karışıklığın büyük ölçüde bir öncelik-sıralama başarısızlığı olduğunu savunur: insanlar küçük vecibelere sarılıp büyüklerini ihmal eder, ya da sembolik olanı esasa zarar verecek biçimde tercih eder. Modern şartlarda maksatları tartmak için işlevsel bir yöntem geliştirir."
+    },
+    "themes": ["awlawiyyat", "priority", "modern-fiqh"],
+    "casePatterns": ["religious-obligation", "leadership-civic", "general"],
+    "assertionStrength": "zanni",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "scholar.ibn-ashur.maqasid-modern",
+    "scholar": "Muḥammad al-Ṭāhir Ibn ʿĀshūr",
+    "era": "modern",
+    "school": "Mālikī (reformist)",
+    "work": "Maqāṣid al-sharīʿa al-islāmiyya",
+    "summary": {
+      "en": "Modernised the maqāṣid framework in the early twentieth century by adding axes that classical authors only implied — ḥurriyya (freedom), musāwāt (equality), fiṭra (innate human nature) — and arguing that the ʿillas of rulings must be intelligible to reasoned minds, not merely traditional.",
+      "tr": "Yirminci yüzyılın başında, klasik müelliflerin yalnızca îma ettiği eksenleri (ḥürriyet, müsâvât, fıtrat) ekleyerek maksatlar çerçevesini modernleştirdi; hükümlerin illetlerinin yalnızca geleneksel değil, akledilebilir olması gerektiğini savundu."
+    },
+    "themes": ["maqasid", "modern", "fitra", "freedom", "equality"],
+    "casePatterns": ["leadership-civic", "religious-obligation", "knowledge-learning"],
+    "assertionStrength": "zanni",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "scholar.taha.aql-vahiy",
+    "scholar": "Taha Abdurrahman",
+    "era": "modern",
+    "school": "contemporary, ethical philosopher",
+    "work": "Sūʾāl al-akhlāq — al-ʿaql al-aẖlāqī",
+    "summary": {
+      "en": "Distinguishes a 'vital' axis (the act's bare functioning), a 'rational' axis (its intelligible justification), and a 'spiritual' axis (its bearing on the agent's relation to the transcendent). The framework's three Tāhā axes are drawn from this triadic anthropology.",
+      "tr": "Bir fiilin ‘vital' ekseni (yalın işlevselliği), ‘aklî' ekseni (anlaşılabilir gerekçesi) ve ‘rûhî' ekseni (failin aşkın olanla ilişkisine etkisi) arasında ayırım yapar. Çerçevenin üç Tâhâ ekseni, bu üçlü antropolojiden alınmıştır."
+    },
+    "themes": ["ʿaql", "ruh", "anthropology", "ethics", "taha-axes"],
+    "casePatterns": ["sincerity-intention", "religious-obligation", "general"],
+    "assertionStrength": "zanni",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "scholar.attas.adab",
+    "scholar": "Syed Muhammad Naquib al-Attas",
+    "era": "modern",
+    "school": "contemporary, traditionalist",
+    "work": "Adab and the concept of education in Islam",
+    "summary": {
+      "en": "Reframes adab as the proper placement of every thing in its right rank — knowledge in its rank, action in its rank, persons in their rank. Moral failure is therefore less a violation of rules and more a misordering of values. Useful for diagnosing the niyya-tension cases the framework flags.",
+      "tr": "Edebi, her şeyin doğru mertebesine yerleştirilmesi olarak yeniden tanımlar: bilginin mertebesi, fiilin mertebesi, kişilerin mertebesi. Ahlâkî başarısızlık, kuralların ihlâli olmaktan çok değerlerin yanlış sıralanmasıdır. Çerçevenin işaret ettiği niyet-gerilimi durumlarını teşhis için yararlıdır."
+    },
+    "themes": ["adab", "rank", "right-placement"],
+    "casePatterns": ["sincerity-intention", "knowledge-learning"],
+    "assertionStrength": "zanni",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "scholar.kamali.shariah-purposes",
+    "scholar": "Mohammad Hashim Kamali",
+    "era": "modern",
+    "school": "contemporary, Sunnī",
+    "work": "Shariʿah Law: An Introduction; Maqāṣid al-Sharīʿah Made Simple",
+    "summary": {
+      "en": "Translates the maqāṣid framework into the vocabulary of public-interest reasoning recognisable to lawyers and policy-makers. Identifies an emerging 'extended maqāṣid' that includes information ethics, environmental sustainability, and minority rights as ḥājī-tier purposes recognised by the modern jurist.",
+      "tr": "Maksatlar çerçevesini, hukukçu ve politika yapıcının tanıdığı kamu yararı dilinde yeniden ifade eder. Modern müctehidin tanıdığı ḥâcî-mertebede maksatlar olarak bilgi etiği, çevresel sürdürülebilirlik ve azınlık haklarını içeren ‘genişletilmiş maksatlar' alanını tanımlar."
+    },
+    "themes": ["maqasid", "modern", "policy", "rights"],
+    "casePatterns": ["digital-online", "environment-creation", "leadership-civic"],
+    "assertionStrength": "zanni",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "scholar.ramadan.ethics-of-action",
+    "scholar": "Tariq Ramadan",
+    "era": "modern",
+    "school": "contemporary, Sunnī",
+    "work": "Radical Reform: Islamic Ethics and Liberation",
+    "summary": {
+      "en": "Pushes the maqāṣid programme outward: the universe and the human community are themselves textual sources, alongside revelation. Ethical practice integrates revealed wisdom, scientific knowledge, and the lived experience of communities — corresponding directly to the framework's four-source ontology.",
+      "tr": "Maksatlar programını dışa doğru genişletir: kâinat ve insan topluluğu, vahiy yanında birer nas-kaynağıdır. Ahlâkî pratik, vahiyle gelen hikmeti, ilmî bilgiyi ve toplulukların yaşanmış tecrübesini birleştirir; bu, çerçevenin dört-kaynak ontolojisiyle doğrudan örtüşür."
+    },
+    "themes": ["four-sources", "modern", "ethics-application"],
+    "casePatterns": ["leadership-civic", "knowledge-learning", "general"],
+    "assertionStrength": "zanni",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "scholar.muhasibi.riaya.self",
+    "scholar": "al-Ḥārith al-Muḥāsibī",
+    "era": "classical",
+    "school": "Sufi (Baghdad school)",
+    "work": "al-Riʿāya li-ḥuqūq Allāh",
+    "summary": {
+      "en": "Pioneer of muḥāsabat al-nafs — the disciplined, daily reckoning of one's motives. Treats the passing of a thought through the heart as the first scene of moral life, well before action. Foundational for the niyya-check stage of any deliberation worth the name.",
+      "tr": "Muhâsebetü'n-nefsin öncüsü: kişinin kendi saiklerini düzenli ve günlük olarak hesaba çekmesi. Bir hatıranın kalpten geçişini, fiilden çok önce, ahlâkî hayatın ilk sahnesi olarak ele alır. Adına lâyık her tedbîrin niyet-denetimi aşamasının temelidir."
+    },
+    "themes": ["muhasaba", "niyya", "self-examination"],
+    "casePatterns": ["sincerity-intention", "general"],
+    "assertionStrength": "zanni",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "scholar.juwayni.dirayat",
+    "scholar": "Imām al-Ḥaramayn al-Juwaynī",
+    "era": "classical",
+    "school": "Shāfiʿī",
+    "work": "al-Ghiyāthī",
+    "summary": {
+      "en": "Anticipates the maqāṣid programme by ranking the public interests the sharīʿa is designed to protect, and gives a method for legal reasoning when textual evidence is silent or contradictory. An early statement that the law is not exhausted by the texts that exist at any given moment.",
+      "tr": "Şeriatın korumayı amaçladığı kamu yararlarını sıralamak ve nas suskun veya çelişkili olduğunda hukukî muhâkeme için bir yöntem vermek suretiyle maksatlar programını öncüler. Hukukun, herhangi bir anda mevcut naslarla tükenmediğini söyleyen erken bir ifadedir."
+    },
+    "themes": ["maqasid", "uṣūl", "ijtihad"],
+    "casePatterns": ["religious-obligation", "leadership-civic"],
+    "assertionStrength": "zanni",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "scholar.izzetbegovic.east-west",
+    "scholar": "Alija Izetbegović",
+    "era": "modern",
+    "school": "contemporary, Bosnian",
+    "work": "Islam Between East and West",
+    "summary": {
+      "en": "Locates Islam as a third position between materialism (which sees only the body and its needs) and pure spiritualism (which abandons the body and the world). Practical decisions, on this reading, must answer to both bodily-rational welfare and spiritual orientation — exactly the dual demand the framework places on every deliberation.",
+      "tr": "İslam'ı, yalnız bedeni ve ihtiyaçlarını gören materyalizm ile dünyayı ve bedeni terk eden saf spiritualizm arasında üçüncü bir konum olarak konumlandırır. Bu okumada pratik kararlar, hem bedensel-aklî iyiliğe hem de rûhî yönelime cevap vermek zorundadır — çerçevenin her tedbîre yüklediği iki katlı talebin aynısıdır."
+    },
+    "themes": ["materialism", "spiritualism", "balance", "wasat"],
+    "casePatterns": ["moderation-balance", "leadership-civic", "general"],
+    "assertionStrength": "zanni",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "scholar.fadlallah.minorities",
+    "scholar": "Sayyid Muḥammad Ḥusayn Faḍlallāh",
+    "era": "modern",
+    "school": "contemporary, Twelver Shīʿī",
+    "work": "Fiqh al-shariʿa — fatāwā on civic life",
+    "summary": {
+      "en": "Argues that minority Muslims must answer to the maqāṣid in dialogue with the laws of the host society, recognising that pluralistic citizenship can itself be a maslaha when it secures life, mind, religion, lineage, and property. A Shīʿī parallel to the Sunnī fiqh-of-minorities literature.",
+      "tr": "Azınlık konumundaki Müslümanların, ev sahibi toplumun hukukuyla diyalog hâlinde maksatlara cevap vermesi gerektiğini; çoğulcu vatandaşlığın can, akıl, din, nesil ve malı koruduğunda kendisinin de bir maslahat olabileceğini savunur. Sünnî azınlıklar fıkhı literatürünün Şiî paraleli."
+    },
+    "themes": ["minorities", "citizenship", "modern-fiqh"],
+    "casePatterns": ["leadership-civic", "community-harm", "religious-obligation"],
+    "assertionStrength": "zanni",
+    "reviewStatus": "seed"
+  }
+]

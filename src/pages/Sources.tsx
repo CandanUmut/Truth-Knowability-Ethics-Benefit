@@ -8,7 +8,7 @@ import { searchSources, allThemes, listSources } from '@/lib/sources';
 import type { AnySource } from '@/types/sources';
 import { cn } from '@/lib/utils';
 
-type Filter = 'all' | 'quran' | 'hadith';
+type Filter = 'all' | 'quran' | 'hadith' | 'qaida' | 'scholar';
 
 export default function Sources() {
   const { t } = useTranslation('sources');
@@ -63,6 +63,12 @@ export default function Sources() {
           </FilterPill>
           <FilterPill active={filter === 'hadith'} onClick={() => setFilter('hadith')}>
             {t('filter.hadith')}
+          </FilterPill>
+          <FilterPill active={filter === 'qaida'} onClick={() => setFilter('qaida')}>
+            {t('filter.qaida')}
+          </FilterPill>
+          <FilterPill active={filter === 'scholar'} onClick={() => setFilter('scholar')}>
+            {t('filter.scholar')}
           </FilterPill>
           <span aria-hidden="true" className="text-border">|</span>
           <Filter size={14} className="text-muted-foreground" aria-hidden="true" />

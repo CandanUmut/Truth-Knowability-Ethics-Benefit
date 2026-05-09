@@ -143,5 +143,473 @@
     "casePatterns": ["truth-disclosure", "professional-ethics", "general"],
     "assertionStrength": "zanni",
     "reviewStatus": "seed"
+  },
+  {
+    "id": "bukhari.13",
+    "collection": "Bukhari",
+    "book": "al-Īmān",
+    "number": 13,
+    "grade": "sahih",
+    "narrator": "Anas ibn Mālik",
+    "arabic": "لَا يُؤْمِنُ أَحَدُكُمْ حَتَّىٰ يُحِبَّ لِأَخِيهِ مَا يُحِبُّ لِنَفْسِهِ.",
+    "transliteration": "Lā yuʾminu aḥadukum ḥattā yuḥibba li-akhīhi mā yuḥibbu li-nafsihi.",
+    "translations": {
+      "en": "None of you truly believes until he loves for his brother what he loves for himself.",
+      "tr": "Sizden biriniz, kendisi için sevdiğini kardeşi için de sevmedikçe (gerçek anlamda) iman etmiş olmaz."
+    },
+    "themes": ["iman", "muhabbah", "ukhuwwa", "golden-rule"],
+    "casePatterns": ["family-conflict", "community-harm", "professional-ethics", "general"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "bukhari.6018",
+    "collection": "Bukhari",
+    "book": "al-Adab",
+    "number": 6018,
+    "grade": "sahih",
+    "narrator": "Abū Hurayra",
+    "arabic": "مَنْ كَانَ يُؤْمِنُ بِاللَّهِ وَالْيَوْمِ الْآخِرِ فَلْيَقُلْ خَيْرًا أَوْ لِيَصْمُتْ، وَمَنْ كَانَ يُؤْمِنُ بِاللَّهِ وَالْيَوْمِ الْآخِرِ فَلْيُكْرِمْ جَارَهُ، وَمَنْ كَانَ يُؤْمِنُ بِاللَّهِ وَالْيَوْمِ الْآخِرِ فَلْيُكْرِمْ ضَيْفَهُ.",
+    "transliteration": "Man kāna yuʾminu bi-Llāhi wa-l-yawmi al-ākhiri fa-l-yaqul khayran aw li-yaṣmut, wa-man kāna yuʾminu bi-Llāhi wa-l-yawmi al-ākhiri fa-l-yukrim jārahu, wa-man kāna yuʾminu bi-Llāhi wa-l-yawmi al-ākhiri fa-l-yukrim ḍayfahu.",
+    "translations": {
+      "en": "Whoever believes in God and the Last Day, let him speak good or remain silent; let him be generous to his neighbour; and let him be generous to his guest.",
+      "tr": "Allah'a ve âhiret gününe inanan kimse ya hayır söylesin ya da sussun; Allah'a ve âhiret gününe inanan kimse komşusuna ikram etsin; Allah'a ve âhiret gününe inanan kimse misafirine ikram etsin."
+    },
+    "themes": ["speech", "silence", "neighbor", "guest", "akhlaq"],
+    "casePatterns": ["speech-control", "neighbor-rights", "honest-speech", "digital-online"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "bukhari.6035",
+    "collection": "Bukhari",
+    "book": "al-Adab",
+    "number": 6035,
+    "grade": "sahih",
+    "narrator": "ʿAbdullāh ibn ʿAmr",
+    "arabic": "لَيْسَ الْمُؤْمِنُ بِالطَّعَّانِ، وَلَا اللَّعَّانِ، وَلَا الْفَاحِشِ، وَلَا الْبَذِيءِ.",
+    "transliteration": "Laysa al-muʾminu bi-l-ṭaʿʿāni wa-lā al-laʿʿāni wa-lā al-fāḥishi wa-lā al-badhīʾi.",
+    "translations": {
+      "en": "The believer is not given to maligning, cursing, obscenity, or vulgarity.",
+      "tr": "Mümin; yerici, lânetleyici, çirkin söz söyleyici ve ağzı bozuk olmaz."
+    },
+    "themes": ["lisan", "tongue", "speech", "fuhsh", "akhlaq"],
+    "casePatterns": ["speech-control", "digital-online", "community-harm"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "bukhari.2442",
+    "collection": "Bukhari",
+    "book": "al-Maẓālim",
+    "number": 2442,
+    "grade": "sahih",
+    "narrator": "ʿAbdullāh ibn ʿUmar",
+    "arabic": "الْمُسْلِمُ أَخُو الْمُسْلِمِ، لَا يَظْلِمُهُ وَلَا يُسْلِمُهُ. وَمَنْ كَانَ فِي حَاجَةِ أَخِيهِ كَانَ اللَّهُ فِي حَاجَتِهِ.",
+    "transliteration": "Al-muslimu akhū al-muslimi, lā yaẓlimuhu wa-lā yuslimuhu. Wa-man kāna fī ḥājati akhīhi kāna Allāhu fī ḥājatihi.",
+    "translations": {
+      "en": "A Muslim is the brother of a Muslim — he does not wrong him nor abandon him. Whoever is in his brother's need, God is in his.",
+      "tr": "Müslüman Müslümanın kardeşidir; ona zulmetmez, onu (zalime) teslim etmez. Kim kardeşinin ihtiyacını giderirse, Allah da onun ihtiyacını giderir."
+    },
+    "themes": ["zulm", "brotherhood", "ukhuwwa", "mutual-aid"],
+    "casePatterns": ["community-harm", "whistleblowing", "professional-ethics", "conflict-resolution"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "bukhari.2697",
+    "collection": "Bukhari",
+    "book": "al-Ṣulḥ",
+    "number": 2697,
+    "grade": "sahih",
+    "narrator": "ʿĀʾisha",
+    "arabic": "مَنْ أَحْدَثَ فِي أَمْرِنَا هَٰذَا مَا لَيْسَ مِنْهُ فَهُوَ رَدٌّ.",
+    "transliteration": "Man aḥdatha fī amrinā hādhā mā laysa minhu fa-huwa radd.",
+    "translations": {
+      "en": "Whoever introduces into this affair of ours something that is not from it shall have it rejected.",
+      "tr": "Kim bizim bu işimizde (dinimizde) ondan olmayan bir şey ortaya koyarsa, o reddolunur."
+    },
+    "themes": ["bidʿah", "innovation", "religion-bounds"],
+    "casePatterns": ["religious-obligation", "general"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "bukhari.6011",
+    "collection": "Bukhari",
+    "book": "al-Adab",
+    "number": 6011,
+    "grade": "sahih",
+    "narrator": "al-Nuʿmān ibn Bashīr",
+    "arabic": "مَثَلُ الْمُؤْمِنِينَ فِي تَوَادِّهِمْ وَتَرَاحُمِهِمْ وَتَعَاطُفِهِمْ مَثَلُ الْجَسَدِ، إِذَا اشْتَكَىٰ مِنْهُ عُضْوٌ تَدَاعَىٰ لَهُ سَائِرُ الْجَسَدِ بِالسَّهَرِ وَالْحُمَّىٰ.",
+    "transliteration": "Mathalu al-muʾminīna fī tawāddihim wa-tarāḥumihim wa-taʿāṭufihim mathalu al-jasad — idhā ishtakā minhu ʿuḍwun tadāʿā lahu sāʾiru al-jasadi bi-l-saharī wa-l-ḥummā.",
+    "translations": {
+      "en": "The believers in their mutual love, mercy and compassion are like a single body — when one limb suffers, the rest of the body responds with sleeplessness and fever.",
+      "tr": "Müminler birbirlerini sevmekte, birbirlerine merhamet etmekte ve birbirlerine şefkat göstermekte bir vücut gibidirler. Vücudun bir uzvu rahatsızlandığında, diğer organları da uykusuzluk ve hararetle ona iştirak eder."
+    },
+    "themes": ["rahma", "compassion", "ukhuwwa", "solidarity"],
+    "casePatterns": ["community-harm", "family-conflict", "general"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "bukhari.6116",
+    "collection": "Bukhari",
+    "book": "al-Adab",
+    "number": 6116,
+    "grade": "sahih",
+    "narrator": "Abū Hurayra",
+    "arabic": "لَيْسَ الشَّدِيدُ بِالصُّرَعَةِ، إِنَّمَا الشَّدِيدُ الَّذِي يَمْلِكُ نَفْسَهُ عِنْدَ الْغَضَبِ.",
+    "transliteration": "Laysa al-shadīdu bi-l-ṣurʿati — innamā al-shadīdu alladhī yamliku nafsahu ʿinda al-ghaḍab.",
+    "translations": {
+      "en": "The strong man is not the one who can wrestle others down; the strong man is the one who controls himself in anger.",
+      "tr": "Güçlü kimse, güreşte rakibini yenen değildir; gerçek güçlü, öfke anında nefsine hâkim olandır."
+    },
+    "themes": ["ghadab", "anger", "self-control", "akhlaq"],
+    "casePatterns": ["conflict-resolution", "patience-trials", "speech-control"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "bukhari.2443",
+    "collection": "Bukhari",
+    "book": "al-Maẓālim",
+    "number": 2443,
+    "grade": "sahih",
+    "narrator": "Anas ibn Mālik",
+    "arabic": "انْصُرْ أَخَاكَ ظَالِمًا أَوْ مَظْلُومًا. قَالُوا: يَا رَسُولَ اللَّهِ، هَذَا نَنْصُرُهُ مَظْلُومًا، فَكَيْفَ نَنْصُرُهُ ظَالِمًا؟ قَالَ: تَأْخُذُ فَوْقَ يَدَيْهِ.",
+    "transliteration": "Unṣur akhāka ẓāliman aw maẓlūman. Qālū: yā rasūla Allāh, hādhā nanṣuruhu maẓlūman, fa-kayfa nanṣuruhu ẓāliman? Qāla: taʾkhudhu fawqa yadayhi.",
+    "translations": {
+      "en": "Help your brother whether he is the oppressor or the oppressed. They asked: O Messenger of God, we help him when he is oppressed — but how do we help him when he is the oppressor? He said: By restraining his hand.",
+      "tr": "Zalim de mazlum da olsa kardeşine yardım et. Ashab: ‘Ey Allah'ın Resûlü! Mazluma yardım edebiliriz; zalime nasıl yardım edelim?' diye sordu. ‘Onun elini (zulümden) tutarak,' buyurdu."
+    },
+    "themes": ["zulm", "intervention", "amr-bil-maʿruf", "responsibility"],
+    "casePatterns": ["whistleblowing", "professional-ethics", "community-harm"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "muslim.4867",
+    "collection": "Muslim",
+    "book": "al-Birr wa-l-Ṣila",
+    "number": 4867,
+    "grade": "sahih",
+    "narrator": "ʿĀʾisha",
+    "arabic": "اللَّهُمَّ مَنْ وَلِيَ مِنْ أَمْرِ أُمَّتِي شَيْئًا فَشَقَّ عَلَيْهِمْ فَاشْقُقْ عَلَيْهِ، وَمَنْ وَلِيَ مِنْ أَمْرِ أُمَّتِي شَيْئًا فَرَفَقَ بِهِمْ فَارْفُقْ بِهِ.",
+    "transliteration": "Allāhumma man waliya min amri ummatī shayʾan fa-shaqqa ʿalayhim fa-shquq ʿalayhi, wa-man waliya min amri ummatī shayʾan fa-rafaqa bihim fa-rfuq bihi.",
+    "translations": {
+      "en": "O God, whoever is given charge of any of my community's affairs and is harsh with them, be harsh with him; and whoever is gentle with them, be gentle with him.",
+      "tr": "Allah'ım! Kim ümmetimin işinden bir şeye velilik eder de onlara güçlük çıkarırsa, sen de ona güçlük çıkar. Kim de ümmetimin işinden bir şeye velilik eder de onlara yumuşak davranırsa, sen de ona yumuşak davran."
+    },
+    "themes": ["leadership", "rifq", "mercy", "responsibility"],
+    "casePatterns": ["leadership-civic", "professional-ethics", "consultation-shura"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "muslim.91",
+    "collection": "Muslim",
+    "book": "al-Īmān",
+    "number": 91,
+    "grade": "sahih",
+    "narrator": "ʿAbdullāh ibn Masʿūd",
+    "arabic": "لَا يَدْخُلُ الْجَنَّةَ مَنْ كَانَ فِي قَلْبِهِ مِثْقَالُ ذَرَّةٍ مِنْ كِبْرٍ.",
+    "transliteration": "Lā yadkhulu al-jannata man kāna fī qalbihi mithqālu dharratin min kibr.",
+    "translations": {
+      "en": "Whoever has an atom's weight of arrogance in his heart shall not enter Paradise.",
+      "tr": "Kalbinde zerre kadar kibir bulunan kimse cennete giremeyecektir."
+    },
+    "themes": ["kibr", "arrogance", "akhlaq"],
+    "casePatterns": ["sincerity-intention", "speech-control"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "muslim.2589",
+    "collection": "Muslim",
+    "book": "al-Birr wa-l-Ṣila",
+    "number": 2589,
+    "grade": "sahih",
+    "narrator": "Abū Hurayra",
+    "arabic": "أَتَدْرُونَ مَا الْغِيبَةُ؟ قَالُوا: اللَّهُ وَرَسُولُهُ أَعْلَمُ. قَالَ: ذِكْرُكَ أَخَاكَ بِمَا يَكْرَهُ.",
+    "transliteration": "A-tadrūna mā al-ghībah? Qālū: Allāhu wa-rasūluhu aʿlamu. Qāla: dhikruka akhāka bi-mā yakrahu.",
+    "translations": {
+      "en": "Do you know what backbiting is? They said: God and His Messenger know best. He said: Mentioning your brother in a way he would dislike.",
+      "tr": "Gıybetin ne olduğunu biliyor musunuz? ‘Allah ve Resûlü daha iyi bilir,' dediler. ‘Kardeşini hoşlanmayacağı bir şey ile anmandır,' buyurdu."
+    },
+    "themes": ["ghiba", "backbiting", "lisan", "speech"],
+    "casePatterns": ["speech-control", "digital-online", "community-harm", "family-conflict"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "muslim.2553",
+    "collection": "Muslim",
+    "book": "al-Birr wa-l-Ṣila",
+    "number": 2553,
+    "grade": "sahih",
+    "narrator": "al-Nawwās ibn Samʿān",
+    "arabic": "الْبِرُّ حُسْنُ الْخُلُقِ، وَالْإِثْمُ مَا حَاكَ فِي صَدْرِكَ وَكَرِهْتَ أَنْ يَطَّلِعَ عَلَيْهِ النَّاسُ.",
+    "transliteration": "Al-birru ḥusnu al-khuluqi, wa-l-ithmu mā ḥāka fī ṣadrika wa-karihta an yaṭṭaliʿa ʿalayhi al-nās.",
+    "translations": {
+      "en": "Righteousness is good character; and sin is what wavers in your chest and which you would dislike people to know about.",
+      "tr": "İyilik güzel ahlâktır. Günah ise gönlüne sıkıntı veren ve insanların öğrenmesini istemediğin şeydir."
+    },
+    "themes": ["birr", "ithm", "akhlaq", "conscience", "qalb"],
+    "casePatterns": ["sincerity-intention", "honest-speech", "general"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "muslim.1715",
+    "collection": "Muslim",
+    "book": "al-Aqḍiya",
+    "number": 1715,
+    "grade": "sahih",
+    "narrator": "ʿĀʾisha",
+    "arabic": "إِنَّمَا أَنَا بَشَرٌ، وَإِنَّكُمْ تَخْتَصِمُونَ إِلَيَّ، فَلَعَلَّ بَعْضَكُمْ أَنْ يَكُونَ أَلْحَنَ بِحُجَّتِهِ مِنْ بَعْضٍ … فَمَنْ قَضَيْتُ لَهُ بِشَيْءٍ مِنْ حَقِّ أَخِيهِ فَلَا يَأْخُذْ مِنْهُ شَيْئًا، فَإِنَّمَا أَقْطَعُ لَهُ قِطْعَةً مِنَ النَّارِ.",
+    "transliteration": "Innamā anā basharun, wa-innakum takhtaṣimūna ilayya, fa-laʿalla baʿḍakum an yakūna alḥana bi-ḥujjatihi min baʿḍin … fa-man qaḍaytu lahu bi-shayʾin min ḥaqqi akhīhi fa-lā yaʾkhudh minhu shayʾan, fa-innamā aqṭaʿu lahu qiṭʿatan mina al-nār.",
+    "translations": {
+      "en": "I am only a human, and you bring disputes to me. Perhaps some of you are more eloquent in their argument than others … so whoever I judge in favour of regarding what is his brother's right, let him not take it — for I am only assigning him a piece of the Fire.",
+      "tr": "Ben ancak bir beşerim ve siz bana davanızı getiriyorsunuz; belki biriniz delilini öbürüne göre daha güzel anlatıyor olabilir … Kime kardeşinin hakkından bir şey hükmedersem, onu almasın; zira ben ona ateşten bir parça vermiş oluyorum."
+    },
+    "themes": ["qadāʾ", "judgement", "eloquence", "haqq", "scrupulousness"],
+    "casePatterns": ["truth-disclosure", "professional-ethics", "leadership-civic"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "abudawud.4944",
+    "collection": "Abu Dawud",
+    "book": "al-Adab",
+    "number": 4944,
+    "grade": "sahih",
+    "narrator": "ʿAbdullāh ibn ʿAmr",
+    "arabic": "لَيْسَ مِنَّا مَنْ لَمْ يَرْحَمْ صَغِيرَنَا، وَيَعْرِفْ حَقَّ كَبِيرِنَا.",
+    "transliteration": "Laysa minnā man lam yarḥam ṣaghīranā wa-yaʿrif ḥaqqa kabīrinā.",
+    "translations": {
+      "en": "He is not one of us who does not show mercy to our young and acknowledge the right of our elders.",
+      "tr": "Küçüklerimize merhamet etmeyen, büyüklerimizin hakkını da bilmeyen bizden değildir."
+    },
+    "themes": ["rahma", "respect", "elders", "youth", "akhlaq"],
+    "casePatterns": ["family-conflict", "community-harm"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "tirmidhi.1987",
+    "collection": "Tirmidhi",
+    "book": "al-Birr wa-l-Ṣila",
+    "number": 1987,
+    "grade": "hasan",
+    "narrator": "Abū Dharr",
+    "arabic": "اتَّقِ اللَّهَ حَيْثُمَا كُنْتَ، وَأَتْبِعِ السَّيِّئَةَ الْحَسَنَةَ تَمْحُهَا، وَخَالِقِ النَّاسَ بِخُلُقٍ حَسَنٍ.",
+    "transliteration": "Ittaqi Allāha ḥaythumā kunta, wa-atbiʿi al-sayyiʾata al-ḥasanata tamḥuhā, wa-khāliqi al-nāsa bi-khuluqin ḥasanin.",
+    "translations": {
+      "en": "Be mindful of God wherever you are; follow a bad deed with a good one to wipe it out; and treat people with good character.",
+      "tr": "Nerede olursan ol Allah'tan kork; yaptığın kötülüğün arkasından bir iyilik yap ki onu silsin; insanlara güzel ahlâkla davran."
+    },
+    "themes": ["taqwa", "tawba", "akhlaq", "khuluq"],
+    "casePatterns": ["repentance-tawba", "general"],
+    "assertionStrength": "zanni",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "tirmidhi.2317",
+    "collection": "Tirmidhi",
+    "book": "al-Zuhd",
+    "number": 2317,
+    "grade": "hasan",
+    "narrator": "Abū Hurayra",
+    "arabic": "مِنْ حُسْنِ إِسْلَامِ الْمَرْءِ تَرْكُهُ مَا لَا يَعْنِيهِ.",
+    "transliteration": "Min ḥusni islāmi al-marʾi tarkuhu mā lā yaʿnīhi.",
+    "translations": {
+      "en": "Part of someone's being a good Muslim is his leaving alone that which does not concern him.",
+      "tr": "Kişinin Müslümanlığının güzelliğindendir, kendisini ilgilendirmeyen şeyi terk etmesidir."
+    },
+    "themes": ["adab", "irrelevant", "discretion", "wara"],
+    "casePatterns": ["digital-online", "speech-control", "time-priorities", "general"],
+    "assertionStrength": "zanni",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "tirmidhi.2407",
+    "collection": "Tirmidhi",
+    "book": "al-Zuhd",
+    "number": 2407,
+    "grade": "hasan",
+    "narrator": "ʿUqba ibn ʿĀmir",
+    "arabic": "أَمْسِكْ عَلَيْكَ لِسَانَكَ، وَلْيَسَعْكَ بَيْتُكَ، وَابْكِ عَلَىٰ خَطِيئَتِكَ.",
+    "transliteration": "Amsik ʿalayka lisānaka, wa-l-yasaʿka baytuka, wa-bki ʿalā khaṭīʾatika.",
+    "translations": {
+      "en": "Restrain your tongue, let your home suffice you, and weep over your faults.",
+      "tr": "Diline sahip ol, evin sana yetsin ve hatalarına ağla."
+    },
+    "themes": ["lisan", "tongue", "khataʾ", "tawba", "introspection"],
+    "casePatterns": ["speech-control", "repentance-tawba", "sincerity-intention"],
+    "assertionStrength": "zanni",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "tirmidhi.2459",
+    "collection": "Tirmidhi",
+    "book": "Ṣifat al-Qiyāma",
+    "number": 2459,
+    "grade": "hasan",
+    "narrator": "Shaddād ibn Aws",
+    "arabic": "الْكَيِّسُ مَنْ دَانَ نَفْسَهُ وَعَمِلَ لِمَا بَعْدَ الْمَوْتِ، وَالْعَاجِزُ مَنْ أَتْبَعَ نَفْسَهُ هَوَاهَا وَتَمَنَّىٰ عَلَى اللَّهِ.",
+    "transliteration": "Al-kayyisu man dāna nafsahu wa-ʿamila li-mā baʿda al-mawt, wa-l-ʿājizu man atbaʿa nafsahu hawāhā wa-tamannā ʿalā Allāh.",
+    "translations": {
+      "en": "The wise person is the one who calls himself to account and works for what comes after death; the helpless one is he who lets his soul follow its desires and merely wishes (for ease) from God.",
+      "tr": "Akıllı kimse, nefsini hesaba çeken ve ölümden sonrası için çalışandır. Âciz olan ise, nefsini hevâsına tâbi kılan ve Allah'tan (boşuna) temennilerde bulunandır."
+    },
+    "themes": ["muḥāsaba", "self-accounting", "hawa", "akhirah"],
+    "casePatterns": ["sincerity-intention", "time-priorities", "general"],
+    "assertionStrength": "zanni",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "tirmidhi.1924",
+    "collection": "Tirmidhi",
+    "book": "al-Birr wa-l-Ṣila",
+    "number": 1924,
+    "grade": "hasan",
+    "narrator": "ʿAbdullāh ibn ʿAmr",
+    "arabic": "الرَّاحِمُونَ يَرْحَمُهُمُ الرَّحْمَنُ، ارْحَمُوا مَنْ فِي الْأَرْضِ يَرْحَمْكُمْ مَنْ فِي السَّمَاءِ.",
+    "transliteration": "Al-rāḥimūna yarḥamuhumu al-Raḥmān — irḥamū man fī al-arḍi yarḥamkum man fī al-samāʾ.",
+    "translations": {
+      "en": "Those who show mercy will be shown mercy by the Most Merciful. Show mercy to those on earth and the One in the heavens will show you mercy.",
+      "tr": "Merhamet edenlere Rahmân da merhamet eder. Yerdekilere merhamet edin ki, gökteki de size merhamet etsin."
+    },
+    "themes": ["rahma", "mercy", "compassion"],
+    "casePatterns": ["family-conflict", "neighbor-rights", "community-harm"],
+    "assertionStrength": "zanni",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "abudawud.3580",
+    "collection": "Abu Dawud",
+    "book": "al-Aqḍiya",
+    "number": 3580,
+    "grade": "sahih",
+    "narrator": "Abū Hurayra",
+    "arabic": "مَنْ بَلَغَتْ هَذِهِ — يَعْنِي شَفَتَيْهِ — فِي شَيْءٍ يَنْفَعُ بِهِ مُسْلِمًا فَكَتَمَهُ، أُلْجِمَ يَوْمَ الْقِيَامَةِ بِلِجَامٍ مِنْ نَارٍ.",
+    "transliteration": "Man balaghat hādhihi — yaʿnī shafatayhi — fī shayʾin yanfaʿu bihi musliman fa-katamahu, uljima yawma al-qiyāmati bi-lijāmin min nār.",
+    "translations": {
+      "en": "Whoever conceals knowledge that would benefit a Muslim — knowledge that has reached his lips — will be bridled on the Day of Resurrection with a bridle of fire.",
+      "tr": "Kim, bir Müslümana fayda verecek bir ilmi — sözü dudaklarına gelmişken — gizlerse, kıyamet gününde ateşten bir gem ile gemlenir."
+    },
+    "themes": ["ilm", "knowledge-sharing", "kitman", "concealment"],
+    "casePatterns": ["truth-disclosure", "whistleblowing", "knowledge-learning", "professional-ethics"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "abudawud.3597",
+    "collection": "Abu Dawud",
+    "book": "al-Aqḍiya",
+    "number": 3597,
+    "grade": "hasan",
+    "narrator": "ʿAlī ibn Abī Ṭālib",
+    "arabic": "إِذَا تَقَاضَىٰ إِلَيْكَ رَجُلَانِ فَلَا تَقْضِ لِلْأَوَّلِ حَتَّىٰ تَسْمَعَ كَلَامَ الْآخَرِ.",
+    "transliteration": "Idhā taqāḍā ilayka rajulāni fa-lā taqḍi li-l-awwali ḥattā tasmaʿa kalāma al-ākhar.",
+    "translations": {
+      "en": "When two adversaries come to you, do not rule for the first until you have heard the speech of the other.",
+      "tr": "İki kişi senin huzurunda hak için davalı oldukları zaman, ötekini de dinlemeden ilkin lehine hüküm verme."
+    },
+    "themes": ["qadāʾ", "fair-hearing", "tabayyun", "justice"],
+    "casePatterns": ["conflict-resolution", "professional-ethics", "consultation-shura", "leadership-civic"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "ibn-majah.224",
+    "collection": "Ibn Majah",
+    "book": "al-Muqaddima",
+    "number": 224,
+    "grade": "hasan",
+    "narrator": "Anas ibn Mālik",
+    "arabic": "طَلَبُ الْعِلْمِ فَرِيضَةٌ عَلَىٰ كُلِّ مُسْلِمٍ.",
+    "transliteration": "Ṭalabu al-ʿilmi farīḍatun ʿalā kulli muslim.",
+    "translations": {
+      "en": "Seeking knowledge is an obligation upon every Muslim.",
+      "tr": "İlim öğrenmek her Müslümana farzdır."
+    },
+    "themes": ["ilm", "talab", "knowledge", "obligation"],
+    "casePatterns": ["knowledge-learning", "religious-obligation"],
+    "assertionStrength": "zanni",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "muslim.91b",
+    "collection": "Muslim",
+    "book": "al-Īmān",
+    "number": 102,
+    "grade": "sahih",
+    "narrator": "Abū Hurayra",
+    "arabic": "مَنْ غَشَّ فَلَيْسَ مِنِّي.",
+    "transliteration": "Man ghashsha fa-laysa minnī.",
+    "translations": {
+      "en": "Whoever cheats is not from me.",
+      "tr": "Bizi aldatan bizden değildir."
+    },
+    "themes": ["ghishsh", "cheating", "deception", "honesty"],
+    "casePatterns": ["truth-disclosure", "professional-ethics", "contracts-promises", "workplace-honesty"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "muslim.987",
+    "collection": "Muslim",
+    "book": "al-Zakāt",
+    "number": 987,
+    "grade": "sahih",
+    "narrator": "Abū Hurayra",
+    "arabic": "مَا نَقَصَتْ صَدَقَةٌ مِنْ مَالٍ، وَمَا زَادَ اللَّهُ عَبْدًا بِعَفْوٍ إِلَّا عِزًّا، وَمَا تَوَاضَعَ أَحَدٌ لِلَّهِ إِلَّا رَفَعَهُ اللَّهُ.",
+    "transliteration": "Mā naqaṣat ṣadaqatun min mālin, wa-mā zāda Allāhu ʿabdan bi-ʿafwin illā ʿizzan, wa-mā tawāḍaʿa aḥadun lillāhi illā rafaʿahu Allāh.",
+    "translations": {
+      "en": "Charity does not decrease wealth; God does not increase a servant in pardon except in honour; and no one humbles himself for God's sake but God raises him.",
+      "tr": "Sadaka maldan bir şey eksiltmez; Allah, affettiği için kuluna mutlaka izzet verir; Allah için tevazu gösterene Allah mutlaka yükselten verir."
+    },
+    "themes": ["sadaqa", "ʿafw", "tawāḍuʿ", "rizq"],
+    "casePatterns": ["charity-zakat", "conflict-resolution", "general"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "muslim.2699",
+    "collection": "Muslim",
+    "book": "al-Dhikr",
+    "number": 2699,
+    "grade": "sahih",
+    "narrator": "Abū Hurayra",
+    "arabic": "مَنْ نَفَّسَ عَنْ مُؤْمِنٍ كُرْبَةً مِنْ كُرَبِ الدُّنْيَا، نَفَّسَ اللَّهُ عَنْهُ كُرْبَةً مِنْ كُرَبِ يَوْمِ الْقِيَامَةِ، وَمَنْ يَسَّرَ عَلَىٰ مُعْسِرٍ يَسَّرَ اللَّهُ عَلَيْهِ فِي الدُّنْيَا وَالْآخِرَةِ.",
+    "transliteration": "Man naffasa ʿan muʾminin kurbatan min kurabi al-dunyā, naffasa Allāhu ʿanhu kurbatan min kurabi yawmi al-qiyāmati, wa-man yassara ʿalā muʿsirin yassara Allāhu ʿalayhi fī al-dunyā wa-l-ākhirati.",
+    "translations": {
+      "en": "Whoever relieves a believer of one of the hardships of this world, God will relieve him of one of the hardships of the Day of Resurrection; whoever eases the burden of one in difficulty, God will ease him in this world and the next.",
+      "tr": "Kim bir mümin kardeşinden dünya sıkıntılarından birini giderirse, Allah da kıyamet günü onun sıkıntılarından birini giderir. Kim darda olanın işini kolaylaştırırsa, Allah ona dünyada da âhirette de kolaylık verir."
+    },
+    "themes": ["taysir", "compassion", "kurba", "mutual-aid"],
+    "casePatterns": ["riba-finance", "neighbor-rights", "community-harm", "charity-zakat"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "tirmidhi.2520",
+    "collection": "Tirmidhi",
+    "book": "Ṣifat al-Qiyāma",
+    "number": 2520,
+    "grade": "sahih",
+    "narrator": "al-Ḥasan ibn ʿAlī",
+    "arabic": "احْفَظِ اللَّهَ يَحْفَظْكَ، احْفَظِ اللَّهَ تَجِدْهُ تُجَاهَكَ.",
+    "transliteration": "Iḥfaẓi Allāha yaḥfaẓka, iḥfaẓi Allāha tajidhu tujāhaka.",
+    "translations": {
+      "en": "Be mindful of God and He will be mindful of you; be mindful of God and you will find Him before you.",
+      "tr": "Sen Allah'ı koru (emirlerine sahip ol) ki Allah da seni korusun; sen Allah'ı koru ki onu önünde bulasın."
+    },
+    "themes": ["taqwa", "trust", "tawakkul", "sincerity"],
+    "casePatterns": ["sincerity-intention", "patience-trials", "general"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
   }
 ]

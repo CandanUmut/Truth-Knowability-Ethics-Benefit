@@ -1,11 +1,13 @@
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { CheckCircle2, AlertCircle, HelpCircle, Scale, Quote } from 'lucide-react';
+import { CheckCircle2, AlertCircle, HelpCircle, Scale, Quote, Sparkles, ChevronRight, Zap } from 'lucide-react';
 import { useSession } from '@/lib/storage/session';
 import { runDeliberation } from '@/lib/classification';
-import { CONFIDENCE_SCORE, type Deliberation, type DeliberationResult, type Maqsad, MAQASID } from '@/types/deliberation';
+import { CONFIDENCE_SCORE, type Deliberation, type DeliberationResult, type Maqsad, MAQASID, type SourceConsultation } from '@/types/deliberation';
 import { TetradRadar, type TetradPoint } from './TetradRadar';
 import { GlossaryTerm } from '@/components/common/GlossaryTerm';
+import { SourceCard } from '@/components/common/SourceCard';
+import { sourcesFor, getSource } from '@/lib/sources';
 import { cn } from '@/lib/utils';
 
 interface DerivedRadar {
@@ -81,7 +83,7 @@ export function Output({ deliberation }: OutputProps = {}) {
 
   return (
     <div className="space-y-10">
-      <ClassificationBadge result={result} />
+      <ClassificationBadge result={result} mode={current.mode} />
 
       <CaseSummary deliberation={current} />
 
@@ -160,21 +162,38 @@ export function Output({ deliberation }: OutputProps = {}) {
 
       <Recommendations result={result} />
 
+      <SuggestedSourcesPanel deliberation={current} />
+
+      <RefinePanel deliberation={current} result={result} />
+
       <DissentingFooter />
     </div>
   );
 }
 
-function ClassificationBadge({ result }: { result: DeliberationResult }) {
+function ClassificationBadge({
+  result,
+  mode,
+}: {
+  result: DeliberationResult;
+  mode?: Deliberation['mode'];
+}) {
   const { t } = useTranslation('deliberate');
   const Icon = result.classification === 'settled' ? CheckCircle2 : result.classification === 'qualified_disagreement' ? Scale : HelpCircle;
   return (
     <div className="rounded-2xl border border-border p-5 flex items-start gap-4">
       <Icon size={24} className="text-foreground shrink-0 mt-0.5" aria-hidden="true" />
-      <div>
-        <p className="text-xs uppercase tracking-wider text-muted-foreground">
-          {t(`classification.${classKey(result.classification)}.tag`, { ns: 'method' })}
-        </p>
+      <div className="flex-1 min-w-0">
+        <div className="flex flex-wrap items-center gap-2">
+          <p className="text-xs uppercase tracking-wider text-muted-foreground">
+            {t(`classification.${classKey(result.classification)}.tag`, { ns: 'method' })}
+          </p>
+          {mode === 'quick' && (
+            <span className="text-[0.65rem] uppercase tracking-wider px-2 py-0.5 rounded-full border border-border text-muted-foreground inline-flex items-center gap-1">
+              <Zap size={10} aria-hidden="true" /> {t('express.modeBadge')}
+            </span>
+          )}
+        </div>
         <p className="text-lg font-semibold mt-0.5">
           {t(`classification.${classKey(result.classification)}.title`, { ns: 'method' })}
         </p>
@@ -382,3 +401,168 @@ function DissentingFooter() {
     </section>
   );
 }
+
+/**
+ * Surfaces sources from the library that the case-pattern matcher
+ * picked up but the user hasn't formally consulted. One-click "Consult"
+ * adds the source to the consultation list with bearsOnCase = 'yes'.
+ */
+function SuggestedSourcesPanel({ deliberation }: { deliberation: Deliberation }) {
+  const { t } = useTranslation('deliberate');
+  const setConsultations = useSession((s) => s.setConsultations);
+
+  const matched = useMemo(
+    () => sourcesFor(deliberation.case.description),
+    [deliberation.case.description],
+  );
+
+  const consultedIds = useMemo(
+    () => new Set(deliberation.consultations.map((c) => c.sourceId)),
+    [deliberation.consultations],
+  );
+
+  const unconsulted = matched.filter((s) => !consultedIds.has(s.data.id));
+  if (unconsulted.length === 0) return null;
+
+  const visible = unconsulted.slice(0, 3);
+  const moreCount = unconsulted.length - visible.length;
+
+  const consult = (sourceId: string) => {
+    const src = getSource(sourceId);
+    if (!src) return;
+    const citation =
+      src.kind === 'quran'
+        ? `Q. ${src.data.sura}:${src.data.aya}`
+        : src.kind === 'hadith'
+        ? `${src.data.collection} #${src.data.number}`
+        : src.kind === 'qaida'
+        ? src.data.transliteration
+        : `${src.data.scholar} — ${src.data.work}`;
+    const fresh: SourceConsultation = {
+      id: crypto.randomUUID(),
+      sourceId,
+      citation,
+      bearsOnCase: 'yes',
+    };
+    setConsultations([...deliberation.consultations, fresh]);
+  };
+
+  return (
+    <section className="space-y-4">
+      <div className="flex items-baseline gap-2">
+        <Sparkles size={14} className="text-muted-foreground shrink-0" aria-hidden="true" />
+        <h2 className="text-xl font-semibold tracking-tight">{t('suggestedSources.title')}</h2>
+      </div>
+      <p className="text-sm text-muted-foreground leading-relaxed">{t('suggestedSources.body')}</p>
+      <div className="space-y-3">
+        {visible.map((src) => (
+          <div key={src.data.id} className="space-y-2">
+            <SourceCard source={src} compact />
+            <div className="pl-1">
+              <button
+                type="button"
+                onClick={() => consult(src.data.id)}
+                className="h-8 px-3 rounded-full border border-border text-xs text-muted-foreground hover:text-foreground hover:border-foreground/40 transition-colors"
+              >
+                {t('suggestedSources.consult')}
+              </button>
+            </div>
+          </div>
+        ))}
+        {moreCount > 0 && (
+          <p className="text-xs text-muted-foreground italic">
+            {t('suggestedSources.moreCount', { n: moreCount })}
+          </p>
+        )}
+      </div>
+    </section>
+  );
+}
+
+/**
+ * The Refine panel — drops the user back into the deep flow at a
+ * specific step. We surface it for two cases: the user came in via the
+ * Quick path (and may want to deepen any layer), or the classification
+ * came back as something other than 'settled' (and a deepening could
+ * disambiguate the dossier).
+ */
+function RefinePanel({
+  deliberation,
+  result,
+}: {
+  deliberation: Deliberation;
+  result: DeliberationResult;
+}) {
+  const { t } = useTranslation('deliberate');
+  const setStep = useSession((s) => s.setStep);
+  const setMode = useSession((s) => s.setMode);
+
+  const isQuick = deliberation.mode === 'quick';
+  const isUncertain = result.classification !== 'settled';
+  if (!isQuick && !isUncertain) return null;
+
+  const goToStep = (step: 2 | 3 | 4 | 5) => {
+    // If we came in via the Quick path, switch to deep so step navigation
+    // and the step bar render correctly. Auto-derived impacts remain in
+    // place so the user is editing on top of the heuristic.
+    if (isQuick) setMode('deep');
+    setStep(step);
+  };
+
+  return (
+    <section className="rounded-2xl border border-border bg-secondary/30 p-5 space-y-4">
+      <div className="flex items-baseline gap-2">
+        <Zap size={14} className="text-foreground shrink-0" aria-hidden="true" />
+        <h2 className="text-base font-semibold tracking-tight">{t('refine.title')}</h2>
+      </div>
+      <p className="text-sm text-muted-foreground leading-relaxed">{t('refine.body')}</p>
+      <div className="space-y-2">
+        <RefineRow
+          label={t('refine.addClaims')}
+          desc={t('refine.addClaimsDesc')}
+          onClick={() => goToStep(2)}
+        />
+        <RefineRow
+          label={t('refine.weighEffects')}
+          desc={t('refine.weighEffectsDesc')}
+          onClick={() => goToStep(3)}
+        />
+        <RefineRow
+          label={t('refine.consultSources')}
+          desc={t('refine.consultSourcesDesc')}
+          onClick={() => goToStep(4)}
+        />
+        <RefineRow
+          label={t('refine.deepenNiyya')}
+          desc={t('refine.deepenNiyyaDesc')}
+          onClick={() => goToStep(5)}
+        />
+      </div>
+    </section>
+  );
+}
+
+function RefineRow({
+  label,
+  desc,
+  onClick,
+}: {
+  label: string;
+  desc: string;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className="w-full rounded-xl border border-border bg-background p-4 text-left hover:border-foreground/40 transition-colors flex items-start gap-3"
+    >
+      <div className="flex-1 min-w-0">
+        <p className="text-sm font-medium">{label}</p>
+        <p className="text-xs text-muted-foreground mt-1 leading-relaxed">{desc}</p>
+      </div>
+      <ChevronRight size={16} className="text-muted-foreground/70 shrink-0 mt-0.5" aria-hidden="true" />
+    </button>
+  );
+}
+

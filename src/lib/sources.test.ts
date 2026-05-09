@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { patternsFor, sourcesFor, searchSources, allThemes } from './sources';
+import { patternsFor, sourcesFor, searchSources, allThemes, QAWAID, SCHOLARS, listSources } from './sources';
 
 describe('patternsFor', () => {
   it('returns general for empty input', () => {
@@ -61,5 +61,58 @@ describe('allThemes', () => {
     const themes = allThemes();
     expect(themes.length).toBeGreaterThan(5);
     expect(new Set(themes).size).toBe(themes.length);
+  });
+});
+
+describe('expanded library', () => {
+  it('includes the five major qawāʿid', () => {
+    const ids = QAWAID.map((q) => q.id);
+    expect(ids).toContain('qaida.intentions');
+    expect(ids).toContain('qaida.no-harm');
+    expect(ids).toContain('qaida.hardship-eases');
+    expect(ids).toContain('qaida.necessity');
+    expect(ids).toContain('qaida.certainty-doubt');
+    expect(ids).toContain('qaida.custom');
+  });
+
+  it('includes both classical and modern scholarly entries', () => {
+    expect(SCHOLARS.some((s) => s.era === 'classical')).toBe(true);
+    expect(SCHOLARS.some((s) => s.era === 'modern')).toBe(true);
+  });
+
+  it('listSources returns entries of all four kinds', () => {
+    const kinds = new Set(listSources().map((s) => s.kind));
+    expect(kinds.has('quran')).toBe(true);
+    expect(kinds.has('hadith')).toBe(true);
+    expect(kinds.has('qaida')).toBe(true);
+    expect(kinds.has('scholar')).toBe(true);
+  });
+
+  it('searchSources finds a scholar by name', () => {
+    const matches = searchSources('Ghazālī');
+    expect(matches.some((s) => s.kind === 'scholar' && s.data.scholar.includes('Ghazālī'))).toBe(true);
+  });
+
+  it('sourcesFor surfaces a qāʿida for a medical-decision case', () => {
+    const sources = sourcesFor('I need to decide whether to consent to a risky surgery for my elderly father');
+    expect(sources.some((s) => s.kind === 'qaida' && s.data.id === 'qaida.no-harm')).toBe(true);
+  });
+});
+
+describe('new case patterns', () => {
+  it('matches charity-zakat on English keyword', () => {
+    expect(patternsFor('Should I give a larger sadaqa this year')).toContain('charity-zakat');
+  });
+
+  it('matches digital-online on social-media context', () => {
+    expect(patternsFor('Should I share this leaked data on twitter anonymously')).toContain('digital-online');
+  });
+
+  it('matches consultation-shura on Turkish keyword', () => {
+    expect(patternsFor('Önemli bir karar için kiminle istişâre etmeliyim')).toContain('consultation-shura');
+  });
+
+  it('matches conflict-resolution on a reconcile-family scenario', () => {
+    expect(patternsFor('I need to reconcile two siblings who have stopped speaking')).toContain('conflict-resolution');
   });
 });

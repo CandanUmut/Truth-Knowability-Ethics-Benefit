@@ -12,7 +12,7 @@ This application implements the framework defended in the working paper *Truth, 
 
 ## What this is
 
-- A **decision-support tool** that walks the user through a five-step procedure (Case → Truth-claims → Maqāṣid → Sources → Niyya) and returns a structured dossier with a confidence class (settled / qualified disagreement / open).
+- A **decision-support tool** that walks the user through the framework's five-step procedure (Case → Truth-claims → Maqāṣid → Sources → Niyya) and returns a structured dossier with a confidence class (settled / qualified disagreement / open). A **Quick path** delivers a heuristic dossier in three screens by auto-deriving impact signals from the case and option text; the same dossier can be deepened any time by jumping into a specific step from the Refine panel.
 - A **bilingual** interface in Turkish (default) and English (fallback), with vocabulary drawn from the paper's Turkish executive summary.
 - A **client-side-only** application: no server, no analytics, no telemetry, no cookies. localStorage and IndexedDB only. Open source.
 
@@ -94,10 +94,12 @@ src/
       export.ts            # versioned JSON export and import
   data/
     sources/
-      quran.json           # 26 verses with Pickthall + Diyanet translations
-      hadith.json          # 8 foundational hadiths from the Sahihayn and Sunan
+      quran.json           # ~58 verses with Pickthall + Diyanet translations
+      hadith.json          # ~33 hadiths from the Sahihayn, Sunan, and Tirmidhi
+      qawaid.json          # ~12 classical legal maxims (qawāʿid fiqhiyya)
+      scholars.json        # ~20 scholarly opinions across schools and eras
       maqasid.json         # ontology of the classical five + Tāhā axes
-    case-patterns.json     # 14 patterns mapping keywords to source IDs
+    case-patterns.json     # ~30 patterns mapping keywords to source IDs
   locales/{tr,en}/         # 8 namespaces per language
   types/                   # deliberation.ts, sources.ts
   styles/globals.css       # Tailwind + design-token CSS variables + font-face

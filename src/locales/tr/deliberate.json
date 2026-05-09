@@ -35,6 +35,60 @@
   "outputSubtitle": "Bu bir hüküm değil, dört eksende size geri yansıtılan yapılandırılmış bir akıl yürütmedir.",
   "outputBadge": "Harita",
   "reviewBadge": "Hızlı gözden geçirme",
+  "modeChooser": {
+    "title": "Bunu nasıl ele almak istersiniz?",
+    "subtitle": "İki yol, aynı çerçeve. İstediğiniz zaman geçiş yapabilirsiniz.",
+    "quick": {
+      "label": "Hızlı yol · 3 soru",
+      "desc": "Durumu anlatın, seçeneklerinizi sıralayın, niyetinizi yoklayın. Çerçeve etki haritasını sizin için çıkarır ve iki dakikadan kısa sürede sezgisel bir dosya verir."
+    },
+    "deep": {
+      "label": "Derinlikli yol · 5 adım",
+      "desc": "Tam prosedür: vaka, hakikat iddiaları, her korunan iyi üzerindeki etkiler, kaynaklar ve niyet. Kapsamlı bir dosya için yaklaşık 10 dakika."
+    },
+    "recommendedTag": "Önerilen"
+  },
+  "express": {
+    "modeBadge": "Hızlı müzakere",
+    "progress": "{{total}} sorudan {{n}}.",
+    "q1": {
+      "title": "Hangi karar üzerine düşünüyorsunuz?",
+      "subtitle": "Aklınızdaki durumu kendi sözcüklerinizle anlatın.",
+      "helper": "Birkaç cümle yeter. Çerçeve gerisini açıklamanız ve seçenekleriniz üzerinden çıkaracak."
+    },
+    "q2": {
+      "title": "Seçenekleriniz neler?",
+      "subtitle": "En az iki tane ekleyin — gerçek bir seçenekse \"hiçbir şey yapmama\" da olur.",
+      "helper": "Seçeneklerin kısa açıklaması, çerçevenin korunan iyileri tanımasına yardımcı olur.",
+      "descPlaceholder": "Bu seçenek somutta ne demek? (çerçeveye yardımcı)"
+    },
+    "q3": {
+      "title": "Haritayı görmeden önce niyet için bir an.",
+      "subtitle": "Vicdanınız bu seçim hakkında ne söylüyor?",
+      "helper": "Dosya çıktıktan sonra bunu — ve diğer her katmanı — derinleştirme şansınız olacak.",
+      "leaning": "Kalbiniz hangi seçeneğe meylediyor?",
+      "cta": "Haritayı göster"
+    }
+  },
+  "refine": {
+    "title": "Bu dosyayı derinleştir",
+    "body": "Bu sezgisel bir ilk geçiş. Dosyayı daha kararlı kılmak için çerçevenin en çok ihtiyacı olan katmanı ekleyin.",
+    "addClaims": "Kararınızın dayandığı bir olguyu işaretleyin",
+    "addClaimsDesc": "Yanlış olduğunda cevabınızı değiştirecek bir olgu varsa adlandırın. Dosya kanıtınıza bağlı kalır.",
+    "weighEffects": "Etkileri kendiniz tartın",
+    "weighEffectsDesc": "Çıkarılan etki haritasının yerine, her seçenekteki zararları ve iyilikleri kendiniz okuyun.",
+    "consultSources": "Kaynak kitaplığına başvur",
+    "consultSourcesDesc": "Vakanıza eşleşen ayetleri, hadisleri, klasik kâideleri ve âlim görüşlerini gözden geçirin.",
+    "deepenNiyya": "Niyet sorularıyla daha uzun otur",
+    "deepenNiyyaDesc": "Hızlı yol beş niyet sorusundan birini sordu. Tam set hazır."
+  },
+  "suggestedSources": {
+    "title": "Kütüphaneden rehberlik",
+    "body": "Açıklamanız için vaka-örüntü eşleyicisinin yüzeye çıkardığı kaynaklar. Resmî olarak başvurmak için herhangi birine dokunun.",
+    "consult": "Başvur",
+    "consulted": "Başvuruldu",
+    "moreCount": "+{{n}} daha"
+  },
   "newDeliberation": "Yeni müzakere",
   "newStarted": "Yeni müzakere başlatıldı. Önceki Geçmiş'e kaydedildi.",
   "continueDraft": "Yarım kalan müzakereye devam et",

@@ -1,0 +1,218 @@
+[
+  {
+    "id": "qaida.intentions",
+    "arabic": "الْأُمُورُ بِمَقَاصِدِهَا",
+    "transliteration": "Al-umūru bi-maqāṣidihā",
+    "translations": {
+      "en": "Matters are judged by their intentions.",
+      "tr": "İşler maksatlarına göredir."
+    },
+    "explanation": {
+      "en": "The first of the five major maxims of Islamic law (al-qawāʿid al-fiqhiyya al-kubrā). It anchors moral and legal evaluation in the intention (niyya) behind an act, drawn directly from the hadith of intentions (Bukhārī 1).",
+      "tr": "İslam hukukunun beş büyük küllî kâidesinin ilkidir. Bir fiilin ahlâkî ve hukukî değerlendirmesini, niyetine göre temellendirir; doğrudan ‘ameller niyetlere göredir' hadisinden alınmıştır."
+    },
+    "themes": ["niyya", "intention", "qaida-kubra"],
+    "casePatterns": ["sincerity-intention", "general"],
+    "school": "general",
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "qaida.no-harm",
+    "arabic": "لَا ضَرَرَ وَلَا ضِرَارَ",
+    "transliteration": "Lā ḍarara wa-lā ḍirār",
+    "translations": {
+      "en": "There shall be no harm, nor reciprocating harm.",
+      "tr": "Zarar vermek de yoktur, zarara zararla karşılık vermek de."
+    },
+    "explanation": {
+      "en": "Hadith-derived maxim that grounds an entire body of fiqh on harm prevention. Forbids both initiating harm and retaliating with harm. Underlies tort law, environmental rulings, and many medical-ethics decisions.",
+      "tr": "Bütün bir fıkıh tabakasının zarar engellemeye dayandığı, hadisten alınmış bir kâidedir. Hem zararı başlatmayı hem de zarara zararla karşılık vermeyi yasaklar; tazminat, çevre ve tıp etiği hükümlerinin temelinde yer alır."
+    },
+    "themes": ["darar", "harm-prevention", "tort"],
+    "casePatterns": ["medical-decision", "professional-ethics", "community-harm", "environment-creation"],
+    "school": "general",
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "qaida.hardship-eases",
+    "arabic": "الْمَشَقَّةُ تَجْلِبُ التَّيْسِيرَ",
+    "transliteration": "Al-mashaqqatu tajlibu al-taysīr",
+    "translations": {
+      "en": "Hardship brings about ease.",
+      "tr": "Meşakkat kolaylığı getirir."
+    },
+    "explanation": {
+      "en": "When fulfilling an obligation in its standard form imposes genuine hardship, the law accommodates with concessions (rukhṣa). The maxim is the ground for shortened prayer in travel, dispensations for the sick, and adjustments under necessity.",
+      "tr": "Bir vecibenin alışılmış şekilde yerine getirilmesi gerçek bir meşakkat doğurursa, hukuk ruhsatlarla bunu hafifletir. Yolculukta namazın kısaltılması, hastaya yapılan kolaylıklar ve zaruret hâlleri bu kâideye dayanır."
+    },
+    "themes": ["mashaqqa", "taysir", "rukhsa"],
+    "casePatterns": ["medical-decision", "patience-trials", "religious-obligation"],
+    "school": "general",
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "qaida.necessity",
+    "arabic": "الضَّرُورَاتُ تُبِيحُ الْمَحْظُورَاتِ",
+    "transliteration": "Al-ḍarūrātu tubīḥu al-maḥẓūrāt",
+    "translations": {
+      "en": "Necessities permit the prohibited.",
+      "tr": "Zaruretler haramları mubah kılar."
+    },
+    "explanation": {
+      "en": "When preserving life, mind, lineage, or essential property requires it, an otherwise-prohibited act becomes permitted to the extent of the necessity. Conditioned by a parallel maxim: 'what is permitted by necessity is measured by it.'",
+      "tr": "Can, akıl, nesil veya zorunlu malın korunması bunu gerektiriyorsa, normalde haram olan bir fiil, zaruretin sınırı kadar mubah olur. ‘Zaruretler kendi miktarınca takdir olunur' kâidesiyle birlikte değerlendirilir."
+    },
+    "themes": ["darura", "necessity", "rukhsa"],
+    "casePatterns": ["medical-decision", "riba-finance", "patience-trials"],
+    "school": "general",
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "qaida.harm-priority",
+    "arabic": "دَرْءُ الْمَفَاسِدِ مُقَدَّمٌ عَلَىٰ جَلْبِ الْمَصَالِحِ",
+    "transliteration": "Darʾu al-mafāsidi muqaddamun ʿalā jalbi al-maṣāliḥ",
+    "translations": {
+      "en": "Repelling harms takes precedence over securing benefits.",
+      "tr": "Mefsedetleri savmak, maslahatları celb etmekten önce gelir."
+    },
+    "explanation": {
+      "en": "When a course of action presents both a likely harm and a potential benefit, and they cannot be combined, preventing the harm is given priority. This is the ranking principle that underwrites the framework's hard-constraint filter on ḍarūrī goods.",
+      "tr": "Bir eylem hem muhtemel bir mefsedet hem bir maslahat içerip ikisi birlikte tahsil edilemediğinde, mefsedetin def'ine öncelik verilir. Bu çerçevede, ḍarūrî maslahatlara getirilen sert kısıtın da temel ilkesidir."
+    },
+    "themes": ["mafsada", "maslaha", "priority", "harm-prevention"],
+    "casePatterns": ["medical-decision", "professional-ethics", "community-harm", "whistleblowing"],
+    "school": "general",
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "qaida.lesser-evil",
+    "arabic": "إِذَا تَعَارَضَتْ مَفْسَدَتَانِ رُوعِيَ أَعْظَمُهُمَا ضَرَرًا بِارْتِكَابِ أَخَفِّهِمَا",
+    "transliteration": "Idhā taʿāraḍat mafsadatāni rūʿiya aʿẓamuhumā ḍararan bi-irtikābi akhaffihimā",
+    "translations": {
+      "en": "When two harms conflict, the greater is averted by accepting the lesser.",
+      "tr": "İki mefsedet çatıştığında, daha küçüğüne katlanılarak büyük olanı önlenir."
+    },
+    "explanation": {
+      "en": "A practical corollary of harm-priority: when harms cannot all be avoided, the agent is responsible for choosing the lesser. This formalises the recognition that some moral situations admit only sub-optimal outcomes.",
+      "tr": "Zarar önceliği kâidesinin pratik sonucudur: bütün zararlar birden engellenemediğinde, fail küçüğünü seçmekle yükümlüdür. Bu, bazı ahlâkî durumların yalnızca optimal-altı sonuçlar verdiğinin formel bir kabulüdür."
+    },
+    "themes": ["mafsada", "lesser-evil", "tradeoff"],
+    "casePatterns": ["medical-decision", "professional-ethics", "conflict-resolution"],
+    "school": "general",
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "qaida.public-private",
+    "arabic": "الْمَصْلَحَةُ الْعَامَّةُ مُقَدَّمَةٌ عَلَىٰ الْمَصْلَحَةِ الْخَاصَّةِ",
+    "transliteration": "Al-maṣlaḥatu al-ʿāmmatu muqaddamatun ʿalā al-maṣlaḥati al-khāṣṣa",
+    "translations": {
+      "en": "Public benefit is given precedence over private benefit.",
+      "tr": "Genel maslahat, hususî maslahattan öne geçirilir."
+    },
+    "explanation": {
+      "en": "When the welfare of the community and that of an individual conflict, the broader good is preferred — provided the individual's foundational rights are not extinguished. This maxim governs eminent domain, public health, and civic regulation in classical fiqh.",
+      "tr": "Toplumun yararı ile ferdin yararı çatıştığında, ferdin temel hakları yok edilmemek şartıyla genel iyiliğe öncelik verilir. Bu kâide, klasik fıkıhta kamu kullanımı, halk sağlığı ve sivil düzenleme alanlarında işler."
+    },
+    "themes": ["maslaha", "public-private", "community"],
+    "casePatterns": ["leadership-civic", "community-harm", "professional-ethics"],
+    "school": "general",
+    "assertionStrength": "zanni",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "qaida.certainty-doubt",
+    "arabic": "الْيَقِينُ لَا يَزُولُ بِالشَّكِّ",
+    "transliteration": "Al-yaqīnu lā yazūlu bi-l-shakk",
+    "translations": {
+      "en": "Certainty is not removed by doubt.",
+      "tr": "Yakîn, şek ile zâil olmaz."
+    },
+    "explanation": {
+      "en": "What is established with certainty (yaqīn) is not overturned by mere doubt (shakk). The maxim grounds the presumption of continuity (istiṣḥāb): the prior settled state continues until contrary evidence rises above doubt.",
+      "tr": "Yakîn ile sabit olan, yalnızca şek ile bozulmaz. Kâide, istisḥâb karinesinin temelidir: bir hâl, aksine şüphe üstü bir delil getirilmedikçe devam eder."
+    },
+    "themes": ["yaqin", "shakk", "istishab", "epistemic-discipline"],
+    "casePatterns": ["truth-disclosure", "professional-ethics", "general"],
+    "school": "general",
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "qaida.custom",
+    "arabic": "الْعَادَةُ مُحَكَّمَةٌ",
+    "transliteration": "Al-ʿādatu muḥakkamah",
+    "translations": {
+      "en": "Custom is given decisive weight.",
+      "tr": "Âdet muhakkemdir."
+    },
+    "explanation": {
+      "en": "Where revealed texts are silent, sound prevailing custom (ʿurf) functions as legal evidence — interpreting contracts, defining reasonable conduct, and shaping the rules of marriage, trade, and neighbourly life. Custom must not contradict explicit text.",
+      "tr": "Açık nas bulunmadığında, sahih ve yaygın örf hukukî delil olarak işler: sözleşmelerin yorumu, makul davranışın tayini, evlilik-ticaret ve komşuluk kurallarının şekillenmesi bu yolla olur. Örf, açık nasla çelişmemelidir."
+    },
+    "themes": ["urf", "custom", "context"],
+    "casePatterns": ["contracts-promises", "neighbor-rights", "professional-ethics", "family-conflict"],
+    "school": "general",
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "qaida.original-permissibility",
+    "arabic": "الْأَصْلُ فِي الْأَشْيَاءِ الْإِبَاحَةُ",
+    "transliteration": "Al-aṣlu fī al-ashyāʾi al-ibāḥa",
+    "translations": {
+      "en": "The original ruling on things is permissibility.",
+      "tr": "Eşyada aslolan ibâhadır."
+    },
+    "explanation": {
+      "en": "In matters of ordinary life — food, dress, transactions, technology — the default position is permissibility unless a clear text or strong analogical reason forbids. The maxim is widely cited (especially in Shāfiʿī and Ḥanbalī works) and is foundational to dealing with novel modern questions.",
+      "tr": "Yiyecek, giyim, muamele ve teknoloji gibi gündelik meselelerde, açık bir nas veya güçlü bir kıyas yasaklamadıkça aslolan hüküm mubahlıktır. Özellikle Şâfiî ve Hanbelî eserlerinde sıkça zikredilen bu kâide, yeni meselelerle ilişki kurmanın temelidir."
+    },
+    "themes": ["ibaha", "default-permissible", "novel-issues"],
+    "casePatterns": ["digital-online", "knowledge-learning", "professional-ethics", "general"],
+    "school": "general",
+    "assertionStrength": "zanni",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "qaida.means-ends",
+    "arabic": "لِلْوَسَائِلِ حُكْمُ الْمَقَاصِدِ",
+    "transliteration": "Lil-wasāʾili ḥukmu al-maqāṣid",
+    "translations": {
+      "en": "Means take the legal status of their ends.",
+      "tr": "Vesilelerin hükmü, gayelerin hükmüdür."
+    },
+    "explanation": {
+      "en": "An act that is itself neutral takes on the moral status of the end it serves: a means to an obligatory end becomes obligatory; a means to a forbidden end becomes forbidden. Closely tied to sadd al-dharāʾiʿ — blocking the means.",
+      "tr": "Aslen mubah olan bir fiil, hizmet ettiği gayenin hükmünü alır: vâcibe götüren vesile vâcip, harama götüren vesile haram olur. Vesileyi kapatma (sedd-i zerâî') ilkesiyle yakından ilgilidir."
+    },
+    "themes": ["wasila", "dharia", "ends-and-means"],
+    "casePatterns": ["sincerity-intention", "professional-ethics", "digital-online"],
+    "school": "general",
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "qaida.no-leverage-from-wrong",
+    "arabic": "لَا يَجُوزُ لِأَحَدٍ أَنْ يَتَصَرَّفَ فِي مِلْكِ الْغَيْرِ بِلَا إِذْنِهِ",
+    "transliteration": "Lā yajūzu li-aḥadin an yataṣarrafa fī milki al-ghayri bi-lā idhnihi",
+    "translations": {
+      "en": "It is not permitted for anyone to deal with another's property without permission.",
+      "tr": "Hiç kimsenin, başkasının mülkünde izinsiz tasarrufta bulunması câiz değildir."
+    },
+    "explanation": {
+      "en": "A maxim of property rights and consent (tarāḍī). It applies not only to physical property but, by analogy, to authorship, data, reputation, and bodily integrity. Foundational for digital-ethics, privacy, and informed-consent debates.",
+      "tr": "Mülkiyet ve rızâ kâidesidir. Yalnız maddî mülke değil, kıyasla telif, veri, itibar ve beden bütünlüğüne de tatbik edilir. Dijital etik, mahremiyet ve bilgilendirilmiş onam tartışmalarının temeli durumundadır."
+    },
+    "themes": ["milk", "property", "consent", "privacy"],
+    "casePatterns": ["digital-online", "neighbor-rights", "contracts-promises", "professional-ethics"],
+    "school": "general",
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  }
+]

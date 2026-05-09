@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { Download, RotateCcw, FileCheck2, Plus, ScrollText, Check } from 'lucide-react';
+import { Download, RotateCcw, FileCheck2, Plus, ScrollText, Check, Zap, Layers } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Step1Case } from '@/components/deliberation/Step1Case';
 import { Step2Truth } from '@/components/deliberation/Step2Truth';
@@ -10,12 +10,13 @@ import { Step3Maqasid } from '@/components/deliberation/Step3Maqasid';
 import { Step4Sources } from '@/components/deliberation/Step4Sources';
 import { Step5Niyya } from '@/components/deliberation/Step5Niyya';
 import { Step6Review } from '@/components/deliberation/Step6Review';
+import { ExpressFlow } from '@/components/deliberation/ExpressFlow';
 import { Output } from '@/components/deliberation/Output';
 import { useSession, type StepIndex, REVIEW_STEP, OUTPUT_STEP, FINAL_STEP } from '@/lib/storage/session';
 import { saveDeliberation } from '@/lib/storage/history';
 import { buildExport, downloadJSON } from '@/lib/storage/export';
 import { runDeliberation } from '@/lib/classification';
-import type { Deliberation } from '@/types/deliberation';
+import type { Deliberation, DeliberationMode } from '@/types/deliberation';
 import { cn } from '@/lib/utils';
 
 const TOTAL_MAJOR = 5;
@@ -57,12 +58,20 @@ export default function Deliberate() {
   }, [savedToast]);
 
   if (!current || step === 0) {
-    return <LandingNew onStart={() => start()} />;
+    return <LandingNew onStart={(mode) => start(mode)} />;
   }
 
+  const isExpress = current.mode === 'quick' && step < OUTPUT_STEP;
   const isReview = step === REVIEW_STEP;
   const isOutput = step >= OUTPUT_STEP;
   const visibleStep = isOutput || isReview ? TOTAL_MAJOR : step;
+
+  /**
+   * Express completion jumps straight to OUTPUT_STEP. The ExpressFlow
+   * component owns its own sub-steps; only the final "Show me the map"
+   * call lands here.
+   */
+  const onExpressComplete = () => setStep(OUTPUT_STEP);
 
   const onSaveFinal = async () => {
     const result = runDeliberation(current);
@@ -91,20 +100,24 @@ export default function Deliberate() {
 
   return (
     <div className="mx-auto max-w-form px-6 py-10 min-h-[calc(100vh-4rem)] flex flex-col">
-      <CompactStepBar
-        visibleStep={visibleStep}
-        isOutput={isOutput || isReview}
-        outputBadgeKey={isOutput ? 'outputBadge' : isReview ? 'reviewBadge' : undefined}
-        onJump={(n) => setStep(n as StepIndex)}
-      />
+      {!isExpress && (
+        <CompactStepBar
+          visibleStep={visibleStep}
+          isOutput={isOutput || isReview}
+          outputBadgeKey={isOutput ? 'outputBadge' : isReview ? 'reviewBadge' : undefined}
+          onJump={(n) => setStep(n as StepIndex)}
+        />
+      )}
+      {isExpress && <ExpressProgressBadge />}
 
       <div className="flex-1 flex items-start justify-center pt-12 pb-16">
-        {step === 1 && <Step1Case onComplete={advanceStep} />}
-        {step === 2 && <Step2Truth onComplete={advanceStep} onBackToPrevious={retreatStep} />}
-        {step === 3 && <Step3Maqasid onComplete={advanceStep} onBackToPrevious={retreatStep} />}
-        {step === 4 && <Step4Sources onComplete={advanceStep} onBackToPrevious={retreatStep} />}
-        {step === FINAL_STEP && <Step5Niyya onComplete={advanceStep} onBackToPrevious={retreatStep} />}
-        {isReview && <Step6Review onComplete={advanceStep} onBackToPrevious={retreatStep} />}
+        {isExpress && <ExpressFlow onComplete={onExpressComplete} />}
+        {!isExpress && step === 1 && <Step1Case onComplete={advanceStep} />}
+        {!isExpress && step === 2 && <Step2Truth onComplete={advanceStep} onBackToPrevious={retreatStep} />}
+        {!isExpress && step === 3 && <Step3Maqasid onComplete={advanceStep} onBackToPrevious={retreatStep} />}
+        {!isExpress && step === 4 && <Step4Sources onComplete={advanceStep} onBackToPrevious={retreatStep} />}
+        {!isExpress && step === FINAL_STEP && <Step5Niyya onComplete={advanceStep} onBackToPrevious={retreatStep} />}
+        {!isExpress && isReview && <Step6Review onComplete={advanceStep} onBackToPrevious={retreatStep} />}
         {isOutput && (
           <div className="w-full">
             <Output />
@@ -175,7 +188,7 @@ function SavedIndicator({ at }: { at: number | null }) {
 
 const TUTORIAL_KEY = 'teb.tutorial.seen';
 
-function LandingNew({ onStart }: { onStart: () => void }) {
+function LandingNew({ onStart }: { onStart: (mode: DeliberationMode) => void }) {
   const { t } = useTranslation('deliberate');
   const current = useSession((s) => s.current);
   const setStep = useSession((s) => s.setStep);
@@ -200,9 +213,9 @@ function LandingNew({ onStart }: { onStart: () => void }) {
   if (showIntro) {
     return (
       <FirstRunIntro
-        onStart={() => {
+        onStart={(mode) => {
           dismissIntro();
-          onStart();
+          onStart(mode);
         }}
         onDismiss={dismissIntro}
       />
@@ -210,12 +223,12 @@ function LandingNew({ onStart }: { onStart: () => void }) {
   }
 
   return (
-    <div className="mx-auto max-w-prose px-6 py-24 text-center space-y-10">
+    <div className="mx-auto max-w-form px-6 py-20 space-y-10">
       <motion.div
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
-        className="space-y-5"
+        className="space-y-5 text-center"
       >
         <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
           {t('eyebrow')}
@@ -227,10 +240,10 @@ function LandingNew({ onStart }: { onStart: () => void }) {
           {t('start.subtitle')}
         </p>
       </motion.div>
-      <div className="flex flex-col items-center gap-3">
-        <Button size="lg" onClick={onStart}>
-          {t('startCta')}
-        </Button>
+
+      <ModeChooser onPick={onStart} />
+
+      <div className="flex flex-col items-center gap-3 text-center">
         {hasDraft && (
           <Button variant="ghost" size="sm" onClick={() => setStep(1)}>
             <ScrollText size={14} aria-hidden="true" /> {t('continueDraft')}
@@ -248,11 +261,90 @@ function LandingNew({ onStart }: { onStart: () => void }) {
   );
 }
 
-function FirstRunIntro({ onStart, onDismiss }: { onStart: () => void; onDismiss: () => void }) {
+function ModeChooser({ onPick }: { onPick: (mode: DeliberationMode) => void }) {
+  const { t } = useTranslation('deliberate');
+  return (
+    <div className="space-y-4">
+      <div className="text-center space-y-1">
+        <p className="text-base font-medium">{t('modeChooser.title')}</p>
+        <p className="text-xs text-muted-foreground">{t('modeChooser.subtitle')}</p>
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <ModeCard
+          icon={<Zap size={18} aria-hidden="true" />}
+          tag={t('modeChooser.recommendedTag')}
+          label={t('modeChooser.quick.label')}
+          desc={t('modeChooser.quick.desc')}
+          onClick={() => onPick('quick')}
+          recommended
+        />
+        <ModeCard
+          icon={<Layers size={18} aria-hidden="true" />}
+          label={t('modeChooser.deep.label')}
+          desc={t('modeChooser.deep.desc')}
+          onClick={() => onPick('deep')}
+        />
+      </div>
+    </div>
+  );
+}
+
+function ModeCard({
+  icon,
+  tag,
+  label,
+  desc,
+  onClick,
+  recommended,
+}: {
+  icon: React.ReactNode;
+  tag?: string;
+  label: string;
+  desc: string;
+  onClick: () => void;
+  recommended?: boolean;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={cn(
+        'rounded-2xl border p-5 text-left transition-colors',
+        recommended
+          ? 'border-foreground/40 bg-secondary/40 hover:bg-secondary/60'
+          : 'border-border bg-background hover:border-foreground/40'
+      )}
+    >
+      <div className="flex items-center gap-2 mb-2">
+        <span className="text-foreground">{icon}</span>
+        {recommended && tag && (
+          <span className="text-[0.65rem] uppercase tracking-wider px-2 py-0.5 rounded-full border border-foreground/30 text-muted-foreground">
+            {tag}
+          </span>
+        )}
+      </div>
+      <p className="text-sm font-semibold">{label}</p>
+      <p className="text-xs text-muted-foreground mt-1.5 leading-relaxed">{desc}</p>
+    </button>
+  );
+}
+
+function ExpressProgressBadge() {
+  const { t } = useTranslation('deliberate');
+  return (
+    <div className="flex justify-center">
+      <span className="text-[0.7rem] uppercase tracking-[0.2em] px-3 py-1 rounded-full border border-border text-muted-foreground inline-flex items-center gap-1.5">
+        <Zap size={11} aria-hidden="true" /> {t('express.modeBadge')}
+      </span>
+    </div>
+  );
+}
+
+function FirstRunIntro({ onStart, onDismiss }: { onStart: (mode: DeliberationMode) => void; onDismiss: () => void }) {
   const { t } = useTranslation('deliberate');
   const cards = ['cards.ask', 'cards.private', 'cards.output'] as const;
   return (
-    <div className="mx-auto max-w-prose px-6 py-20 space-y-10">
+    <div className="mx-auto max-w-form px-6 py-20 space-y-10">
       <motion.div
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
@@ -287,10 +379,9 @@ function FirstRunIntro({ onStart, onDismiss }: { onStart: () => void; onDismiss:
         ))}
       </div>
 
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-        <Button size="lg" onClick={onStart}>
-          {t('intro.startCta')}
-        </Button>
+      <ModeChooser onPick={onStart} />
+
+      <div className="flex justify-center">
         <Link
           to="/examples"
           onClick={onDismiss}

@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import { ScrollText, BookOpen } from 'lucide-react';
-import type { AnySource, QuranVerse, Hadith } from '@/types/sources';
+import { ScrollText, BookOpen, Scale, GraduationCap } from 'lucide-react';
+import type { AnySource, QuranVerse, Hadith, QaidaEntry, ScholarEntry } from '@/types/sources';
 import { cn } from '@/lib/utils';
 
 interface Props {
@@ -12,10 +12,28 @@ interface Props {
 
 export function SourceCard({ source, className, compact, trailing }: Props) {
   const { t, i18n } = useTranslation('sources');
-  const isQuran = source.kind === 'quran';
+  const lang = i18n.resolvedLanguage ?? 'tr';
 
-  const Icon = isQuran ? BookOpen : ScrollText;
-  const labelKey = isQuran ? 'sources.quranTag' : 'sources.hadithTag';
+  const Icon =
+    source.kind === 'quran'
+      ? BookOpen
+      : source.kind === 'hadith'
+      ? ScrollText
+      : source.kind === 'qaida'
+      ? Scale
+      : GraduationCap;
+
+  const labelKey =
+    source.kind === 'quran'
+      ? 'sources.quranTag'
+      : source.kind === 'hadith'
+      ? 'sources.hadithTag'
+      : source.kind === 'qaida'
+      ? 'sources.qaidaTag'
+      : 'sources.scholarTag';
+
+  const hasArabic = source.kind === 'quran' || source.kind === 'hadith' || source.kind === 'qaida';
+  const hasTransliteration = hasArabic;
 
   return (
     <article
@@ -30,26 +48,43 @@ export function SourceCard({ source, className, compact, trailing }: Props) {
           <p className="text-xs uppercase tracking-wider text-muted-foreground">
             {t(labelKey)} · {source.data.id}
           </p>
-          {isQuran ? <QuranHeading verse={source.data as QuranVerse} /> : <HadithHeading hadith={source.data as Hadith} />}
+          {source.kind === 'quran' && <QuranHeading verse={source.data} />}
+          {source.kind === 'hadith' && <HadithHeading hadith={source.data} />}
+          {source.kind === 'qaida' && <QaidaHeading qaida={source.data} />}
+          {source.kind === 'scholar' && <ScholarHeading scholar={source.data} />}
         </div>
         {trailing}
       </header>
 
-      <div
-        dir="rtl"
-        lang="ar"
-        className="font-arabic text-[1.45rem] leading-[2] text-foreground"
-      >
-        {source.data.arabic}
-      </div>
+      {hasArabic && 'arabic' in source.data && (
+        <div
+          dir="rtl"
+          lang="ar"
+          className="font-arabic text-[1.45rem] leading-[2] text-foreground"
+        >
+          {source.data.arabic}
+        </div>
+      )}
 
-      {!compact && (
+      {!compact && hasTransliteration && 'transliteration' in source.data && (
         <p className="text-sm italic text-muted-foreground leading-relaxed">
           {source.data.transliteration}
         </p>
       )}
 
-      <SourceTranslations source={source} lang={i18n.resolvedLanguage ?? 'tr'} />
+      <SourceTranslations source={source} lang={lang} />
+
+      {!compact && source.kind === 'qaida' && (
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          {source.data.explanation[lang === 'tr' ? 'tr' : 'en']}
+        </p>
+      )}
+
+      {!compact && source.kind === 'scholar' && (
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          {source.data.summary[lang === 'tr' ? 'tr' : 'en']}
+        </p>
+      )}
 
       {!compact && (
         <footer className="flex flex-wrap gap-2 pt-2">
@@ -95,7 +130,50 @@ function HadithHeading({ hadith }: { hadith: Hadith }) {
   );
 }
 
+function QaidaHeading({ qaida }: { qaida: QaidaEntry }) {
+  return (
+    <p className="text-sm font-medium">
+      <span className="text-xs text-muted-foreground font-normal">{qaida.school}</span>
+    </p>
+  );
+}
+
+function ScholarHeading({ scholar }: { scholar: ScholarEntry }) {
+  return (
+    <p className="text-sm font-medium">
+      {scholar.scholar}{' '}
+      <span className="text-xs text-muted-foreground font-normal">
+        · {scholar.school} · {scholar.work}
+      </span>
+    </p>
+  );
+}
+
 function SourceTranslations({ source, lang }: { source: AnySource; lang: string }) {
+  if (source.kind === 'qaida') {
+    const q = source.data;
+    const trText = q.translations.tr;
+    const enText = q.translations.en;
+    return (
+      <div className="space-y-2">
+        {lang === 'tr' && trText && (
+          <p className="text-foreground leading-relaxed font-medium">{trText}</p>
+        )}
+        {lang !== 'tr' && enText && (
+          <p className="text-foreground leading-relaxed font-medium">{enText}</p>
+        )}
+        {lang === 'tr' && enText && (
+          <p className="text-sm text-muted-foreground leading-relaxed italic">{enText}</p>
+        )}
+        {lang !== 'tr' && trText && (
+          <p className="text-sm text-muted-foreground leading-relaxed italic">{trText}</p>
+        )}
+      </div>
+    );
+  }
+  if (source.kind === 'scholar') {
+    return null; // scholar summary is rendered above as a paragraph
+  }
   if (source.kind === 'quran') {
     const v = source.data;
     const trText = v.translations.diyanet;

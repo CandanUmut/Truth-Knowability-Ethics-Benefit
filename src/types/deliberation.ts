@@ -149,6 +149,15 @@ export interface NiyyaCheck {
 
 export type DeliberationStatus = 'draft' | 'final';
 
+/**
+ * Quick = a single-screen Express path that auto-derives maqāṣid impacts
+ * from the case + option text and surfaces a heuristic dossier.
+ * Deep = the original five-step flow with explicit weighting at every axis.
+ *
+ * Older deliberations (before this field existed) are treated as 'deep'.
+ */
+export type DeliberationMode = 'quick' | 'deep';
+
 export type ClassificationClass = 'settled' | 'qualified_disagreement' | 'open';
 
 export interface OptionScore {
@@ -185,6 +194,8 @@ export interface Deliberation {
   status: DeliberationStatus;
   /** Optional human-friendly title supplied by user, defaults to a short slice of the case. */
   title?: string;
+  /** Path the user took. Undefined = legacy deep-mode deliberation. */
+  mode?: DeliberationMode;
   case: DeliberationCase;
   claims: TruthClaim[];
   consultations: SourceConsultation[];

@@ -97,7 +97,11 @@ export function Step4Sources({ onComplete, onBackToPrevious }: Props) {
     const citation =
       src.kind === 'quran'
         ? `Q. ${src.data.sura}:${src.data.aya}`
-        : `${src.data.collection} #${src.data.number}`;
+        : src.kind === 'hadith'
+        ? `${src.data.collection} #${src.data.number}`
+        : src.kind === 'qaida'
+        ? src.data.transliteration
+        : `${src.data.scholar} — ${src.data.work}`;
     const fresh: SourceConsultation = {
       id: crypto.randomUUID(),
       sourceId,

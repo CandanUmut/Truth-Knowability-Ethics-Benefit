@@ -1,13 +1,15 @@
 {
   "eyebrow": "Sources",
-  "title": "Qur'ān, hadith, and classical maqāṣid sources",
-  "subtitle": "The source library used in Step 4 of any deliberation. Every source is presented in Arabic, transliteration, and bilingual translation, with translator named.",
+  "title": "Qur'ān, hadith, classical maxims, and scholarly opinions",
+  "subtitle": "The source library used in Step 4 of any deliberation. Every entry is presented in its source language, transliteration, and bilingual translation, with translator and provenance named.",
   "searchLabel": "Search sources",
-  "searchPlaceholder": "Theme, citation, keyword…",
+  "searchPlaceholder": "Theme, citation, scholar, keyword…",
   "filter": {
     "all": "All",
     "quran": "Qur'ān",
-    "hadith": "Hadith"
+    "hadith": "Hadith",
+    "qaida": "Maxims",
+    "scholar": "Scholars"
   },
   "themeFilter": "Filter by theme",
   "allThemes": "All themes",
@@ -15,7 +17,9 @@
   "noResults": "No sources match this search or filter.",
   "sources": {
     "quranTag": "Qur'ān",
-    "hadithTag": "Hadith"
+    "hadithTag": "Hadith",
+    "qaidaTag": "Legal maxim",
+    "scholarTag": "Scholar"
   },
   "assertion": {
     "qatʿi": "Qaṭʿī",
@@ -33,6 +37,6 @@
   },
   "seedNotice": {
     "title": "The library is currently a seed set.",
-    "body": "The Arabic, transliteration, and translations are a good-faith first pass; we welcome scholarly review via pull request. The review workflow lives in /docs/scholar-review.md (Phase 6)."
+    "body": "The Arabic, transliteration, and translations are a good-faith first pass; we welcome scholarly review via pull request. The review workflow lives in /docs/scholar-review.md (Phase 6). The expanded library now includes the five major qawāʿid fiqhiyya and a representative cross-section of classical and modern scholarly voices."
   }
 }

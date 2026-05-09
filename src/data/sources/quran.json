@@ -377,5 +377,470 @@
     "casePatterns": ["family-conflict", "religious-obligation"],
     "assertionStrength": "qatʿi",
     "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.2.143",
+    "sura": 2,
+    "aya": 143,
+    "arabic": "وَكَذَٰلِكَ جَعَلْنَاكُمْ أُمَّةً وَسَطًا لِّتَكُونُوا شُهَدَاءَ عَلَى النَّاسِ",
+    "transliteration": "Wa-kadhālika jaʿalnākum ummatan wasaṭan li-takūnū shuhadāʾa ʿalā al-nās",
+    "translations": {
+      "pickthall": "Thus We have appointed you a middle nation, that ye may be witnesses against mankind.",
+      "diyanet": "Böylece sizi orta bir ümmet yaptık ki, insanlara şahitler olasınız."
+    },
+    "themes": ["wasat", "moderation", "balance", "ummah", "witness"],
+    "casePatterns": ["moderation-balance", "general"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.2.177",
+    "sura": 2,
+    "aya": 177,
+    "arabic": "لَّيْسَ الْبِرَّ أَن تُوَلُّوا وُجُوهَكُمْ قِبَلَ الْمَشْرِقِ وَالْمَغْرِبِ وَلَٰكِنَّ الْبِرَّ مَنْ آمَنَ بِاللَّهِ وَالْيَوْمِ الْآخِرِ … وَآتَى الْمَالَ عَلَىٰ حُبِّهِ ذَوِي الْقُرْبَىٰ وَالْيَتَامَىٰ وَالْمَسَاكِينَ وَابْنَ السَّبِيلِ",
+    "transliteration": "Laysa al-birra an tuwallū wujūhakum qibala al-mashriqi wa-l-maghribi wa-lākinna al-birra man āmana bi-Llāhi wa-l-yawmi al-ākhir … wa-ātā al-māla ʿalā ḥubbihi dhawī al-qurbā wa-l-yatāmā wa-l-masākīna wa-bna al-sabīl",
+    "translations": {
+      "pickthall": "It is not righteousness that ye turn your faces to the East and the West; but righteous is he who believeth in Allah and the Last Day … and giveth his wealth, for love of Him, to kinsfolk and to orphans and the needy and the wayfarer.",
+      "diyanet": "İyilik, yüzlerinizi doğu ve batı tarafına çevirmeniz değildir. Asıl iyilik; Allah'a, ahiret gününe inanan … sevdiği maldan yakınlara, yetimlere, yoksullara, yolda kalmışlara verendir."
+    },
+    "themes": ["birr", "righteousness", "sadaqa", "charity", "iman"],
+    "casePatterns": ["charity-zakat", "religious-obligation", "general"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.2.195",
+    "sura": 2,
+    "aya": 195,
+    "arabic": "وَلَا تُلْقُوا بِأَيْدِيكُمْ إِلَى التَّهْلُكَةِ وَأَحْسِنُوا ۛ إِنَّ اللَّهَ يُحِبُّ الْمُحْسِنِينَ",
+    "transliteration": "Wa-lā tulqū bi-aydīkum ilā al-tahlukati wa-aḥsinū inna Allāha yuḥibbu al-muḥsinīn",
+    "translations": {
+      "pickthall": "Be not cast by your own hands to ruin; and do good. Lo! Allah loveth the beneficent.",
+      "diyanet": "Kendinizi kendi ellerinizle tehlikeye atmayın. İyilik edin; çünkü Allah iyilik edenleri sever."
+    },
+    "themes": ["tahluka", "self-harm", "ihsan", "preservation"],
+    "casePatterns": ["medical-decision", "addiction", "community-harm", "general"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.2.256",
+    "sura": 2,
+    "aya": 256,
+    "arabic": "لَا إِكْرَاهَ فِي الدِّينِ ۖ قَد تَّبَيَّنَ الرُّشْدُ مِنَ الْغَيِّ",
+    "transliteration": "Lā ikrāha fī al-dīn — qad tabayyana al-rushdu mina al-ghayy",
+    "translations": {
+      "pickthall": "There is no compulsion in religion. The right direction is henceforth distinct from error.",
+      "diyanet": "Dinde zorlama yoktur; çünkü doğruluk, sapıklıktan iyice ayrılmıştır."
+    },
+    "themes": ["ikrah", "compulsion", "freedom", "religion", "rushd"],
+    "casePatterns": ["family-conflict", "religious-obligation", "conflict-resolution"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.2.282",
+    "sura": 2,
+    "aya": 282,
+    "arabic": "يَا أَيُّهَا الَّذِينَ آمَنُوا إِذَا تَدَايَنتُم بِدَيْنٍ إِلَىٰ أَجَلٍ مُّسَمًّى فَاكْتُبُوهُ ۚ وَلْيَكْتُب بَّيْنَكُمْ كَاتِبٌ بِالْعَدْلِ",
+    "transliteration": "Yā ayyuhā alladhīna āmanū idhā tadāyantum bi-daynin ilā ajalin musamman fa-ktubūhu — wa-l-yaktub baynakum kātibun bi-l-ʿadl",
+    "translations": {
+      "pickthall": "O ye who believe! When ye contract a debt for a fixed term, record it in writing; let a scribe record it in writing between you in (terms of) equity.",
+      "diyanet": "Ey iman edenler! Belirli bir süreye kadar birbirinize borçlandığınızda onu yazın. Aranızda bir yazıcı adaletle yazsın."
+    },
+    "themes": ["dayn", "debt", "contract", "writing", "ʿadl", "documentation"],
+    "casePatterns": ["contracts-promises", "riba-finance", "inheritance-property"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.3.104",
+    "sura": 3,
+    "aya": 104,
+    "arabic": "وَلْتَكُن مِّنكُمْ أُمَّةٌ يَدْعُونَ إِلَى الْخَيْرِ وَيَأْمُرُونَ بِالْمَعْرُوفِ وَيَنْهَوْنَ عَنِ الْمُنكَرِ",
+    "transliteration": "Wa-l-takun minkum ummatun yadʿūna ilā al-khayri wa-yaʾmurūna bi-l-maʿrūfi wa-yanhawna ʿani al-munkar",
+    "translations": {
+      "pickthall": "And there may spring from you a nation who invite to goodness, and enjoin right conduct and forbid indecency.",
+      "diyanet": "İçinizden hayra çağıran, iyiliği emredip kötülükten alıkoyan bir topluluk bulunsun."
+    },
+    "themes": ["amr-bil-maʿruf", "nahy-an-il-munkar", "khayr", "ummah"],
+    "casePatterns": ["whistleblowing", "community-harm", "professional-ethics"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.3.159",
+    "sura": 3,
+    "aya": 159,
+    "arabic": "فَبِمَا رَحْمَةٍ مِّنَ اللَّهِ لِنتَ لَهُمْ ۖ وَلَوْ كُنتَ فَظًّا غَلِيظَ الْقَلْبِ لَانفَضُّوا مِنْ حَوْلِكَ ۖ فَاعْفُ عَنْهُمْ وَاسْتَغْفِرْ لَهُمْ وَشَاوِرْهُمْ فِي الْأَمْرِ",
+    "transliteration": "Fa-bimā raḥmatin mina Allāhi linta lahum — wa-law kunta faẓẓan ghalīẓa al-qalbi la-nfaḍḍū min ḥawlika — fa-ʿfu ʿanhum wa-staghfir lahum wa-shāwirhum fī al-amr",
+    "translations": {
+      "pickthall": "It was by the mercy of Allah that thou wast lenient with them; for if thou hadst been stern and fierce of heart they would have dispersed from round about thee. So pardon them and ask forgiveness for them and consult with them upon the conduct of affairs.",
+      "diyanet": "Allah'tan bir rahmet ile onlara yumuşak davrandın. Eğer kaba, katı yürekli olsaydın, onlar etrafından dağılıp giderlerdi. Onları affet, onlar için bağışlanma dile ve iş hakkında onlara danış."
+    },
+    "themes": ["shura", "consultation", "rahma", "leniency", "leadership"],
+    "casePatterns": ["consultation-shura", "leadership-civic", "professional-ethics", "family-conflict"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.4.29",
+    "sura": 4,
+    "aya": 29,
+    "arabic": "يَا أَيُّهَا الَّذِينَ آمَنُوا لَا تَأْكُلُوا أَمْوَالَكُم بَيْنَكُم بِالْبَاطِلِ إِلَّا أَن تَكُونَ تِجَارَةً عَن تَرَاضٍ مِّنكُمْ ۚ وَلَا تَقْتُلُوا أَنفُسَكُمْ",
+    "transliteration": "Yā ayyuhā alladhīna āmanū lā taʾkulū amwālakum baynakum bi-l-bāṭili illā an takūna tijāratan ʿan tarāḍin minkum — wa-lā taqtulū anfusakum",
+    "translations": {
+      "pickthall": "O ye who believe! Squander not your wealth among yourselves in vanity, except it be a trade by mutual consent, and kill not one another.",
+      "diyanet": "Ey iman edenler! Mallarınızı aranızda bâtıl yollarla yemeyin; ancak rızanıza dayalı bir alışveriş ile olursa başka. Kendinizi (de) öldürmeyin."
+    },
+    "themes": ["mal", "tijara", "tarāḍī", "consent", "preservation"],
+    "casePatterns": ["riba-finance", "contracts-promises", "professional-ethics", "inheritance-property"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.4.58",
+    "sura": 4,
+    "aya": 58,
+    "arabic": "إِنَّ اللَّهَ يَأْمُرُكُمْ أَن تُؤَدُّوا الْأَمَانَاتِ إِلَىٰ أَهْلِهَا وَإِذَا حَكَمْتُم بَيْنَ النَّاسِ أَن تَحْكُمُوا بِالْعَدْلِ",
+    "transliteration": "Inna Allāha yaʾmurukum an tuʾaddū al-amānāti ilā ahlihā wa-idhā ḥakamtum bayna al-nāsi an taḥkumū bi-l-ʿadl",
+    "translations": {
+      "pickthall": "Lo! Allah commandeth you that ye restore deposits to their owners, and, if ye judge between mankind, that ye judge justly.",
+      "diyanet": "Allah size emanetleri ehline vermenizi ve insanlar arasında hükmettiğinizde adaletle hükmetmenizi emreder."
+    },
+    "themes": ["amana", "trust", "ʿadl", "justice", "judgement"],
+    "casePatterns": ["trust-amana", "professional-ethics", "leadership-civic"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.4.114",
+    "sura": 4,
+    "aya": 114,
+    "arabic": "لَّا خَيْرَ فِي كَثِيرٍ مِّن نَّجْوَاهُمْ إِلَّا مَنْ أَمَرَ بِصَدَقَةٍ أَوْ مَعْرُوفٍ أَوْ إِصْلَاحٍ بَيْنَ النَّاسِ",
+    "transliteration": "Lā khayra fī kathīrin min najwāhum illā man amara bi-ṣadaqatin aw maʿrūfin aw iṣlāḥin bayna al-nās",
+    "translations": {
+      "pickthall": "There is no good in much of their secret conferences save (in) him who enjoineth almsgiving and kindness and peace-making among the people.",
+      "diyanet": "Onların gizli konuşmalarının çoğunda hayır yoktur; ancak sadakayı, iyiliği veya insanlar arasını düzeltmeyi emreden hariç."
+    },
+    "themes": ["najwā", "secret-talk", "iṣlāḥ", "reconciliation", "sadaqa"],
+    "casePatterns": ["conflict-resolution", "community-harm", "honest-speech"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.6.151",
+    "sura": 6,
+    "aya": 151,
+    "arabic": "قُلْ تَعَالَوْا أَتْلُ مَا حَرَّمَ رَبُّكُمْ عَلَيْكُمْ ۖ أَلَّا تُشْرِكُوا بِهِ شَيْئًا ۖ وَبِالْوَالِدَيْنِ إِحْسَانًا ۖ وَلَا تَقْتُلُوا أَوْلَادَكُم مِّنْ إِمْلَاقٍ",
+    "transliteration": "Qul taʿālaw atlu mā ḥarrama rabbukum ʿalaykum — allā tushrikū bihi shayʾan wa-bi-l-wālidayni iḥsānan — wa-lā taqtulū awlādakum min imlāq",
+    "translations": {
+      "pickthall": "Say: Come, I will recite unto you that which your Lord hath made a sacred duty for you: that ye ascribe nothing as partner unto Him; and that ye do good to parents; and that ye slay not your children because of penury.",
+      "diyanet": "De ki: Gelin, Rabbinizin size haram kıldıklarını okuyayım: O'na hiçbir şeyi ortak koşmayın, anaya babaya iyilik edin, fakirlik korkusuyla çocuklarınızı öldürmeyin."
+    },
+    "themes": ["walidayn", "ihsan", "preservation", "imlāq", "moral-imperatives"],
+    "casePatterns": ["family-conflict", "medical-decision", "religious-obligation"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.7.31",
+    "sura": 7,
+    "aya": 31,
+    "arabic": "وَكُلُوا وَاشْرَبُوا وَلَا تُسْرِفُوا ۚ إِنَّهُ لَا يُحِبُّ الْمُسْرِفِينَ",
+    "transliteration": "Wa-kulū wa-shrabū wa-lā tusrifū — innahu lā yuḥibbu al-musrifīn",
+    "translations": {
+      "pickthall": "Eat and drink, but be not prodigal. Lo! He loveth not the prodigals.",
+      "diyanet": "Yiyin için, fakat israf etmeyin; çünkü O, israf edenleri sevmez."
+    },
+    "themes": ["isrāf", "moderation", "consumption", "wasat"],
+    "casePatterns": ["moderation-balance", "addiction", "environment-creation"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.7.199",
+    "sura": 7,
+    "aya": 199,
+    "arabic": "خُذِ الْعَفْوَ وَأْمُرْ بِالْعُرْفِ وَأَعْرِضْ عَنِ الْجَاهِلِينَ",
+    "transliteration": "Khudhi al-ʿafwa wa-ʾmur bi-l-ʿurfi wa-aʿriḍ ʿani al-jāhilīn",
+    "translations": {
+      "pickthall": "Keep to forgiveness, and enjoin kindness, and turn away from the ignorant.",
+      "diyanet": "Sen affı tut, iyiliği emret ve cahillerden yüz çevir."
+    },
+    "themes": ["ʿafw", "forgiveness", "ʿurf", "kindness"],
+    "casePatterns": ["conflict-resolution", "speech-control", "family-conflict"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.13.11",
+    "sura": 13,
+    "aya": 11,
+    "arabic": "إِنَّ اللَّهَ لَا يُغَيِّرُ مَا بِقَوْمٍ حَتَّىٰ يُغَيِّرُوا مَا بِأَنفُسِهِمْ",
+    "transliteration": "Inna Allāha lā yughayyiru mā bi-qawmin ḥattā yughayyirū mā bi-anfusihim",
+    "translations": {
+      "pickthall": "Lo! Allah changeth not the condition of a folk until they (first) change that which is in their hearts.",
+      "diyanet": "Bir toplum kendi nefislerinde olanı değiştirmedikçe, Allah onların durumunu değiştirmez."
+    },
+    "themes": ["taghyir", "self-change", "agency", "responsibility"],
+    "casePatterns": ["sincerity-intention", "addiction", "general"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.16.125",
+    "sura": 16,
+    "aya": 125,
+    "arabic": "ادْعُ إِلَىٰ سَبِيلِ رَبِّكَ بِالْحِكْمَةِ وَالْمَوْعِظَةِ الْحَسَنَةِ ۖ وَجَادِلْهُم بِالَّتِي هِيَ أَحْسَنُ",
+    "transliteration": "Udʿu ilā sabīli rabbika bi-l-ḥikmati wa-l-mawʿiẓati al-ḥasanati wa-jādilhum bi-llatī hiya aḥsan",
+    "translations": {
+      "pickthall": "Call unto the way of thy Lord with wisdom and fair exhortation, and reason with them in the better way.",
+      "diyanet": "Rabbinin yoluna hikmetle, güzel öğütle çağır ve onlarla en güzel şekilde tartış."
+    },
+    "themes": ["daʿwa", "ḥikma", "dialogue", "argumentation"],
+    "casePatterns": ["speech-control", "conflict-resolution", "professional-ethics"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.17.23",
+    "sura": 17,
+    "aya": 23,
+    "arabic": "وَقَضَىٰ رَبُّكَ أَلَّا تَعْبُدُوا إِلَّا إِيَّاهُ وَبِالْوَالِدَيْنِ إِحْسَانًا ۚ إِمَّا يَبْلُغَنَّ عِندَكَ الْكِبَرَ أَحَدُهُمَا أَوْ كِلَاهُمَا فَلَا تَقُل لَّهُمَا أُفٍّ",
+    "transliteration": "Wa-qaḍā rabbuka allā taʿbudū illā iyyāhu wa-bi-l-wālidayni iḥsānan — immā yablughanna ʿindaka al-kibara aḥaduhumā aw kilāhumā fa-lā taqul lahumā uffin",
+    "translations": {
+      "pickthall": "Thy Lord hath decreed, that ye worship none save Him, and (that ye show) kindness to parents. If one of them or both of them attain old age with thee, say not 'Fie' unto them.",
+      "diyanet": "Rabbin, kendisinden başkasına kulluk etmemenizi ve ana babaya iyilik etmenizi emretti. Onlardan biri veya her ikisi senin yanında yaşlanırsa, onlara 'öf' bile deme."
+    },
+    "themes": ["walidayn", "ihsan", "elderly", "respect", "family"],
+    "casePatterns": ["family-conflict", "religious-obligation"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.17.32",
+    "sura": 17,
+    "aya": 32,
+    "arabic": "وَلَا تَقْرَبُوا الزِّنَىٰ ۖ إِنَّهُ كَانَ فَاحِشَةً وَسَاءَ سَبِيلًا",
+    "transliteration": "Wa-lā taqrabū al-zinā — innahu kāna fāḥishatan wa-sāʾa sabīlā",
+    "translations": {
+      "pickthall": "And come not near unto adultery. Lo! it is an abomination and an evil way.",
+      "diyanet": "Zinaya yaklaşmayın. Şüphesiz o, bir hayâsızlıktır ve kötü bir yoldur."
+    },
+    "themes": ["zina", "modesty", "fahsha", "preservation"],
+    "casePatterns": ["modesty-haya", "family-conflict"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.17.34",
+    "sura": 17,
+    "aya": 34,
+    "arabic": "وَأَوْفُوا بِالْعَهْدِ ۖ إِنَّ الْعَهْدَ كَانَ مَسْئُولًا",
+    "transliteration": "Wa-awfū bi-l-ʿahd — inna al-ʿahda kāna masʾūlan",
+    "translations": {
+      "pickthall": "Keep the covenant. Lo! of the covenant it will be asked.",
+      "diyanet": "Verdiğiniz sözü de yerine getirin. Çünkü verilen söz, sorumluluk gerektirir."
+    },
+    "themes": ["ʿahd", "covenant", "promise", "responsibility"],
+    "casePatterns": ["contracts-promises", "trust-amana", "professional-ethics"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.20.114",
+    "sura": 20,
+    "aya": 114,
+    "arabic": "وَقُل رَّبِّ زِدْنِي عِلْمًا",
+    "transliteration": "Wa-qul rabbi zidnī ʿilman",
+    "translations": {
+      "pickthall": "And say: My Lord! Increase me in knowledge.",
+      "diyanet": "Ve de ki: Rabbim! Benim ilmimi artır."
+    },
+    "themes": ["ʿilm", "knowledge", "learning", "duʿāʾ"],
+    "casePatterns": ["knowledge-learning", "general"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.24.27",
+    "sura": 24,
+    "aya": 27,
+    "arabic": "يَا أَيُّهَا الَّذِينَ آمَنُوا لَا تَدْخُلُوا بُيُوتًا غَيْرَ بُيُوتِكُمْ حَتَّىٰ تَسْتَأْنِسُوا وَتُسَلِّمُوا عَلَىٰ أَهْلِهَا",
+    "transliteration": "Yā ayyuhā alladhīna āmanū lā tadkhulū buyūtan ghayra buyūtikum ḥattā tastaʾnisū wa-tusallimū ʿalā ahlihā",
+    "translations": {
+      "pickthall": "O ye who believe! Enter not houses other than your own without first announcing your presence and invoking peace upon the folk thereof.",
+      "diyanet": "Ey iman edenler! Kendi evlerinizden başka evlere izin almadan ve ev halkına selam vermeden girmeyin."
+    },
+    "themes": ["isti'dhan", "permission", "privacy", "neighbor-rights"],
+    "casePatterns": ["digital-online", "neighbor-rights", "family-conflict"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.25.63",
+    "sura": 25,
+    "aya": 63,
+    "arabic": "وَعِبَادُ الرَّحْمَٰنِ الَّذِينَ يَمْشُونَ عَلَى الْأَرْضِ هَوْنًا وَإِذَا خَاطَبَهُمُ الْجَاهِلُونَ قَالُوا سَلَامًا",
+    "transliteration": "Wa-ʿibādu al-Raḥmāni alladhīna yamshūna ʿalā al-arḍi hawnan wa-idhā khāṭabahumu al-jāhilūna qālū salāman",
+    "translations": {
+      "pickthall": "The (faithful) slaves of the Beneficent are they who walk upon the earth modestly, and when the foolish ones address them they answer: Peace.",
+      "diyanet": "Rahman'ın kulları öyle kimselerdir ki, yeryüzünde tevazu ile yürürler; cahiller onlara laf attıklarında 'selâm' der geçerler."
+    },
+    "themes": ["hawn", "humility", "salam", "patience", "akhlaq"],
+    "casePatterns": ["speech-control", "conflict-resolution", "patience-trials"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.31.18",
+    "sura": 31,
+    "aya": 18,
+    "arabic": "وَلَا تُصَعِّرْ خَدَّكَ لِلنَّاسِ وَلَا تَمْشِ فِي الْأَرْضِ مَرَحًا ۖ إِنَّ اللَّهَ لَا يُحِبُّ كُلَّ مُخْتَالٍ فَخُورٍ",
+    "transliteration": "Wa-lā tuṣaʿʿir khaddaka li-l-nāsi wa-lā tamshi fī al-arḍi maraḥan — inna Allāha lā yuḥibbu kulla mukhtālin fakhūr",
+    "translations": {
+      "pickthall": "Turn not thy cheek in scorn toward folk, nor walk with pertness in the land. Lo! Allah loveth not each braggart boaster.",
+      "diyanet": "Küçümseyerek insanlardan yüz çevirme ve yeryüzünde böbürlenerek yürüme. Çünkü Allah, hiçbir kibirleneni ve övüneni sevmez."
+    },
+    "themes": ["kibr", "arrogance", "humility", "akhlaq"],
+    "casePatterns": ["sincerity-intention", "speech-control"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.42.38",
+    "sura": 42,
+    "aya": 38,
+    "arabic": "وَأَمْرُهُمْ شُورَىٰ بَيْنَهُمْ",
+    "transliteration": "Wa-amruhum shūrā baynahum",
+    "translations": {
+      "pickthall": "And whose affair is a matter of counsel.",
+      "diyanet": "İşleri aralarında danışma iledir."
+    },
+    "themes": ["shura", "consultation", "collective-decision"],
+    "casePatterns": ["consultation-shura", "leadership-civic", "professional-ethics", "family-conflict"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.49.10",
+    "sura": 49,
+    "aya": 10,
+    "arabic": "إِنَّمَا الْمُؤْمِنُونَ إِخْوَةٌ فَأَصْلِحُوا بَيْنَ أَخَوَيْكُمْ",
+    "transliteration": "Innamā al-muʾminūna ikhwatun fa-aṣliḥū bayna akhawaykum",
+    "translations": {
+      "pickthall": "The believers are naught else than brothers. Therefore make peace between your brethren.",
+      "diyanet": "Müminler ancak kardeştirler. Öyleyse iki kardeşinizin arasını düzeltin."
+    },
+    "themes": ["ukhuwwa", "brotherhood", "iṣlāḥ", "reconciliation"],
+    "casePatterns": ["conflict-resolution", "community-harm", "family-conflict"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.49.11",
+    "sura": 49,
+    "aya": 11,
+    "arabic": "يَا أَيُّهَا الَّذِينَ آمَنُوا لَا يَسْخَرْ قَوْمٌ مِّن قَوْمٍ … وَلَا تَلْمِزُوا أَنفُسَكُمْ وَلَا تَنَابَزُوا بِالْأَلْقَابِ",
+    "transliteration": "Yā ayyuhā alladhīna āmanū lā yaskhar qawmun min qawmin … wa-lā talmizū anfusakum wa-lā tanābazū bi-l-alqāb",
+    "translations": {
+      "pickthall": "O ye who believe! Let not a folk deride a folk … neither defame one another, nor insult one another by nicknames.",
+      "diyanet": "Ey iman edenler! Bir topluluk başka bir topluluğu alaya almasın … kendi kendinizi ayıplamayın, birbirinizi (kötü) lakaplarla çağırmayın."
+    },
+    "themes": ["sukhriyya", "mockery", "lamz", "tanabbuz", "akhlaq"],
+    "casePatterns": ["speech-control", "community-harm", "digital-online"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.49.13",
+    "sura": 49,
+    "aya": 13,
+    "arabic": "يَا أَيُّهَا النَّاسُ إِنَّا خَلَقْنَاكُم مِّن ذَكَرٍ وَأُنثَىٰ وَجَعَلْنَاكُمْ شُعُوبًا وَقَبَائِلَ لِتَعَارَفُوا ۚ إِنَّ أَكْرَمَكُمْ عِندَ اللَّهِ أَتْقَاكُمْ",
+    "transliteration": "Yā ayyuhā al-nāsu innā khalaqnākum min dhakarin wa-unthā wa-jaʿalnākum shuʿūban wa-qabāʾila li-taʿārafū — inna akramakum ʿinda Allāhi atqākum",
+    "translations": {
+      "pickthall": "O mankind! Lo! We have created you male and female, and have made you nations and tribes that ye may know one another. Lo! the noblest of you, in the sight of Allah, is the best in conduct.",
+      "diyanet": "Ey insanlar! Şüphe yok ki, biz sizi bir erkek ve bir dişiden yarattık ve birbirinizle tanışmanız için sizi kavimlere ve kabilelere ayırdık. Allah katında en üstün olanınız, O'na karşı gelmekten en çok sakınanınızdır."
+    },
+    "themes": ["taʿaruf", "diversity", "taqwa", "equality"],
+    "casePatterns": ["community-harm", "leadership-civic", "general"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.55.9",
+    "sura": 55,
+    "aya": 9,
+    "arabic": "وَأَقِيمُوا الْوَزْنَ بِالْقِسْطِ وَلَا تُخْسِرُوا الْمِيزَانَ",
+    "transliteration": "Wa-aqīmū al-wazna bi-l-qisṭi wa-lā tukhsirū al-mīzān",
+    "translations": {
+      "pickthall": "But observe the measure strictly, nor fall short thereof.",
+      "diyanet": "Tartıyı adaletle yapın ve teraziyi eksiltmeyin."
+    },
+    "themes": ["mizan", "qist", "balance", "justice", "weight"],
+    "casePatterns": ["professional-ethics", "moderation-balance", "contracts-promises"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.59.9",
+    "sura": 59,
+    "aya": 9,
+    "arabic": "وَيُؤْثِرُونَ عَلَىٰ أَنفُسِهِمْ وَلَوْ كَانَ بِهِمْ خَصَاصَةٌ ۚ وَمَن يُوقَ شُحَّ نَفْسِهِ فَأُولَٰئِكَ هُمُ الْمُفْلِحُونَ",
+    "transliteration": "Wa-yuʾthirūna ʿalā anfusihim wa-law kāna bihim khaṣāṣatun — wa-man yūqa shuḥḥa nafsihi fa-ulāʾika humu al-mufliḥūn",
+    "translations": {
+      "pickthall": "But give them preference over themselves though poverty become their lot. And whoso is saved from his own avarice — such are they who are successful.",
+      "diyanet": "Kendileri zaruret içinde bulunsalar bile onları kendilerine tercih ederler. Kim nefsinin cimriliğinden korunursa, işte onlar kurtuluşa erenlerdir."
+    },
+    "themes": ["īthār", "selflessness", "shuhh", "generosity"],
+    "casePatterns": ["charity-zakat", "family-conflict", "general"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.93.10",
+    "sura": 93,
+    "aya": 10,
+    "arabic": "وَأَمَّا السَّائِلَ فَلَا تَنْهَرْ",
+    "transliteration": "Wa-ammā al-sāʾila fa-lā tanhar",
+    "translations": {
+      "pickthall": "Therefor the beggar drive not away.",
+      "diyanet": "Ve dilenciyi de azarlama."
+    },
+    "themes": ["sāʾil", "compassion", "kindness"],
+    "casePatterns": ["charity-zakat", "speech-control"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.103.1",
+    "sura": 103,
+    "aya": 1,
+    "arabic": "وَالْعَصْرِ ۝ إِنَّ الْإِنسَانَ لَفِي خُسْرٍ ۝ إِلَّا الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ وَتَوَاصَوْا بِالْحَقِّ وَتَوَاصَوْا بِالصَّبْرِ",
+    "transliteration": "Wa-l-ʿaṣr — inna al-insāna la-fī khusr — illā alladhīna āmanū wa-ʿamilū al-ṣāliḥāti wa-tawāṣaw bi-l-ḥaqqi wa-tawāṣaw bi-l-ṣabr",
+    "translations": {
+      "pickthall": "By the declining day, lo! man is in a state of loss, save those who believe and do good works, and exhort one another to truth and exhort one another to endurance.",
+      "diyanet": "Asra yemin olsun ki, insan gerçekten bir hüsran içindedir. Ancak iman edip salih amel işleyenler, birbirlerine hakkı tavsiye edenler ve birbirlerine sabrı tavsiye edenler bunun dışındadır."
+    },
+    "themes": ["ʿaṣr", "time", "sabr", "haqq", "khusr"],
+    "casePatterns": ["time-priorities", "patience-trials", "general"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
+  },
+  {
+    "id": "Q.104.1",
+    "sura": 104,
+    "aya": 1,
+    "arabic": "وَيْلٌ لِّكُلِّ هُمَزَةٍ لُّمَزَةٍ",
+    "transliteration": "Waylun li-kulli humazatin lumazah",
+    "translations": {
+      "pickthall": "Woe unto every slandering traducer.",
+      "diyanet": "Arkadan çekiştirip yüze karşı eğlenen her kişinin vay hâline!"
+    },
+    "themes": ["humaza", "lumaza", "slander", "backbiting", "speech"],
+    "casePatterns": ["speech-control", "community-harm", "digital-online"],
+    "assertionStrength": "qatʿi",
+    "reviewStatus": "seed"
   }
 ]

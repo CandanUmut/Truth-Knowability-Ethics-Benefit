@@ -35,6 +35,60 @@
   "outputSubtitle": "Not a verdict — a structured reflection on four moments, returned to you.",
   "outputBadge": "Map",
   "reviewBadge": "Quick review",
+  "modeChooser": {
+    "title": "How would you like to think this through?",
+    "subtitle": "Two paths, the same framework. You can switch between them at any time.",
+    "quick": {
+      "label": "Quick path · 3 questions",
+      "desc": "Describe your case, list your options, and check your intention. The framework infers the impact map for you and returns a heuristic dossier in under two minutes."
+    },
+    "deep": {
+      "label": "In-depth path · 5 steps",
+      "desc": "The full procedure: case, truth-claims, effects on each protected good, sources, and intention. ~10 minutes for a thorough dossier."
+    },
+    "recommendedTag": "Recommended"
+  },
+  "express": {
+    "modeBadge": "Quick deliberation",
+    "progress": "Question {{n}} of {{total}}",
+    "q1": {
+      "title": "What decision are you facing?",
+      "subtitle": "Describe what's on your mind in your own words.",
+      "helper": "A few sentences is enough. The framework will infer the rest from your description and your options."
+    },
+    "q2": {
+      "title": "What are your options?",
+      "subtitle": "Add at least two — including \"do nothing\" if it's a real one.",
+      "helper": "Each option's short description helps the framework recognise the protected goods it touches.",
+      "descPlaceholder": "What does this option concretely look like? (helps the framework)"
+    },
+    "q3": {
+      "title": "Before you see the map, a moment for intention.",
+      "subtitle": "What is your conscience saying about this choice?",
+      "helper": "You'll get a chance to deepen this — and any other layer — after the dossier appears.",
+      "leaning": "Which option does your heart lean toward?",
+      "cta": "Show me the map"
+    }
+  },
+  "refine": {
+    "title": "Refine this dossier",
+    "body": "This is a heuristic first pass. To make the dossier more decisive, add the layer the framework needs most.",
+    "addClaims": "Mark a fact your decision rests on",
+    "addClaimsDesc": "If a fact, were it false, would change your answer — name it. The dossier will hold itself to your evidence.",
+    "weighEffects": "Weigh effects manually",
+    "weighEffectsDesc": "Replace the inferred impact map with your own reading of harms and goods on each option.",
+    "consultSources": "Consult the source library",
+    "consultSourcesDesc": "Browse the verses, hadiths, classical maxims, and scholarly opinions matched to your case.",
+    "deepenNiyya": "Sit longer with the niyya questions",
+    "deepenNiyyaDesc": "The Quick path asked one of the five niyya questions. The full set is here when you're ready."
+  },
+  "suggestedSources": {
+    "title": "Guidance from the library",
+    "body": "Sources from the library that the case-pattern matcher surfaced for your description. Tap any to consult it formally.",
+    "consult": "Consult",
+    "consulted": "Consulted",
+    "moreCount": "+{{n}} more"
+  },
   "newDeliberation": "New deliberation",
   "newStarted": "New deliberation started. The previous one is in History.",
   "continueDraft": "Continue your in-progress deliberation",

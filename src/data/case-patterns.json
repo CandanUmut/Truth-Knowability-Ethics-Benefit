@@ -2,21 +2,23 @@
   {
     "pattern": "workplace-honesty",
     "keywords": [
-      "workplace", "employer", "colleague", "report", "regulator", "defect", "safety", "whistleblow", "fire", "manager", "complain",
-      "iş", "işyeri", "işveren", "rapor", "kusur", "güvenlik", "ihbar", "yöneticiye"
+      "workplace", "employer", "colleague", "report", "regulator", "defect", "safety", "whistleblow", "fire", "manager", "complain", "performance review", "supervisor", "coworker",
+      "iş", "işyeri", "işveren", "rapor", "kusur", "güvenlik", "ihbar", "yöneticiye", "amir", "patron", "mesai"
     ],
     "sourceIds": [
-      "Q.5.2", "Q.4.135", "Q.5.8", "Q.49.6", "Q.17.36",
-      "muslim.49", "muslim.55", "ibn-majah.2341", "bukhari.6094"
+      "Q.5.2", "Q.4.135", "Q.5.8", "Q.49.6", "Q.17.36", "Q.55.9",
+      "muslim.49", "muslim.55", "ibn-majah.2341", "bukhari.6094", "muslim.91b", "qaida.harm-priority"
     ]
   },
   {
     "pattern": "whistleblowing",
     "keywords": [
-      "whistleblow", "report wrongdoing", "expose", "disclose", "fraud", "wrongdoing",
-      "ihbar", "iç müfettiş", "yolsuzluk", "kötülüğü göstermek"
+      "whistleblow", "report wrongdoing", "expose", "disclose", "fraud", "wrongdoing", "cover up", "scandal",
+      "ihbar", "iç müfettiş", "yolsuzluk", "kötülüğü göstermek", "ifşa", "açığa çıkarmak"
     ],
-    "sourceIds": ["muslim.49", "muslim.55", "Q.4.135", "Q.5.8", "Q.5.2", "ibn-majah.2341"]
+    "sourceIds": [
+      "muslim.49", "muslim.55", "Q.4.135", "Q.5.8", "Q.5.2", "ibn-majah.2341", "Q.3.104", "bukhari.2443", "abudawud.3580"
+    ]
   },
   {
     "pattern": "organ-donation",
@@ -24,92 +26,327 @@
       "organ", "donor", "transplant", "brain death", "harvest", "cadaver",
       "organ bağışı", "nakil", "beyin ölümü", "donör"
     ],
-    "sourceIds": ["Q.5.32", "Q.33.72", "ibn-majah.2341"]
+    "sourceIds": ["Q.5.32", "Q.33.72", "ibn-majah.2341", "qaida.no-harm", "qaida.necessity"]
   },
   {
     "pattern": "riba-finance",
     "keywords": [
-      "mortgage", "loan", "interest", "ribā", "riba", "credit", "usury", "finance", "bank",
-      "ipotek", "kredi", "faiz", "ribâ", "banka", "konut kredisi"
+      "mortgage", "loan", "interest", "ribā", "riba", "credit", "usury", "finance", "bank", "investment", "stocks",
+      "ipotek", "kredi", "faiz", "ribâ", "banka", "konut kredisi", "yatırım", "borç", "borçlanma"
     ],
-    "sourceIds": ["Q.2.275", "Q.4.36", "Q.16.90", "ibn-majah.2341"]
+    "sourceIds": [
+      "Q.2.275", "Q.4.36", "Q.16.90", "Q.4.29", "Q.2.282", "ibn-majah.2341", "muslim.2699", "qaida.necessity", "scholar.ibn-hazm.muhalla.contracts"
+    ]
   },
   {
     "pattern": "family-conflict",
     "keywords": [
-      "family", "parent", "spouse", "child", "marriage", "divorce", "in-law", "religion family",
-      "aile", "ebeveyn", "anne baba", "eş", "çocuk", "evlilik", "boşanma"
+      "family", "parent", "spouse", "child", "marriage", "divorce", "in-law", "religion family", "sibling", "brother", "sister", "father", "mother",
+      "aile", "ebeveyn", "anne baba", "eş", "çocuk", "evlilik", "boşanma", "kardeş", "anne", "baba", "aile içi"
     ],
-    "sourceIds": ["Q.4.36", "Q.4.135", "Q.5.8", "Q.16.90", "Q.49.12", "muslim.2564"]
+    "sourceIds": [
+      "Q.4.36", "Q.4.135", "Q.5.8", "Q.16.90", "Q.49.12", "Q.17.23", "Q.6.151", "Q.49.10", "Q.2.256",
+      "muslim.2564", "bukhari.13", "abudawud.4944", "tirmidhi.1924", "bukhari.6011"
+    ]
   },
   {
     "pattern": "professional-ethics",
     "keywords": [
-      "client", "patient", "colleague", "professional", "ethics", "boundary", "conflict of interest",
-      "müvekkil", "hasta", "meslek", "etik", "çıkar çatışması"
+      "client", "patient", "colleague", "professional", "ethics", "boundary", "conflict of interest", "deadline", "freelance",
+      "müvekkil", "hasta", "meslek", "etik", "çıkar çatışması", "müşteri"
     ],
-    "sourceIds": ["Q.4.135", "Q.5.8", "Q.16.90", "Q.17.36", "Q.49.6", "muslim.49", "muslim.55", "ibn-majah.2341", "bukhari.6094"]
+    "sourceIds": [
+      "Q.4.135", "Q.5.8", "Q.16.90", "Q.17.36", "Q.49.6", "Q.4.58", "Q.55.9",
+      "muslim.49", "muslim.55", "ibn-majah.2341", "bukhari.6094", "muslim.1715", "muslim.91b", "abudawud.3580", "abudawud.3597",
+      "qaida.no-harm", "qaida.harm-priority", "scholar.izz-bin-abdissalam.qawaid.maslaha"
+    ]
   },
   {
     "pattern": "medical-decision",
     "keywords": [
-      "treatment", "surgery", "doctor", "diagnosis", "vaccine", "medical", "end of life", "DNR", "transplant",
-      "tedavi", "ameliyat", "doktor", "teşhis", "aşı", "sağlık"
+      "treatment", "surgery", "doctor", "diagnosis", "vaccine", "medical", "end of life", "DNR", "transplant", "abortion", "fertility", "ivf", "cancer",
+      "tedavi", "ameliyat", "doktor", "teşhis", "aşı", "sağlık", "kürtaj", "hastalık"
     ],
-    "sourceIds": ["Q.5.32", "Q.33.72", "ibn-majah.2341"]
+    "sourceIds": [
+      "Q.5.32", "Q.33.72", "Q.2.195", "Q.6.151",
+      "ibn-majah.2341", "qaida.no-harm", "qaida.necessity", "qaida.harm-priority", "qaida.lesser-evil", "qaida.hardship-eases",
+      "scholar.izz-bin-abdissalam.qawaid.maslaha"
+    ]
   },
   {
     "pattern": "truth-disclosure",
     "keywords": [
-      "tell", "disclose", "secret", "honest", "lie", "truth", "transparent",
-      "söyle", "açıkla", "sır", "doğruluk", "yalan", "şeffaf"
+      "tell", "disclose", "secret", "honest", "lie", "truth", "transparent", "confess", "reveal",
+      "söyle", "açıkla", "sır", "doğruluk", "yalan", "şeffaf", "itiraf"
     ],
-    "sourceIds": ["Q.2.42", "Q.9.119", "Q.17.81", "Q.49.6", "bukhari.6094", "tirmidhi.2516"]
+    "sourceIds": [
+      "Q.2.42", "Q.9.119", "Q.17.81", "Q.49.6", "Q.10.36", "Q.53.28",
+      "bukhari.6094", "tirmidhi.2516", "muslim.91b", "muslim.1715", "abudawud.3580",
+      "qaida.certainty-doubt"
+    ]
   },
   {
     "pattern": "honest-speech",
     "keywords": [
-      "say", "speech", "promise", "lie", "tell",
-      "söyle", "konuş", "sözü", "yalan"
+      "say", "speech", "promise", "lie", "tell", "announce", "post",
+      "söyle", "konuş", "sözü", "yalan", "duyur"
     ],
-    "sourceIds": ["Q.9.119", "Q.49.6", "bukhari.6094", "tirmidhi.2516", "muslim.55"]
+    "sourceIds": [
+      "Q.9.119", "Q.49.6", "Q.4.114",
+      "bukhari.6094", "tirmidhi.2516", "muslim.55", "bukhari.6018", "muslim.2553"
+    ]
   },
   {
     "pattern": "sincerity-intention",
     "keywords": [
-      "intention", "niyya", "motive", "sincerity", "ikhlas", "showing off", "riyāʾ",
-      "niyet", "ihlas", "samimiyet", "riyâ", "gösteriş"
+      "intention", "niyya", "motive", "sincerity", "ikhlas", "showing off", "riyāʾ", "ego",
+      "niyet", "ihlas", "samimiyet", "riyâ", "gösteriş", "ego"
     ],
-    "sourceIds": ["bukhari.1", "Q.92.20", "Q.25.43", "Q.16.106"]
+    "sourceIds": [
+      "bukhari.1", "Q.92.20", "Q.25.43", "Q.16.106", "Q.13.11", "Q.31.18",
+      "muslim.91", "muslim.2553", "tirmidhi.2407", "tirmidhi.2459", "tirmidhi.2520",
+      "qaida.intentions", "qaida.means-ends",
+      "scholar.ghazali.ihya.niyya", "scholar.ibn-ata-allah.hikam.action", "scholar.muhasibi.riaya.self", "scholar.taha.aql-vahiy"
+    ]
   },
   {
     "pattern": "religious-obligation",
     "keywords": [
-      "prayer", "fast", "zakāt", "hajj", "obligation", "ibadet", "namaz", "oruç", "zekat", "hac"
+      "prayer", "fast", "zakāt", "hajj", "obligation", "ibadet", "namaz", "oruç", "zekat", "hac", "ibadet",
+      "pray", "ramadan", "ramazan"
     ],
-    "sourceIds": ["muslim.8", "Q.51.56", "Q.33.72", "Q.4.36"]
+    "sourceIds": [
+      "muslim.8", "Q.51.56", "Q.33.72", "Q.4.36", "Q.2.177", "Q.6.151", "Q.17.23",
+      "bukhari.2697", "ibn-majah.224",
+      "qaida.hardship-eases", "scholar.shatibi.muwafaqat.maqasid", "scholar.ibn-rushd.bidaya.ikhtilaf", "scholar.qaradawi.fiqh-of-priorities"
+    ]
   },
   {
     "pattern": "community-harm",
     "keywords": [
-      "community", "society", "public", "harm", "fitna", "discord",
-      "topluluk", "toplum", "kamuoyu", "fitne", "zarar"
+      "community", "society", "public", "harm", "fitna", "discord", "polarization", "minority",
+      "topluluk", "toplum", "kamuoyu", "fitne", "zarar", "kutuplaşma"
     ],
-    "sourceIds": ["Q.5.2", "Q.16.90", "Q.49.12", "muslim.49", "ibn-majah.2341", "muslim.2564"]
+    "sourceIds": [
+      "Q.5.2", "Q.16.90", "Q.49.12", "Q.49.10", "Q.49.13", "Q.3.104",
+      "muslim.49", "ibn-majah.2341", "muslim.2564", "bukhari.13", "bukhari.2442", "muslim.2699", "tirmidhi.1924", "bukhari.6011",
+      "qaida.public-private"
+    ]
   },
   {
     "pattern": "inheritance-property",
     "keywords": [
-      "inheritance", "will", "property", "wealth", "money",
+      "inheritance", "will", "property", "wealth", "money", "estate", "succession",
       "miras", "vasiyet", "mülk", "para", "servet"
     ],
-    "sourceIds": ["Q.2.275", "Q.4.36", "Q.16.90"]
+    "sourceIds": ["Q.2.275", "Q.4.36", "Q.16.90", "Q.4.29", "Q.2.282", "qaida.original-permissibility"]
+  },
+  {
+    "pattern": "contracts-promises",
+    "keywords": [
+      "contract", "promise", "agreement", "deal", "covenant", "oath", "vow", "sign",
+      "sözleşme", "söz", "anlaşma", "ahd", "yemin", "imzala"
+    ],
+    "sourceIds": [
+      "Q.2.282", "Q.4.29", "Q.17.34", "Q.55.9",
+      "muslim.91b",
+      "qaida.custom", "qaida.no-leverage-from-wrong",
+      "scholar.ibn-hazm.muhalla.contracts"
+    ]
+  },
+  {
+    "pattern": "charity-zakat",
+    "keywords": [
+      "charity", "donate", "give", "sadaqa", "zakat", "needy", "poor", "almsgiving",
+      "yardım", "sadaka", "zekat", "muhtaç", "yoksul"
+    ],
+    "sourceIds": [
+      "Q.2.177", "Q.59.9", "Q.93.10",
+      "muslim.987", "muslim.2699"
+    ]
+  },
+  {
+    "pattern": "patience-trials",
+    "keywords": [
+      "patience", "trial", "hardship", "endurance", "sabr", "suffering", "loss",
+      "sabır", "çile", "deneme", "tahammül", "kayıp"
+    ],
+    "sourceIds": [
+      "Q.103.1", "Q.25.63",
+      "tirmidhi.2520", "bukhari.6116",
+      "qaida.hardship-eases", "qaida.necessity"
+    ]
+  },
+  {
+    "pattern": "speech-control",
+    "keywords": [
+      "gossip", "rumour", "rumor", "post", "tweet", "comment", "insult", "argue", "shout",
+      "dedikodu", "söylenti", "yorum", "hakaret", "tartışma", "bağırmak", "dil"
+    ],
+    "sourceIds": [
+      "Q.49.11", "Q.7.199", "Q.16.125", "Q.25.63", "Q.31.18", "Q.93.10", "Q.104.1",
+      "bukhari.6018", "bukhari.6035", "muslim.91", "muslim.2589", "tirmidhi.2317", "tirmidhi.2407", "bukhari.6116",
+      "scholar.nawawi.adhkar.tongue"
+    ]
+  },
+  {
+    "pattern": "repentance-tawba",
+    "keywords": [
+      "repent", "regret", "sin", "tawba", "forgiveness", "guilt",
+      "tövbe", "pişman", "günah", "bağış", "vicdan azabı"
+    ],
+    "sourceIds": [
+      "tirmidhi.1987", "tirmidhi.2407",
+      "qaida.intentions"
+    ]
+  },
+  {
+    "pattern": "knowledge-learning",
+    "keywords": [
+      "study", "learn", "school", "university", "education", "research", "teach", "phd", "thesis",
+      "öğren", "okul", "üniversite", "eğitim", "araştırma", "öğret", "tez", "doktora"
+    ],
+    "sourceIds": [
+      "Q.20.114", "Q.17.36", "Q.10.36",
+      "ibn-majah.224", "abudawud.3580",
+      "qaida.original-permissibility", "scholar.attas.adab"
+    ]
+  },
+  {
+    "pattern": "moderation-balance",
+    "keywords": [
+      "moderation", "balance", "extreme", "excess", "wasat",
+      "orta", "denge", "aşırı", "ölçü", "vasat"
+    ],
+    "sourceIds": [
+      "Q.2.143", "Q.7.31", "Q.55.9",
+      "scholar.izzetbegovic.east-west"
+    ]
+  },
+  {
+    "pattern": "trust-amana",
+    "keywords": [
+      "trust", "deposit", "responsibility", "amana", "duty", "fiduciary",
+      "emanet", "güven", "sorumluluk", "vekil"
+    ],
+    "sourceIds": [
+      "Q.4.58", "Q.17.34", "Q.33.72",
+      "qaida.no-leverage-from-wrong"
+    ]
+  },
+  {
+    "pattern": "consultation-shura",
+    "keywords": [
+      "consult", "consultation", "advice", "decision team", "council", "shura",
+      "danış", "şûrâ", "istişâre", "danışma"
+    ],
+    "sourceIds": [
+      "Q.3.159", "Q.42.38",
+      "abudawud.3597", "muslim.4867"
+    ]
+  },
+  {
+    "pattern": "conflict-resolution",
+    "keywords": [
+      "fight", "dispute", "argument", "reconcile", "mediate", "hostile",
+      "kavga", "tartışma", "uzlaşma", "arabulucu", "düşmanlık"
+    ],
+    "sourceIds": [
+      "Q.49.10", "Q.4.114", "Q.7.199", "Q.16.125", "Q.2.256",
+      "bukhari.2442", "bukhari.6116", "muslim.987", "abudawud.3597",
+      "qaida.lesser-evil"
+    ]
+  },
+  {
+    "pattern": "neighbor-rights",
+    "keywords": [
+      "neighbor", "neighbour", "apartment", "noise", "shared",
+      "komşu", "site", "apartman", "gürültü"
+    ],
+    "sourceIds": [
+      "Q.24.27",
+      "bukhari.6018", "tirmidhi.1924", "muslim.2699", "abudawud.4944",
+      "qaida.custom", "qaida.no-leverage-from-wrong"
+    ]
+  },
+  {
+    "pattern": "digital-online",
+    "keywords": [
+      "internet", "social media", "twitter", "facebook", "instagram", "tiktok", "online", "post", "share", "leak", "data", "privacy", "screenshot", "anonymous",
+      "sosyal medya", "internet", "çevrim içi", "veri", "mahremiyet", "gizlilik"
+    ],
+    "sourceIds": [
+      "Q.49.11", "Q.24.27", "Q.104.1",
+      "bukhari.6018", "bukhari.6035", "muslim.2589", "tirmidhi.2317",
+      "qaida.no-leverage-from-wrong", "qaida.original-permissibility",
+      "scholar.kamali.shariah-purposes"
+    ]
+  },
+  {
+    "pattern": "environment-creation",
+    "keywords": [
+      "environment", "climate", "pollution", "waste", "recycle", "consumption",
+      "çevre", "iklim", "atık", "tüketim", "geri dönüşüm"
+    ],
+    "sourceIds": [
+      "Q.7.31",
+      "qaida.no-harm",
+      "scholar.kamali.shariah-purposes"
+    ]
+  },
+  {
+    "pattern": "time-priorities",
+    "keywords": [
+      "time", "schedule", "busy", "balance", "priority", "burnout",
+      "zaman", "yoğun", "öncelik", "tükenmişlik"
+    ],
+    "sourceIds": [
+      "Q.103.1",
+      "tirmidhi.2317", "tirmidhi.2459"
+    ]
+  },
+  {
+    "pattern": "modesty-haya",
+    "keywords": [
+      "modesty", "haya", "shame", "modest dress", "intimacy",
+      "haya", "tesettür", "edep", "mahrem"
+    ],
+    "sourceIds": [
+      "Q.17.32", "Q.24.27"
+    ]
+  },
+  {
+    "pattern": "addiction",
+    "keywords": [
+      "addiction", "alcohol", "smoking", "gambling", "porn", "drug", "habit",
+      "bağımlılık", "alkol", "sigara", "kumar", "uyuşturucu"
+    ],
+    "sourceIds": [
+      "Q.2.195", "Q.7.31", "Q.13.11",
+      "tirmidhi.2459",
+      "qaida.no-harm"
+    ]
+  },
+  {
+    "pattern": "leadership-civic",
+    "keywords": [
+      "leadership", "leader", "voting", "election", "policy", "government", "civic", "public office",
+      "lider", "oy", "seçim", "siyaset", "politika", "kamu"
+    ],
+    "sourceIds": [
+      "Q.3.159", "Q.42.38", "Q.4.58", "Q.49.13",
+      "muslim.4867", "abudawud.3597",
+      "qaida.public-private",
+      "scholar.ibn-taymiyya.fatawa.maslaha", "scholar.ramadan.ethics-of-action", "scholar.fadlallah.minorities", "scholar.kamali.shariah-purposes", "scholar.ibn-ashur.maqasid-modern"
+    ]
   },
   {
     "pattern": "general",
     "keywords": [],
     "sourceIds": [
-      "Q.17.36", "Q.5.8", "Q.16.90", "Q.49.6", "Q.92.20", "bukhari.1", "muslim.55", "ibn-majah.2341"
+      "Q.17.36", "Q.5.8", "Q.16.90", "Q.49.6", "Q.92.20",
+      "bukhari.1", "muslim.55", "ibn-majah.2341", "bukhari.13", "tirmidhi.2520",
+      "qaida.intentions", "qaida.no-harm", "qaida.harm-priority"
     ]
   }
 ]

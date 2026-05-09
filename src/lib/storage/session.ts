@@ -10,6 +10,7 @@ import {
   emptyNiyya,
   type Deliberation,
   type DeliberationCase,
+  type DeliberationMode,
   type NiyyaCheck,
   type SourceConsultation,
   type TruthClaim,
@@ -33,14 +34,16 @@ type SessionState = {
   step: StepIndex;
   /** Sub-step within the current major step. Reset to 1 whenever step changes. */
   subStep: number;
-  start: () => Deliberation;
+  start: (mode?: DeliberationMode) => Deliberation;
   /** Save current to Dexie via auto-save and create a fresh deliberation. */
-  startAnother: () => Deliberation;
+  startAnother: (mode?: DeliberationMode) => Deliberation;
   reset: () => void;
   setStep: (step: StepIndex) => void;
   advanceStep: () => void;
   retreatStep: () => void;
   setSubStep: (subStep: number) => void;
+  /** Switch the active deliberation to a different mode (e.g. quick → deep on refine). */
+  setMode: (mode: DeliberationMode) => void;
   updateCase: (patch: Partial<DeliberationCase>) => void;
   setClaims: (claims: TruthClaim[]) => void;
   setConsultations: (consultations: SourceConsultation[]) => void;
@@ -48,13 +51,14 @@ type SessionState = {
   loadFromHistory: (deliberation: Deliberation) => void;
 };
 
-function newDeliberation(): Deliberation {
+function newDeliberation(mode: DeliberationMode = 'deep'): Deliberation {
   const now = new Date().toISOString();
   return {
     id: crypto.randomUUID(),
     createdAt: now,
     updatedAt: now,
     status: 'draft',
+    mode,
     case: emptyCase(),
     claims: [],
     consultations: [],
@@ -72,13 +76,13 @@ export const useSession = create<SessionState>()(
       current: null,
       step: 0,
       subStep: 1,
-      start: () => {
-        const fresh = newDeliberation();
+      start: (mode = 'deep') => {
+        const fresh = newDeliberation(mode);
         set({ current: fresh, step: 1, subStep: 1 });
         return fresh;
       },
-      startAnother: () => {
-        const fresh = newDeliberation();
+      startAnother: (mode = 'deep') => {
+        const fresh = newDeliberation(mode);
         set({ current: fresh, step: 1, subStep: 1 });
         return fresh;
       },
@@ -93,6 +97,11 @@ export const useSession = create<SessionState>()(
         set({ step: prev, subStep: 99 }); // 99 = "last sub-step"; each step normalizes
       },
       setSubStep: (subStep) => set({ subStep }),
+      setMode: (mode) => {
+        const cur = get().current;
+        if (!cur) return;
+        set({ current: touch({ ...cur, mode }) });
+      },
       updateCase: (patch) => {
         const cur = get().current;
         if (!cur) return;
